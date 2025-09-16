@@ -95,6 +95,29 @@
     <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
   </div>
 </header>
+<script>
+  (function(){
+    var __origLog = console.log;
+    console.log = function(){
+      try {
+        if (arguments.length && typeof arguments[0] === 'string') {
+          var msg = arguments[0];
+          // Suppress legacy logs from old main.js
+          if (
+            msg.indexOf('Toggle') === 0 ||
+            msg.indexOf('Setting up language toggle') !== -1 ||
+            msg.indexOf('Diaeta: Header initialization complete') !== -1 ||
+            msg.indexOf('Diaeta: ') === 0
+          ) {
+            return;
+          }
+        }
+      } catch (e) {}
+      return __origLog.apply(console, arguments);
+    };
+  })();
+  </script>
+<script src="/assets/js/nav.js" defer=""></script>
 
 
 

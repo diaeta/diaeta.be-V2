@@ -157,6 +157,16 @@ module.exports = function (eleventyConfig) {
     }
   );
 
+  // Strip any lingering legacy main.js includes from built HTML
+  eleventyConfig.addTransform('stripLegacyMain', (content, outputPath) => {
+    try {
+      if (outputPath && outputPath.endsWith('.html')) {
+        return content.replace(/<script[^>]*src=["']\/?legacy\/js\/main\.js["'][^>]*><\/script>\s*/gi, '');
+      }
+    } catch {}
+    return content;
+  });
+
   eleventyConfig.addTemplateFormats('scss');
   eleventyConfig.addExtension('scss', {
     outputFileExtension: 'css',
