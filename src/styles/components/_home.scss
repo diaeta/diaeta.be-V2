@@ -1,0 +1,46 @@
+/* Homepage harmonized styles */
+
+.hero-desktop, .hero-mobile {
+  display: block;
+}
+
+.hero-desktop {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-blueprint .bp-line { height: 1px; background: rgba(10,95,107,0.12); margin: .5rem 0; }
+.hero-blueprint .bp-curve { border-top: 1px dashed rgba(10,95,107,0.15); height: 1px; margin: .75rem 0; }
+
+.hero-dna-svg { max-width: 100%; height: auto; opacity: .6 }
+
+.feature-badges {
+  display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1rem;
+}
+.feature-badges .feature-item { display: inline-flex; align-items: center; gap: .5rem; padding: .5rem .75rem; border-radius: 999px; background: #f4f8f9; color: #0a5f6b; font-weight: 600; font-size: .9rem; }
+
+.btn { display: inline-flex; align-items: center; gap: .5rem; padding: .6rem 1rem; border-radius: 999px; text-decoration: none; cursor: pointer; }
+.btn.btn-primary, .btn.btn-accent, .btn.btn-primary-mobile { background: #0a5f6b; color: #fff; }
+.btn.btn-outline, .btn.btn-outline-primary { background: transparent; color: #0a5f6b; border: 1px solid #0a5f6b; }
+.btn.btn-secondary, .btn.btn-secondary-mobile { background: #084e57; color:#fff; }
+.btn:hover { filter: brightness(.95); }
+
+.section-header .section-title, .wl-topic-page-header h1 { color: #0a5f6b; }
+
+.special-offer-card { background: linear-gradient(180deg,#0a5f6b 0%, #0a4450 100%); color: #fff; border-radius: 1rem; padding: 2rem; text-align: center; }
+.special-offer-card .price-comparison .h2 { color: #fff; }
+
+.info-card { background: #ffffff; border: 1px solid rgba(0,0,0,0.08); border-radius: .75rem; padding: 1.5rem; }
+.info-item .small { color: #6b7280; }
+
+.program-aside .pricing-highlight { background: #0a5f6b; color: #fff; border-radius: 1rem; }
+.consultation-note { background: rgba(255,255,255,.12); border-radius: .75rem; }
+
+/* grids, chips */
+.option-chip { border: 1px solid rgba(0,0,0,0.08); border-radius: .75rem; background: #fff; }
+
+/* utilities for spacing if needed */
+.mt-4 { margin-top: 1rem; }
+.mb-3 { margin-bottom: .75rem; }
+.mb-4 { margin-bottom: 1rem; }
+
