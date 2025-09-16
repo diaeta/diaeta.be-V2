@@ -1,0 +1,50 @@
+{
+  "fr": {
+    "brand": "Diaeta",
+    "cta.book": "Prendre rendez-vous",
+    "cta.contact": "Contact",
+    "nav.home": "Accueil",
+    "nav.services": "Services",
+    "nav.knowledge": "Connaissances",
+    "nav.locations": "Centres",
+    "nav.legal": "Mentions l�gales",
+    "nav.privacy": "Confidentialit�",
+    "nav.contact": "Contact"
+  },
+  "en": {
+    "brand": "Diaeta",
+    "cta.book": "Book an appointment",
+    "cta.contact": "Contact",
+    "nav.home": "Home",
+    "nav.services": "Services",
+    "nav.knowledge": "Knowledge hub",
+    "nav.locations": "Locations",
+    "nav.legal": "Legal",
+    "nav.privacy": "Privacy",
+    "nav.contact": "Contact"
+  },
+  "nl": {
+    "brand": "Diaeta",
+    "cta.book": "Maak een afspraak",
+    "cta.contact": "Contact",
+    "nav.home": "Start",
+    "nav.services": "Diensten",
+    "nav.knowledge": "Kenniscentrum",
+    "nav.locations": "Locaties",
+    "nav.legal": "Juridisch",
+    "nav.privacy": "Privacy",
+    "nav.contact": "Contact"
+  },
+  "de": {
+    "brand": "Diaeta",
+    "cta.book": "Termin vereinbaren",
+    "cta.contact": "Kontakt",
+    "nav.home": "Startseite",
+    "nav.services": "Leistungen",
+    "nav.knowledge": "Wissensbereich",
+    "nav.locations": "Standorte",
+    "nav.legal": "Rechtliches",
+    "nav.privacy": "Datenschutz",
+    "nav.contact": "Kontakt"
+  }
+}

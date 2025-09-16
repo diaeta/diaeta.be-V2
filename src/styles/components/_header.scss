@@ -1,0 +1,10 @@
+/* Harmonized header styles */
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.site-header .nav-link { color: #0a0a0a; text-decoration: none; }
+.site-header .nav-link:hover { color: #0a5f6b; }
+.site-header .btn { background: #0a5f6b; color: #fff; border-radius: 999px; padding: .5rem 1rem; }
+.site-header .btn:hover { background: #084e57; }
+

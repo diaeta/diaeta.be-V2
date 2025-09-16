@@ -1,0 +1,24 @@
+{
+  "organization": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Diaeta",
+    "url": "https://www.diaeta.be",
+    "logo": "https://www.diaeta.be/public/assets/images/logo.svg",
+    "sameAs": []
+  },
+  "localBusiness": {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Diaeta Nutrition Clinic",
+    "image": "https://www.diaeta.be/public/assets/images/clinic.jpg",
+    "url": "https://www.diaeta.be",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "",
+      "addressLocality": "Brussels",
+      "addressCountry": "BE"
+    },
+    "telephone": ""
+  }
+}

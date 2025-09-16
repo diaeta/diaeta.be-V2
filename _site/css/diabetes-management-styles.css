@@ -1,0 +1,345 @@
+/* 
+    src/css/diabetes-management-styles.css
+    Dedicated styles for the main diabetes management hub page.
+*/
+
+#diabetes-knowledge-hub {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-10);
+}
+#diabetes-knowledge-hub .hub-main-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto var(--space-6);
+}
+#diabetes-knowledge-hub .section-badge {
+    display: inline-block;
+    margin-bottom: var(--space-3);
+    background: linear-gradient(135deg, var(--primary-50), var(--primary-100));
+    color: var(--primary-700);
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    font-weight: var(--font-medium);
+    font-size: 0.85rem;
+    border: 1px solid var(--primary-200);
+}
+#diabetes-knowledge-hub .section-title {
+    font-size: 2.4rem;
+    margin-bottom: var(--space-2);
+}
+#diabetes-knowledge-hub .hub-search {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto var(--space-6);
+}
+#diabetes-knowledge-hub .hub-search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    opacity: .6;
+}
+#diabetes-knowledge-hub .hub-search input {
+    padding-left: 2.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--neutral-200);
+    background: #ffffff;
+    box-shadow: var(--box-shadow-sm);
+}
+#diabetes-knowledge-hub .hub-search input::placeholder {
+    color: var(--text-secondary);
+    opacity: .7;
+    font-size: .9rem;
+}
+#diabetes-knowledge-hub .accordion-item {
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--border-radius-xl) !important; 
+    overflow: hidden;
+    box-shadow: var(--box-shadow-sm);
+    margin-bottom: var(--space-3);
+}
+#diabetes-knowledge-hub .accordion-button {
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+}
+#diabetes-knowledge-hub .accordion-button:not(.collapsed) {
+    background: var(--primary-50);
+    color: var(--primary-800);
+    box-shadow: inset 0 -1px 0 var(--neutral-200);
+}
+#diabetes-knowledge-hub .accordion-body {
+    padding: var(--space-4);
+}
+#diabetes-knowledge-hub .hub-links li {
+    margin-bottom: var(--space-2);
+}
+#diabetes-knowledge-hub .hub-links a {
+    text-decoration: none;
+    color: var(--primary-700);
+    transition: color 0.2s;
+    font-weight: var(--font-semibold);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-size-base);
+}
+#diabetes-knowledge-hub .hub-links a:hover {
+    color: var(--primary-600);
+    text-decoration: underline;
+}
+#diabetes-knowledge-hub .hub-link-description {
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+    padding-left: 0.1rem;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-normal);
+}
+#diabetes-knowledge-hub .hub-link-icon {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    transition: transform 0.2s;
+}
+#diabetes-knowledge-hub .hub-links a:hover .hub-link-icon {
+    transform: translateX(2px);
+}
+
+/* Aesthetic polish scoped to this page */
+.service-hero-wp {
+    position: relative;
+    padding: clamp(3.5rem, 6vw, 6rem) 0;
+    background: radial-gradient(900px 500px at 15% 10%, rgba(var(--primary-rgb),0.10), rgba(0,0,0,0) 60%),
+                linear-gradient(180deg, rgba(var(--primary-rgb),0.06), rgba(0,0,0,0));
+    overflow: hidden;
+}
+.service-hero-wp::after {
+    content: "";
+    position: absolute; inset: -20% -10% auto -10%; height: 70%;
+    background: radial-gradient(60% 60% at 80% 20%, rgba(255,255,255,0.6), rgba(255,255,255,0));
+    pointer-events: none;
+}
+.service-hero-wp h1 { font-size: clamp(2rem, 1.2rem + 2.5vw, 3rem); letter-spacing: var(--tracking-tight); }
+.service-hero-wp .lead { color: var(--text-secondary); }
+.service-hero-wp .btn.btn-primary {
+    background: linear-gradient(135deg, var(--primary-500), var(--accent-500));
+    border: none;
+    box-shadow: 0 10px 24px rgba(var(--primary-rgb), .25);
+    transition: var(--transition-standard), transform .2s ease;
+}
+.service-hero-wp .btn.btn-primary:hover { transform: translateY(-2px); }
+
+.content-section { padding: clamp(2.5rem, 5vw, 4rem) 0; }
+.content-section .section-title { letter-spacing: var(--tracking-tight); }
+
+.card.h-100, .card.shadow-sm {
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--neutral-200);
+    box-shadow: var(--box-shadow-sm);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.card.h-100:hover, .card.shadow-sm:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--box-shadow-md);
+    border-color: var(--primary-200);
+}
+.icon-large i { font-size: 1.75rem; color: var(--primary-600); }
+.section-badge {
+    display: inline-block;
+    padding: .4rem .85rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--primary-50), #fff);
+    border: 1px solid var(--neutral-200);
+    color: var(--primary-700);
+    font-weight: 600;
+    letter-spacing: .02em;
+    margin-top: var(--space-1);
+    margin-bottom: var(--space-3);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(var(--primary-rgb), .08), inset 0 1px 0 rgba(255,255,255,.7);
+    background-size: 140% 140%;
+}
+/* Subtle shine animation */
+.section-badge::after {
+    content: "";
+    position: absolute; top: 0; left: -30%; height: 100%; width: 30%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform: skewX(-20deg);
+    animation: badgeShine 4s ease-in-out infinite;
+}
+@keyframes badgeShine { 0% { left: -30%; } 60% { left: 130%; } 100% { left: 130%; } }
+/* Gentle float on hover/focus for a lively feel */
+.section-badge:hover, .section-badge:focus { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(var(--primary-rgb), .12), inset 0 1px 0 rgba(255,255,255,.9); }
+@media (prefers-reduced-motion: reduce) {
+    .section-badge::after { animation: none; }
+    .section-badge { transition: none; }
+}
+/* Extra spacing harmony when badge sits atop section titles */
+.section-header .section-badge { margin-bottom: var(--space-3); margin-top: var(--space-2); }
+
+nav[aria-label="breadcrumb"] .breadcrumb {
+    background: rgba(var(--neutral-50-rgb), 0.9);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--border-radius-md);
+    padding: .5rem .75rem;
+}
+
+.accordion-button::after { transition: transform .2s ease; }
+.accordion-button:not(.collapsed)::after { transform: rotate(180deg); }
+/* Exceptional visual art: animated gradient hero with glass panel */
+:root { --orb-blur: 40px; --orb-speed: 22s; --orb-speed-slow: 36s; }
+@media (prefers-reduced-motion: reduce) {
+    :root { --orb-speed: 0s; --orb-speed-slow: 0s; --orb-blur: 0px; }
+    .orb { animation: none !important; }
+}
+
+.service-hero-wp {
+    position: relative;
+    padding: clamp(3.5rem, 6vw, 6rem) 0 clamp(2rem, 4vw, 3rem);
+    background: radial-gradient(1200px 700px at 5% 5%, rgba(0,109,119,0.10) 0%, rgba(0,0,0,0) 60%),
+                radial-gradient(800px 500px at 95% 0%, rgba(226,149,120,0.10) 0%, rgba(0,0,0,0) 60%),
+                linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0));
+    overflow: hidden;
+    isolation: isolate;
+}
+.service-hero-wp .hero-art { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.service-hero-wp .orb {
+    position: absolute; filter: blur(var(--orb-blur)); opacity: .65; mix-blend-mode: multiply;
+    will-change: transform; border-radius: 50%;
+}
+.service-hero-wp .orb.orb-a { width: 38vmin; height: 38vmin; left: -6vmin; top: -6vmin; background: radial-gradient(circle at 30% 30%, rgba(0,109,119,.85), rgba(0,109,119,0)); animation: floatA var(--orb-speed) ease-in-out infinite alternate; }
+.service-hero-wp .orb.orb-b { width: 34vmin; height: 34vmin; right: -8vmin; top: -4vmin; background: radial-gradient(circle at 35% 35%, rgba(226,149,120,.85), rgba(226,149,120,0)); animation: floatB var(--orb-speed-slow) ease-in-out infinite alternate; }
+.service-hero-wp .orb.orb-c { width: 28vmin; height: 28vmin; left: 10vmin; bottom: -8vmin; background: radial-gradient(circle at 40% 40%, rgba(140,198,63,.75), rgba(140,198,63,0)); animation: floatC var(--orb-speed) ease-in-out infinite alternate; }
+.service-hero-wp .orb.orb-d { width: 22vmin; height: 22vmin; right: 20vmin; bottom: -6vmin; background: radial-gradient(circle at 40% 40%, rgba(0,109,119,.55), rgba(0,109,119,0)); animation: floatD var(--orb-speed-slow) ease-in-out infinite alternate; }
+@keyframes floatA { to { transform: translate(4vmin, 3vmin) scale(1.05); } }
+@keyframes floatB { to { transform: translate(-3vmin, 2vmin) scale(1.06); } }
+@keyframes floatC { to { transform: translate(2vmin, -3vmin) scale(1.04); } }
+@keyframes floatD { to { transform: translate(-2vmin, -2vmin) scale(1.05); } }
+
+.hero-panel { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; }
+.hero-panel .glass {
+    background: rgba(255,255,255,0.75);
+    border: 1px solid rgba(255,255,255,0.55);
+    backdrop-filter: blur(8px) saturate(120%);
+    border-radius: var(--border-radius-xl);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: clamp(1rem, 3vw, 1.5rem);
+}
+.service-hero-wp h1 { font-size: clamp(2.15rem, 1.3rem + 2.6vw, 3.1rem); letter-spacing: var(--tracking-tight); }
+.service-hero-wp .lead { color: var(--text-secondary); }
+.service-hero-wp .btn.btn-primary { background: linear-gradient(135deg, var(--primary-500), var(--accent-500)); border: none; box-shadow: 0 12px 26px rgba(var(--primary-rgb), .25); transition: var(--transition-standard), transform .2s ease; }
+.service-hero-wp .btn.btn-primary:hover { transform: translateY(-2px); }
+
+/* Feature strip under hero */
+.feature-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-4); margin-top: var(--space-5); }
+.feature-item {(--primary-300), var(--accent-300)) border-box; border:2px solid transparent; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); backdrop-filter: blur(8px) saturate(115%); }
+.feature-item i { color: var(--primary-600); margin-top:.1rem; }
+@media (max-width: 767px) { .feature-strip { grid-template-columns: 1fr; } }
+
+/* Decorative wave divider */
+.section-divider { position: relative; margin-top: -1rem; }
+.section-divider svg { display:block; width:100%; height:auto; }
+
+/* Section background art layering */
+.content-section { position: relative; overflow: hidden; }
+.section-art { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.content-section > .container,
+.content-section .section-header,
+.content-section .row { position: relative; z-index: 1; }
+
+/* Enhanced cards and badges */
+.card.h-100, .card.shadow-sm { border-radius: var(--border-radius-lg); border: 1px solid var(--neutral-200); box-shadow: var(--box-shadow-sm); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.card.h-100:hover, .card.shadow-sm:hover { transform: translateY(-4px); box-shadow: var(--box-shadow-md); border-color: var(--primary-200); }
+.icon-large i { font-size: 1.75rem; color: var(--primary-600); }
+.section-badge { display:inline-block; padding:.35rem .75rem; border-radius:999px; background: linear-gradient(135deg, var(--primary-50), #fff); border:1px solid var(--neutral-200); color: var(--primary-700); font-weight:600; letter-spacing:.02em; }
+
+/* Section aesthetics + glass cards */
+.section-alt { background: linear-gradient(180deg, rgba(224,242,243,0.45), rgba(249,213,196,0.35) 40%, rgba(214,235,186,0.35) 70%, #fff 100%); }
+.content-section .section-title { position: relative; display: inline-block; padding-bottom: .35rem; letter-spacing: var(--tracking-tight); }
+.content-section .section-title::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: linear-gradient(90deg, var(--primary-400), var(--secondary-400), var(--accent-400)); border-radius: 999px; }
+.glass-card { background: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.55); backdrop-filter: blur(8px) saturate(120%); }
+.glass-card .card-body { border-top: 4px solid var(--primary-500); }
+
+/* Custom bullets for lists */
+.list-styled li { position: relative; padding-left: 1.25rem; }
+.list-styled li::before { content: ""; position: absolute; left: 0; top: .55rem; width: .5rem; height: .5rem; border-radius: 50%; background: var(--primary-500); }
+/* IBS-inspired essentials list */
+.essentials-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; margin-top: .5rem; }
+@media (min-width: 992px) { .essentials-grid { grid-template-columns: repeat(3,1fr); } }
+.essentials-item { background: #fff; padding: 1.1rem; border-radius: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); border-left: 4px solid var(--primary-500); transition: transform .2s ease, box-shadow .2s ease; }
+.essentials-item:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); }
+.essentials-item .ess-media { display:flex; align-items:center; gap:.75rem; }
+.essentials-item .ess-icon { width: 40px; height: 40px; border-radius: 50%; display:flex; align-items:center; justify-content:center; background: linear-gradient(135deg, var(--primary-500), var(--accent-500)); color: #fff; box-shadow: 0 6px 16px rgba(var(--primary-rgb), .25); flex: 0 0 40px; }
+.essentials-item .ess-title { margin: 0 0 .25rem 0; font-weight: 600; color: var(--primary-700); font-size: 1rem; }
+.essentials-item .ess-text { margin: 0; color: var(--text-secondary); font-size: .95rem; }
+/* Final CTA button overlay like IBS */
+#final-cta .btn.btn-primary { position: relative; overflow: hidden; }
+#final-cta .btn.btn-primary::after { content: ""; position: absolute; inset: 0; left: -100%; background: linear-gradient(135deg, var(--primary-600), var(--accent-500)); transition: left .3s ease; }
+#final-cta .btn.btn-primary:hover::after { left: 0; }
+/* Knowledge Hub & Expert showcase polish */
+#diabetes-knowledge-hub { position: relative; background: linear-gradient(180deg, #fff, rgba(0,109,119,0.06) 20%, rgba(226,149,120,0.06) 45%, rgba(140,198,63,0.06) 70%, #fff 100%); }
+#diabetes-knowledge-hub .hub-main-header { background: rgba(255,255,255,0.7); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.5); border-radius: var(--border-radius-lg); padding: 1rem; box-shadow: var(--box-shadow-sm); }
+.expert-showcase-section { display:flex; gap:1rem; align-items:center; background: rgba(255,255,255,0.8); border:1px solid rgba(255,255,255,0.6); border-radius: var(--border-radius-xl); padding: 1rem; box-shadow: var(--box-shadow-sm); }
+.expert-showcase-image { border-radius: var(--border-radius-lg); box-shadow: var(--box-shadow-sm); }
+.expert-showcase-name { font-weight: 700; font-size: 1.25rem; margin: 0; }
+.expert-showcase-link { text-decoration: none; font-weight: 600; color: var(--primary-700); }
+.expert-showcase-link:hover { text-decoration: underline; }
+/* Final CTA richness */
+.final-cta-section { background: linear-gradient(180deg, var(--primary-50), #fff 70%); }
+.final-cta-section .btn.btn-primary { background: linear-gradient(135deg, var(--primary-500), var(--accent-500)); border: none; box-shadow: 0 12px 26px rgba(var(--primary-rgb), .25); }
+.final-cta-section .btn.btn-primary:hover { transform: translateY(-2px); }
+/* Improve final CTA readability */
+.final-cta-section { position: relative; padding-bottom: 7rem; }
+@media (max-width: 576px) { .final-cta-section { padding-bottom: 8rem; } }
+.final-cta-section::before { content: ""; position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.86)); }
+#final-cta .container { position: relative; z-index: 2; }
+#final-cta h2 { color: var(--primary-800); letter-spacing: var(--tracking-tight); }
+#final-cta .lead { color: var(--text-secondary); }
+.cta-glass { background: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.6); backdrop-filter: blur(10px) saturate(120%); border-radius: var(--border-radius-xl); box-shadow: 0 14px 40px rgba(0,0,0,0.1); padding: clamp(1rem, 3vw, 2rem); max-width: 960px; margin: 0 auto; }
+
+/* Subtle on-scroll reveals */
+.animate-on-scroll { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+.animate-on-scroll.in-view { opacity: 1; transform: none; }
+
+/* Care Pathway (horizontal steps) */
+.care-pathway { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1rem; margin-bottom: 3rem; position: relative; z-index: 1; }
+@media (max-width: 991px) { .care-pathway { margin-bottom: 3.5rem; } }
+@media (max-width: 767px) { .care-pathway { grid-template-columns: 1fr 1fr; } }
+.care-step { background: linear-gradient(#ffffff,#ffffff) padding-box,
+                linear-gradient(135deg, var(--primary-200), var(--accent-200)) border-box;
+                border:2px solid transparent; border-radius: 16px; padding: 1rem; text-align: left; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+.care-step .step-head { display: flex; align-items: center; gap: .6rem; margin-bottom: .4rem; }
+.care-step .step-icon { width: 36px; height: 36px; border-radius: 50%; display:flex; align-items:center; justify-content:center; color:#fff; background: linear-gradient(135deg, var(--primary-500), var(--accent-500)); box-shadow: 0 6px 16px rgba(var(--primary-rgb), .25); }
+.care-step .step-title { margin: 0; font-weight: 600; color: var(--primary-700); font-size: 1rem; }
+.care-step .step-text { margin: 0; color: var(--text-secondary); font-size: .95rem; }
+
+/* Back-to-top button */
+#backToTop { position: fixed; right: 16px; bottom: 16px; z-index: 999; width: 44px; height: 44px; border-radius: 50%; border: none; color: #fff;
+    background: linear-gradient(135deg, var(--primary-500), var(--accent-500)); box-shadow: 0 10px 24px rgba(var(--primary-rgb), .25); display: none; align-items:center; justify-content:center; }
+#backToTop:focus { outline: 3px solid var(--focus-ring); }
+#backToTop { right: auto; left: 16px; bottom: 16px; z-index: 998; }
+@media (max-width: 576px) { #backToTop { bottom: 80px; } }
+
+/* === THIS IS THE FIX === */
+/* Ensure clear separation to next sections */
+#treatment-approaches { 
+    position: relative; 
+    padding-bottom: 5rem; /* Increased padding */
+}
+#treatment-approaches .section-header,
+#treatment-approaches .row,
+#treatment-approaches .care-pathway { position: relative; z-index: 2; }
+#diabetes-knowledge-hub { position: relative; z-index: 2; padding-top: 1rem; margin-top: 1rem; }
+/* More colorful badges in section headers */
+.section-header .section-badge { background: linear-gradient(135deg, var(--primary-500), var(--accent-500)); color: #fff; border: 0; box-shadow: 0 8px 22px rgba(var(--primary-rgb), .25); }
+
+/* Per-section icon accents */
+#understanding-diabetes .icon-large i { color: var(--accent-600); }
+#diabetes-types .icon-large i { color: var(--secondary-600); }
+#nutrition-therapy .icon-large i { color: var(--primary-600); }
+#treatment-approaches .icon-large i { color: var(--primary-600); }
+
+/* Care steps more colorful borders */
+.care-step { background: linear-gradient(#ffffff,#ffffff) padding-box,
+                linear-gradient(135deg, var(--primary-300), var(--accent-300)) border-box; }

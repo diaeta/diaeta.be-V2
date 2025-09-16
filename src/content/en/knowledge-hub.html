@@ -1,0 +1,345 @@
+---
+title: "Knowledge Hub | Diaeta"
+description: "Your personalized learning center for nutrition, health, and wellness. Track your progress, discover new content, and achieve your health goals."
+lang: en
+og_image: /images/nutrition-research-lab-large.jpg
+head_extra: |
+  <link rel="stylesheet" href="{{ '/css/knowledge-hub.css' | url }}">
+---
+
+{# === Knowledge Hub Hero Section === #}
+<section class="knowledge-hub-hero">
+    <div class="container position-relative">
+        <div class="section-header text-center text-white animate-on-scroll fade-up">
+            <span class="hero-badge">
+                <i class="fas fa-graduation-cap me-2"></i>Your Learning Center
+            </span>
+            <h1 class="hero-headline">
+                Knowledge Hub
+            </h1>
+            <p class="section-subtitle">
+                Your personalized journey to better health through evidence-based nutrition education
+            </p>
+            <div class="hero-actions animate-on-scroll fade-up delay-200">
+                <a href="#learning-paths" class="btn btn-lg">
+                    <i class="fas fa-road me-2"></i>Start Learning
+                </a>
+                <a href="#progress" class="btn btn-lg btn-outline-light">
+                    <i class="fas fa-chart-line me-2"></i>View Progress
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Floating Action Button -->
+
+
+{# === User Dashboard Section === #}
+<section id="user-dashboard" class="user-dashboard-section">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Welcome & Progress Overview -->
+            <div class="col-lg-8">
+                <div class="dashboard-welcome-card">
+                    <div class="welcome-header">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="welcome-text">
+                            <h2>Welcome back!</h2>
+                            <p>Continue your health education journey</p>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-overview">
+                        <div class="progress-card progress-card--primary">
+                            <div class="progress-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <h3 class="progress-number">12</h3>
+                            <p>Articles Completed</p>
+                        </div>
+                        
+                        <div class="progress-card progress-card--accent">
+                            <div class="progress-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h3 class="progress-number">8</h3>
+                            <p>Achievements Unlocked</p>
+                        </div>
+                        
+                        <div class="progress-card progress-card--success">
+                            <div class="progress-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3 class="progress-number">45</h3>
+                            <p>Hours Learning</p>
+                        </div>
+                    </div>
+                    
+                    <div class="current-learning">
+                        <h4>
+                            <i class="fas fa-play-circle me-2"></i>Continue Learning
+                        </h4>
+                        <div class="current-article">
+                            <div class="article-icon">
+                                <i class="fas fa-stomach"></i>
+                            </div>
+                            <div class="article-info">
+                                <h5>Understanding IBS: Symptoms & Causes</h5>
+                                <p>Progress: 65% complete</p>
+                            </div>
+                            <a href="{{ '/en/irritable-bowel-syndrome-fodmap/' | url }}" class="btn btn-primary">
+                                Continue
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Actions Sidebar -->
+            <div class="col-lg-4">
+                <div class="quick-actions-sidebar">
+                    <h3>
+                        <i class="fas fa-bolt me-2"></i>Quick Actions
+                    </h3>
+                    
+                    <div class="action-buttons">
+                        <a href="{{ '/en/search/' | url }}" class="action-btn action-btn--primary">
+                            <div class="action-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <span>Search Knowledge Base</span>
+                        </a>
+                        
+                        <a href="#bookmarks" class="action-btn action-btn--accent">
+                            <div class="action-icon">
+                                <i class="fas fa-bookmark"></i>
+                            </div>
+                            <span>My Bookmarks</span>
+                        </a>
+                        
+                        <a href="#notes" class="action-btn action-btn--success">
+                            <div class="action-icon">
+                                <i class="fas fa-sticky-note"></i>
+                            </div>
+                            <span>My Notes</span>
+                        </a>
+                        
+                        <a href="{{ '/en/appointment/' | url }}" class="action-btn action-btn--warning">
+                            <div class="action-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <span>Book Consultation</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# === Learning Paths Section === #}
+<section id="learning-paths" class="learning-paths-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-badge animate-on-scroll fade-in">
+                <i class="fas fa-road me-2"></i>Structured Learning
+            </span>
+            <h2 class="animate-on-scroll fade-up">
+                Choose Your Learning Path
+            </h2>
+            <p class="lead animate-on-scroll fade-up delay-100">
+                Follow structured learning paths designed to guide you from basics to advanced topics
+            </p>
+        </div>
+        
+        <div class="learning-paths-grid">
+            <!-- IBS Learning Path -->
+            <div class="learning-path-card learning-path-card--primary animate-on-scroll fade-up delay-200">
+                <div class="path-header">
+                    <div class="path-icon path-icon--primary">
+                        <i class="fas fa-stomach"></i>
+                    </div>
+                    <h3 class="text--primary">IBS & Digestive Health</h3>
+                    <p>Master the low FODMAP approach and digestive wellness</p>
+                </div>
+                
+                <div class="path-progress">
+                    <div class="progress-info">
+                        <span class="progress-label">Progress</span>
+                        <span class="progress-percentage--primary">75%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill progress-fill--primary" style="width: 75%;"></div>
+                    </div>
+                </div>
+                
+                <div class="path-steps">
+                    <h4 class="text--primary">Learning Steps</h4>
+                    <div class="step-list">
+                        <div class="step-item completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Understanding IBS Basics</span>
+                        </div>
+                        <div class="step-item completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>FODMAP Introduction</span>
+                        </div>
+                        <div class="step-item current--primary">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Food Elimination Phase</span>
+                        </div>
+                        <div class="step-item pending">
+                            <i class="fas fa-circle"></i>
+                            <span>Reintroduction Strategy</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="{{ '/en/irritable-bowel-syndrome-fodmap/' | url }}" class="btn btn--primary w-100">
+                    Continue Learning
+                </a>
+            </div>
+            
+            <!-- Diabetes Learning Path -->
+            <div class="learning-path-card learning-path-card--accent animate-on-scroll fade-up delay-300">
+                <div class="path-header">
+                    <div class="path-icon path-icon--accent">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="text--accent">Diabetes Management</h3>
+                    <p>Learn effective strategies for blood sugar control</p>
+                </div>
+                
+                <div class="path-progress">
+                    <div class="progress-info">
+                        <span class="progress-label">Progress</span>
+                        <span class="progress-percentage--accent">40%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill progress-fill--accent" style="width: 40%;"></div>
+                    </div>
+                </div>
+                
+                <div class="path-steps">
+                    <h4 class="text--accent">Learning Steps</h4>
+                    <div class="step-list">
+                        <div class="step-item completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Diabetes Types & Causes</span>
+                        </div>
+                        <div class="step-item current--accent">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Blood Sugar Monitoring</span>
+                        </div>
+                        <div class="step-item pending">
+                            <i class="fas fa-circle"></i>
+                            <span>Meal Planning Strategies</span>
+                        </div>
+                        <div class="step-item pending">
+                            <i class="fas fa-circle"></i>
+                            <span>Lifestyle Management</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="{{ '/en/diabetes-management/' | url }}" class="btn btn--accent w-100">
+                    Continue Learning
+                </a>
+            </div>
+            
+            <!-- Weight Loss Learning Path -->
+            <div class="learning-path-card learning-path-card--success animate-on-scroll fade-up delay-400">
+                <div class="path-header">
+                    <div class="path-icon path-icon--success">
+                        <i class="fas fa-weight-scale"></i>
+                    </div>
+                    <h3 class="text--success">Sustainable Weight Loss</h3>
+                    <p>Science-based approaches to healthy weight management</p>
+                </div>
+                
+                <div class="path-progress">
+                    <div class="progress-info">
+                        <span class="progress-label">Progress</span>
+                        <span class="progress-percentage--success">20%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill progress-fill--success" style="width: 20%;"></div>
+                    </div>
+                </div>
+                
+                <div class="path-steps">
+                    <h4 class="text--success">Learning Steps</h4>
+                    <div class="step-list">
+                        <div class="step-item current--success">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Weight Loss Fundamentals</span>
+                        </div>
+                        <div class="step-item pending">
+                            <i class="fas fa-circle"></i>
+                            <span>Nutrition Strategies</span>
+                        </div>
+                        <div class="step-item pending">
+                            <i class="fas fa-circle"></i>
+                            <span>Exercise Integration</span>
+                        </div>
+                        <div class="step-item pending">
+                            <i class="fas fa-circle"></i>
+                            <span>Long-term Maintenance</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="{{ '/en/weight-loss/' | url }}" class="btn btn--success w-100">
+                    Start Learning
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# === Personalized Recommendations Section === #}
+<section class="recommendations-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-badge animate-on-scroll fade-in">
+                <i class="fas fa-lightbulb me-2"></i>Recommended for You
+            </span>
+            <h2 class="animate-on-scroll fade-up">
+                Discover Your Next Steps
+            </h2>
+            <p class="lead animate-on-scroll fade-up delay-100">
+                Based on your learning progress and interests, here are articles we think you'll find valuable
+            </p>
+        </div>
+        
+        <div class="recommendations-grid">
+            <!-- Recommendation cards will be dynamically populated by JavaScript -->
+        </div>
+    </div>
+</section>
+
+{# === Achievements Section === #}
+<section class="achievements-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-badge animate-on-scroll fade-in">
+                <i class="fas fa-trophy me-2"></i>Your Achievements
+            </span>
+            <h2 class="animate-on-scroll fade-up">
+                Celebrate Your Progress
+            </h2>
+            <p class="lead animate-on-scroll fade-up delay-100">
+                Track your learning milestones and unlock new achievements as you progress
+            </p>
+        </div>
+        
+        <div class="achievements-grid">
+            <!-- Achievement cards will be dynamically populated by JavaScript -->
+        </div>
+    </div>
+</section>
+
+<script src="{{ '/js/knowledge-hub.js' | url }}"></script> 

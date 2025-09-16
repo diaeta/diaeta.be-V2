@@ -1,0 +1,98 @@
+/* src/css/diabetes-deep-dive.css */
+
+:root {
+    --brand-primary: #005f73;
+    --brand-secondary: #0a9396;
+    --brand-accent: #94d2bd;
+    --text-dark: #333;
+    --text-light: #f8f9fa;
+    --bg-light: #ffffff;
+    --bg-off-white: #f8f9fa;
+    --border-color: #dee2e6;
+}
+
+/* --- Hero Section --- */
+.hero-diabetes {
+    background-color: var(--brand-primary);
+    color: var(--text-light);
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.hero-diabetes h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero-diabetes .lead {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 1rem auto 0;
+}
+
+/* --- Content Section --- */
+.diabetes-types-container {
+    padding: 3rem 1rem;
+    background-color: var(--bg-off-white);
+}
+
+.type-card {
+    background: var(--bg-light);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-top: 5px solid var(--brand-secondary);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.type-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.type-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.type-card-icon {
+    font-size: 2.5rem;
+    color: var(--brand-secondary);
+}
+
+.type-card-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--brand-primary);
+}
+
+.type-card-content h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--brand-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.references {
+    background-color: var(--bg-off-white);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+.references h2 {
+    color: var(--brand-primary);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .hero-diabetes h1 {
+        font-size: 2.5rem;
+    }
+}

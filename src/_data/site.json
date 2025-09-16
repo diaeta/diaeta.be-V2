@@ -1,0 +1,10 @@
+{
+  "brand": {
+    "name": "Diaeta",
+    "tagline": ""
+  },
+  "defaultLocale": "fr",
+  "locales": ["fr", "en", "nl", "de"],
+  "baseUrl": "https://www.diaeta.be",
+  "assetPath": "/public"
+}

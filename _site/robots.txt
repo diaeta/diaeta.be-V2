@@ -1,0 +1,4 @@
+
+User-agent: *
+Allow: /
+Sitemap: https://www.diaeta.be/sitemap.xml

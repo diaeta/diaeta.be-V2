@@ -1,0 +1,46 @@
+{
+  "name": "diaeta.be-v2",
+  "version": "1.0.0",
+  "description": "Multilingual Eleventy skeleton for diaeta.be V2",
+  "type": "commonjs",
+  "scripts": {
+    "clean": "rimraf _site .cache dist || true",
+    "dev": "cross-env ELEVENTY_OUTPUT_DIR=_site npm-run-all --parallel watch serve",
+    "build": "cross-env ELEVENTY_OUTPUT_DIR=_site NODE_ENV=production eleventy --config=eleventy.config.js",
+    "serve": "cross-env ELEVENTY_OUTPUT_DIR=_site eleventy --config=eleventy.config.js --serve",
+    "watch": "cross-env ELEVENTY_OUTPUT_DIR=_site eleventy --config=eleventy.config.js --watch",
+    "lint:css": "stylelint \"src/**/*.scss\"",
+    "lint:js": "eslint . --ext js,cjs --max-warnings=0",
+    "format": "prettier -w .",
+    "format:check": "prettier -c \"{README.md,docs/**/*.md,rules/**/*.md,src/_data/**/*.{json},src/styles/**/*.scss,*.{js,cjs},.github/**/*.yml,public/manifest.webmanifest,package.json}\"",
+    "check": "npm-run-all -s lint:css lint:js"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-img": "^3.0.3",
+    "@11ty/eleventy-navigation": "^1.0.4",
+    "@11ty/eleventy-plugin-bundle": "^3.0.7",
+    "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.35.0",
+    "http-server": "^14.1.1",
+    "lightningcss": "^1.30.1",
+    "linkinator": "^6.1.4",
+    "luxon": "^3.7.2",
+    "npm-run-all": "^4.1.5",
+    "pa11y-ci": "^4.0.1",
+    "postcss-scss": "^4.0.9",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.0.1",
+    "sass": "^1.92.1",
+    "stylelint": "^16.8.1",
+    "stylelint-config-standard": "^35.0.0",
+    "stylelint-selector-bem-pattern": "^4.0.1",
+    "wait-on": "^9.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

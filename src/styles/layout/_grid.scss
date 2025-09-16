@@ -1,0 +1,16 @@
+@use 'sass:map';
+@use '../settings/breakpoints' as breakpoints;
+
+.l-container {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+}
+
+.l-grid {
+  display: grid;
+  gap: 1.5rem;
+
+  @media (min-width: map.get(breakpoints.$breakpoints, md)) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}

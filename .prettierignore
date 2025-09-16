@@ -1,0 +1,7 @@
+node_modules/
+_site/
+dist/
+public/assets/
+package-lock.json
+*.report.html
+playwright-report/

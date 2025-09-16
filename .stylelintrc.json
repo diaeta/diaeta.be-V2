@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/stylelintrc",
+  "extends": ["stylelint-config-standard"],
+  "customSyntax": "postcss-scss",
+  "rules": {
+    "at-rule-no-unknown": null,
+    "no-empty-source": null,
+    "color-function-notation": null,
+    "alpha-value-notation": null,
+    "color-hex-length": null,
+    "value-keyword-case": null,
+    "media-query-no-invalid": null
+  },
+  "ignoreFiles": ["_site/**/*.css", "dist/**/*.css", "node_modules/**"]
+}

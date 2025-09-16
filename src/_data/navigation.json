@@ -1,0 +1,13 @@
+{
+  "primary": [
+    { "id": "home", "label": "nav.home" },
+    { "id": "services", "label": "nav.services" },
+    { "id": "knowledge", "label": "nav.knowledge" },
+    { "id": "locations", "label": "nav.locations" }
+  ],
+  "footer": [
+    { "id": "legal", "label": "nav.legal" },
+    { "id": "privacy", "label": "nav.privacy" },
+    { "id": "contact", "label": "nav.contact" }
+  ]
+}
