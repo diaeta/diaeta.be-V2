@@ -14,193 +14,64 @@
     <!-- Assuming a global header is included via the build process -->
     
 
-  <header class="site-header" lang="en" id="site-header" itemscope="" itemtype="https://schema.org/WPHeader" style="position: relative;">
+  ﻿<header class="site-header" id="site-header">
   <div class="container header-container">
     <div class="logo">
       <a href="/en/" aria-label="Diaeta - Home">
         <img src="/images/logo.svg" alt="Diaeta Logo" width="142" height="50">
       </a>
     </div>
-    <nav class="main-nav" id="main-nav" aria-label="Main navigation" itemscope="" itemtype="https://schema.org/SiteNavigationElement">
+
+    <nav class="main-nav js-main-nav" id="main-nav" aria-label="Main navigation">
       <ul class="nav-list">
-        <li class="nav-item" itemprop="name"><a href="/en/" class="nav-link" itemprop="url">Home</a></li>
-
-        <li class="nav-item dropdown" itemprop="name">
-          <a class="nav-link dropdown-toggle" href="#" id="navDropdownAbout" role="button" data-bs-toggle="dropdown" aria-expanded="false" itemprop="url">
-            About
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navDropdownAbout">
-            <li><a class="dropdown-item" href="/en/diaeta-method/" itemprop="url"><span itemprop="name">The Diaeta Method</span></a></li>
-            <li><a class="dropdown-item" href="/en/our-expertise/" itemprop="url"><span itemprop="name">Our Expertise</span></a></li>
+        <li class="nav-item"><a href="/en/" class="nav-link">Home</a></li>
+        <li class="nav-item dropdown js-dropdown">
+          <a class="nav-link dropdown-toggle js-dropdown-toggle" href="#" aria-expanded="false">About</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/en/diaeta-method/">The Diaeta Method</a></li>
+            <li><a class="dropdown-item" href="/en/our-expertise/">Our Expertise</a></li>
           </ul>
         </li>
-
-        <li class="nav-item dropdown" itemprop="name">
-          <a class="nav-link dropdown-toggle" href="#" id="navDropdownSpecializations" role="button" data-bs-toggle="dropdown" aria-expanded="false" itemprop="url">
-            Services
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navDropdownSpecializations">
-            <li><a class="dropdown-item" href="/en/weight-loss/" itemprop="url"><span itemprop="name">Weight Loss</span></a></li>
-            <li><a class="dropdown-item" href="/en/irritable-bowel-syndrome-fodmap/" itemprop="url"><span itemprop="name">Irritable Bowel Syndrome</span></a></li>
-            <li><a class="dropdown-item" href="/en/diabetes-management/" itemprop="url"><span itemprop="name">Diabetes Management</span></a></li>
-            <li><a class="dropdown-item" href="/en/hypertension-cholesterol/" itemprop="url"><span itemprop="name">Hypertension & Cholesterol</span></a></li>
-            <li><a class="dropdown-item" href="/en/nutrigenetic-tests/" itemprop="url"><span itemprop="name">Nutrigenetic Tests</span></a></li>
+        <li class="nav-item dropdown js-dropdown">
+          <a class="nav-link dropdown-toggle js-dropdown-toggle" href="#" aria-expanded="false">Services</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/en/weight-loss/">Weight Loss</a></li>
+            <li><a class="dropdown-item" href="/en/irritable-bowel-syndrome-fodmap/">Irritable Bowel Syndrome</a></li>
+            <li><a class="dropdown-item" href="/en/diabetes-management/">Diabetes Management</a></li>
+            <li><a class="dropdown-item" href="/en/hypertension-cholesterol/">Hypertension & Cholesterol</a></li>
+            <li><a class="dropdown-item" href="/en/nutrigenetic-tests/">Nutrigenetic Tests</a></li>
           </ul>
         </li>
-
-        <li class="nav-item" itemprop="name"><a href="/en/locations/" class="nav-link" itemprop="url">Locations</a></li>
-        <li class="nav-item" itemprop="name"><a href="/en/tariffs/" class="nav-link" itemprop="url">Pricing</a></li>
-        <li class="nav-item" itemprop="name"><a href="/en/news/" class="nav-link" itemprop="url">Blog</a></li>
-        <li class="nav-item" itemprop="name"><a href="/en/contact/" class="nav-link" itemprop="url">Contact</a></li>
+        <li class="nav-item"><a href="/en/locations/" class="nav-link">Locations</a></li>
+        <li class="nav-item"><a href="/en/tariffs/" class="nav-link">Pricing</a></li>
+        <li class="nav-item"><a href="/en/news/" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="/en/contact/" class="nav-link">Contact</a></li>
       </ul>
-      <div class="mobile-actions">
-        <form action="/en/search" method="get" class="search-form mobile-search-form" style="width: 100%; margin-bottom: 1rem; display: flex; align-items: center; position: relative;">
-          <input type="text" name="q" placeholder="Search…" aria-label="Search" style="flex:1; padding:0.5em 2.5em 0.5em 1em; border-radius:2em; border:1px solid #ccc; font-size: 1rem;">
-          <button type="submit" style="position: absolute; right: 0.75em; background:none; border:none; color:var(--primary-700); cursor:pointer; z-index: 10;"><i class="fa fa-search"></i></button>
-        </form>
-        <div class="lang-selector">
-            <button class="lang-toggle" aria-expanded="false" aria-controls="lang-dropdown-mobile"><i class="fa-solid fa-globe" aria-hidden="true"></i><span>EN</span></button>
-            <div class="lang-dropdown" id="lang-dropdown-mobile">
-                <a href="/fr/" class="lang-option">Français</a>
-                <a href="/en/" class="lang-option active" aria-current="true">English</a>
-                <a href="/nl/" class="lang-option">Nederlands</a>
-                <a href="/de/" class="lang-option">Deutsch</a>
-                <a href="/ar/" class="lang-option">العربية</a>
-            </div>
-        </div>
-        <a href="tel:+32479355551" class="phone-link"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>+32 479 35 55 51</span></a>
-        <a href="/en/appointment/" class="btn btn-secondary mobile-cta"><span>Book Appointment</span></a>
-      </div>
     </nav>
-    <div class="desktop-actions">
-        <a href="tel:+32479355551" class="phone-link" aria-label="Call Diaeta"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>+32 479 35 55 51</span></a>
+
+    <div class="header-actions">
+      <div class="desktop-actions">
+        <a href="tel:+32479355551" class="phone-link" aria-label="Call Diaeta"><i class="fa-solid fa-phone"></i><span>+32 479 35 55 51</span></a>
         <div class="lang-selector">
-            <button class="lang-toggle" aria-expanded="false" aria-controls="lang-dropdown-desktop"><i class="fa-solid fa-globe" aria-hidden="true"></i><span>EN</span></button>
-            <div class="lang-dropdown" id="lang-dropdown-desktop">
-                <a href="/fr/" class="lang-option">Français</a>
-                <a href="/en/" class="lang-option active" aria-current="true">English</a>
-                <a href="/nl/" class="lang-option">Nederlands</a>
-                <a href="/de/" class="lang-option">Deutsch</a>
-                <a href="/ar/" class="lang-option">العربية</a>
-            </div>
+          <button class="lang-toggle" aria-expanded="false"><i class="fa-solid fa-globe"></i><span>EN</span></button>
+          <div class="lang-dropdown">
+            <a href="/fr/" class="lang-option">Français</a>
+            <a href="/en/" class="lang-option active" aria-current="true">English</a>
+            <a href="/nl/" class="lang-option">Nederlands</a>
+            <a href="/de/" class="lang-option">Deutsch</a>
+            <a href="/ar/" class="lang-option">العربية</a>
+          </div>
         </div>
         <a href="/en/appointment/" class="btn btn-secondary header-cta">Book Appointment</a>
+      </div>
+      <button class="menu-toggle js-menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
     </div>
-    <div class="search-container">
-        <form action="/en/search" method="get" class="search-form">
-          <input type="text" name="q" placeholder="Search…" aria-label="Search">
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
   </div>
 </header>
-<script>
-  (function(){
-    var __origLog = console.log;
-    console.log = function(){
-      try {
-        if (arguments.length && typeof arguments[0] === 'string') {
-          var msg = arguments[0];
-          // Suppress legacy logs from old main.js
-          if (
-            msg.indexOf('Toggle') === 0 ||
-            msg.indexOf('Setting up language toggle') !== -1 ||
-            msg.indexOf('Diaeta: Header initialization complete') !== -1 ||
-            msg.indexOf('Diaeta: ') === 0
-          ) {
-            return;
-          }
-        }
-      } catch (e) {}
-      return __origLog.apply(console, arguments);
-    };
-  })();
-  </script>
-<script src="/assets/js/nav.js" defer=""></script>
 
 
 
 
-  <div class="container header-container">
-    <div class="logo">
-      <a href="/fr/" aria-label="Diaeta - Accueil">
-        <img src="/images/logo.svg" alt="Diaeta Logo" width="142" height="50">
-      </a>
-    </div>
-    <nav class="main-nav" id="main-nav" aria-label="Navigation principale" itemscope="" itemtype="https://schema.org/SiteNavigationElement">
-      <ul class="nav-list">
-        <li class="nav-item" itemprop="name"><a href="/fr/" class="nav-link" itemprop="url">Accueil</a></li>
-
-        <li class="nav-item dropdown" itemprop="name">
-          <a class="nav-link dropdown-toggle" href="#" id="navDropdownAbout" role="button" data-bs-toggle="dropdown" aria-expanded="false" itemprop="url">
-            À Propos
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navDropdownAbout">
-            <li><a class="dropdown-item" href="/fr/methode-diaeta/" itemprop="url"><span itemprop="name">La Méthode Diaeta</span></a></li>
-            <li><a class="dropdown-item" href="/fr/notre-expertise/" itemprop="url"><span itemprop="name">Notre Expertise</span></a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown" itemprop="name">
-          <a class="nav-link dropdown-toggle" href="#" id="navDropdownSpecialisations" role="button" data-bs-toggle="dropdown" aria-expanded="false" itemprop="url">
-            Services
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navDropdownSpecialisations">
-            <li><a class="dropdown-item" href="/fr/perte-de-poids/" itemprop="url"><span itemprop="name">Perte de Poids</span></a></li>
-            <li><a class="dropdown-item" href="/fr/syndrome-colon-irritable-fodmap/" itemprop="url"><span itemprop="name">Syndrome Intestin Irritable</span></a></li>
-            <li><a class="dropdown-item" href="/fr/gestion-diabete/" itemprop="url"><span itemprop="name">Gestion du Diabète</span></a></li>
-            <li><a class="dropdown-item" href="/fr/hypertension-cholesterol/" itemprop="url"><span itemprop="name">Hypertension & Cholestérol</span></a></li>
-            <li><a class="dropdown-item" href="/fr/tests-nutrigenetiques/" itemprop="url"><span itemprop="name">Tests Nutrigénétiques</span></a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item" itemprop="name"><a href="/fr/cabinets-bruxelles/" class="nav-link" itemprop="url">Cabinets</a></li>
-        <li class="nav-item" itemprop="name"><a href="/fr/tarifs/" class="nav-link" itemprop="url">Tarifs</a></li>
-        <li class="nav-item" itemprop="name"><a href="/fr/actualites/" class="nav-link" itemprop="url">Blog</a></li>
-        <li class="nav-item" itemprop="name"><a href="/fr/contact/" class="nav-link" itemprop="url">Contact</a></li>
-      </ul>
-      <div class="mobile-actions">
-        <form action="/fr/recherche" method="get" class="search-form mobile-search-form" style="width: 100%; margin-bottom: 1rem; display: flex; align-items: center; position: relative;">
-          <input type="text" name="q" placeholder="Rechercher…" aria-label="Rechercher" style="flex:1; padding:0.5em 2.5em 0.5em 1em; border-radius:2em; border:1px solid #ccc; font-size: 1rem;">
-          <button type="submit" style="position: absolute; right: 0.75em; background:none; border:none; color:var(--primary-700); cursor:pointer; z-index: 10;"><i class="fa fa-search"></i></button>
-        </form>
-        <div class="lang-selector">
-            <button class="lang-toggle" aria-expanded="false" aria-controls="lang-dropdown-mobile"><i class="fa-solid fa-globe" aria-hidden="true"></i><span>FR</span></button>
-            <div class="lang-dropdown" id="lang-dropdown-mobile">
-                <a href="/fr/" class="lang-option active" aria-current="true">Français</a>
-                <a href="/en/" class="lang-option">English</a>
-                <a href="/nl/" class="lang-option">Nederlands</a>
-                <a href="/de/" class="lang-option">Deutsch</a>
-                <a href="/ar/" class="lang-option">العربية</a>
-            </div>
-        </div>
-        <a href="tel:+32479355551" class="phone-link"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>+32 479 35 55 51</span></a>
-        <a href="/fr/rendez-vous/" class="btn btn-secondary mobile-cta"><span>Prendre Rendez-vous</span></a>
-      </div>
-    </nav>
-    <div class="desktop-actions">
-        <a href="tel:+32479355551" class="phone-link" aria-label="Appeler Diaeta"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>+32 479 35 55 51</span></a>
-        <div class="lang-selector">
-            <button class="lang-toggle" aria-expanded="false" aria-controls="lang-dropdown-desktop"><i class="fa-solid fa-globe" aria-hidden="true"></i><span>FR</span></button>
-            <div class="lang-dropdown" id="lang-dropdown-desktop">
-                <a href="/fr/" class="lang-option active" aria-current="true">Français</a>
-                <a href="/en/" class="lang-option">English</a>
-                <a href="/nl/" class="lang-option">Nederlands</a>
-                <a href="/de/" class="lang-option">Deutsch</a>
-                <a href="/ar/" class="lang-option">العربية</a>
-            </div>
-        </div>
-        <a href="/fr/rendez-vous/" class="btn btn-secondary header-cta">Prendre Rendez-vous</a>
-    </div>
-    <div class="search-container">
-        <form action="/fr/recherche" method="get" class="search-form">
-          <input type="text" name="q" placeholder="Rechercher…" aria-label="Rechercher">
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
-  </div>
 
 
 
@@ -415,145 +286,6 @@
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 </script>
 
-
-
-            <div class="footer-col">
-                <a href="/fr/" class="footer-logo mb-3">
-                    <img src="/images/logo.svg" alt="Logo Diaeta - Nutrition Personnalisée et Scientifique" style="height: 50px; width: auto;">
-                </a>
-                <p class="footer-about text-sm">
-                    Diaeta transforme votre santé grâce à des solutions nutritionnelles personnalisées, fondées sur la science, pour un bien-être durable.
-                </p>
-                <div class="footer-social">
-                    <a href="https://www.facebook.com/Dieteticien.colon.irritable/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook Diaeta"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/expert.fodmap/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram Diaeta"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/pierre-abou-zeid/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn Pierre Abou-Zeid"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://www.tiktok.com/@expert.fodmap" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="TikTok Diaeta"><i class="fa-brands fa-tiktok"></i></a>
-                </div>
-            </div>
-
-            <div class="footer-col">
-                <h3 class="footer-heading">Explorer Diaeta</h3>
-                <ul class="footer-links">
-                    <li><a href="/fr/" class="footer-link">Accueil</a></li>
-                    <li><a href="/fr/methode-diaeta/" class="footer-link">La Méthode</a></li>
-                    <li><a href="/fr/notre-expertise/" class="footer-link">Notre Expertise</a></li>
-                    <li><a href="/fr/tarifs/" class="footer-link">Tarifs</a></li>
-                    <li><a href="/fr/actualites/" class="footer-link">Blog</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h3 class="footer-heading">Nos Services</h3>
-                <ul class="footer-links">
-                    <li><a href="/fr/perte-de-poids/" class="footer-link">Perte de Poids</a></li>
-                    <li><a href="/fr/syndrome-colon-irritable-fodmap/" class="footer-link">Syndrome Intestin Irritable</a></li>
-                    <li><a href="/fr/diabete-type-2/" class="footer-link">Diabète de Type 2</a></li>
-                    <li><a href="/fr/hypertension-cholesterol/" class="footer-link">Hypertension & Cholestérol</a></li>
-                    <li><a href="/fr/tests-nutrigenetiques/" class="footer-link">Tests Nutrigénétiques</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h3 class="footer-heading">Qualifications</h3>
-                <ul class="footer-links text-sm">
-                    <li class="footer-contact-item">
-                        <div class="footer-contact-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                        <div class="footer-contact-text">Diététicien Agréé (INAMI)</div>
-                    </li>
-                    <li class="footer-contact-item">
-                        <div class="footer-contact-icon"><i class="fa-solid fa-shield-alt"></i></div>
-                        <div class="footer-contact-text">Certifié FODMAP par l'Université Monash</div>
-                    </li>
-                     <li class="footer-contact-item">
-                        <div class="footer-contact-icon"><i class="fa-solid fa-envelope"></i></div>
-                        <div class="footer-contact-text"><a href="mailto:info@diaeta.be" class="footer-link" style="padding: 0;">info@diaeta.be</a></div>
-                    </li>
-                    <li class="footer-contact-item">
-                        <div class="footer-contact-icon"><i class="fa-solid fa-phone"></i></div>
-                        <div class="footer-contact-text"><a href="tel:+32479355551" class="footer-link" style="padding: 0;">+32 479 35 55 51</a></div>
-                    </li>
-                </ul>
-                 <a href="/fr/rendez-vous/" class="btn btn-accent btn-sm d-block mt-3" style="max-width: 200px;">
-                    <i class="fa-solid fa-calendar-check me-1"></i> RDV en Ligne
-                </a>
-            </div>
-        
-
-        <div class="footer-bottom">
-            <p class="footer-copyright text-xs">
-                &copy; <span id="currentYear"></span> Diaeta. Tous droits réservés.
-            </p>
-            <div class="footer-legal text-xs">
-                <a href="/fr/politique-de-confidentialite/" class="footer-legal-link">Politique de Confidentialité</a>
-                <a href="/fr/politique-de-cookies/" class="footer-legal-link">Politique de Cookies</a>
-                <a href="/fr/mentions-legales/" class="footer-legal-link">Mentions Légales</a>
-            </div>
-        </div>
-    
-
-
-<div id="cookieConsentContainer" style="display: none;">
-    <div class="cookie-consent-banner active" id="cookieMainBanner">
-        <div class="container cookie-consent-content">
-            <div class="cookie-consent-text">
-                <p>Nous utilisons des cookies pour optimiser votre expérience sur notre site. Certains cookies sont nécessaires au fonctionnement du site, tandis que d'autres nous aident à améliorer ce site et votre expérience. Vous pouvez choisir d'accepter tous les cookies ou de personnaliser vos préférences. Pour en savoir plus, consultez notre <a href="/fr/politique-de-cookies/" class="cookie-consent-link">Politique de Cookies</a>.</p>
-            </div>
-            <div class="cookie-consent-actions">
-                <button id="cookieAcceptAllBtn" class="btn btn-primary btn-sm">Tout Accepter</button>
-                <button id="cookieCustomizeBtn" class="btn btn-outline btn-sm">Personnaliser</button>
-                <button id="cookieDeclineAllBtn" class="btn btn-outline btn-sm">Tout Refuser</button> 
-            </div>
-        </div>
-    </div>
-
-    <div class="cookie-preferences-modal" id="cookiePreferencesModal" style="display: none;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Préférences de Cookies</h3>
-                <button id="cookieModalCloseBtn" class="btn-close" aria-label="Fermer">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p>Nous utilisons différents types de cookies. Sélectionnez ceux que vous acceptez :</p>
-                
-                <div class="cookie-category">
-                    <div class="category-header">
-                        <label for="cookieCatNecessary" class="category-label">Cookies Nécessaires</label>
-                        <input type="checkbox" id="cookieCatNecessary" checked="" disabled="">
-                         <span class="toggle-switch-display" aria-hidden="true"></span>
-                    </div>
-                    <p class="category-description text-xs">Ces cookies sont indispensables au bon fonctionnement du site et ne peuvent pas être désactivés.</p>
-                </div>
-
-                <div class="cookie-category">
-                    <div class="category-header">
-                        <label for="cookieCatAnalytics" class="category-label">Cookies Analytiques</label>
-                        <input type="checkbox" id="cookieCatAnalytics" data-cookie-category="analytics">
-                        <span class="toggle-switch-display" aria-hidden="true"></span>
-                    </div>
-                    <p class="category-description text-xs">Ces cookies nous aident à comprendre comment les visiteurs interagissent avec le site en collectant des informations de manière anonyme.</p>
-                </div>
-
-                <div class="cookie-category">
-                    <div class="category-header">
-                        <label for="cookieCatMarketing" class="category-label">Cookies Marketing</label>
-                        <input type="checkbox" id="cookieCatMarketing" data-cookie-category="marketing">
-                        <span class="toggle-switch-display" aria-hidden="true"></span>
-                    </div>
-                    <p class="category-description text-xs">Ces cookies sont utilisés pour suivre les visiteurs sur les sites web afin d'afficher des publicités pertinentes et engageantes.</p>
-                </div>
-                 <p class="text-xs mt-3">Pour plus de détails sur les cookies spécifiques utilisés, veuillez consulter notre <a href="/fr/politique-de-cookies/" class="cookie-consent-link">Politique de Cookies</a>.</p>
-            </div>
-            <div class="modal-footer">
-                <button id="cookieSavePreferencesBtn" class="btn btn-primary btn-sm">Enregistrer mes préférences</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-</script>
 
 
 </body>

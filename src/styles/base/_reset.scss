@@ -18,3 +18,24 @@ video {
   height: auto;
   display: block;
 }
+
+/* Accessible skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  background: #0a5f6b;
+  color: #fff;
+  padding: .5rem .75rem;
+  border-radius: .25rem;
+  z-index: 1000;
+}

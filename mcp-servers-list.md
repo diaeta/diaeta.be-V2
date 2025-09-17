@@ -24,6 +24,9 @@ MCP Servers Reference
 - github (si dispo)
   - Purpose: interact with GitHub API (issues, PRs)
   - Typical id: `github`
+  - Install: `npm i -g mcp-server-github`
+  - Start: `scripts/start-github-mcp.ps1` (uses `GITHUB_TOKEN`)
+  - Codex config example: `mcp/github/codex.example.json`
 
 - markdown-lint (si dispo)
   - Purpose: lint Markdown files via style rules
@@ -34,3 +37,4 @@ Host config notes
 - Add these servers to your MCP host config (Cursor, Claude Desktop, etc.) alongside `byterover`.
 - Keep this list in sync with actual installations on your machine and credentials (e.g., GitHub tokens).
 - Environment variables: `BYTEROVER_PUBLIC_API_KEY`, `BYTEROVER_USER_ID` for Byterover.
+  - For GitHub: `GITHUB_TOKEN` (do not commit secrets)

@@ -30,3 +30,8 @@ h6 {
 p {
   margin-block: 0 1.2em;
 }
+
+/* Helper class to prevent body scroll when modals or overlays are active */
+body.no-scroll {
+  overflow: hidden;
+}

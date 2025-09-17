@@ -6,6 +6,12 @@
   margin-inline: auto;
 }
 
+/* Common container alias used in templates */
+.container {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+}
+
 .l-grid {
   display: grid;
   gap: 1.5rem;

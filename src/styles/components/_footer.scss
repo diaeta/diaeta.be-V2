@@ -2,7 +2,10 @@
 .site-footer, .footer {
   background: #0a0a0a;
   color: #eaeaea;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  position: relative;
 }
+.site-footer::before, .footer::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 3px; background: var(--gradient-primary); }
 .site-footer a, .footer a { color: #bfe6eb; text-decoration: none; }
 .site-footer a:hover, .footer a:hover { color: #8ed2da; }
 

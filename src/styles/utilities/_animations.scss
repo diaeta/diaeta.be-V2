@@ -1,0 +1,26 @@
+.animate-on-scroll { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+.animate-on-scroll.in-view { opacity: 1; transform: translateY(0); }
+.fade-up { }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll { opacity: 1; transform: none; transition: none; }
+}
+
+.pulse-animation { animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse {
+  0%, 100% { transform: translateZ(0) scale(1); }
+  50% { transform: translateZ(0) scale(1.02); }
+}
+
+/* Add fadeInUp animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

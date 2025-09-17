@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="{{ lang or page.lang or localization.defaultLocale }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+      {% if title %}{{ title }}{% elseif seo and seo.title %}{{ seo.title }}{% else %}{{ site.brand.name }}{% endif %}
+    </title>
+    {% if description or seo and seo.description %}
+      <meta name="description" content="{{ description or seo.description }}">
+    {% endif %}
+
+    {% set canonicalUrl = (page.url or '/') | url %}
+    <link rel="canonical" href="{{ site.baseUrl }}{{ canonicalUrl }}">
+
+    {% if localization and localization.supportedLocales and page.url %}
+      {% for href in page.url | hreflangAlternates %}
+        <link rel="alternate" hreflang="{{ href.locale }}" href="{{ href.url }}">
+      {% endfor %}
+    {% endif %}
+
+    {% if og_image %}
+      <meta property="og:image" content="{{ og_image }}">
+    {% endif %}
+    <meta property="og:title" content="{{ title or seo.title or site.brand.name }}">
+    {% if description or seo and seo.description %}
+      <meta property="og:description" content="{{ description or seo.description }}">
+    {% endif %}
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.baseUrl }}{{ canonicalUrl }}">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css?v={{ cacheBuster }}">
+
+    {% if head_extra %}{{ head_extra | safe }}{% endif %}
+  </head>
+  <body>
+    <div class="site-background" aria-hidden="true"></div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    {% include "partials/header.njk" %}
+    
+    <!-- Mobile Menu Overlay - Moved outside header to avoid stacking context issues -->
+    <nav class="mobile-nav-overlay js-mobile-nav-overlay" id="mobile-nav-overlay" aria-label="Mobile navigation" aria-hidden="true">
+      <div class="mobile-sheet">
+        <div class="mobile-sheet-body">
+          <ul class="mobile-nav-list">
+            <li class="mobile-nav-item"><a href="/en/" class="mobile-nav-link">Home</a></li>
+            <li class="mobile-nav-item mobile-dropdown js-mobile-dropdown">
+              <a class="mobile-nav-link mobile-dropdown-toggle js-mobile-dropdown-toggle" href="#" aria-expanded="false">
+                About <i class="fa-solid fa-chevron-down"></i>
+              </a>
+              <ul class="mobile-dropdown-menu">
+                <li><a class="mobile-dropdown-item" href="/en/diaeta-method/">The Diaeta Method</a></li>
+                <li><a class="mobile-dropdown-item" href="/en/our-expertise/">Our Expertise</a></li>
+              </ul>
+            </li>
+            <li class="mobile-nav-item mobile-dropdown js-mobile-dropdown">
+              <a class="mobile-nav-link mobile-dropdown-toggle js-mobile-dropdown-toggle" href="#" aria-expanded="false">
+                Services <i class="fa-solid fa-chevron-down"></i>
+              </a>
+              <ul class="mobile-dropdown-menu">
+                <li><a class="mobile-dropdown-item" href="/en/weight-loss/">Weight Loss</a></li>
+                <li><a class="mobile-dropdown-item" href="/en/irritable-bowel-syndrome-fodmap/">Irritable Bowel Syndrome</a></li>
+                <li><a class="mobile-dropdown-item" href="/en/diabetes-management/">Diabetes Management</a></li>
+                <li><a class="mobile-dropdown-item" href="/en/hypertension-cholesterol/">Hypertension & Cholesterol</a></li>
+                <li><a class="mobile-dropdown-item" href="/en/nutrigenetic-tests/">Nutrigenetic Tests</a></li>
+              </ul>
+            </li>
+            <li class="mobile-nav-item"><a href="/en/locations/" class="mobile-nav-link">Locations</a></li>
+            <li class="mobile-nav-item"><a href="/en/tariffs/" class="mobile-nav-link">Pricing</a></li>
+            <li class="mobile-nav-item"><a href="/en/news/" class="mobile-nav-link">Blog</a></li>
+            <li class="mobile-nav-item"><a href="/en/contact/" class="mobile-nav-link">Contact</a></li>
+          </ul>
+        </div>
+        <div class="mobile-sheet-footer">
+          <div class="mobile-nav-actions">
+            <a href="tel:+32479355551" class="mobile-phone-link">
+              <i class="fa-solid fa-phone"></i>
+              <span>+32 479 35 55 51</span>
+            </a>
+            <div class="mobile-lang-selector">
+              <button class="mobile-lang-toggle js-mobile-lang-toggle" aria-expanded="false">
+                <i class="fa-solid fa-globe"></i>
+                <span>EN</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="mobile-lang-dropdown js-mobile-lang-dropdown">
+                <a href="/fr/" class="mobile-lang-option">FR</a>
+                <a href="/en/" class="mobile-lang-option active" aria-current="true">EN</a>
+                <a href="/nl/" class="mobile-lang-option">NL</a>
+                <a href="/de/" class="mobile-lang-option">DE</a>
+                <a href="/ar/" class="mobile-lang-option">AR</a>
+              </div>
+            </div>
+            <a href="/en/appointment/" class="btn btn-secondary mobile-cta">Book Appointment</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    <main id="main-content" tabindex="-1">
+      {{ content | safe }}
+    </main>
+    {% include "partials/footer.njk" %}
+    <script src="/assets/js/nav.js?v={{ cacheBuster }}" defer></script>
+    <script src="/assets/js/ui.js?v={{ cacheBuster }}" defer></script>
+    <!-- Particles.js for hero animation -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="/assets/js/hero.js?v={{ cacheBuster }}" defer></script>
+  </body>
+</html>

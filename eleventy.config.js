@@ -6,8 +6,6 @@ const EleventyImage = require('@11ty/eleventy-img');
 const EleventyRssPlugin = require('@11ty/eleventy-plugin-rss');
 const sitemapPlugin = require('@quasibit/eleventy-plugin-sitemap');
 const { DateTime } = require('luxon');
-const sass = require('sass');
-const { transform } = require('lightningcss');
 
 const site = require('./src/_data/site.json');
 const translations = require('./src/_data/i18n.json');
@@ -33,8 +31,15 @@ module.exports = function (eleventyConfig) {
     },
   });
 
-  eleventyConfig.addPassthroughCopy({ public: '.' });
+  // Copy static assets to the output directory
+  eleventyConfig.addPassthroughCopy({ 'public/assets/js': '/assets/js' });
+  eleventyConfig.addPassthroughCopy({ 'public/images': '/images' });
+  eleventyConfig.addPassthroughCopy({ 'public/videos': '/videos' });
+  eleventyConfig.addPassthroughCopy({ 'public/favicon.ico': '/favicon.ico' });
+
   eleventyConfig.addWatchTarget('src/styles');
+
+  eleventyConfig.addGlobalData('cacheBuster', () => new Date().getTime());
 
   eleventyConfig.addGlobalData('localization', {
     supportedLocales,
@@ -57,6 +62,41 @@ module.exports = function (eleventyConfig) {
       locale,
       url: locale === defaultLocale ? `${baseUrl}${path}` : `${baseUrl}/${locale}${path}`,
     }));
+  });
+
+  // Backward-compat function for templates calling hreflangList(path) directly
+  // Exposes a universal JS function usable across template engines
+  eleventyConfig.addJavaScriptFunction('hreflangList', function(path = '/') {
+    try {
+      const segs = (path || '/').split('/').filter(Boolean);
+      const first = segs[0];
+      const hasLocalePrefix = supportedLocales.includes(first);
+      const rest = hasLocalePrefix ? '/' + segs.slice(1).join('/') : (path || '/');
+      return supportedLocales.map(locale => ({
+        locale,
+        url: `${baseUrl}${locale === defaultLocale ? rest : `/${locale}${rest}`}`,
+      }));
+    } catch {
+      return supportedLocales.map(locale => ({ locale, url: `${baseUrl}${path || '/'}` }));
+    }
+  });
+
+  // Generate correct hreflang alternates by stripping any existing leading locale
+  // from the current page url and rebuilding for each supported locale.
+  eleventyConfig.addFilter('hreflangAlternates', (urlPath = '/') => {
+    try {
+      const segs = (urlPath || '/').split('/').filter(Boolean);
+      const first = segs[0];
+      const hasLocalePrefix = supportedLocales.includes(first);
+      const rest = hasLocalePrefix ? '/' + segs.slice(1).join('/') : (urlPath || '/');
+      return supportedLocales.map(locale => ({
+        locale,
+        url: `${baseUrl}${locale === defaultLocale ? rest : `/${locale}${rest}`}`,
+      }));
+    } catch {
+      // Fallback to current url only
+      return [{ locale: defaultLocale, url: `${baseUrl}${urlPath || '/'}` }];
+    }
   });
 
   // Proper date formatting filter using Luxon
@@ -167,41 +207,6 @@ module.exports = function (eleventyConfig) {
     return content;
   });
 
-  eleventyConfig.addTemplateFormats('scss');
-  eleventyConfig.addExtension('scss', {
-    outputFileExtension: 'css',
-    compileOptions: {
-      permalink: (data = {}) => {
-        const inputPath = data.page?.inputPath || data.inputPath || '';
-        if (!inputPath.endsWith('main.scss')) {
-          return false;
-        }
-        return '/assets/css/main.css';
-      },
-    },
-    compile: function (_, inputPath) {
-      if (!inputPath.endsWith('main.scss')) {
-        return async () => '';
-      }
-
-      return async () => {
-        const sassResult = sass.compile(inputPath, {
-          loadPaths: ['src/styles'],
-          style: 'expanded',
-        });
-
-        const { code } = transform({
-          filename: inputPath,
-          code: Buffer.from(sassResult.css),
-          minify: process.env.NODE_ENV === 'production',
-          browsers: ['last 2 versions'],
-        });
-
-        return code.toString();
-      };
-    },
-  });
-
   eleventyConfig.setServerOptions({
     port: 8080,
     domDiff: false,
@@ -217,7 +222,7 @@ module.exports = function (eleventyConfig) {
     },
     markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
-    templateFormats: ['md', 'njk', 'html', '11ty.js', 'scss'],
+    templateFormats: ['md', 'njk', 'html', '11ty.js'],
     pathPrefix: '/',
   };
 };

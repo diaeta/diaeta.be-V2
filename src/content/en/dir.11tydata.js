@@ -1,5 +1,6 @@
 module.exports = {
-  layout: false,
+  // Use the new base layout for all English pages
+  layout: 'layouts/base.njk',
   eleventyComputed: {
     // Force normalize all EN permalinks to /en/... regardless of front matter
     permalink: (data) => {

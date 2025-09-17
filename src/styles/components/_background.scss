@@ -1,0 +1,24 @@
+/* Global, subtle, premium background used site-wide */
+.site-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(1200px 600px at 80% -5%, color-mix(in srgb, var(--color-primary-300) 18%, transparent), transparent 60%),
+    radial-gradient(900px 500px at 10% 105%, color-mix(in srgb, var(--color-accent) 14%, transparent), transparent 60%),
+    linear-gradient(180deg, #ffffff, var(--color-surface));
+}
+.site-background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: .12;
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,.06) 1px, transparent 1px);
+  background-size: 64px 64px, 64px 64px;
+}
+
+
+

@@ -4,9 +4,13 @@
 @use 'base/reset';
 @use 'base/typography';
 @use 'layout/grid';
+@use 'components/background';
 @use 'components/header';
 @use 'components/footer';
 @use 'components/hero';
-@use 'components/home';
 @use 'components/card';
+@use 'components/buttons';
+@use 'components/badges';
+@use 'components/sections';
 @use 'utilities/utilities';
+@use 'utilities/animations';

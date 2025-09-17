@@ -1,10 +1,43 @@
+@use 'sass:map';
 // Color tokens (ITCSS settings layer).
 $colors: (
   background: #ffffff,
+  surface: #f7fbfc,
   text: #0f172a,
-  accent: #0ea5e9,
   muted: #64748b,
+  primary-900: #032a30,
+  primary-800: #063a42,
+  primary-700: #0a5f6b,
+  primary-600: #0c7080,
+  primary-500: #128ea0,
+  primary-400: #3ba8b7,
+  primary-300: #7ac7d1,
+  accent: #8cc63f,
   success: #22c55e,
   warning: #f59e0b,
   danger: #ef4444,
 );
+
+// Expose CSS custom properties for runtime theming.
+:root {
+  --color-bg: #{map.get($colors, background)};
+  --color-surface: #{map.get($colors, surface)};
+  --color-text: #{map.get($colors, text)};
+  --color-muted: #{map.get($colors, muted)};
+  --color-primary-900: #{map.get($colors, primary-900)};
+  --color-primary-800: #{map.get($colors, primary-800)};
+  --color-primary-700: #{map.get($colors, primary-700)};
+  --color-primary-600: #{map.get($colors, primary-600)};
+  --color-primary-500: #{map.get($colors, primary-500)};
+  --color-primary-400: #{map.get($colors, primary-400)};
+  --color-primary-300: #{map.get($colors, primary-300)};
+  --color-accent: #{map.get($colors, accent)};
+  --color-success: #{map.get($colors, success)};
+  --color-warning: #{map.get($colors, warning)};
+  --color-danger: #{map.get($colors, danger)};
+
+  /* Brand gradients and surfaces */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-500) 45%, var(--color-accent) 100%);
+  --surface-glass: color-mix(in srgb, #ffffff 60%, var(--color-surface));
+  --glass-border: 1px solid rgba(255,255,255,0.24);
+}
