@@ -2,38 +2,43 @@
   <div class="container header-container">
     <div class="logo">
       <a href="/en/" aria-label="Diaeta - Home">
-        <img src="/images/logo.svg" alt="Diaeta Logo" width="142" height="50">
+        <img src="/images/logo.svg" alt="Diaeta Logo">
       </a>
     </div>
 
     <nav class="main-nav js-main-nav" id="main-nav" aria-label="Main navigation">
       <ul class="nav-list">
-        <li class="nav-item"><a href="/en/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/en/" class="nav-link{% if page.url == '/en/' %} is-active{% endif %}"{% if page.url == '/en/' %} aria-current="page"{% endif %}>Home</a></li>
         <li class="nav-item dropdown js-dropdown">
-          <a class="nav-link dropdown-toggle js-dropdown-toggle" href="#" aria-expanded="false">About</a>
+          <a class="nav-link dropdown-toggle js-dropdown-toggle{% if page.url and ('/en/diaeta-method/' in page.url or '/en/our-expertise/' in page.url) %} is-active{% endif %}" href="#" aria-expanded="false">About <i class="fa-solid fa-chevron-down nav-chev" aria-hidden="true"></i></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/en/diaeta-method/">The Diaeta Method</a></li>
-            <li><a class="dropdown-item" href="/en/our-expertise/">Our Expertise</a></li>
+            <li><a class="dropdown-item{% if page.url and '/en/diaeta-method/' in page.url %} is-active{% endif %}" href="/en/diaeta-method/"{% if page.url and '/en/diaeta-method/' in page.url %} aria-current="page"{% endif %}>The Diaeta Method</a></li>
+            <li><a class="dropdown-item{% if page.url and '/en/our-expertise/' in page.url %} is-active{% endif %}" href="/en/our-expertise/"{% if page.url and '/en/our-expertise/' in page.url %} aria-current="page"{% endif %}>Our Expertise</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown js-dropdown">
-          <a class="nav-link dropdown-toggle js-dropdown-toggle" href="#" aria-expanded="false">Services</a>
+          <a class="nav-link dropdown-toggle js-dropdown-toggle{% if page.url and ('/en/weight-loss/' in page.url or '/en/irritable-bowel-syndrome-fodmap/' in page.url or '/en/diabetes-management/' in page.url or '/en/hypertension-cholesterol/' in page.url or '/en/nutrigenetic-tests/' in page.url) %} is-active{% endif %}" href="#" aria-expanded="false">Services <i class="fa-solid fa-chevron-down nav-chev" aria-hidden="true"></i></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/en/weight-loss/">Weight Loss</a></li>
-            <li><a class="dropdown-item" href="/en/irritable-bowel-syndrome-fodmap/">Irritable Bowel Syndrome</a></li>
-            <li><a class="dropdown-item" href="/en/diabetes-management/">Diabetes Management</a></li>
-            <li><a class="dropdown-item" href="/en/hypertension-cholesterol/">Hypertension & Cholesterol</a></li>
-            <li><a class="dropdown-item" href="/en/nutrigenetic-tests/">Nutrigenetic Tests</a></li>
+            <li><a class="dropdown-item{% if page.url and '/en/weight-loss/' in page.url %} is-active{% endif %}" href="/en/weight-loss/"{% if page.url and '/en/weight-loss/' in page.url %} aria-current="page"{% endif %}>Weight Loss</a></li>
+            <li><a class="dropdown-item{% if page.url and '/en/irritable-bowel-syndrome-fodmap/' in page.url %} is-active{% endif %}" href="/en/irritable-bowel-syndrome-fodmap/"{% if page.url and '/en/irritable-bowel-syndrome-fodmap/' in page.url %} aria-current="page"{% endif %}>Irritable Bowel Syndrome</a></li>
+            <li><a class="dropdown-item{% if page.url and '/en/diabetes-management/' in page.url %} is-active{% endif %}" href="/en/diabetes-management/"{% if page.url and '/en/diabetes-management/' in page.url %} aria-current="page"{% endif %}>Diabetes Management</a></li>
+            <li><a class="dropdown-item{% if page.url and '/en/hypertension-cholesterol/' in page.url %} is-active{% endif %}" href="/en/hypertension-cholesterol/"{% if page.url and '/en/hypertension-cholesterol/' in page.url %} aria-current="page"{% endif %}>Hypertension & Cholesterol</a></li>
+            <li><a class="dropdown-item{% if page.url and '/en/nutrigenetic-tests/' in page.url %} is-active{% endif %}" href="/en/nutrigenetic-tests/"{% if page.url and '/en/nutrigenetic-tests/' in page.url %} aria-current="page"{% endif %}>Nutrigenetic Tests</a></li>
           </ul>
         </li>
-        <li class="nav-item"><a href="/en/locations/" class="nav-link">Locations</a></li>
-        <li class="nav-item"><a href="/en/tariffs/" class="nav-link">Pricing</a></li>
-        <li class="nav-item"><a href="/en/news/" class="nav-link">Blog</a></li>
-        <li class="nav-item"><a href="/en/contact/" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="/en/locations/" class="nav-link{% if page.url and '/en/locations/' in page.url %} is-active{% endif %}"{% if page.url and '/en/locations/' in page.url %} aria-current="page"{% endif %}>Locations</a></li>
+        <li class="nav-item"><a href="/en/tariffs/" class="nav-link{% if page.url and '/en/tariffs/' in page.url %} is-active{% endif %}"{% if page.url and '/en/tariffs/' in page.url %} aria-current="page"{% endif %}>Pricing</a></li>
+        <li class="nav-item"><a href="/en/news/" class="nav-link{% if page.url and '/en/news/' in page.url %} is-active{% endif %}"{% if page.url and '/en/news/' in page.url %} aria-current="page"{% endif %}>Blog</a></li>
+        <li class="nav-item"><a href="/en/contact/" class="nav-link{% if page.url and '/en/contact/' in page.url %} is-active{% endif %}"{% if page.url and '/en/contact/' in page.url %} aria-current="page"{% endif %}>Contact</a></li>
       </ul>
     </nav>
 
     <div class="header-actions">
+      <form class="site-search" action="/en/search/" method="get" role="search" aria-label="Site search">
+        <label for="q" class="visually-hidden">Search</label>
+        <input id="q" name="q" type="search" placeholder="Search..." aria-label="Search" />
+        <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
       <div class="desktop-actions">
         <a href="tel:+32479355551" class="phone-link" aria-label="Call Diaeta"><i class="fa-solid fa-phone"></i><span>+32 479 35 55 51</span></a>
         <div class="lang-selector">

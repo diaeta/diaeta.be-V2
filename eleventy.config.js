@@ -1,10 +1,4 @@
 require('dotenv').config();
-const { EleventyI18nPlugin } = require('@11ty/eleventy');
-const EleventyNavigationPlugin = require('@11ty/eleventy-navigation');
-const EleventyBundlePlugin = require('@11ty/eleventy-plugin-bundle').default;
-const EleventyImage = require('@11ty/eleventy-img');
-const EleventyRssPlugin = require('@11ty/eleventy-plugin-rss');
-const sitemapPlugin = require('@quasibit/eleventy-plugin-sitemap');
 const { DateTime } = require('luxon');
 
 const site = require('./src/_data/site.json');
@@ -15,7 +9,14 @@ const defaultLocale = site?.defaultLocale ?? supportedLocales[0];
 const baseUrl = site?.baseUrl ?? '';
 const outputDir = process.env.ELEVENTY_OUTPUT_DIR || '_site';
 
-module.exports = function (eleventyConfig) {
+module.exports = async function (eleventyConfig) {
+  // Eleventy v3-compatible dynamic imports (ESM)
+  const { EleventyI18nPlugin } = await import('@11ty/eleventy');
+  const { default: EleventyImage } = await import('@11ty/eleventy-img');
+  const { default: EleventyBundlePlugin } = await import('@11ty/eleventy-plugin-bundle');
+  const { default: EleventyNavigationPlugin } = await import('@11ty/eleventy-navigation');
+  const { default: EleventyRssPlugin } = await import('@11ty/eleventy-plugin-rss');
+  const { default: sitemapPlugin } = await import('@quasibit/eleventy-plugin-sitemap');
   eleventyConfig.addPlugin(EleventyI18nPlugin, {
     defaultLanguage: defaultLocale,
     errorMode: 'strict',
@@ -97,6 +98,18 @@ module.exports = function (eleventyConfig) {
       // Fallback to current url only
       return [{ locale: defaultLocale, url: `${baseUrl}${urlPath || '/'}` }];
     }
+  });
+
+  // Utility string filters
+  eleventyConfig.addFilter('startsWith', (value, prefix) => {
+    try {
+      return typeof value === 'string' && typeof prefix === 'string' && value.startsWith(prefix);
+    } catch { return false; }
+  });
+  eleventyConfig.addFilter('includes', (value, needle) => {
+    try {
+      return typeof value === 'string' && typeof needle === 'string' && value.includes(needle);
+    } catch { return false; }
   });
 
   // Proper date formatting filter using Luxon

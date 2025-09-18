@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "byterover": {
+      "command": "powershell",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", "& { node 'C:\\nvm4w\\nodejs\\node_modules\\byterover-mcp\\dist\\cli.js' --user-id 'codex-local' }"],
+      "disabled": false,
+      "autoApprove": []
+    },
+    "lighthouse": {
+      "command": "powershell",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", "& { npx lighthouse-mcp }"],
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}
+

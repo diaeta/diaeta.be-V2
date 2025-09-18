@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "lighthouse": {
+      "command": "npx",
+      "args": ["lighthouse-mcp"],
+      "disabled": false,
+      "autoApprove": []
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp", "--headless"],
+      "disabled": false,
+      "autoApprove": []
+    },
+    "browserbase": {
+      "command": "npx",
+      "args": ["@browserbasehq/mcp"],
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}

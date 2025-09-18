@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Site CSS -->
-    <link rel="stylesheet" href="/assets/css/main.css?v=1758117404491">
+    <link rel="stylesheet" href="/assets/css/main.css?v=1758228634491">
 
     <script type="application/ld+json">
 {
@@ -127,22 +127,22 @@
   <div class="container header-container">
     <div class="logo">
       <a href="/en/" aria-label="Diaeta - Home">
-        <img src="/images/logo.svg" alt="Diaeta Logo" width="142" height="50">
+        <img src="/images/logo.svg" alt="Diaeta Logo">
       </a>
     </div>
 
     <nav class="main-nav js-main-nav" id="main-nav" aria-label="Main navigation">
       <ul class="nav-list">
-        <li class="nav-item"><a href="/en/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/en/" class="nav-link is-active" aria-current="page">Home</a></li>
         <li class="nav-item dropdown js-dropdown">
-          <a class="nav-link dropdown-toggle js-dropdown-toggle" href="#" aria-expanded="false">About</a>
+          <a class="nav-link dropdown-toggle js-dropdown-toggle" href="#" aria-expanded="false">About <i class="fa-solid fa-chevron-down nav-chev" aria-hidden="true"></i></a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/en/diaeta-method/">The Diaeta Method</a></li>
             <li><a class="dropdown-item" href="/en/our-expertise/">Our Expertise</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown js-dropdown">
-          <a class="nav-link dropdown-toggle js-dropdown-toggle" href="#" aria-expanded="false">Services</a>
+          <a class="nav-link dropdown-toggle js-dropdown-toggle" href="#" aria-expanded="false">Services <i class="fa-solid fa-chevron-down nav-chev" aria-hidden="true"></i></a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/en/weight-loss/">Weight Loss</a></li>
             <li><a class="dropdown-item" href="/en/irritable-bowel-syndrome-fodmap/">Irritable Bowel Syndrome</a></li>
@@ -159,6 +159,11 @@
     </nav>
 
     <div class="header-actions">
+      <form class="site-search" action="/en/search/" method="get" role="search" aria-label="Site search">
+        <label for="q" class="visually-hidden">Search</label>
+        <input id="q" name="q" type="search" placeholder="Search..." aria-label="Search">
+        <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
       <div class="desktop-actions">
         <a href="tel:+32479355551" class="phone-link" aria-label="Call Diaeta"><i class="fa-solid fa-phone"></i><span>+32 479 35 55 51</span></a>
         <div class="lang-selector">
@@ -184,62 +189,55 @@
 
 
     
-    <!-- Mobile Menu Overlay - Moved outside header to avoid stacking context issues -->
-    <nav class="mobile-nav-overlay js-mobile-nav-overlay" id="mobile-nav-overlay" aria-label="Mobile navigation" aria-hidden="true">
-      <div class="mobile-sheet">
-        <div class="mobile-sheet-body">
-          <ul class="mobile-nav-list">
-            <li class="mobile-nav-item"><a href="/en/" class="mobile-nav-link">Home</a></li>
-            <li class="mobile-nav-item mobile-dropdown js-mobile-dropdown">
-              <a class="mobile-nav-link mobile-dropdown-toggle js-mobile-dropdown-toggle" href="#" aria-expanded="false">
-                About <i class="fa-solid fa-chevron-down"></i>
-              </a>
-              <ul class="mobile-dropdown-menu">
-                <li><a class="mobile-dropdown-item" href="/en/diaeta-method/">The Diaeta Method</a></li>
-                <li><a class="mobile-dropdown-item" href="/en/our-expertise/">Our Expertise</a></li>
+    <!-- Mobile Menu: new layout (mnav) -->
+    <nav class="mnav mnav--light js-mnav" aria-hidden="true" aria-label="Mobile navigation" role="dialog" aria-modal="true">
+      <div class="mnav__panel" role="document">
+        <header class="mnav__header">
+          <button class="mnav__close js-mnav-close" aria-label="Close menu"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+        </header>
+        <div class="mnav__scroll" role="region" aria-label="Menu">
+          
+          
+          
+          <ul class="mnav__list">
+            <li><a href="/en/" class="mnav__link is-active" aria-current="page">Home</a></li>
+            <li class="mnav__group js-mnav-group">
+              <button class="mnav__toggle js-mnav-toggle" aria-expanded="false">About<i class="mnav__chev fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+              <ul class="mnav__submenu">
+                <li><a href="/en/diaeta-method/" class="mnav__sublink">The Diaeta Method</a></li>
+                <li><a href="/en/our-expertise/" class="mnav__sublink">Our Expertise</a></li>
               </ul>
             </li>
-            <li class="mobile-nav-item mobile-dropdown js-mobile-dropdown">
-              <a class="mobile-nav-link mobile-dropdown-toggle js-mobile-dropdown-toggle" href="#" aria-expanded="false">
-                Services <i class="fa-solid fa-chevron-down"></i>
-              </a>
-              <ul class="mobile-dropdown-menu">
-                <li><a class="mobile-dropdown-item" href="/en/weight-loss/">Weight Loss</a></li>
-                <li><a class="mobile-dropdown-item" href="/en/irritable-bowel-syndrome-fodmap/">Irritable Bowel Syndrome</a></li>
-                <li><a class="mobile-dropdown-item" href="/en/diabetes-management/">Diabetes Management</a></li>
-                <li><a class="mobile-dropdown-item" href="/en/hypertension-cholesterol/">Hypertension & Cholesterol</a></li>
-                <li><a class="mobile-dropdown-item" href="/en/nutrigenetic-tests/">Nutrigenetic Tests</a></li>
+            <li class="mnav__group js-mnav-group">
+              <button class="mnav__toggle js-mnav-toggle" aria-expanded="false">Services<i class="mnav__chev fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+              <ul class="mnav__submenu">
+                <li><a href="/en/weight-loss/" class="mnav__sublink">Weight Loss</a></li>
+                <li><a href="/en/irritable-bowel-syndrome-fodmap/" class="mnav__sublink">Irritable Bowel Syndrome</a></li>
+                <li><a href="/en/diabetes-management/" class="mnav__sublink">Diabetes Management</a></li>
+                <li><a href="/en/hypertension-cholesterol/" class="mnav__sublink">Hypertension & Cholesterol</a></li>
+                <li><a href="/en/nutrigenetic-tests/" class="mnav__sublink">Nutrigenetic Tests</a></li>
               </ul>
             </li>
-            <li class="mobile-nav-item"><a href="/en/locations/" class="mobile-nav-link">Locations</a></li>
-            <li class="mobile-nav-item"><a href="/en/tariffs/" class="mobile-nav-link">Pricing</a></li>
-            <li class="mobile-nav-item"><a href="/en/news/" class="mobile-nav-link">Blog</a></li>
-            <li class="mobile-nav-item"><a href="/en/contact/" class="mobile-nav-link">Contact</a></li>
+            <li><a href="/en/locations/" class="mnav__link">Locations</a></li>
+            <li><a href="/en/tariffs/" class="mnav__link">Pricing</a></li>
+            <li><a href="/en/news/" class="mnav__link">Blog</a></li>
+            <li><a href="/en/contact/" class="mnav__link">Contact</a></li>
           </ul>
         </div>
-        <div class="mobile-sheet-footer">
-          <div class="mobile-nav-actions">
-            <a href="tel:+32479355551" class="mobile-phone-link">
-              <i class="fa-solid fa-phone"></i>
-              <span>+32 479 35 55 51</span>
-            </a>
-            <div class="mobile-lang-selector">
-              <button class="mobile-lang-toggle js-mobile-lang-toggle" aria-expanded="false">
-                <i class="fa-solid fa-globe"></i>
-                <span>EN</span>
-                <i class="fa-solid fa-chevron-down"></i>
-              </button>
-              <div class="mobile-lang-dropdown js-mobile-lang-dropdown">
-                <a href="/fr/" class="mobile-lang-option">FR</a>
-                <a href="/en/" class="mobile-lang-option active" aria-current="true">EN</a>
-                <a href="/nl/" class="mobile-lang-option">NL</a>
-                <a href="/de/" class="mobile-lang-option">DE</a>
-                <a href="/ar/" class="mobile-lang-option">AR</a>
-              </div>
+        <footer class="mnav__footer">
+          <a href="tel:+32479355551" class="mnav__phone"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>+32 479 35 55 51</span></a>
+          <div class="mnav__lang">
+            <button class="mnav__langbtn js-mobile-lang-toggle" aria-expanded="false"><i class="fa-solid fa-globe" aria-hidden="true"></i><span>EN</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+            <div class="mnav__langdrop js-mobile-lang-dropdown">
+              <a href="/fr/" class="mnav__langopt">FR</a>
+              <a href="/en/" class="mnav__langopt active" aria-current="true">EN</a>
+              <a href="/nl/" class="mnav__langopt">NL</a>
+              <a href="/de/" class="mnav__langopt">DE</a>
+              <a href="/ar/" class="mnav__langopt">AR</a>
             </div>
-            <a href="/en/appointment/" class="btn btn-secondary mobile-cta">Book Appointment</a>
           </div>
-        </div>
+          <a href="/en/appointment/" class="mnav__cta">Book Appointment</a>
+        </footer>
       </div>
     </nav>
     
@@ -1300,10 +1298,10 @@
 </script>
 
 
-    <script src="/assets/js/nav.js?v=1758117404491" defer=""></script>
-    <script src="/assets/js/ui.js?v=1758117404491" defer=""></script>
+    <script src="/assets/js/nav.js?v=1758228634491" defer=""></script>
+    <script src="/assets/js/ui.js?v=1758228634491" defer=""></script>
     <!-- Particles.js for hero animation -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="/assets/js/hero.js?v=1758117404491" defer=""></script>
+    <script src="/assets/js/hero.js?v=1758228634491" defer=""></script>
   </body>
 </html>

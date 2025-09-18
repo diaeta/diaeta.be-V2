@@ -28,6 +28,27 @@ MCP Servers Reference
   - Start: `scripts/start-github-mcp.ps1` (uses `GITHUB_TOKEN`)
   - Codex config example: `mcp/github/codex.example.json`
 
+- lighthouse
+  - Purpose: run Lighthouse audits for performance, accessibility, SEO, and best practices
+  - Typical id: `lighthouse`
+  - Install: `npm i -g lighthouse-mcp`
+  - Start: `scripts/start-lighthouse-mcp.ps1`
+  - Config examples: `mcp/lighthouse/*.example.json`
+
+- playwright
+  - Purpose: browser automation with Playwright framework for web interaction and visualization
+  - Typical id: `playwright`
+  - Install: `npm i -g @playwright/mcp`
+  - Features: navigate pages, take screenshots, fill forms, extract content, run JavaScript
+  - Config examples: `mcp/browser/*.example.json`
+
+- browserbase
+  - Purpose: cloud-based browser automation with multi-session management
+  - Typical id: `browserbase`
+  - Install: `npm i -g @browserbasehq/mcp`
+  - Features: cloud browser instances, screenshot capture, form automation
+  - Config examples: `mcp/browser/*.example.json`
+
 - markdown-lint (si dispo)
   - Purpose: lint Markdown files via style rules
   - Typical id: `markdown-lint`

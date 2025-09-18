@@ -18,7 +18,7 @@
   <div class="container header-container">
     <div class="logo">
       <a href="/en/" aria-label="Diaeta - Home">
-        <img src="/images/logo.svg" alt="Diaeta Logo" width="142" height="50">
+        <img src="/images/logo.svg" alt="Diaeta Logo">
       </a>
     </div>
 
@@ -26,16 +26,16 @@
       <ul class="nav-list">
         <li class="nav-item"><a href="/en/" class="nav-link">Home</a></li>
         <li class="nav-item dropdown js-dropdown">
-          <a class="nav-link dropdown-toggle js-dropdown-toggle" href="#" aria-expanded="false">About</a>
+          <a class="nav-link dropdown-toggle js-dropdown-toggle" href="#" aria-expanded="false">About <i class="fa-solid fa-chevron-down nav-chev" aria-hidden="true"></i></a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/en/diaeta-method/">The Diaeta Method</a></li>
             <li><a class="dropdown-item" href="/en/our-expertise/">Our Expertise</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown js-dropdown">
-          <a class="nav-link dropdown-toggle js-dropdown-toggle" href="#" aria-expanded="false">Services</a>
+          <a class="nav-link dropdown-toggle js-dropdown-toggle is-active" href="#" aria-expanded="false">Services <i class="fa-solid fa-chevron-down nav-chev" aria-hidden="true"></i></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/en/weight-loss/">Weight Loss</a></li>
+            <li><a class="dropdown-item is-active" href="/en/weight-loss/" aria-current="page">Weight Loss</a></li>
             <li><a class="dropdown-item" href="/en/irritable-bowel-syndrome-fodmap/">Irritable Bowel Syndrome</a></li>
             <li><a class="dropdown-item" href="/en/diabetes-management/">Diabetes Management</a></li>
             <li><a class="dropdown-item" href="/en/hypertension-cholesterol/">Hypertension & Cholesterol</a></li>
@@ -50,6 +50,11 @@
     </nav>
 
     <div class="header-actions">
+      <form class="site-search" action="/en/search/" method="get" role="search" aria-label="Site search">
+        <label for="q" class="visually-hidden">Search</label>
+        <input id="q" name="q" type="search" placeholder="Search..." aria-label="Search">
+        <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
       <div class="desktop-actions">
         <a href="tel:+32479355551" class="phone-link" aria-label="Call Diaeta"><i class="fa-solid fa-phone"></i><span>+32 479 35 55 51</span></a>
         <div class="lang-selector">

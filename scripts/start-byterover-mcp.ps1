@@ -17,28 +17,13 @@ if ($ApiKey -and $ApiKey.Trim().Length -gt 0) {
   $argList += @('--byterover-public-api-key', $ApiKey)
 }
 
-Write-Host "Starting byterover-mcp on port $Port for user '$UserId'..."
-$psArgs = @('-NoProfile','-ExecutionPolicy','Bypass','-File', $cmd.Source)
-$fullArgs = $psArgs + $argList
-$proc = Start-Process -FilePath 'powershell.exe' -ArgumentList $fullArgs -WindowStyle Hidden -PassThru
-if ($proc) {
-  Write-Host "PID: $($proc.Id)"
+Write-Host "Starting byterover-mcp for user '$UserId'..." -ForegroundColor Green
+if ($ApiKey -and $ApiKey.Trim().Length -gt 0) {
+  Write-Host "Using API key authentication" -ForegroundColor Green
 } else {
-  Write-Warning "Failed to start byterover-mcp process."
+  Write-Host "Running in local mode (no API key)" -ForegroundColor Yellow
 }
 
-# Wait for port to listen
-$maxWait = 20
-for ($i=0; $i -lt $maxWait; $i++) {
-  try {
-    if (Test-NetConnection -ComputerName '127.0.0.1' -Port $Port -InformationLevel Quiet) { break }
-  } catch {}
-  Start-Sleep -Milliseconds 800
-}
-
-if (Test-NetConnection -ComputerName '127.0.0.1' -Port $Port -InformationLevel Quiet) {
-  Write-Host "Server is listening on 127.0.0.1:$Port"
-} else {
-  Write-Warning "Port $Port not open yet. If startup stalls, set BYTEROVER_PUBLIC_API_KEY or pass -ApiKey."
-}
+# Start byterover-mcp directly for MCP stdio communication
+& byterover-mcp @argList
 

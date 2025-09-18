@@ -47,62 +47,55 @@
     <a class="skip-link" href="#main-content">Skip to content</a>
     {% include "partials/header.njk" %}
     
-    <!-- Mobile Menu Overlay - Moved outside header to avoid stacking context issues -->
-    <nav class="mobile-nav-overlay js-mobile-nav-overlay" id="mobile-nav-overlay" aria-label="Mobile navigation" aria-hidden="true">
-      <div class="mobile-sheet">
-        <div class="mobile-sheet-body">
-          <ul class="mobile-nav-list">
-            <li class="mobile-nav-item"><a href="/en/" class="mobile-nav-link">Home</a></li>
-            <li class="mobile-nav-item mobile-dropdown js-mobile-dropdown">
-              <a class="mobile-nav-link mobile-dropdown-toggle js-mobile-dropdown-toggle" href="#" aria-expanded="false">
-                About <i class="fa-solid fa-chevron-down"></i>
-              </a>
-              <ul class="mobile-dropdown-menu">
-                <li><a class="mobile-dropdown-item" href="/en/diaeta-method/">The Diaeta Method</a></li>
-                <li><a class="mobile-dropdown-item" href="/en/our-expertise/">Our Expertise</a></li>
+    <!-- Mobile Menu: new layout (mnav) -->
+    <nav class="mnav mnav--light js-mnav" aria-hidden="true" aria-label="Mobile navigation" role="dialog" aria-modal="true">
+      <div class="mnav__panel" role="document">
+        <header class="mnav__header">
+          <button class="mnav__close js-mnav-close" aria-label="Close menu"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+        </header>
+        <div class="mnav__scroll" role="region" aria-label="Menu">
+          {% set loc = (lang or page.lang or localization.defaultLocale) %}
+          {% set cur = (page.url or '/') | replace('/content', '') %}
+          {% set homePath = '/' ~ loc ~ '/' %}
+          <ul class="mnav__list">
+            <li><a href="/{{ loc }}/" class="mnav__link{% if cur == homePath %} is-active{% endif %}"{% if cur == homePath %} aria-current="page"{% endif %}>Home</a></li>
+            <li class="mnav__group js-mnav-group{% if '/'+loc+'/diaeta-method/' in cur or '/'+loc+'/our-expertise/' in cur %} is-open{% endif %}">
+              <button class="mnav__toggle js-mnav-toggle" aria-expanded="{% if '/'+loc+'/diaeta-method/' in cur or '/'+loc+'/our-expertise/' in cur %}true{% else %}false{% endif %}">About<i class="mnav__chev fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+              <ul class="mnav__submenu">
+                <li><a href="/{{ loc }}/diaeta-method/" class="mnav__sublink{% if '/'+loc+'/diaeta-method/' in cur %} is-active{% endif %}"{% if '/'+loc+'/diaeta-method/' in cur %} aria-current="page"{% endif %}>The Diaeta Method</a></li>
+                <li><a href="/{{ loc }}/our-expertise/" class="mnav__sublink{% if '/'+loc+'/our-expertise/' in cur %} is-active{% endif %}"{% if '/'+loc+'/our-expertise/' in cur %} aria-current="page"{% endif %}>Our Expertise</a></li>
               </ul>
             </li>
-            <li class="mobile-nav-item mobile-dropdown js-mobile-dropdown">
-              <a class="mobile-nav-link mobile-dropdown-toggle js-mobile-dropdown-toggle" href="#" aria-expanded="false">
-                Services <i class="fa-solid fa-chevron-down"></i>
-              </a>
-              <ul class="mobile-dropdown-menu">
-                <li><a class="mobile-dropdown-item" href="/en/weight-loss/">Weight Loss</a></li>
-                <li><a class="mobile-dropdown-item" href="/en/irritable-bowel-syndrome-fodmap/">Irritable Bowel Syndrome</a></li>
-                <li><a class="mobile-dropdown-item" href="/en/diabetes-management/">Diabetes Management</a></li>
-                <li><a class="mobile-dropdown-item" href="/en/hypertension-cholesterol/">Hypertension & Cholesterol</a></li>
-                <li><a class="mobile-dropdown-item" href="/en/nutrigenetic-tests/">Nutrigenetic Tests</a></li>
+            <li class="mnav__group js-mnav-group{% if '/'+loc+'/weight-loss/' in cur or '/'+loc+'/irritable-bowel-syndrome-fodmap/' in cur or '/'+loc+'/diabetes-management/' in cur or '/'+loc+'/hypertension-cholesterol/' in cur or '/'+loc+'/nutrigenetic-tests/' in cur %} is-open{% endif %}">
+              <button class="mnav__toggle js-mnav-toggle" aria-expanded="{% if '/'+loc+'/weight-loss/' in cur or '/'+loc+'/irritable-bowel-syndrome-fodmap/' in cur or '/'+loc+'/diabetes-management/' in cur or '/'+loc+'/hypertension-cholesterol/' in cur or '/'+loc+'/nutrigenetic-tests/' in cur %}true{% else %}false{% endif %}">Services<i class="mnav__chev fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+              <ul class="mnav__submenu">
+                <li><a href="/{{ loc }}/weight-loss/" class="mnav__sublink{% if '/'+loc+'/weight-loss/' in cur %} is-active{% endif %}"{% if '/'+loc+'/weight-loss/' in cur %} aria-current="page"{% endif %}>Weight Loss</a></li>
+                <li><a href="/{{ loc }}/irritable-bowel-syndrome-fodmap/" class="mnav__sublink{% if '/'+loc+'/irritable-bowel-syndrome-fodmap/' in cur %} is-active{% endif %}"{% if '/'+loc+'/irritable-bowel-syndrome-fodmap/' in cur %} aria-current="page"{% endif %}>Irritable Bowel Syndrome</a></li>
+                <li><a href="/{{ loc }}/diabetes-management/" class="mnav__sublink{% if '/'+loc+'/diabetes-management/' in cur %} is-active{% endif %}"{% if '/'+loc+'/diabetes-management/' in cur %} aria-current="page"{% endif %}>Diabetes Management</a></li>
+                <li><a href="/{{ loc }}/hypertension-cholesterol/" class="mnav__sublink{% if '/'+loc+'/hypertension-cholesterol/' in cur %} is-active{% endif %}"{% if '/'+loc+'/hypertension-cholesterol/' in cur %} aria-current="page"{% endif %}>Hypertension & Cholesterol</a></li>
+                <li><a href="/{{ loc }}/nutrigenetic-tests/" class="mnav__sublink{% if '/'+loc+'/nutrigenetic-tests/' in cur %} is-active{% endif %}"{% if '/'+loc+'/nutrigenetic-tests/' in cur %} aria-current="page"{% endif %}>Nutrigenetic Tests</a></li>
               </ul>
             </li>
-            <li class="mobile-nav-item"><a href="/en/locations/" class="mobile-nav-link">Locations</a></li>
-            <li class="mobile-nav-item"><a href="/en/tariffs/" class="mobile-nav-link">Pricing</a></li>
-            <li class="mobile-nav-item"><a href="/en/news/" class="mobile-nav-link">Blog</a></li>
-            <li class="mobile-nav-item"><a href="/en/contact/" class="mobile-nav-link">Contact</a></li>
+            <li><a href="/{{ loc }}/locations/" class="mnav__link{% if '/'+loc+'/locations/' in cur %} is-active{% endif %}"{% if '/'+loc+'/locations/' in cur %} aria-current="page"{% endif %}>Locations</a></li>
+            <li><a href="/{{ loc }}/tariffs/" class="mnav__link{% if '/'+loc+'/tariffs/' in cur %} is-active{% endif %}"{% if '/'+loc+'/tariffs/' in cur %} aria-current="page"{% endif %}>Pricing</a></li>
+            <li><a href="/{{ loc }}/news/" class="mnav__link{% if '/'+loc+'/news/' in cur %} is-active{% endif %}"{% if '/'+loc+'/news/' in cur %} aria-current="page"{% endif %}>Blog</a></li>
+            <li><a href="/{{ loc }}/contact/" class="mnav__link{% if '/'+loc+'/contact/' in cur %} is-active{% endif %}"{% if '/'+loc+'/contact/' in cur %} aria-current="page"{% endif %}>Contact</a></li>
           </ul>
         </div>
-        <div class="mobile-sheet-footer">
-          <div class="mobile-nav-actions">
-            <a href="tel:+32479355551" class="mobile-phone-link">
-              <i class="fa-solid fa-phone"></i>
-              <span>+32 479 35 55 51</span>
-            </a>
-            <div class="mobile-lang-selector">
-              <button class="mobile-lang-toggle js-mobile-lang-toggle" aria-expanded="false">
-                <i class="fa-solid fa-globe"></i>
-                <span>EN</span>
-                <i class="fa-solid fa-chevron-down"></i>
-              </button>
-              <div class="mobile-lang-dropdown js-mobile-lang-dropdown">
-                <a href="/fr/" class="mobile-lang-option">FR</a>
-                <a href="/en/" class="mobile-lang-option active" aria-current="true">EN</a>
-                <a href="/nl/" class="mobile-lang-option">NL</a>
-                <a href="/de/" class="mobile-lang-option">DE</a>
-                <a href="/ar/" class="mobile-lang-option">AR</a>
-              </div>
+        <footer class="mnav__footer">
+          <a href="tel:+32479355551" class="mnav__phone"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>+32 479 35 55 51</span></a>
+          <div class="mnav__lang">
+            <button class="mnav__langbtn js-mobile-lang-toggle" aria-expanded="false"><i class="fa-solid fa-globe" aria-hidden="true"></i><span>EN</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+            <div class="mnav__langdrop js-mobile-lang-dropdown">
+              <a href="/fr/" class="mnav__langopt">FR</a>
+              <a href="/en/" class="mnav__langopt active" aria-current="true">EN</a>
+              <a href="/nl/" class="mnav__langopt">NL</a>
+              <a href="/de/" class="mnav__langopt">DE</a>
+              <a href="/ar/" class="mnav__langopt">AR</a>
             </div>
-            <a href="/en/appointment/" class="btn btn-secondary mobile-cta">Book Appointment</a>
           </div>
-        </div>
+          <a href="/en/appointment/" class="mnav__cta">Book Appointment</a>
+        </footer>
       </div>
     </nav>
     
