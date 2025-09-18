@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Site CSS -->
-    <link rel="stylesheet" href="/assets/css/main.css?v=1758228634491">
+    <link rel="stylesheet" href="/assets/css/main.css?v=1758231600525">
 
     <script type="application/ld+json">
 {
@@ -244,11 +244,36 @@
     <main id="main-content" tabindex="-1">
       
 <section class="hero-section">
-  <div id="hero-particles" class="hero-background" aria-hidden="true"></div>
+  <!-- Background Video -->
+  <div class="hero-background">
+    <video class="hero-video" autoplay="" muted="" loop="" playsinline="" poster="/images/hero-background-large-optimized.jpg" aria-hidden="true">
+      <source src="/videos/Background video.mp4" type="video/mp4">
+      <!-- Fallback for browsers that don't support video -->
+      <div class="hero-fallback-image">
+        <img src="/images/hero-background-large-optimized.jpg" alt="" aria-hidden="true">
+      </div>
+    </video>
+    <div class="hero-overlay"></div>
+  </div>
+  
+  <!-- Particles Effect (optional enhancement) -->
+  <div id="hero-particles" class="hero-particles" aria-hidden="true"></div>
+  
   <div class="container hero-content">
-    <div class="hero-badge animate-on-scroll fade-in"><i class="fa-solid fa-flask-vial" aria-hidden="true"></i><span>Evidence-Based Care</span></div>
-    <h1 class="hero-headline animate-on-scroll fade-up">Personalized Nutrition, Backed by Medical Science</h1>
-    <p class="hero-tagline animate-on-scroll fade-up delay-200">We help you build sustainable habits for IBS, Weight Management, Type 2 Diabetes, and Cholesterol—clear guidance, compassion, and no fad promises.</p>
+    <div class="hero-badge animate-on-scroll fade-in">
+      <i class="fa-solid fa-flask-vial" aria-hidden="true"></i>
+      <span>Evidence-Based Care</span>
+    </div>
+    
+    <h1 class="hero-headline animate-on-scroll fade-up">
+      Personalized Nutrition,<br>
+      <span class="hero-headline-accent">Backed by Medical Science</span>
+    </h1>
+    
+    <p class="hero-tagline animate-on-scroll fade-up delay-200">
+      Transform your health with <strong>sustainable habits</strong> for IBS, Weight Management, Type 2 Diabetes, and Cholesterol—clear guidance, compassion, and no fad promises.
+    </p>
+    
     <div class="hero-description animate-on-scroll fade-up delay-300">
       <p>Looking for an English-speaking dietitian in Brussels? At Diaeta, we combine <span class="text-highlight">evidence-based science</span> with <span class="text-highlight">genuine care</span> to create solutions that work for you.</p>
     </div>
@@ -258,14 +283,33 @@
       <span class="badge badge--pill badge--md badge--soft badge--primary"><i class="fa-solid fa-fingerprint" aria-hidden="true"></i><span>Fully Personalized</span></span>
     </div>
     <div class="hero-cta animate-on-scroll fade-up delay-500">
-      <a href="/en/appointment/" class="btn btn-primary pulse-animation">
-        <span>Book a Consultation</span>
-        <i class="fa-solid fa-arrow-right btn-icon-right" aria-hidden="true"></i>
-      </a>
-      <a href="#approach" class="btn btn-outline scroll-to">
-        <span>Explore Our Services</span>
-        <i class="fa-solid fa-chevron-right btn-icon-right" aria-hidden="true"></i>
-      </a>
+      <div class="hero-cta-buttons">
+        <a href="/en/appointment/" class="btn btn-primary btn-lg pulse-animation">
+          <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+          <span>Book a Consultation</span>
+          <i class="fa-solid fa-arrow-right btn-icon-right" aria-hidden="true"></i>
+        </a>
+        <a href="#approach" class="btn btn-outline btn-lg scroll-to">
+          <i class="fa-solid fa-compass" aria-hidden="true"></i>
+          <span>Explore Our Services</span>
+          <i class="fa-solid fa-chevron-right btn-icon-right" aria-hidden="true"></i>
+        </a>
+      </div>
+      
+      <div class="hero-trust-indicators animate-on-scroll fade-up delay-600">
+        <div class="trust-item">
+          <i class="fa-solid fa-shield-check" aria-hidden="true"></i>
+          <span>INAMI/RIZIV Registered</span>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+          <span>Monash FODMAP Certified</span>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-users" aria-hidden="true"></i>
+          <span>500+ Patients Helped</span>
+        </div>
+      </div>
     </div>
   </div>
   <div class="hero-metrics-marquee" role="region" aria-label="Health outcomes">
@@ -1298,10 +1342,11 @@
 </script>
 
 
-    <script src="/assets/js/nav.js?v=1758228634491" defer=""></script>
-    <script src="/assets/js/ui.js?v=1758228634491" defer=""></script>
+    <script src="/assets/js/nav.js?v=1758231600525" defer=""></script>
+    <script src="/assets/js/ui.js?v=1758231600525" defer=""></script>
     <!-- Particles.js for hero animation -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="/assets/js/hero.js?v=1758228634491" defer=""></script>
+    <script src="/assets/js/hero.js?v=1758231600525" defer=""></script>
+    <script src="/assets/js/hero-video.js?v=1758231600525" defer=""></script>
   </body>
 </html>
