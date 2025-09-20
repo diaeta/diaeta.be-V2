@@ -131,304 +131,253 @@
 }
 
 .philosophy-atlas__layout {
-  position: relative;
-  z-index: 1;
   display: grid;
-  gap: clamp(2.2rem, 6vw, 3.5rem);
-  margin-top: clamp(2.5rem, 6vw, 3.5rem);
+  gap: clamp(1.6rem, 4vw, 2.6rem);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: stretch;
 }
 
-.philosophy-atlas__vision {
-  position: relative;
+.philosophy-atlas__column {
+  display: grid;
+  gap: clamp(1.6rem, 4vw, 2.2rem);
+  align-content: start;
+}
+
+.philosophy-atlas__intro-card {
   display: grid;
   gap: clamp(1.2rem, 3vw, 1.8rem);
   padding: clamp(1.9rem, 5vw, 2.4rem);
   border-radius: 2rem;
-  border: 1px solid rgba(13, 90, 102, 0.1);
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 26px 45px rgba(7, 54, 62, 0.08);
+  background: linear-gradient(140deg, rgba(13, 90, 102, 0.18) 0%, rgba(13, 90, 102, 0.05) 100%);
+  border: 1px solid rgba(13, 90, 102, 0.22);
+  box-shadow: 0 28px 48px rgba(7, 54, 62, 0.12);
 }
 
-.philosophy-atlas__tokens {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.philosophy-atlas__token {
+.philosophy-atlas__intro-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.55rem 1.1rem;
-  border-radius: 999px;
-  background: rgba(13, 90, 102, 0.08);
-  border: 1px solid rgba(13, 90, 102, 0.18);
-  color: var(--color-primary-700);
+  gap: 0.55rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary-700);
 }
 
-.philosophy-atlas__token i {
+.philosophy-atlas__intro-eyebrow i {
   color: inherit;
 }
 
-.philosophy-atlas__vision-title {
-  margin: 0;
-  font-size: clamp(1.4rem, 3.5vw, 1.75rem);
-  color: var(--color-primary-900);
+.philosophy-atlas__intro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  align-items: center;
 }
 
-.philosophy-atlas__lead {
+.philosophy-atlas__intro-actions .btn {
+  min-width: 11.5rem;
+}
+
+.philosophy-atlas__grid {
+  display: grid;
+  gap: clamp(1.2rem, 3.5vw, 1.8rem);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.philosophy-atlas__pillars-grid {
+  display: grid;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.philosophy-card {
+  display: grid;
+  gap: 0.85rem;
+  padding: clamp(1.5rem, 4vw, 1.9rem);
+  border-radius: 1.6rem;
+  border: 1px solid rgba(13, 90, 102, 0.14);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 20px 36px rgba(7, 54, 62, 0.1);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  height: 100%;
+}
+
+.philosophy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 44px rgba(7, 54, 62, 0.14);
+}
+
+.philosophy-card__icon,
+.philosophy-atlas__pulse-icon {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 0.9rem;
+  display: grid;
+  place-items: center;
+  background: rgba(13, 90, 102, 0.12);
+  color: var(--color-primary-700);
+  font-size: 1.2rem;
+}
+
+.philosophy-card h4 {
   margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
   color: var(--color-primary-800);
-  font-size: clamp(1rem, 2.3vw, 1.15rem);
-  line-height: 1.7;
 }
 
-.philosophy-atlas__tenets {
+.philosophy-card p {
+  margin: 0;
+  color: var(--color-neutral-700);
+  line-height: 1.55;
+}
+
+.philosophy-card--pillar {
+  gap: 0.75rem;
+}
+
+.philosophy-card--timeline {
+  gap: 1.2rem;
+}
+
+.philosophy-atlas__timeline {
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
   display: grid;
-  gap: 1.1rem;
+  gap: 1.2rem;
 }
 
-.philosophy-atlas__tenets li {
+.philosophy-atlas__timeline li {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 0.9rem;
+  gap: 1rem;
   align-items: start;
 }
 
-.philosophy-atlas__tenet-icon {
+.philosophy-atlas__timeline-node {
   display: grid;
   place-items: center;
   width: 2.6rem;
   height: 2.6rem;
-  border-radius: 0.85rem;
-  background: rgba(12, 108, 122, 0.12);
+  border-radius: 0.9rem;
+  background: rgba(13, 90, 102, 0.12);
   color: var(--color-primary-700);
-  font-size: 1.1rem;
+  font-weight: 700;
 }
 
-.philosophy-atlas__tenet-title {
+.philosophy-atlas__timeline-title {
   margin: 0;
-  font-weight: 600;
-  color: var(--color-primary-900);
-}
-
-.philosophy-atlas__tenet-copy {
-  margin: 0.25rem 0 0;
-  color: var(--color-text);
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
-.philosophy-atlas__pulse {
-  margin: 0;
-  padding: 1.4rem 1.5rem;
-  border-radius: 1.6rem;
-  border: 1px solid rgba(13, 90, 102, 0.14);
-  background: rgba(5, 43, 48, 0.08);
-  display: grid;
-  gap: 0.75rem;
-  color: var(--color-primary-900);
-  font-size: 0.98rem;
-  line-height: 1.6;
-}
-
-.philosophy-atlas__pulse-icon {
-  width: 2.4rem;
-  height: 2.4rem;
-  border-radius: 0.75rem;
-  background: rgba(15, 88, 99, 0.18);
-  display: grid;
-  place-items: center;
-  color: var(--color-primary-700);
-}
-
-.philosophy-atlas__pulse cite {
-  font-style: normal;
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-}
-
-.philosophy-atlas__ribbon {
-  position: relative;
-  display: grid;
-  gap: clamp(1.5rem, 4vw, 2.2rem);
-  padding: clamp(1.8rem, 5vw, 2.3rem);
-  border-radius: 2rem;
-  border: 1px solid rgba(15, 88, 99, 0.12);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(239, 249, 250, 0.7));
-  box-shadow: 0 28px 52px rgba(6, 55, 63, 0.1);
-}
-
-.philosophy-atlas__ribbon-track {
-  position: relative;
-  display: grid;
-  gap: 1.4rem;
-}
-
-.philosophy-atlas__ribbon-track::before {
-  content: '';
-  position: absolute;
-  top: 1.3rem;
-  bottom: 1.3rem;
-  left: 1.25rem;
-  width: 2px;
-  background: linear-gradient(180deg, rgba(13, 90, 102, 0.4), rgba(13, 90, 102, 0));
-}
-
-.philosophy-atlas__ribbon-step {
-  position: relative;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1.2rem;
-  align-items: start;
-  padding-left: 0.4rem;
-}
-
-.philosophy-atlas__node {
-  display: grid;
-  place-items: center;
-  width: 2.8rem;
-  height: 2.8rem;
-  border-radius: 999px;
-  background: linear-gradient(135deg, rgba(27, 125, 142, 0.85), rgba(18, 97, 110, 0.75));
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.95rem;
-  box-shadow: 0 12px 24px rgba(18, 97, 110, 0.3);
-}
-
-.philosophy-atlas__step-title {
-  margin: 0;
-  font-weight: 600;
-  color: var(--color-primary-900);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.philosophy-atlas__step-copy {
-  margin: 0.35rem 0 0;
-  color: var(--color-text);
-  line-height: 1.55;
-  font-size: 0.92rem;
-}
-
-.philosophy-atlas__microtag {
-  margin-top: 0.6rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.35rem 0.95rem;
-  border-radius: 999px;
-  background: rgba(13, 90, 102, 0.1);
-  border: 1px solid rgba(13, 90, 102, 0.18);
+  font-weight: 700;
   color: var(--color-primary-800);
-  font-size: 0.8rem;
-  font-weight: 600;
 }
 
-.philosophy-atlas__microtag i {
-  color: inherit;
-}
-
-.philosophy-atlas__lab {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-}
-
-.philosophy-atlas__lab-card {
-  padding: 1.35rem 1.4rem;
-  border-radius: 1.4rem;
-  border: 1px solid rgba(15, 88, 99, 0.12);
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 20px 38px rgba(7, 54, 62, 0.08);
-  display: grid;
-  gap: 0.45rem;
-}
-
-.philosophy-atlas__lab-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.3rem;
-  height: 2.3rem;
-  border-radius: 0.8rem;
-  background: rgba(27, 125, 142, 0.15);
-  color: var(--color-primary-700);
-  font-size: 1.05rem;
-}
-
-.philosophy-atlas__lab-card strong {
-  color: var(--color-primary-900);
-  font-size: 1.05rem;
-}
-
-.philosophy-atlas__lab-card p {
-  margin: 0;
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
+.philosophy-atlas__timeline-copy {
+  margin: 0.35rem 0;
+  color: var(--color-neutral-700);
   line-height: 1.5;
 }
 
-.philosophy-atlas__footer {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  gap: 1.2rem;
-  margin-top: clamp(2.6rem, 6vw, 3.4rem);
-}
-
-.philosophy-atlas__footnote {
-  margin: 0;
-  color: var(--color-text-muted);
-  font-size: 0.85rem;
+.philosophy-atlas__timeline-tag {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-}
-
-.philosophy-atlas__footnote i {
+  gap: 0.45rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: rgba(13, 90, 102, 0.1);
   color: var(--color-primary-700);
 }
 
-.philosophy-atlas__cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  align-items: center;
+.philosophy-atlas__timeline-tag i {
+  color: inherit;
 }
 
-@media (min-width: 60rem) {
+.philosophy-card--metrics {
+  gap: 1.1rem;
+}
+
+.philosophy-atlas__metrics-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.philosophy-atlas__metric {
+  padding: 1rem 1.2rem;
+  border-radius: 1.2rem;
+  background: rgba(13, 90, 102, 0.08);
+  border: 1px solid rgba(13, 90, 102, 0.18);
+  display: grid;
+  gap: 0.35rem;
+}
+
+.philosophy-atlas__metric-value {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-primary-800);
+}
+
+.philosophy-atlas__metric-caption {
+  font-size: 0.9rem;
+  color: var(--color-neutral-700);
+}
+
+.philosophy-card--testimonial {
+  gap: 0.8rem;
+}
+
+.philosophy-card--testimonial p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-primary-900);
+}
+
+.philosophy-card--testimonial cite {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--color-primary-700);
+}
+
+@media (max-width: 1080px) {
+  .philosophy-atlas__pillars-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
   .philosophy-atlas__layout {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-    align-items: start;
+    grid-template-columns: 1fr;
   }
 
-  .philosophy-atlas__ribbon {
-    margin-left: auto;
-    width: min(100%, 26rem);
+  .philosophy-atlas__metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .philosophy-atlas__timeline li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.65rem;
+  }
+
+  .philosophy-atlas__timeline-node {
+    width: 2.2rem;
+    height: 2.2rem;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .philosophy-atlas__orb {
-    animation: none;
+@media (max-width: 720px) {
+  .philosophy-atlas__intro-card {
+    padding: 1.6rem;
+  }
+
+  .philosophy-atlas__pillars-grid,
+  .philosophy-atlas__grid {
+    grid-template-columns: 1fr;
   }
 }
 
-@keyframes atlasDrift {
-  from {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  to {
-    transform: translate3d(6%, -6%, 0) scale(1.08);
-  }
-}
 /* Generic chips and cards on homepage */
 .feature-badges { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1rem; }
 .feature-badges .feature-item { display: inline-flex; align-items: center; gap: .5rem; padding: .5rem .75rem; border-radius: 999px; background: #f4f8f9; color: var(--color-primary-700); font-weight: 600; font-size: .9rem; }
