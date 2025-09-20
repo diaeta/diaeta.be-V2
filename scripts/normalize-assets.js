@@ -20,7 +20,6 @@ function ensureMainCss(html) {
 
 function rewriteLegacy(html) {
   return html
-    .replace(/href=("|')\/?css\//g, 'href=$1/legacy/css/')
     .replace(/src=("|')\/?js\//g, 'src=$1/legacy/js/');
 }
 

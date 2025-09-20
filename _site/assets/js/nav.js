@@ -73,6 +73,16 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mnavClose) mnavClose.addEventListener('click', () => setOpen(false));
   if (closeBtn) closeBtn.addEventListener('click', () => setOpen(false));
 
+  // Global ESC key handler
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const overlay = mnav || mobileNavOverlay;
+      if (overlay && overlay.classList.contains('is-open')) {
+        setOpen(false);
+      }
+    }
+  });
+
   // Close when tapping outside sheet body
   const attachOutsideClick = (root, sheetSelector) => {
     if (!root) return;
@@ -128,15 +138,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Focus trap & ESC
+  // Enhanced Focus trap & ESC for both menu systems
   function trapFocus() {
-    if (!mobileNavOverlay) return;
-    const focusables = mobileNavOverlay.querySelectorAll(firstFocusableSelector);
+    const overlay = mnav || mobileNavOverlay;
+    if (!overlay) return;
+    
+    const focusables = overlay.querySelectorAll(firstFocusableSelector);
     if (!focusables.length) return;
+    
     const first = focusables[0];
     const last = focusables[focusables.length - 1];
+    
     // Move focus to the first focusable item inside menu
     first.focus();
+    
     function onKeydown(e) {
       if (e.key === 'Escape') {
         setOpen(false);
@@ -153,36 +168,56 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     }
-    mobileNavOverlay.addEventListener('keydown', onKeydown);
-    mobileNavOverlay._trapHandler = onKeydown;
+    
+    overlay.addEventListener('keydown', onKeydown);
+    overlay._trapHandler = onKeydown;
+    
+    // Ensure ARIA attributes are properly set
+    overlay.setAttribute('aria-hidden', 'false');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('role', 'dialog');
   }
 
   function releaseFocus() {
-    if (!mobileNavOverlay || !mobileNavOverlay._trapHandler) return;
-    mobileNavOverlay.removeEventListener('keydown', mobileNavOverlay._trapHandler);
-    delete mobileNavOverlay._trapHandler;
+    const overlay = mnav || mobileNavOverlay;
+    if (!overlay || !overlay._trapHandler) return;
+    overlay.removeEventListener('keydown', overlay._trapHandler);
+    delete overlay._trapHandler;
   }
 
-  // Keyboard-safe sticky footer using visualViewport
+  // Enhanced viewport height management for both menu systems
   const updatePanelHeight = () => {
     let height = window.innerHeight;
     if (window.visualViewport && typeof window.visualViewport.height === 'number') {
       height = Math.round(window.visualViewport.height);
     }
+    
+    // Set CSS custom property for dynamic viewport height
     document.documentElement.style.setProperty('--vvh', height + 'px');
-    // ensure the actions remain fully visible by clamping sheet height
+    
+    // Update both menu systems with proper height constraints
     const sheet = document.querySelector('.mobile-sheet');
-    if (sheet) sheet.style.maxHeight = height + 'px';
+    if (sheet) {
+      sheet.style.maxHeight = height + 'px';
+      sheet.style.height = height + 'px';
+    }
+    
+    const mnavPanel = document.querySelector('.mnav__panel');
+    if (mnavPanel) {
+      mnavPanel.style.maxHeight = height + 'px';
+      mnavPanel.style.height = height + 'px';
+    }
+    
     document.documentElement.style.setProperty('--mobile-footer-height', getFooterHeight() + 'px');
   };
-  if (mobileNavOverlay) {
-    updatePanelHeight();
-    window.addEventListener('resize', updatePanelHeight, { passive: true });
-    window.addEventListener('orientationchange', updatePanelHeight, { passive: true });
-    if (window.visualViewport) {
-      window.visualViewport.addEventListener('resize', updatePanelHeight, { passive: true });
-      window.visualViewport.addEventListener('scroll', updatePanelHeight, { passive: true });
-    }
+  
+  // Initialize viewport height management
+  updatePanelHeight();
+  window.addEventListener('resize', updatePanelHeight, { passive: true });
+  window.addEventListener('orientationchange', updatePanelHeight, { passive: true });
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', updatePanelHeight, { passive: true });
+    window.visualViewport.addEventListener('scroll', updatePanelHeight, { passive: true });
   }
 
   function getFooterHeight() {
