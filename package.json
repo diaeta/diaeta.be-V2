@@ -5,6 +5,8 @@
   "type": "commonjs",
   "scripts": {
     "clean": "rimraf _site .cache dist || true",
+    "img:clean:gj": "rimraf assets/images/guided-journeys/*",
+    "img:gj": "node scripts/process-guided-journeys.js",
     "build:css": "sass src/styles/main.scss _site/assets/css/main.css --style=compressed",
     "watch:css": "sass src/styles/main.scss _site/assets/css/main.css --watch",
     "dev": "npm run build && npm-run-all --parallel watch serve:static watch:css",
@@ -48,7 +50,8 @@
     "stylelint": "^16.8.1",
     "stylelint-config-standard": "^35.0.0",
     "stylelint-selector-bem-pattern": "^4.0.1",
-    "wait-on": "^9.0.0"
+    "wait-on": "^9.0.0",
+    "sharp": "^0.32.6"
   },
   "engines": {
     "node": ">=20.0.0"

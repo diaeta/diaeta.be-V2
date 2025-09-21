@@ -1,5 +1,7 @@
 require('dotenv').config();
 const { DateTime } = require('luxon');
+const path = require('path');
+const fs = require('fs');
 
 const site = require('./src/_data/site.json');
 const translations = require('./src/_data/i18n.json');
@@ -35,6 +37,7 @@ module.exports = async function (eleventyConfig) {
   // Copy static assets to the output directory
   eleventyConfig.addPassthroughCopy({ 'public/assets/js': '/assets/js' });
   eleventyConfig.addPassthroughCopy({ 'public/images': '/images' });
+  eleventyConfig.addPassthroughCopy({ 'assets/images': '/assets/images' });
   eleventyConfig.addPassthroughCopy({ 'public/videos': '/videos' });
   eleventyConfig.addPassthroughCopy({ 'public/favicon.ico': '/favicon.ico' });
 
@@ -187,26 +190,109 @@ module.exports = async function (eleventyConfig) {
         throw new Error('Image shortcode requires src');
       }
 
-      const widths = options.widths || [400, 800, 1200];
-      const formats = options.formats || ['avif', 'webp', 'jpeg'];
+      const widths = options.widths || [360, 480, 640, 768, 1024, 1280, 1536, 1920];
+      const formats = options.formats || ['avif', 'webp', 'jpg'];
+      const sizes = options.sizes || '(min-width: 1200px) 560px, (min-width: 768px) 75vw, 92vw';
+      const outputDirPath = `${outputDir}/assets/images`;
 
       const results = await EleventyImage(src, {
         widths,
         formats,
         urlPath: '/assets/images',
-        outputDir: `${outputDir}/assets/images`,
-      });
+        outputDir: outputDirPath,
+        filenameFormat(id, imageSrc, width, format) {
+          const optSlug = options.slug ? String(options.slug) : '';
+          const parsedSrc = typeof imageSrc === 'string' ? imageSrc : '';
+          let relativeDir = '';
+          let slugBase = optSlug.trim();
 
-      const metadata = results.jpeg?.[results.jpeg.length - 1] || Object.values(results)[0][0];
+          if (!slugBase && parsedSrc) {
+            try {
+              const absolute = path.isAbsolute(parsedSrc) ? parsedSrc : path.resolve(parsedSrc);
+              const relativeToSrc = path.relative(path.resolve('src'), absolute);
+              if (!relativeToSrc.startsWith('..')) {
+                relativeDir = path.dirname(relativeToSrc).replace(/\\/g, '/');
+                slugBase = path.parse(relativeToSrc).name;
+              }
+            } catch {}
+          }
+
+          if (!slugBase) {
+            slugBase = EleventyImage.slugify(id);
+          }
+
+          const safeSlug = slugBase
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-|-$/g, '') || 'image';
+
+          let computedDir = relativeDir && relativeDir !== '.' ? relativeDir.replace(/\\/g, '/') : '';
+          if (computedDir.startsWith('images/')) {
+            computedDir = computedDir.slice('images/'.length);
+          }
+          const subdir = options.outputSubdir || computedDir;
+          const normalizedDir = subdir ? subdir.replace(/\\/g, '/') : '';
+          const normalizedFormat = format === 'jpeg' ? 'jpg' : format;
+          const filename = `${safeSlug}-${width}.${normalizedFormat}`;
+
+          const ensureDir = normalizedDir ? path.join(outputDirPath, normalizedDir) : outputDirPath;
+          if (!fs.existsSync(ensureDir)) {
+            fs.mkdirSync(ensureDir, { recursive: true });
+          }
+
+          return normalizedDir ? `${normalizedDir}/${filename}` : filename;
+        },
+        sharpOptions: {
+          withoutEnlargement: false,
+        },
+        sharpAvifOptions: {
+          quality: options.avifQuality || 60,
+          effort: 6,
+        },
+        sharpWebpOptions: {
+          quality: options.webpQuality || 75,
+          effort: 5,
+        },
+        sharpJpegOptions: {
+          quality: options.jpegQuality || 82,
+          progressive: true,
+          mozjpeg: true,
+          chromaSubsampling: '4:4:4',
+        },
+      });
+      if (results.jpeg) {
+        results.jpg = results.jpg || results.jpeg.map(entry => {
+          const next = { ...entry };
+          if (next.url) next.url = next.url.replace(/\.jpeg$/i, '.jpg');
+          if (next.outputPath) next.outputPath = next.outputPath.replace(/\.jpeg$/i, '.jpg');
+          if (next.filename) next.filename = next.filename.replace(/\.jpeg$/i, '.jpg');
+          next.format = 'jpg';
+          next.sourceType = 'image/jpeg';
+          return next;
+        });
+        delete results.jpeg;
+      }
+
+
+      const fallbackFormat = results.jpg || results.jpeg || results[formats[formats.length - 1]];
+      const metadata = fallbackFormat?.[fallbackFormat.length - 1] || Object.values(results)[0][0];
       const attrs = {
         alt,
-        loading: 'lazy',
-        decoding: 'async',
+        loading: options.loading || 'lazy',
+        decoding: options.decoding || 'async',
         width: metadata.width,
         height: metadata.height,
+        sizes,
       };
 
-      return EleventyImage.generateHTML(results, attrs);
+      if (options.class) {
+        attrs.class = options.class;
+      }
+      if (options.style) {
+        attrs.style = options.style;
+      }
+
+      return EleventyImage.generateHTML(results, attrs, { whitespaceMode: 'inline' });
     }
   );
 
@@ -239,3 +325,4 @@ module.exports = async function (eleventyConfig) {
     pathPrefix: '/',
   };
 };
+

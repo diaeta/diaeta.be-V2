@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "sectionTitle": "Our Patients Testify",
+    "sectionIntro": "Real journeys, steady milestones. Everyone's path is different — here are a few ways progress can look."
+  },
+  "stories": [
+    {
+      "program": "IBS",
+      "initials": "J.",
+      "locale": "Brussels",
+      "consent": true,
+      "headline": "\"Mornings became calmer — and I finally knew why.\"",
+      "timeline": [
+        { "date": "Week 0", "note": "Frequent morning urgency and bloating.", "metric": "Comfort score 3/7" },
+        { "date": "Week 2", "note": "Identified two trigger patterns; adjusted breakfast.", "metric": "Comfort score 4/7" },
+        { "date": "Week 4", "note": "Fewer unpredictable mornings; routine feels doable.", "metric": "Comfort score 5/7" }
+      ],
+      "reflection": "Learning my own triggers changed the tone of my mornings.",
+      "img": { "srcBase": "j-ibs", "alt": "Testimonial from J., IBS program" },
+      "disclaimer": "Individual results vary."
+    },
+    {
+      "program": "Weight Management",
+      "initials": "M.",
+      "locale": "Ixelles",
+      "consent": true,
+      "headline": "\"Steady loss without constant hunger.\"",
+      "timeline": [
+        { "date": "Start", "note": "Evening snacking and low energy.", "metric": "Hunger steadiness 2/5" },
+        { "date": "Month 1", "note": "Protein and fiber anchors at lunch/dinner.", "metric": "Hunger steadiness 3/5" },
+        { "date": "Month 3", "note": "Portions feel natural; energy more stable.", "metric": "Hunger steadiness 4/5" }
+      ],
+      "reflection": "Habits feel sustainable rather than restrictive.",
+      "img": { "srcBase": "m-weight", "alt": "Testimonial from M., Weight program" },
+      "disclaimer": "Individual results vary."
+    },
+    {
+      "program": "Type 2 Diabetes",
+      "initials": "A.",
+      "locale": "EU expat",
+      "consent": true,
+      "headline": "\"My CGM finally told a story I understood.\"",
+      "timeline": [
+        { "date": "Week 0", "note": "Post-lunch spikes common.", "metric": "Afternoon spikes: frequent" },
+        { "date": "Week 4", "note": "Carb pairing and timing tweaks.", "metric": "Afternoon spikes: less frequent" },
+        { "date": "Week 12", "note": "Smoother daily trend; more confidence.", "metric": "Trend: smoother" }
+      ],
+      "reflection": "Data plus warmth made the plan feel doable.",
+      "img": { "srcBase": "a-diabetes", "alt": "Testimonial from A., Type 2 Diabetes program" },
+      "disclaimer": "Nutrition is one part of a personalized medical plan."
+    },
+    {
+      "program": "Heart & Lipids",
+      "initials": "C.",
+      "locale": "Uccle",
+      "consent": true,
+      "headline": "\"Mediterranean habits, not restriction.\"",
+      "timeline": [
+        { "date": "Start", "note": "Discussed LDL with GP; planned swaps.", "metric": "Mediterranean score 2/5" },
+        { "date": "Month 2", "note": "Olive oil, legumes, and greens now routine.", "metric": "Mediterranean score 3/5" },
+        { "date": "Month 4", "note": "Meals brighter; energy up.", "metric": "Mediterranean score 4/5" }
+      ],
+      "reflection": "My numbers and my meals look better.",
+      "img": { "srcBase": "c-lipids", "alt": "Testimonial from C., Heart & Lipids program" },
+      "disclaimer": "Discuss changes with your GP."
+    }
+  ]
+}

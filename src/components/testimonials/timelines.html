@@ -1,0 +1,89 @@
+<!-- ========================= TESTIMONIALS — JOURNEY TIMELINES ========================= -->
+<section id="testimonials-timelines" class="tt-section" aria-labelledby="tt-heading">
+  <div class="tt-container">
+    <header class="tt-head">
+      <h2 id="tt-heading">{{ testimonials.en.meta.sectionTitle }}</h2>
+      <p class="tt-intro">{{ testimonials.en.meta.sectionIntro }}</p>
+    </header>
+
+    <!-- Filters (EN only for now) -->
+    <div class="tt-filters" role="toolbar" aria-label="Filter testimonials">
+      <button class="tt-filter is-active" data-filter="All" aria-pressed="true">All</button>
+      <button class="tt-filter" data-filter="IBS" aria-pressed="false">IBS</button>
+      <button class="tt-filter" data-filter="Weight Management" aria-pressed="false">Weight</button>
+      <button class="tt-filter" data-filter="Type 2 Diabetes" aria-pressed="false">Type 2 Diabetes</button>
+      <button class="tt-filter" data-filter="Heart & Lipids" aria-pressed="false">Heart & Lipids</button>
+    </div>
+
+    <!-- Stories list -->
+    <ul class="tt-list" role="list">
+      {% for story in testimonials.en.stories %}
+      <li class="tt-item" data-program="{{ story.program }}">
+        <article class="tt-card">
+          <figure class="tt-figure">
+            <!-- Use initials coin if no portrait image available -->
+            <div class="tt-initials-coin" aria-hidden="true">
+              <span class="tt-initials-text">{{ story.initials }}</span>
+            </div>
+            <figcaption class="visually-hidden">{{ story.initials }}, {{ story.locale }} — {{ story.program }}</figcaption>
+          </figure>
+
+          <header class="tt-card-head">
+            <div class="tt-chip">{{ story.program }}</div>
+            <h3 class="tt-quote">{{ story.headline }}</h3>
+            <p class="tt-meta"><span class="tt-initials">{{ story.initials }}</span> • {{ story.locale }}</p>
+          </header>
+
+          <ol class="tt-timeline" aria-label="Milestones">
+            {% for milestone in story.timeline %}
+            <li class="tt-milestone">
+              <div class="tt-dot" aria-hidden="true"></div>
+              <div class="tt-milestone-body">
+                <div class="tt-date">{{ milestone.date }}</div>
+                <p class="tt-note">{{ milestone.note }}</p>
+                <div class="tt-metric">
+                  <!-- Inline sparkline SVG with accessible text -->
+                  <svg class="tt-spark" viewBox="0 0 100 24" role="img" aria-label="{{ milestone.metric }}">
+                    <title>{{ milestone.metric }}</title>
+                    <polyline points="0,18 33,16 66,14 100,12" fill="none" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                  <span class="tt-metric-text">{{ milestone.metric }}</span>
+                </div>
+              </div>
+            </li>
+            {% endfor %}
+          </ol>
+
+          <p class="tt-reflection">{{ story.reflection }}</p>
+          <p class="tt-disclaimer">{{ story.disclaimer }}</p>
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <footer class="tt-cta">
+      <a class="btn-primary" href="/en/appointment">Start your own timeline</a>
+      <a class="btn-secondary" href="/en/diaeta-method">How our programs work</a>
+    </footer>
+
+    <!-- Compliance note -->
+    <div class="tt-compliance">
+      <p>These are individual journeys. Nutrition is one part of a personalized medical plan. Results vary.</p>
+    </div>
+  </div>
+
+  <!-- JSON-LD for each story -->
+  {% for story in testimonials.en.stories %}
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Review",
+    "itemReviewed":{"@type":"LocalBusiness","name":"Diaeta — Registered Dietitian"},
+    "author":{"@type":"Person","name":"{{ story.initials }}"},
+    "reviewBody":"{{ story.headline }} {{ story.timeline[0].note }} {{ story.timeline[-1].note }}",
+    "datePublished":"2025-01-21",
+    "inLanguage":"en"
+  }
+  </script>
+  {% endfor %}
+</section>
