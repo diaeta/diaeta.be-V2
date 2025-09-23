@@ -132,7 +132,7 @@
 }
 
 .solutions-head .lead {
-  color: rgba(197, 224, 228, 0.92);
+  color: rgba(197, 224, 228, .92);
   max-width: 72ch;
   margin: 0 auto;
   font-size: clamp(1.02rem, 3vw, 1.15rem);
@@ -141,10 +141,15 @@
 
 .solutions-grid {
   display: grid;
-  gap: clamp(1.25rem, 4vw, 2rem);
-  grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr));
+  gap: clamp(1.25rem, 3.5vw, 2rem);
+  grid-template-columns: 1fr; /* mobile: one per line */
   margin-bottom: clamp(2.5rem, 6vw, 3.75rem);
   position: relative;
+}
+
+/* Desktop: force symmetry with exactly 2 cards per row */
+@media (min-width: 768px) {
+  .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 .solutions-grid:hover .solution-card {
@@ -157,7 +162,7 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: clamp(1.4rem, 3vw, 1.85rem);
+  padding: clamp(1.4rem, 2.5vw, 1.85rem);
   border-radius: 22px;
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -175,13 +180,35 @@
   --accent-glow: rgba(115, 215, 255, 0.55);
 }
 
+/* Subtle per-program accent bar */
+.solution-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent-strong) 35%, var(--accent-strong) 65%, transparent 100%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
 .solutions-grid:hover .solution-card:hover {
   filter: none;
   transform: translateY(-16px) scale(1.01);
   opacity: 1;
 }
 
-.solution-card:hover {
+/* Motion safeties */
+@media (prefers-reduced-motion: reduce) {
+  .solutions-grid:hover .solution-card,
+  .solutions-grid:hover .solution-card:hover,
+  .solution-card:focus-within,
+  .solution-card:hover {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+.solution-card:hover,
+.solution-card:focus-within {
   box-shadow: 0 28px 55px rgba(0, 0, 0, 0.34);
   border-color: var(--accent-border);
 }
@@ -229,7 +256,7 @@
   background: radial-gradient(circle at 20% 20%, var(--accent-strong), transparent 65%);
   opacity: 0.45;
   z-index: -2;
-  filter: blur(30px);
+  filter: blur(26px);
   transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
@@ -294,7 +321,7 @@
 }
 
 .solution-card .desc {
-  color: rgba(215, 235, 238, 0.9);
+  color: rgba(215, 235, 238, .9);
   line-height: 1.58;
   margin: 0;
 }
@@ -391,7 +418,7 @@
 
 .solutions-atlas__head p {
   margin: clamp(0.9rem, 2.4vw, 1.2rem) auto 0;
-  color: rgba(198, 222, 226, 0.9);
+  color: rgba(198, 222, 226, .9);
   line-height: 1.64;
 }
 
@@ -406,7 +433,7 @@
   gap: clamp(1.4rem, 2.8vw, 2rem);
   padding: clamp(1.6rem, 3vw, 2rem);
   border-radius: 28px;
-  background: linear-gradient(160deg, rgba(12, 36, 46, 0.9), rgba(12, 24, 37, 0.7));
+  background: linear-gradient(160deg, rgba(12, 36, 46, .9), rgba(12, 24, 37, .7));
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.34);
   overflow: hidden;
@@ -458,7 +485,7 @@
   display: flex;
   flex-direction: column;
   gap: clamp(0.9rem, 2vw, 1.2rem);
-  color: rgba(215, 235, 238, 0.92);
+  color: rgba(215, 235, 238, .92);
 }
 
 .panel-title {
@@ -486,7 +513,7 @@
   position: relative;
   padding-left: 2.3rem;
   line-height: 1.5;
-  color: rgba(221, 240, 243, 0.9);
+  color: rgba(221, 240, 243, .9);
   counter-increment: atlas-step;
 }
 
@@ -514,26 +541,27 @@
 }
 
 .panel-metrics .badge {
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.32);
   color: #F8FDFF;
   font-size: 0.75rem;
   letter-spacing: 0.04em;
   padding: 0.4rem 0.75rem;
   border-radius: 999px;
   text-transform: none;
+  backdrop-filter: blur(8px);
 }
 
 .atlas-note {
   margin: 0;
   font-size: 0.85rem;
-  color: rgba(193, 215, 219, 0.78);
+  color: rgba(193, 215, 219, 0.85);
 }
 
 .atlas-legend {
   margin: 0;
   padding-left: 1rem;
-  color: rgba(193, 215, 219, 0.78);
+  color: rgba(193, 215, 219, 0.85);
   font-size: 0.85rem;
 }
 
@@ -624,10 +652,11 @@
 }
 
 .solutions-section .btn-ghost {
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.12);
   color: #E4F7FA;
-  border: 2px solid rgba(255, 255, 255, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.45);
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(8px);
 }
 
 .solutions-section .btn-ghost:hover {

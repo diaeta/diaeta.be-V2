@@ -197,7 +197,7 @@
   padding: clamp(1.5rem, 4vw, 1.9rem);
   border-radius: 1.6rem;
   border: 1px solid rgba(13, 90, 102, 0.14);
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, .92);
   box-shadow: 0 20px 36px rgba(7, 54, 62, 0.1);
   transition: transform 220ms ease, box-shadow 220ms ease;
   height: 100%;
@@ -395,3 +395,199 @@
 .mt-4 { margin-top: 1rem; }
 .mb-3 { margin-bottom: .75rem; }
 .mb-4 { margin-bottom: 1rem; }
+
+/* Section dividers spacing refinement */
+.section-divider, .section-divider-thick { margin: clamp(2.5rem, 6vw, 4rem) 0; }
+
+/* ========================= PATIENT STORIES — PREMIUM GRID ========================= */
+.ps-section {
+  position: relative;
+  isolation: isolate;
+  color: var(--color-text);
+  background:
+    radial-gradient(1200px 720px at -20% -25%, rgba(18,142,160,0.06), transparent 60%),
+    radial-gradient(980px 680px at 110% 0%, rgba(140,198,63,0.05), transparent 65%),
+    linear-gradient(180deg, #f7fbfc 0%, #ffffff 100%);
+  padding: clamp(3.5rem, 7vw, 6rem) 0;
+}
+
+.ps-head { text-align: center; margin-bottom: clamp(1.5rem, 4vw, 2.5rem); }
+.ps-head h2 { font-family: ui-serif, Georgia, "Times New Roman", serif; font-size: clamp(1.7rem, 4.6vw, 2.6rem); line-height: 1.15; margin: .6rem 0; color: var(--color-primary-700); }
+.ps-head .lead { color: var(--color-muted); max-width: 68ch; margin: 0 auto; }
+
+.ps-grid { display: grid; gap: clamp(1rem, 3vw, 1.5rem); grid-template-columns: 1fr; }
+@media (min-width: 768px) { .ps-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.ps-card {
+  position: relative;
+  display: grid;
+  gap: .8rem;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 22px;
+  padding: clamp(1.1rem, 2.4vw, 1.6rem);
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  min-height: 100%;
+}
+
+.ps-meta { display: flex; flex-wrap: wrap; gap: .5rem .6rem; align-items: center; justify-content: space-between; }
+.ps-chip { background: #eef6f7; border: 1px solid rgba(18,142,160,.22); color: var(--color-primary-700); padding: .36rem .65rem; border-radius: 999px; font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.ps-metric { display: inline-flex; align-items: center; gap: .4rem; color: var(--color-muted); font-weight: 600; font-size: .95rem; }
+.ps-metric i { color: var(--color-primary-600); }
+.ps-spark { width: 56px; height: 18px; color: var(--color-accent); opacity: .9; }
+
+.ps-quote { margin: 0; color: var(--color-text); font-size: clamp(1.05rem, 2.4vw, 1.2rem); line-height: 1.55; font-style: italic; }
+.ps-details { margin-top: .25rem; }
+.ps-summary { cursor: pointer; color: rgba(197,224,228,.9); font-weight: 600; font-size: .92rem; display: inline-flex; align-items: center; gap: .35rem; }
+.ps-summary::marker { content: none; }
+.ps-summary::after { content: '\25BC'; font-size: .7rem; opacity: .7; transition: transform .2s ease; }
+.ps-details[open] .ps-summary::after { transform: rotate(180deg); }
+.ps-full { color: var(--color-muted); line-height: 1.6; padding-top: .4rem; }
+.ps-author { display: flex; align-items: center; gap: .7rem; margin-top: auto; }
+.ps-avatar { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--color-primary-400), var(--color-primary-600)); color: #041a1f; font-weight: 800; }
+.ps-author-body { display: grid; line-height: 1.2; }
+.ps-author-body strong { color: #F8FDFF; }
+.ps-author-body span { color: rgba(197,224,228,.9); font-size: .92rem; }
+
+/* Per-program accent edge */
+.ps-card[data-program="ibs"]::before,
+.ps-card[data-program="weight"]::before,
+.ps-card[data-program="diabetes"]::before,
+.ps-card[data-program="lipids"]::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0; width: 3px;
+  border-radius: 3px 0 0 3px;
+}
+.ps-card[data-program="ibs"]::before { background: #6fe9d7; }
+.ps-card[data-program="weight"]::before { background: #7fbaff; }
+.ps-card[data-program="diabetes"]::before { background: #ffc177; }
+.ps-card[data-program="lipids"]::before { background: #ff8ab3; }
+
+.ps-cta { display: flex; gap: .8rem; justify-content: center; align-items: center; margin-top: clamp(1.5rem, 3vw, 2rem); flex-wrap: wrap; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ps-card { transition: none; }
+}
+
+/* ========================= PROXIMITY — REWORKED LAYOUT ========================= */
+#our-locations-teaser {
+  position: relative;
+  background:
+    radial-gradient(900px 520px at 15% -10%, rgba(18,142,160,.08), transparent 60%),
+    radial-gradient(800px 520px at 115% 0%, rgba(140,198,63,.07), transparent 60%),
+    linear-gradient(180deg, #f7fbfc 0%, #ffffff 100%);
+  color: var(--color-text);
+  padding: clamp(3.75rem, 7.5vw, 6.5rem) 0;
+}
+
+#our-locations-teaser::before,
+#our-locations-teaser::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Aurora ribbon layer */
+#our-locations-teaser::before {
+  background:
+    radial-gradient(60% 50% at 25% 30%, rgba(18,142,160,0.07), transparent 60%),
+    radial-gradient(55% 50% at 80% 35%, rgba(140,198,63,0.06), transparent 65%),
+    conic-gradient(from 120deg at 50% 50%, rgba(0,0,0,0.03), rgba(0,0,0,0) 40%, rgba(0,0,0,0.03));
+  mix-blend-mode: multiply;
+  animation: auroraShift 48s ease-in-out infinite alternate;
+  opacity: .6;
+}
+
+/* Rotating grid shimmer */
+#our-locations-teaser::after {
+  background-image:
+    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 120px 120px;
+  opacity: .10;
+  animation: gridDrift 90s linear infinite;
+}
+
+.prox-board {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 3vw, 1.8rem);
+  align-items: stretch;
+}
+@media (min-width: 960px) {
+  .prox-board { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.prox-left {
+  display: grid;
+  gap: clamp(.8rem, 2.5vw, 1.2rem);
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 22px;
+  padding: clamp(1rem, 2.4vw, 1.6rem);
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+
+.prox-metrics { display: flex; flex-wrap: wrap; gap: .5rem .6rem; align-items: center; justify-content: center; }
+.prox-count { display: inline-flex; align-items: center; gap: .5rem; background: #eef6f7; border: 1px solid rgba(18,142,160,.22); color: var(--color-primary-700); padding: .36rem .65rem; border-radius: 999px; font-weight: 800; }
+.prox-pill { display: inline-flex; align-items: center; gap: .45rem; background: #f5f9f9; border: 1px solid rgba(0,0,0,.08); color: var(--color-primary-700); padding: .36rem .65rem; border-radius: 999px; font-weight: 600; }
+.prox-lead { margin: 0; color: var(--color-muted); line-height: 1.6; }
+.prox-chips { display: grid; gap: .5rem; grid-template-columns: 1fr; }
+@media (min-width: 960px) { .prox-chips { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.prox-chip { display: inline-flex; align-items: center; gap: .4rem; border: 1px solid rgba(0,0,0,.08); color: var(--color-text); background: #fff; padding: .45rem .65rem; border-radius: 999px; text-decoration: none; font-weight: 600; width: 100%; }
+.prox-chip:hover { background: #f8fbfc; border-color: rgba(0,0,0,.12); }
+.prox-ctas { display: flex; gap: .8rem; flex-wrap: wrap; align-items: center; }
+
+.prox-right {
+  position: relative;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 22px;
+  padding: clamp(1rem, 2vw, 1.4rem);
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  min-height: 360px;
+  display: grid;
+  align-content: center;
+}
+.prox-map { width: 100%; height: auto; display: block; filter: drop-shadow(0 8px 24px rgba(0,0,0,.08)); }
+.prox-legend { position: absolute; right: .9rem; bottom: .9rem; display: flex; gap: .6rem; flex-wrap: wrap; background: #f8fbfc; border: 1px solid rgba(0,0,0,.08); color: var(--color-text); padding: .35rem .6rem; border-radius: 999px; font-size: .85rem; }
+
+/* Subtle animation on schematic map */
+.prox-map path {
+  stroke-linecap: round;
+  stroke-dasharray: 10 14;
+  animation: pathFlow 24s linear infinite;
+}
+.prox-map circle {
+  animation: nodePulse 7s ease-in-out infinite;
+}
+
+@keyframes pathFlow {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: -240; }
+}
+
+@keyframes nodePulse {
+  0%, 100% { r: 4.5; opacity: .9; }
+  50%      { r: 6;   opacity: 1; }
+}
+
+@keyframes auroraShift {
+  0%   { transform: translateY(0) scale(1); filter: hue-rotate(0deg) saturate(1); }
+  50%  { transform: translateY(-1.5%) scale(1.02); filter: hue-rotate(6deg) saturate(1.05); }
+  100% { transform: translateY(0) scale(1); filter: hue-rotate(0deg) saturate(1); }
+}
+
+@keyframes gridDrift {
+  0%   { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(360deg) scale(1.02); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prox-left, .prox-right { transition: none; }
+  #our-locations-teaser::before, #our-locations-teaser::after { animation: none; }
+  .prox-map path, .prox-map circle { animation: none; }
+}

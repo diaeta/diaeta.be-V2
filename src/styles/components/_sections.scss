@@ -1,7 +1,7 @@
 .content-section { padding: 3rem 0; background: var(--color-bg); }
 .content-section.alt { background: var(--color-surface); }
 .section-header { text-align: center; margin-bottom: 2rem; }
-.section-badge { display: inline-flex; align-items: center; gap: .5rem; padding: .35rem .6rem; background: #eef6f7; color: var(--color-primary-700); border-radius: 999px; font-weight: 600; font-size: .85rem; }
+.section-badge { display: inline-flex; align-items: center; gap: .5rem; padding: .35rem .6rem; background: #eef6f7; color: var(--color-primary-700); border-radius: 999px; font-weight: 600; font-size: .85rem; margin-bottom: .5rem; }
 .section-title { margin: .75rem 0 .25rem; font-size: clamp(1.6rem, 3.5vw, 2.25rem); color: var(--color-primary-700); }
 .section-subtitle { max-width: 70ch; margin-inline: auto; color: var(--color-muted); }
 
@@ -18,4 +18,3 @@
 }
 .card h3 { margin-top: .25rem; color: var(--color-primary-700); }
 .card .card-meta { color: var(--color-muted); font-size: .9rem; }
-

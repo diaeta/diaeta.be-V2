@@ -35,11 +35,12 @@ module.exports = async function (eleventyConfig) {
   });
 
   // Copy static assets to the output directory
-  eleventyConfig.addPassthroughCopy({ 'public/assets/js': '/assets/js' });
-  eleventyConfig.addPassthroughCopy({ 'public/images': '/images' });
-  eleventyConfig.addPassthroughCopy({ 'assets/images': '/assets/images' });
-  eleventyConfig.addPassthroughCopy({ 'public/videos': '/videos' });
-  eleventyConfig.addPassthroughCopy({ 'public/favicon.ico': '/favicon.ico' });
+  eleventyConfig.addPassthroughCopy({ 'public/assets/js': 'assets/js' });
+  eleventyConfig.addPassthroughCopy({ "src/scripts": "assets/js" });
+  eleventyConfig.addPassthroughCopy({ 'public/images': 'images' });
+  eleventyConfig.addPassthroughCopy({ 'assets/images': 'assets/images' });
+  eleventyConfig.addPassthroughCopy({ 'public/videos': 'videos' });
+  eleventyConfig.addPassthroughCopy({ 'public/favicon.ico': 'favicon.ico' });
 
   eleventyConfig.addWatchTarget('src/styles');
 

@@ -1,7 +1,7 @@
 {
-  "ibs": {
-    "slug": "ibs",
-    "fileBase": "ibs",
+  "weight": {
+    "alt": "Weight Management  steady progress without hunger.",
+    "lqip": "data:image/jpeg;base64,/9j/2wBDAA4ODg4PDhASEhAXGBYYFyEfHBwfITIkJyQnJDJNMDgwMDgwTURSQz5DUkR6X1VVX3qMdnB2jKqYmKrWy9b/////2wBDAQ4ODg4PDhASEhAXGBYYFyEfHBwfITIkJyQnJDJNMDgwMDgwTURSQz5DUkR6X1VVX3qMdnB2jKqYmKrWy9b/////wgARCAAYABgDAREAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAABQEEBv/EABcBAQEBAQAAAAAAAAAAAAAAAAIDAQT/2gAMAwEAAhADEAAAAADrdeMXVBdF81R5kdKOz0OP/8QAIRAAAgEEAgMBAQAAAAAAAAAAAQIDAAQREgUhFDJRMUH/2gAIAQEAAT8At7NvDR9QVkTLZHa6k9g1xcK2810Tsy6Ar9Ncik88+5U+u2P4q1CZTZBAwRkUkA+xBNcT5S3ERZWIfrc/tcmkaZV0GdcZHypWZlVy+TjFcRdaXI3Y4CHFcjdLN0K//8QAHREAAgIBBQAAAAAAAAAAAAAAAREAAjEQEiJBYv/aAAgBAgEBPwA35HzK3ChuDEN2MxVSHUQ0ZUM//8QAHhEBAAIBBQEBAAAAAAAAAAAAAQACAxEhMTJBEgT/2gAIAQMBAT8AKCG/afoxK6A7TFi+KppvFt86j1l7XEsvbiVtbyzOeZelXzxmMSf/2Q==",
     "widths": [
       360,
       480,
@@ -12,48 +12,42 @@
       1536,
       1920
     ],
-    "sources": {
+    "files": {
       "avif": [
-        "/assets/images/guided-journeys/ibs/ibs-360.avif",
-        "/assets/images/guided-journeys/ibs/ibs-480.avif",
-        "/assets/images/guided-journeys/ibs/ibs-640.avif",
-        "/assets/images/guided-journeys/ibs/ibs-768.avif",
-        "/assets/images/guided-journeys/ibs/ibs-1024.avif",
-        "/assets/images/guided-journeys/ibs/ibs-1280.avif",
-        "/assets/images/guided-journeys/ibs/ibs-1536.avif",
-        "/assets/images/guided-journeys/ibs/ibs-1920.avif"
+        "weight-360.avif",
+        "weight-480.avif",
+        "weight-640.avif",
+        "weight-768.avif",
+        "weight-1024.avif",
+        "weight-1280.avif",
+        "weight-1536.avif",
+        "weight-1920.avif"
       ],
       "webp": [
-        "/assets/images/guided-journeys/ibs/ibs-360.webp",
-        "/assets/images/guided-journeys/ibs/ibs-480.webp",
-        "/assets/images/guided-journeys/ibs/ibs-640.webp",
-        "/assets/images/guided-journeys/ibs/ibs-768.webp",
-        "/assets/images/guided-journeys/ibs/ibs-1024.webp",
-        "/assets/images/guided-journeys/ibs/ibs-1280.webp",
-        "/assets/images/guided-journeys/ibs/ibs-1536.webp",
-        "/assets/images/guided-journeys/ibs/ibs-1920.webp"
+        "weight-360.webp",
+        "weight-480.webp",
+        "weight-640.webp",
+        "weight-768.webp",
+        "weight-1024.webp",
+        "weight-1280.webp",
+        "weight-1536.webp",
+        "weight-1920.webp"
       ],
       "jpg": [
-        "/assets/images/guided-journeys/ibs/ibs-360.jpg",
-        "/assets/images/guided-journeys/ibs/ibs-480.jpg",
-        "/assets/images/guided-journeys/ibs/ibs-640.jpg",
-        "/assets/images/guided-journeys/ibs/ibs-768.jpg",
-        "/assets/images/guided-journeys/ibs/ibs-1024.jpg",
-        "/assets/images/guided-journeys/ibs/ibs-1280.jpg",
-        "/assets/images/guided-journeys/ibs/ibs-1536.jpg",
-        "/assets/images/guided-journeys/ibs/ibs-1920.jpg"
+        "weight-360.jpg",
+        "weight-480.jpg",
+        "weight-640.jpg",
+        "weight-768.jpg",
+        "weight-1024.jpg",
+        "weight-1280.jpg",
+        "weight-1536.jpg",
+        "weight-1920.jpg"
       ]
-    },
-    "lqip": {
-      "data": "data:image/webp;base64,UklGRjwBAABXRUJQVlA4IDABAAAwBwCdASoeAB4APrVGoEmnI6MhMBgMAOAWiUATpBe1YI0D8UrzcfxNKsoL8rRc8gaM0lYMPiCoPX6KVPaSMBaX2RAA/v3h2b56uck1PcenTysaVlMpCOoQeZk8lnoBexcJEX8XXPY21fuqGetAnyGDEGXgAT2ordJn5dfnx3SBlM3FVt+Izc05QVj4/+Lag2a611ui0Al1+8w5hPTZyhbl7x4OhGCLh2DJySDi0Y5TV2SslByS26ue9o3e4O5Ra+zt4e2QUHSDEts0BlKWDWxBymBZfDGM0Lb3ohOmmCtcBAnBrWJTpC2WMeMzFipCQVBzupko7RYCieSPkEcbTDZQzcOWxaSDFVoQJwSxpbwsoq0PlQfkXB2tk4wFXOnJyolnt3nO6nnDiSCVbC1sq5AA",
-      "width": 30,
-      "height": 30,
-      "format": "webp"
     }
   },
-  "weight": {
-    "slug": "weight",
-    "fileBase": "weight",
+  "ibs": {
+    "alt": "IBS Coaching  calmer gut, confident routine.",
+    "lqip": "data:image/jpeg;base64,/9j/2wBDAA4ODg4PDhASEhAXGBYYFyEfHBwfITIkJyQnJDJNMDgwMDgwTURSQz5DUkR6X1VVX3qMdnB2jKqYmKrWy9b/////2wBDAQ4ODg4PDhASEhAXGBYYFyEfHBwfITIkJyQnJDJNMDgwMDgwTURSQz5DUkR6X1VVX3qMdnB2jKqYmKrWy9b/////wgARCAAYABgDAREAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAABQQCBv/EABcBAQEBAQAAAAAAAAAAAAAAAAIDAAH/2gAMAwEAAhADEAAAAOP6LA3ygXPQqk4h5Xh1sf/EACEQAAICAQQCAwAAAAAAAAAAAAECAxEABBITIQUUMlFh/9oACAEBAAE/AI1UxtIbpcETLHHLXTZovHnXxtvmKhdv78sWKG+LlIUiyRjyqqiLkJAIrrI9cunhAUAt1kccu9eOMmxRvH0+8IwljWh32Cesi8R7Ee4ar6q1z//EABsRAAIDAQEBAAAAAAAAAAAAAAABAhEhEhNR/9oACAECAQE/AC1JOjlRJOlhB/I4Sj1W0Pk9IrE9FKz/xAAeEQACAgICAwAAAAAAAAAAAAABAgAREiEDQRMiMf/aAAgBAwEBPwCUyEX2LjcjMKibO5yjstsaqK2OXrdxc54mNk/Iy4z/2Q==",
     "widths": [
       360,
       480,
@@ -64,48 +58,42 @@
       1536,
       1920
     ],
-    "sources": {
+    "files": {
       "avif": [
-        "/assets/images/guided-journeys/weight/weight-360.avif",
-        "/assets/images/guided-journeys/weight/weight-480.avif",
-        "/assets/images/guided-journeys/weight/weight-640.avif",
-        "/assets/images/guided-journeys/weight/weight-768.avif",
-        "/assets/images/guided-journeys/weight/weight-1024.avif",
-        "/assets/images/guided-journeys/weight/weight-1280.avif",
-        "/assets/images/guided-journeys/weight/weight-1536.avif",
-        "/assets/images/guided-journeys/weight/weight-1920.avif"
+        "ibs-360.avif",
+        "ibs-480.avif",
+        "ibs-640.avif",
+        "ibs-768.avif",
+        "ibs-1024.avif",
+        "ibs-1280.avif",
+        "ibs-1536.avif",
+        "ibs-1920.avif"
       ],
       "webp": [
-        "/assets/images/guided-journeys/weight/weight-360.webp",
-        "/assets/images/guided-journeys/weight/weight-480.webp",
-        "/assets/images/guided-journeys/weight/weight-640.webp",
-        "/assets/images/guided-journeys/weight/weight-768.webp",
-        "/assets/images/guided-journeys/weight/weight-1024.webp",
-        "/assets/images/guided-journeys/weight/weight-1280.webp",
-        "/assets/images/guided-journeys/weight/weight-1536.webp",
-        "/assets/images/guided-journeys/weight/weight-1920.webp"
+        "ibs-360.webp",
+        "ibs-480.webp",
+        "ibs-640.webp",
+        "ibs-768.webp",
+        "ibs-1024.webp",
+        "ibs-1280.webp",
+        "ibs-1536.webp",
+        "ibs-1920.webp"
       ],
       "jpg": [
-        "/assets/images/guided-journeys/weight/weight-360.jpg",
-        "/assets/images/guided-journeys/weight/weight-480.jpg",
-        "/assets/images/guided-journeys/weight/weight-640.jpg",
-        "/assets/images/guided-journeys/weight/weight-768.jpg",
-        "/assets/images/guided-journeys/weight/weight-1024.jpg",
-        "/assets/images/guided-journeys/weight/weight-1280.jpg",
-        "/assets/images/guided-journeys/weight/weight-1536.jpg",
-        "/assets/images/guided-journeys/weight/weight-1920.jpg"
+        "ibs-360.jpg",
+        "ibs-480.jpg",
+        "ibs-640.jpg",
+        "ibs-768.jpg",
+        "ibs-1024.jpg",
+        "ibs-1280.jpg",
+        "ibs-1536.jpg",
+        "ibs-1920.jpg"
       ]
-    },
-    "lqip": {
-      "data": "data:image/webp;base64,UklGRngBAABXRUJQVlA4IGwBAAAQBwCdASoeAB4APrVMnkmnJCKhMAgA4BaJYgCpFKq2UK47xKcirQJctUXVIaSA//l421HRd/P5sWcupfVeuS5MAAD+9dIvvZObMe7TNsUdGfVzlJuSSqpY7+dWDhfeZiQuUwM9TgJQd7GDCJF4zQIFQxkoauqs1+MRVxOO8wjnuveyjFFDPbP7uvZaqTuPyWdjRcu94HLwcjvh7qSCy7j5vxQjfWm5+FXqFkky6MxoAgVSYReBtALzkqnEAomGcCh5e/R0K9B3KRVJydmJt22RDzviFbJz40JpgScUHO5TInunAF1Sd70rRl2xojJb+sLdyaom5a4mKy2L24GnaUG5GVZwxgZy8THTB24bHPL9Z6VsRoQGOAeLdG44YkZsxb8fbaKrCn4rhI3BgXtg+GzHkAwVAdjtQ6b16XGHX7DM8EG+6xfp4Ljdk2CG+48hEElHjnT9fari+G2J0op8kLSYd5d/TlqwTQPUAAAA",
-      "width": 30,
-      "height": 30,
-      "format": "webp"
     }
   },
   "diabetes": {
-    "slug": "diabetes",
-    "fileBase": "diabetes",
+    "alt": "Type 2 Diabetes  data, warmth & control.",
+    "lqip": "data:image/jpeg;base64,/9j/2wBDAA4ODg4PDhASEhAXGBYYFyEfHBwfITIkJyQnJDJNMDgwMDgwTURSQz5DUkR6X1VVX3qMdnB2jKqYmKrWy9b/////2wBDAQ4ODg4PDhASEhAXGBYYFyEfHBwfITIkJyQnJDJNMDgwMDgwTURSQz5DUkR6X1VVX3qMdnB2jKqYmKrWy9b/////wgARCAAYABgDAREAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAABAMCBv/EABgBAAMBAQAAAAAAAAAAAAAAAAECAwQA/9oADAMBAAIQAxAAAADingkMkoDmdOub5ZzraOpwb//EACIQAAIBAwQCAwAAAAAAAAAAAAECAwAREgQTMUEhImGBsf/aAAgBAQABPwALZL5eb2ArYK7ZZhcqTx9Ux04gdG0ys/UmRBFWDNGG4FM8DOzRBgGYhSfypCPatKsQksclBI83opGccX46bupyGiBzI+BxX//EAB4RAAICAQUBAAAAAAAAAAAAAAERAAIhAxASMWGB/9oACAECAQE/AOhKW5E+Q1Js3LTTdQH92y5nLcrYtT//xAAgEQABBAAHAQAAAAAAAAAAAAABAAIREgMQIUFRYYEx/9oACAEDAQE/APphYrKBvaa8BsQmc9rGAeTUb6ZaVndcVI9T2AiZPi//2Q==",
     "widths": [
       360,
       480,
@@ -116,48 +104,42 @@
       1536,
       1920
     ],
-    "sources": {
+    "files": {
       "avif": [
-        "/assets/images/guided-journeys/diabetes/diabetes-360.avif",
-        "/assets/images/guided-journeys/diabetes/diabetes-480.avif",
-        "/assets/images/guided-journeys/diabetes/diabetes-640.avif",
-        "/assets/images/guided-journeys/diabetes/diabetes-768.avif",
-        "/assets/images/guided-journeys/diabetes/diabetes-1024.avif",
-        "/assets/images/guided-journeys/diabetes/diabetes-1280.avif",
-        "/assets/images/guided-journeys/diabetes/diabetes-1536.avif",
-        "/assets/images/guided-journeys/diabetes/diabetes-1920.avif"
+        "diabetes-360.avif",
+        "diabetes-480.avif",
+        "diabetes-640.avif",
+        "diabetes-768.avif",
+        "diabetes-1024.avif",
+        "diabetes-1280.avif",
+        "diabetes-1536.avif",
+        "diabetes-1920.avif"
       ],
       "webp": [
-        "/assets/images/guided-journeys/diabetes/diabetes-360.webp",
-        "/assets/images/guided-journeys/diabetes/diabetes-480.webp",
-        "/assets/images/guided-journeys/diabetes/diabetes-640.webp",
-        "/assets/images/guided-journeys/diabetes/diabetes-768.webp",
-        "/assets/images/guided-journeys/diabetes/diabetes-1024.webp",
-        "/assets/images/guided-journeys/diabetes/diabetes-1280.webp",
-        "/assets/images/guided-journeys/diabetes/diabetes-1536.webp",
-        "/assets/images/guided-journeys/diabetes/diabetes-1920.webp"
+        "diabetes-360.webp",
+        "diabetes-480.webp",
+        "diabetes-640.webp",
+        "diabetes-768.webp",
+        "diabetes-1024.webp",
+        "diabetes-1280.webp",
+        "diabetes-1536.webp",
+        "diabetes-1920.webp"
       ],
       "jpg": [
-        "/assets/images/guided-journeys/diabetes/diabetes-360.jpg",
-        "/assets/images/guided-journeys/diabetes/diabetes-480.jpg",
-        "/assets/images/guided-journeys/diabetes/diabetes-640.jpg",
-        "/assets/images/guided-journeys/diabetes/diabetes-768.jpg",
-        "/assets/images/guided-journeys/diabetes/diabetes-1024.jpg",
-        "/assets/images/guided-journeys/diabetes/diabetes-1280.jpg",
-        "/assets/images/guided-journeys/diabetes/diabetes-1536.jpg",
-        "/assets/images/guided-journeys/diabetes/diabetes-1920.jpg"
+        "diabetes-360.jpg",
+        "diabetes-480.jpg",
+        "diabetes-640.jpg",
+        "diabetes-768.jpg",
+        "diabetes-1024.jpg",
+        "diabetes-1280.jpg",
+        "diabetes-1536.jpg",
+        "diabetes-1920.jpg"
       ]
-    },
-    "lqip": {
-      "data": "data:image/webp;base64,UklGRjABAABXRUJQVlA4ICQBAAAQBgCdASoeAB4APrVSoUynJKMiKAqo4BaJZgCdMoR/YGgDlhs27uGYFw7ZQroGRWidAP02v6m9/gAA/vsQcocq38czBPeApOh7FfAUSxM4GSyQBMrAO6vus+vU/vaUvxf1CbmM/Um1fxE1mDK+Evhqxd0UaMz7vvzG8HmKhHgSmvikXrUzmV1YMmLWo00sZmu9owpISy/p4nH8QTE4RMHu6Gx3y8t0wfsAFh8X42eI42duDwmn7Tjjrb/wkuBRKtGRjjvFM/gqmhwn6ygFPPAf8A/N+mpdsGJu3INniK9zfMNLxJ/Pv+pehphCCJQgcEmLbTV84d/8hlmwHyJ6zcRGS0V4QG9ErJ4rpGXQcvP6DMnZuxSbuqecrX7DfmmKE0XCqAAA",
-      "width": 30,
-      "height": 30,
-      "format": "webp"
     }
   },
   "lipids": {
-    "slug": "lipids",
-    "fileBase": "lipids",
+    "alt": "Heart & Lipids  Mediterranean glow for cholesterol care.",
+    "lqip": "data:image/jpeg;base64,/9j/2wBDAA4ODg4PDhASEhAXGBYYFyEfHBwfITIkJyQnJDJNMDgwMDgwTURSQz5DUkR6X1VVX3qMdnB2jKqYmKrWy9b/////2wBDAQ4ODg4PDhASEhAXGBYYFyEfHBwfITIkJyQnJDJNMDgwMDgwTURSQz5DUkR6X1VVX3qMdnB2jKqYmKrWy9b/////wgARCAAYABgDAREAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAwQBAgUG/8QAFwEBAQEBAAAAAAAAAAAAAAAAAwIBBP/aAAwDAQACEAMQAAAA4lD1hdFQ2OfpWoTXlIs2XNl//8QAIxAAAgICAQMFAQAAAAAAAAAAAQIDEQASBBQhURMVIjFBkf/aAAgBAQABPwBBiBIo6TQtpf0Cb/TkhLm2Nnyc9ljjSRn5igJ2PxwwQIa6plB7WUrG4Eao539S1ta7Z1TyyHcSMVN7Kao4FjmanfkV5JFYywINUX+nP//EAB0RAQACAgIDAAAAAAAAAAAAAAEAAhESITEDBBP/2gAIAQIBAT8Ai7XxnHMKhH2QsGisPKWR05JuvRPmB0cwCvRWDZn/xAAfEQACAgIBBQAAAAAAAAAAAAABAgARAzEEEiEiQZH/2gAIAQMBAT8AniiXVwu5g4xIvq7R1KGrNQKvth9gysTvUststDjQaE//2Q==",
     "widths": [
       360,
       480,
@@ -168,43 +150,37 @@
       1536,
       1920
     ],
-    "sources": {
+    "files": {
       "avif": [
-        "/assets/images/guided-journeys/lipids/lipids-360.avif",
-        "/assets/images/guided-journeys/lipids/lipids-480.avif",
-        "/assets/images/guided-journeys/lipids/lipids-640.avif",
-        "/assets/images/guided-journeys/lipids/lipids-768.avif",
-        "/assets/images/guided-journeys/lipids/lipids-1024.avif",
-        "/assets/images/guided-journeys/lipids/lipids-1280.avif",
-        "/assets/images/guided-journeys/lipids/lipids-1536.avif",
-        "/assets/images/guided-journeys/lipids/lipids-1920.avif"
+        "lipids-360.avif",
+        "lipids-480.avif",
+        "lipids-640.avif",
+        "lipids-768.avif",
+        "lipids-1024.avif",
+        "lipids-1280.avif",
+        "lipids-1536.avif",
+        "lipids-1920.avif"
       ],
       "webp": [
-        "/assets/images/guided-journeys/lipids/lipids-360.webp",
-        "/assets/images/guided-journeys/lipids/lipids-480.webp",
-        "/assets/images/guided-journeys/lipids/lipids-640.webp",
-        "/assets/images/guided-journeys/lipids/lipids-768.webp",
-        "/assets/images/guided-journeys/lipids/lipids-1024.webp",
-        "/assets/images/guided-journeys/lipids/lipids-1280.webp",
-        "/assets/images/guided-journeys/lipids/lipids-1536.webp",
-        "/assets/images/guided-journeys/lipids/lipids-1920.webp"
+        "lipids-360.webp",
+        "lipids-480.webp",
+        "lipids-640.webp",
+        "lipids-768.webp",
+        "lipids-1024.webp",
+        "lipids-1280.webp",
+        "lipids-1536.webp",
+        "lipids-1920.webp"
       ],
       "jpg": [
-        "/assets/images/guided-journeys/lipids/lipids-360.jpg",
-        "/assets/images/guided-journeys/lipids/lipids-480.jpg",
-        "/assets/images/guided-journeys/lipids/lipids-640.jpg",
-        "/assets/images/guided-journeys/lipids/lipids-768.jpg",
-        "/assets/images/guided-journeys/lipids/lipids-1024.jpg",
-        "/assets/images/guided-journeys/lipids/lipids-1280.jpg",
-        "/assets/images/guided-journeys/lipids/lipids-1536.jpg",
-        "/assets/images/guided-journeys/lipids/lipids-1920.jpg"
+        "lipids-360.jpg",
+        "lipids-480.jpg",
+        "lipids-640.jpg",
+        "lipids-768.jpg",
+        "lipids-1024.jpg",
+        "lipids-1280.jpg",
+        "lipids-1536.jpg",
+        "lipids-1920.jpg"
       ]
-    },
-    "lqip": {
-      "data": "data:image/webp;base64,UklGRkIBAABXRUJQVlA4IDYBAAAwBwCdASoeAB4APrVQn0ynJKKiKAqo4BaJZACdMoMuycBtxOf/G83YFFlFw9FvE4BGubt5Lks5x/1MiwljKB7QPQAA/v2uyjZ4cONZrcd8+ruLrbXTRSr/7bcgAyHRBKs5ne1+mt35vKu6ZPgXFxi6yockMDXlAZGCeSKOG1XfAAqyUGZHZuRCTQ6VS30BdAC1ImDobJCGghmfv2/xz/fRSfGjYjPRVU/J2f/mkpbW/lWIgACYHrakAsrxKYhQeN2dpGVhDKQjxrEDzdkxYJtpUJOZakmCzjeoRuAFKmF/h3w1p3tc7Gj304Cv7T1nQltP3mQrh0Cuk5VWM/4N5+eCnQJmh47xgBRxu6fXTmMQLd6Vh862QUItvT5phV+bH5PPzKLulx6I67S4eT/ATPL1EnmcgAAA",
-      "width": 30,
-      "height": 30,
-      "format": "webp"
     }
   }
 }
