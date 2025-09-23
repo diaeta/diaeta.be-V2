@@ -141,6 +141,11 @@ head_extra: |
   </div>
 </section>
 
+<!-- Wave: hero to light content -->
+<div class="wave-sep wave-sep--bottom" aria-hidden="true">
+  <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,26 C240,58 480,74 720,42 C960,10 1200,10 1440,26 L1440,90 L0,90 Z"/></svg>
+  </div>
+
 
 
 
@@ -224,7 +229,10 @@ head_extra: |
 </section>
 
 
-<div class="section-divider-thick"></div>
+<!-- Wave: to light patient stories -->
+<div class="wave-sep wave-sep--top" aria-hidden="true">
+  <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,64 C240,16 480,16 720,48 C960,80 1200,96 1440,64 L1440,0 L0,0 Z"/></svg>
+  </div>
 
 <!-- =========================
 
@@ -234,6 +242,10 @@ head_extra: |
 
   ========================= -->
 
+<!-- Wave: into dark solutions -->
+<div class="wave-sep wave-sep--dark-top" aria-hidden="true">
+  <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,64 C240,16 480,16 720,48 C960,80 1200,96 1440,64 L1440,0 L0,0 Z"/></svg>
+  </div>
 <section id="targeted-solutions" class="solutions-section" aria-labelledby="solutions-title">
 
   <div class="solutions-backdrop" aria-hidden="true">
@@ -458,11 +470,12 @@ head_extra: |
 
     </div>
 
-
+    <!-- Wave: to light patient stories -->
+    <div class="wave-sep wave-sep--top" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,64 C240,16 480,16 720,48 C960,80 1200,96 1440,64 L1440,0 L0,0 Z"/></svg>
+    </div>
 
     {# Removed redundant Your Health Journey section to streamline UX #}
-
-
 
     <div class="solutions-cta">
 
@@ -734,53 +747,59 @@ head_extra: |
 
 <div class="section-divider"></div>
 
- <section id="nutrigenetic-testing" class="genetic-section section">
+ <!-- Soft wave top -->
+ <div class="wave-sep wave-sep--top" aria-hidden="true">
+   <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,64 C240,16 480,16 720,48 C960,80 1200,96 1440,64 L1440,0 L0,0 Z" fill="#f7fbfc"/></svg>
+ </div>
+ 
+ <section id="nutrigenetic-testing" class="nutri-section section">
   <div class="container">
-      <div class="row align-items-center g-lg-5">
-          <div class="col-lg-6 animate-on-scroll fade-up order-lg-1">
-              <div class="section-header text-start mb-4">
-                  <span class="section-badge"><i class="fa-solid fa-dna"></i><span>Nutrigenetic Testing</span></span>
-                  <h2 class="section-title mb-3">Could DNA insights inform your choices?</h2>
-                  <p class="section-subtitle">
-                      Imagine nutrition advice that's truly designed for you. <a href="https://nutrigenomix.com/" target="_blank" rel="noopener noreferrer" class="text-decoration-underline">Nutrigenomix®</a> tests analyze your unique genetic profile across 70+ markers, helping us create recommendations that work with your body's natural tendencies.
-                  </p>
-              </div>
-              <p class="mb-3">We are genuinely interested in finding the best approach for your specific needs. Together, we will use these insights to create a nutrition plan that feels natural, enjoyable, and effective for your unique body. These personalized tests help you:</p>
-              <ul class="list-styled-check small mb-4">
-                  <li>Optimize your <strong class="text-primary">weight management</strong> by understanding your unique response to proteins, fats, and carbohydrates.</li>
-                  <li>Adjust your vitamin and mineral intake (e.g., Vit. D, B12, Folate) according to <strong class="text-accent">your actual genetic needs</strong>.</li>
-                  <li>Personalize your nutrition for better <strong class="text-secondary">cardiovascular health</strong>.</li>
-                  <li>Identify potential food sensitivities (like caffeine or lactose) to better understand your body.</li>
-                  <li>Refine your strategies for <strong class="text-accent">sports performance</strong>, <strong class="text-secondary">fertility</strong>, or a <strong class="text-primary">balanced plant-based diet</strong>.</li>
-              </ul>
-              <p class="mb-4">This complementary service (€275 per panel) is an investment in a deep understanding of your body, for truly lasting results.</p>
-              <div class="d-flex flex-wrap gap-2 cta-equal-width-group">
-                  <a href="/en/nutrigenetic-tests/" class="btn btn-primary cta-genetic-test">
-                      <i class="fas fa-flask-vial me-2"></i>Explore the Tests in Detail
-                  </a>
-                  <a href="/en/appointment/" class="btn btn-outline-accent cta-genetic-test">
-                      <i class="fas fa-comments me-2"></i>Discuss in a Consultation
-                  </a>
-              </div>
-          </div>
-          <div class="col-lg-6 animate-on-scroll fade-up order-lg-2 text-center">
-              <div class="intro-visual d-inline-block">
-                  <div class="position-relative">
-                      <picture>
-                          <source srcset="/images/dna-helix-abstract-640.webp 2x, /images/dna-helix-abstract-320.webp 1x" type="image/webp">
-                          <source srcset="/images/dna-helix-abstract-640.jpg 2x, /images/dna-helix-abstract-320.jpg 1x" type="image/jpeg">
-                          <img src="/images/dna-helix-abstract-320.jpg"
-                               alt="Stylized DNA helix symbolizing nutrigenetics and personalized nutrition at Diaeta"
-                               class="img-fluid dna-image shadow-sm rounded"
-                               width="320" height="320" loading="lazy" decoding="async">
-                      </picture>
-                  </div>
-                  <p class="text-muted fst-italic text-sm mt-3">Decode the secrets of your DNA for optimized nutrition.</p>
-              </div>
-          </div>
+    <div class="nutri-grid">
+      <div class="nutri-copy animate-on-scroll fade-up">
+        <span class="section-badge"><i class="fa-solid fa-dna"></i><span>Nutrigenetic Testing</span></span>
+        <h2 class="section-title">Could DNA insights inform your choices?</h2>
+        <p class="section-subtitle">
+          Imagine nutrition advice that's truly designed for you. <a href="https://nutrigenomix.com/" target="_blank" rel="noopener noreferrer">Nutrigenomix®</a> panels analyze 70+ markers to tailor recommendations to your biology.
+        </p>
+        <ul class="nutri-bullets" role="list">
+          <li><i class="fa-solid fa-scale-balanced"></i> Weight management tuned to your macronutrient response</li>
+          <li><i class="fa-solid fa-capsules"></i> Vitamins & minerals (D, B12, folate) adapted to your needs</li>
+          <li><i class="fa-solid fa-heart-pulse"></i> Cardiometabolic support with evidence‑based adjustments</li>
+          <li><i class="fa-solid fa-mug-hot"></i> Sensitivities (e.g., caffeine, lactose) understood and managed</li>
+          <li><i class="fa-solid fa-person-running"></i> Options for performance, fertility, and plant‑based living</li>
+        </ul>
+        <div class="nutri-stats">
+          <span class="nutri-stat"><i class="fa-solid fa-dna"></i> 70+ markers</span>
+          <span class="nutri-stat"><i class="fa-solid fa-flask-vial"></i> CLIA‑certified lab</span>
+          <span class="nutri-stat"><i class="fa-solid fa-user-check"></i> Personalized plan</span>
+        </div>
+        <div class="nutri-ctas">
+          <a href="/en/nutrigenetic-tests/" class="btn btn-primary btn-lg"><i class="fas fa-flask-vial me-2"></i><span>Explore the Tests</span></a>
+          <a href="/en/appointment/" class="btn btn-outline-primary btn-lg"><i class="fas fa-comments me-2"></i><span>Discuss With a Dietitian</span></a>
+        </div>
+        <p class="nutri-note">Optional add‑on (€275 per panel). We’ll help you decide if it’s right for you.</p>
       </div>
+      <div class="nutri-visual animate-on-scroll fade-up">
+        <div class="nutri-visual-card">
+          <picture>
+            <source srcset="/images/dna-helix-abstract-640.webp 2x, /images/dna-helix-abstract-320.webp 1x" type="image/webp">
+            <source srcset="/images/dna-helix-abstract-640.jpg 2x, /images/dna-helix-abstract-320.jpg 1x" type="image/jpeg">
+            <img src="/images/dna-helix-abstract-320.jpg"
+                 alt="Stylized DNA helix symbolizing nutrigenetics and personalized nutrition at Diaeta"
+                 class="nutri-image"
+                 width="320" height="320" loading="lazy" decoding="async">
+          </picture>
+          <p class="nutri-legend">A gentle, science‑first way to personalize your nutrition.</p>
+        </div>
+      </div>
+    </div>
   </div>
-  </section>
+ </section>
+ 
+ <!-- Soft wave bottom -->
+ <div class="wave-sep wave-sep--bottom" aria-hidden="true">
+   <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,26 C240,58 480,74 720,42 C960,10 1200,10 1440,26 L1440,90 L0,90 Z" fill="#ffffff"/></svg>
+ </div>
 
 <div class="section-divider"></div>
 
