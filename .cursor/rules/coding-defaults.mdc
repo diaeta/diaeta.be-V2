@@ -1,0 +1,33 @@
+---
+name: Coding Defaults (Slim)
+description: Minimal, scoped defaults for code edits to reduce tokens and noise.
+globs:
+  - src/**
+  - tests/**
+  - eleventy.config.js
+auto: true
+alwaysApply: false
+---
+
+# Coding Defaults
+
+Priorities
+
+- Minimal context only; prefer unified diffs with 3 lines context.
+- Stable cached prefix; small dynamic suffix; `max_tokens<=1200`; stops: "```", "\n\n".
+
+Short Rules
+
+- Return code or diff only; no rationale.
+- Use @Code/@Git diffs over full files; forbid pasting large files verbatim.
+- If referencing files, cite `path:line` ranges; cap RAG top-k<=5, chunk<=500 tokens.
+- Summarize tool/terminal output; avoid repeated re-reads of the same file.
+
+Output Format
+
+- Unified diff with 3 lines of context, or the minimal code block required.
+
+Prohibitions
+
+- No chain-of-thought, no broad RAG, no verbose logs.
+
