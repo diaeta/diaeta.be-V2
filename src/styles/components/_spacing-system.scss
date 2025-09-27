@@ -1,0 +1,317 @@
+/* =========================
+  SPACING SYSTEM & VERTICAL RHYTHM
+  Standardized spacing and vertical rhythm across all sections
+  ========================= */
+
+/* Spacing scale based on 8px grid */
+:root {
+  --space-xs: 0.25rem;   /* 4px */
+  --space-sm: 0.5rem;    /* 8px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4rem;     /* 64px */
+  --space-4xl: 6rem;     /* 96px */
+  --space-5xl: 8rem;     /* 128px */
+  
+  /* Responsive spacing */
+  --space-responsive-sm: clamp(0.5rem, 2vw, 1rem);
+  --space-responsive-md: clamp(1rem, 3vw, 1.5rem);
+  --space-responsive-lg: clamp(1.5rem, 4vw, 2.5rem);
+  --space-responsive-xl: clamp(2rem, 5vw, 3.5rem);
+  --space-responsive-2xl: clamp(2.5rem, 6vw, 4.5rem);
+  --space-responsive-3xl: clamp(3rem, 8vw, 6rem);
+}
+
+/* Section spacing */
+.section-spacing {
+  padding-block: var(--space-responsive-3xl);
+  
+  &--compact {
+    padding-block: var(--space-responsive-xl);
+  }
+  
+  &--large {
+    padding-block: var(--space-responsive-3xl);
+  }
+  
+  &--hero {
+    padding-block: var(--space-responsive-3xl);
+  }
+}
+
+/* Container spacing */
+.container-spacing {
+  padding-inline: var(--space-responsive-md);
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  &--narrow {
+    max-width: 800px;
+  }
+  
+  &--wide {
+    max-width: 1400px;
+  }
+}
+
+/* Grid spacing */
+.grid-spacing {
+  gap: var(--space-responsive-lg);
+  
+  &--tight {
+    gap: var(--space-responsive-md);
+  }
+  
+  &--loose {
+    gap: var(--space-responsive-xl);
+  }
+  
+  &--extra-loose {
+    gap: var(--space-responsive-2xl);
+  }
+}
+
+/* Card spacing */
+.card-spacing {
+  padding: var(--space-responsive-lg);
+  margin-bottom: var(--space-responsive-md);
+  
+  &--compact {
+    padding: var(--space-responsive-md);
+    margin-bottom: var(--space-responsive-sm);
+  }
+  
+  &--comfortable {
+    padding: var(--space-responsive-xl);
+    margin-bottom: var(--space-responsive-lg);
+  }
+}
+
+/* Text spacing */
+.text-spacing {
+  margin-bottom: var(--space-responsive-md);
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: var(--space-responsive-sm);
+  }
+  
+  p {
+    margin-bottom: var(--space-responsive-md);
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  ul, ol {
+    margin-bottom: var(--space-responsive-md);
+    
+    li {
+      margin-bottom: var(--space-xs);
+    }
+  }
+}
+
+/* Button spacing */
+.button-spacing {
+  margin: var(--space-responsive-sm);
+  
+  &--group {
+    display: flex;
+    gap: var(--space-responsive-md);
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  &--stacked {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-responsive-sm);
+    align-items: center;
+  }
+}
+
+/* Form spacing */
+.form-spacing {
+  .form-group {
+    margin-bottom: var(--space-responsive-lg);
+  }
+  
+  .form-label {
+    margin-bottom: var(--space-responsive-sm);
+  }
+  
+  .form-input {
+    margin-bottom: var(--space-responsive-sm);
+  }
+  
+  .form-help {
+    margin-top: var(--space-xs);
+  }
+  
+  .form-error {
+    margin-top: var(--space-xs);
+  }
+}
+
+/* List spacing */
+.list-spacing {
+  li {
+    margin-bottom: var(--space-responsive-sm);
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  &--tight li {
+    margin-bottom: var(--space-xs);
+  }
+  
+  &--loose li {
+    margin-bottom: var(--space-responsive-md);
+  }
+}
+
+/* Icon spacing */
+.icon-spacing {
+  margin-right: var(--space-responsive-sm);
+  
+  &--large {
+    margin-right: var(--space-responsive-md);
+  }
+  
+  &--small {
+    margin-right: var(--space-xs);
+  }
+}
+
+/* Image spacing */
+.image-spacing {
+  margin-bottom: var(--space-responsive-lg);
+  
+  &--compact {
+    margin-bottom: var(--space-responsive-md);
+  }
+  
+  &--large {
+    margin-bottom: var(--space-responsive-xl);
+  }
+}
+
+/* Responsive spacing utilities */
+.spacing-responsive {
+  &-xs { margin: var(--space-responsive-sm); }
+  &-sm { margin: var(--space-responsive-md); }
+  &-md { margin: var(--space-responsive-lg); }
+  &-lg { margin: var(--space-responsive-xl); }
+  &-xl { margin: var(--space-responsive-2xl); }
+  &-2xl { margin: var(--space-responsive-3xl); }
+}
+
+.padding-responsive {
+  &-xs { padding: var(--space-responsive-sm); }
+  &-sm { padding: var(--space-responsive-md); }
+  &-md { padding: var(--space-responsive-lg); }
+  &-lg { padding: var(--space-responsive-xl); }
+  &-xl { padding: var(--space-responsive-2xl); }
+  &-2xl { padding: var(--space-responsive-3xl); }
+}
+
+/* Vertical rhythm helpers */
+.vertical-rhythm {
+  > * + * {
+    margin-top: var(--space-responsive-md);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: var(--space-responsive-lg);
+    margin-bottom: var(--space-responsive-sm);
+    
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  
+  p {
+    margin-top: 0;
+    margin-bottom: var(--space-responsive-md);
+  }
+  
+  ul, ol {
+    margin-top: 0;
+    margin-bottom: var(--space-responsive-md);
+  }
+}
+
+/* Section-specific spacing */
+.hero-section {
+  padding-block: var(--space-responsive-3xl);
+  
+  .hero-content {
+    margin-bottom: var(--space-responsive-2xl);
+  }
+}
+
+.content-section {
+  padding-block: var(--space-responsive-2xl);
+  
+  .content-header {
+    margin-bottom: var(--space-responsive-xl);
+  }
+  
+  .content-body {
+    margin-bottom: var(--space-responsive-lg);
+  }
+}
+
+.cta-section {
+  padding-block: var(--space-responsive-xl);
+  
+  .cta-content {
+    margin-bottom: var(--space-responsive-lg);
+  }
+}
+
+/* Mobile spacing adjustments */
+@media (max-width: 767px) {
+  .section-spacing {
+    padding-block: var(--space-responsive-xl);
+    
+    &--hero {
+      padding-block: var(--space-responsive-2xl);
+    }
+  }
+  
+  .card-spacing {
+    padding: var(--space-responsive-md);
+  }
+  
+  .button-spacing--group {
+    flex-direction: column;
+    gap: var(--space-responsive-sm);
+  }
+  
+  .form-spacing .form-group {
+    margin-bottom: var(--space-responsive-md);
+  }
+}
+
+/* Print spacing */
+@media print {
+  .section-spacing {
+    padding-block: var(--space-md);
+  }
+  
+  .card-spacing {
+    padding: var(--space-md);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .button-spacing {
+    margin: var(--space-xs);
+  }
+}

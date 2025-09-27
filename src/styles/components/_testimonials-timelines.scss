@@ -1,17 +1,17 @@
 /* ========================= TESTIMONIALS — JOURNEY TIMELINES ========================= */
 
-/* Design tokens aligned to teal/indigo palette */
+/* Design tokens aligned to standardized teal/indigo palette */
 :root {
-  --tt-bg: #0C1B2A;
-  --tt-card: #112235;
-  --tt-text: #EAF2F4;
-  --tt-text-muted: #B9D5D9;
-  --tt-teal: #2BB9B3;
-  --tt-indigo: #3A4D7A;
-  --tt-glow: 0 0 24px rgba(43, 185, 179, 0.25);
+  --tt-bg: var(--color-dark-bg);
+  --tt-card: var(--color-dark-surface);
+  --tt-text: var(--color-dark-text);
+  --tt-text-muted: var(--color-dark-muted);
+  --tt-teal: var(--color-accent-dark);
+  --tt-indigo: var(--color-secondary);
+  --tt-glow: var(--glow-accent);
   --tt-border: rgba(255, 255, 255, 0.08);
   --tt-border-hover: rgba(255, 255, 255, 0.12);
-  --tt-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  --tt-shadow: var(--shadow-strong);
   --tt-shadow-hover: 0 14px 36px rgba(0, 0, 0, 0.28);
 }
 

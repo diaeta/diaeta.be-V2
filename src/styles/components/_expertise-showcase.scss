@@ -3,19 +3,19 @@
   Immersive experience showcasing Diaeta's scientific excellence
   ========================= */
 
-/* Design tokens for expertise section */
+/* Design tokens for expertise section - using standardized colors */
 :root {
-  --expertise-bg: #0C1B2A;
-  --expertise-card: #112235;
-  --expertise-text: #EAF2F4;
-  --expertise-text-muted: #B9D5D9;
-  --expertise-primary: #2BB9B3;
-  --expertise-secondary: #3A4D7A;
-  --expertise-accent: #6FE9D7;
-  --expertise-glow: 0 0 24px rgba(43, 185, 179, 0.25);
+  --expertise-bg: var(--color-dark-bg);
+  --expertise-card: var(--color-dark-surface);
+  --expertise-text: var(--color-dark-text);
+  --expertise-text-muted: var(--color-dark-muted);
+  --expertise-primary: var(--color-accent-dark);
+  --expertise-secondary: var(--color-secondary);
+  --expertise-accent: var(--color-accent);
+  --expertise-glow: var(--glow-accent);
   --expertise-border: rgba(255, 255, 255, 0.08);
   --expertise-border-hover: rgba(255, 255, 255, 0.12);
-  --expertise-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  --expertise-shadow: var(--shadow-strong);
   --expertise-shadow-hover: 0 14px 36px rgba(0, 0, 0, 0.28);
 }
 
@@ -561,20 +561,75 @@
   }
 }
 
-/* Responsive adjustments */
+/* Enhanced mobile optimization */
 @media (max-width: 767px) {
+  .expertise-section {
+    padding: clamp(2rem, 6vw, 4rem) 0;
+  }
+  
+  .expertise-head {
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+  
+  .expertise-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    line-height: 1.2;
+  }
+  
+  .expertise-lead {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    line-height: 1.5;
+  }
+  
+  .expertise-grid-cards {
+    gap: 1.5rem;
+    margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  }
+  
   .expertise-card {
     padding: 1.5rem;
+    border-radius: 1.25rem;
+  }
+  
+  .card-header {
+    margin-bottom: 1.25rem;
+  }
+  
+  .card-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+  
+  .card-metrics {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .metric {
+    padding: 0.75rem;
+  }
+  
+  .metric-number {
+    font-size: 1.5rem;
   }
   
   .timeline-item {
     flex-direction: column !important;
     text-align: center;
+    margin-bottom: 2rem;
   }
   
   .timeline-item .timeline-content {
     margin: 1rem 0 0 0 !important;
     text-align: center !important;
+    padding: 1.25rem;
   }
   
   .timeline-line {
@@ -586,14 +641,20 @@
     align-self: flex-start;
   }
   
+  .cta-content {
+    padding: 2rem 1.5rem;
+  }
+  
   .cta-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 0.75rem;
   }
   
   .cta-buttons .btn {
     width: 100%;
     max-width: 300px;
+    padding: 0.875rem 1.5rem;
   }
 }
 

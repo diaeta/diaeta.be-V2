@@ -77,76 +77,288 @@ head_extra: |
 
 
 
-<section class="hero-immersive" aria-labelledby="hero-title">
-  <div class="hero-immersive__background" aria-hidden="true">
-    <div class="hero-immersive__gradient hero-immersive__gradient--primary"></div>
-    <div class="hero-immersive__gradient hero-immersive__gradient--accent"></div>
-    <div class="hero-immersive__pattern"></div>
+
+<section class="hero-modern" aria-labelledby="hero-title">
+  <!-- Background elements for visual appeal -->
+  <div class="hero-modern__background" aria-hidden="true">
+    <div class="hero-modern__pattern"></div>
+    <div class="hero-modern__shapes">
+      <div class="shape shape--circle"></div>
+      <div class="shape shape--dot"></div>
+      <div class="shape shape--plus"></div>
+    </div>
   </div>
-  <div class="container hero-immersive__container">
-    <div class="hero-immersive__intro">
-      <span class="hero-immersive__eyebrow">
-        <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
-        Translational nutrition practice
-      </span>
-      <h1 class="hero-immersive__headline" id="hero-title">
-        Unlock lasting metabolic change with clinical nutrition partners
+
+  <div class="container hero-modern__container">
+    <div class="hero-modern__lead">
+      <div class="hero-modern__badge-group">
+        <span class="hero-modern__badge">
+          <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+          <span>Trusted dietitians in Brussels</span>
+        </span>
+        <div class="hero-modern__rating" aria-label="Patient satisfaction rating">
+          <div class="stars" aria-hidden="true">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <span class="rating-text">4.9/5 from 300+ patients</span>
+        </div>
+      </div>
+
+      <h1 class="hero-modern__headline" id="hero-title">
+        <span class="headline__main">Care that feels human</span>
+        <span class="headline__accent">science that delivers</span>
       </h1>
-      <p class="hero-immersive__copy">
-        Diaeta simplifies your IBS, weight, diabetes, and cholesterol management with medical dietitians who translate data into daily habits you can keep.
+
+      <p class="hero-modern__description">
+        Personalised nutrition for IBS, sustainable weight loss, diabetes and cholesterol management. We design plans around your culture, schedule and medical history—so healthy routines feel natural every day.
       </p>
-      <div class="hero-immersive__cta">
-        <a href="/en/appointment/" class="btn btn-accent btn-lg">
-          <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
-          <span>Book your consultation</span>
+
+      <ul class="hero-modern__benefits" role="list">
+        <li class="hero-modern__benefit" role="listitem">
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+          <span>In-clinic &amp; secure video consultations in EN / FR / NL</span>
+        </li>
+        <li class="hero-modern__benefit" role="listitem">
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+          <span>Evidence-based programmes tailored to your labs &amp; lifestyle</span>
+        </li>
+        <li class="hero-modern__benefit" role="listitem">
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+          <span>Real-life tools: meal plans, shopping guides &amp; symptom trackers</span>
+        </li>
+      </ul>
+
+      <div class="hero-modern__cta-group">
+        <a href="/en/appointment/" class="btn btn-primary btn-hero" aria-describedby="cta-description">
+          <span class="btn__icon">
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+          </span>
+          <span class="btn__text">Book your consultation</span>
+          <span class="btn__accent">New patients welcome</span>
         </a>
-        <a href="#approach" class="hero-immersive__secondary">
-          <span>Discover the Diaeta method</span>
-          <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+        <a href="#philosophy" class="btn btn-secondary-outline btn-hero">
+          <span class="btn__text">Discover our method</span>
+          <span class="btn__icon">
+            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+          </span>
         </a>
       </div>
-      <ul class="hero-immersive__trust">
-        <li><i class="fa-solid fa-shield-heart" aria-hidden="true"></i>INAMI/RIZIV registered care</li>
-        <li><i class="fa-solid fa-users" aria-hidden="true"></i>500+ guided journeys</li>
-        <li><i class="fa-solid fa-video" aria-hidden="true"></i>Telehealth or Brussels clinics</li>
+
+      <div id="cta-description" class="hero-modern__meta">
+        <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+        <span>No doctor referral needed&nbsp;&middot;&nbsp;INAMI registered&nbsp;&middot;&nbsp;Insurance reimbursements available</span>
+      </div>
+
+      <ul class="hero-modern__trust" role="list" aria-label="Why choose Diaeta">
+        <li class="trust-item" role="listitem">
+          <div class="trust-item__icon">
+            <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+          </div>
+          <div class="trust-item__content">
+            <span class="trust-item__title">INAMI Registered</span>
+            <span class="trust-item__detail">Official healthcare provider</span>
+          </div>
+        </li>
+        <li class="trust-item" role="listitem">
+          <div class="trust-item__icon">
+            <i class="fa-solid fa-users" aria-hidden="true"></i>
+          </div>
+          <div class="trust-item__content">
+            <span class="trust-item__title">500+ Success Stories</span>
+            <span class="trust-item__detail">Real results, lasting change</span>
+          </div>
+        </li>
+        <li class="trust-item" role="listitem">
+          <div class="trust-item__icon">
+            <i class="fa-solid fa-globe" aria-hidden="true"></i>
+          </div>
+          <div class="trust-item__content">
+            <span class="trust-item__title">Multilingual Care</span>
+            <span class="trust-item__detail">EN&nbsp;&middot;&nbsp;FR&nbsp;&middot;&nbsp;NL&nbsp;&middot;&nbsp;DE&nbsp;&middot;&nbsp;AR</span>
+          </div>
+        </li>
       </ul>
     </div>
-    <aside class="hero-immersive__flow" aria-label="What happens after you book">
-      <h2 class="hero-immersive__flow-title">Your first three touchpoints</h2>
-      <ol class="hero-immersive__flow-steps">
-        <li>
-          <span class="hero-immersive__step-index">01</span>
-          <div class="hero-immersive__step-body">
-            <p class="hero-immersive__step-heading">Clinical intake</p>
-            <p class="hero-immersive__step-copy">Medical history, body composition, and metrics aligned with your specialist reports.</p>
+
+    <div class="hero-modern__sidebar">
+      <div class="hero-modern__media" aria-labelledby="hero-media-title">
+        <span id="hero-media-title" class="sr-only">Diaeta dietitians working alongside patients</span>
+        <div class="hero-modern__media-card">
+          <picture>
+            <source srcset="/images/weightloss-hero-large-optimized.webp" type="image/webp">
+            <source srcset="/images/weightloss-hero-large-optimized.jpg" type="image/jpeg">
+            <img src="/images/weightloss-hero-large-optimized.jpg" alt="Dietitian supporting a patient during a consultation" loading="eager" width="960" height="960">
+          </picture>
+          <div class="hero-modern__media-badge">
+            <i class="fa-solid fa-user-md" aria-hidden="true"></i>
+            <span>Registered dietitian support</span>
           </div>
-        </li>
-        <li>
-          <span class="hero-immersive__step-index">02</span>
-          <div class="hero-immersive__step-body">
-            <p class="hero-immersive__step-heading">Precision roadmap</p>
-            <p class="hero-immersive__step-copy">Targeted nutrition protocol with FODMAP, glycemic, or lipid focus plus simple meal systems.</p>
+        </div>
+        <div class="hero-modern__media-note">
+          <span class="media-note__title">First session</span>
+          <p class="media-note__copy">60 minutes to map your routines, medical history and goals before co-creating your plan.</p>
+        </div>
+      </div>
+
+      <div class="hero-modern__stat-grid" role="list">
+        <div class="hero-modern__stat-card" role="listitem">
+          <span class="hero-modern__stat-value">92%</span>
+          <span class="hero-modern__stat-caption">complete their personalised journey with us</span>
+        </div>
+        <div class="hero-modern__stat-card" role="listitem">
+          <span class="hero-modern__stat-value">3.2x</span>
+          <span class="hero-modern__stat-caption">faster symptom relief with guided nutrition</span>
+        </div>
+        <div class="hero-modern__stat-card" role="listitem">
+          <span class="hero-modern__stat-value">48h</span>
+          <span class="hero-modern__stat-caption">average time to first video consultation</span>
+        </div>
+      </div>
+
+      <div class="hero-modern__availability">
+        <div class="hero-modern__availability-icon">
+          <i class="fa-solid fa-calendar-day" aria-hidden="true"></i>
+        </div>
+        <div class="hero-modern__availability-copy">
+          <span class="hero-modern__availability-title">Next openings</span>
+          <span class="hero-modern__availability-detail">Appointments this week in Ixelles, Uccle &amp; online</span>
+        </div>
+        <a class="hero-modern__availability-link" href="/en/appointment/">
+          <span>Reserve now</span>
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <aside class="hero-modern__process" aria-label="How we help you succeed">
+        <h2 class="process__title">
+          <span class="process__subtitle">How it works</span>
+          <span class="process__headline">Your path to lasting results</span>
+        </h2>
+
+        <div class="process__steps">
+          <div class="process-step" data-step="1">
+            <div class="process-step__number">
+              <span>1</span>
+            </div>
+            <div class="process-step__content">
+              <h3 class="process-step__title">Understanding you</h3>
+              <p class="process-step__description">We review your story, health history and lifestyle to co-create a personalised strategy.</p>
+              <span class="process-step__duration">60 min&nbsp;&middot;&nbsp;In-clinic or video</span>
+            </div>
           </div>
-        </li>
-        <li>
-          <span class="hero-immersive__step-index">03</span>
-          <div class="hero-immersive__step-body">
-            <p class="hero-immersive__step-heading">Continuous calibration</p>
-            <p class="hero-immersive__step-copy">Follow-up in person or online with data check-ins, coaching, and outcome reviews.</p>
+
+          <div class="process-step" data-step="2">
+            <div class="process-step__number">
+              <span>2</span>
+            </div>
+            <div class="process-step__content">
+              <h3 class="process-step__title">Building your roadmap</h3>
+              <p class="process-step__description">Meal frameworks, grocery guides and symptom tracking that fit your schedule.</p>
+              <span class="process-step__duration">Start immediately&nbsp;&middot;&nbsp;Continuous adjustments</span>
+            </div>
           </div>
-        </li>
-      </ol>
-      <p class="hero-immersive__note"><i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i> Average completion rate 92% with personalised pacing. Results vary.</p>
-    </aside>
+
+          <div class="process-step" data-step="3">
+            <div class="process-step__number">
+              <span>3</span>
+            </div>
+            <div class="process-step__content">
+              <h3 class="process-step__title">Progress together</h3>
+              <p class="process-step__description">Regular check-ins to adapt, celebrate wins and sustain your results long term.</p>
+              <span class="process-step__duration">Flexible cadence&nbsp;&middot;&nbsp;WhatsApp support</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="process__success-note">
+          <div class="success-note__icon">
+            <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+          </div>
+          <div class="success-note__content">
+            <span class="success-note__stat">92% completion rate</span>
+            <span class="success-note__detail">with personalised pacing and ongoing support</span>
+          </div>
+        </div>
+      </aside>
+    </div>
   </div>
 </section>
 
-<!-- Wave: hero to light content -->
-<div class="wave-sep wave-sep--bottom" aria-hidden="true">
-  <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,26 C240,58 480,74 720,42 C960,10 1200,10 1440,26 L1440,90 L0,90 Z"/></svg>
+
+
+<section class="home-overview" aria-labelledby="overview-title">
+  <div class="container home-overview__container">
+    <header class="home-overview__header">
+      <div class="home-overview__eyebrow">
+        <i class="fa-solid fa-circle-nodes" aria-hidden="true"></i>
+        <span>Experience the difference</span>
+      </div>
+      <h2 id="overview-title" class="home-overview__title">Everything you need for confident change</h2>
+      <p class="home-overview__description">We pair clinical expertise with everyday coaching so you gain clarity, calm and measurable progress from the very first session.</p>
+    </header>
+
+    <div class="home-overview__grid" role="list">
+      <article class="home-overview__card home-overview__card--onboarding" role="listitem">
+        <div class="home-overview__icon">
+          <i class="fa-solid fa-comments" aria-hidden="true"></i>
+        </div>
+        <div class="home-overview__content">
+          <h3 class="home-overview__card-title">Warm, structured onboarding</h3>
+          <p class="home-overview__card-copy">A dedicated dietitian welcomes you, reviews your context and defines quick wins for the first week.</p>
+          <ul class="home-overview__list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i>Personal health + lifestyle assessment</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i>Tailored goals and accountability plan</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i>Access to our secure patient portal</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="home-overview__card home-overview__card--insights" role="listitem">
+        <div class="home-overview__icon">
+          <i class="fa-solid fa-microscope" aria-hidden="true"></i>
+        </div>
+        <div class="home-overview__content">
+          <h3 class="home-overview__card-title">Insights that stay practical</h3>
+          <p class="home-overview__card-copy">We translate lab data and research into simple, tasty meal ideas that suit your routines.</p>
+          <ul class="home-overview__list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i>Personalised recipe frameworks</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i>Smart shopping and dining out tips</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i>Progress dashboards you can follow</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="home-overview__card home-overview__card--support" role="listitem">
+        <div class="home-overview__icon">
+          <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+        </div>
+        <div class="home-overview__content">
+          <h3 class="home-overview__card-title">Support built around your life</h3>
+          <p class="home-overview__card-copy">Stay in touch between sessions with compassionate nudges, optional WhatsApp check-ins and micro-adjustments.</p>
+          <ul class="home-overview__list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i>Flexible evening &amp; weekend slots</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i>Follow-up summaries delivered in 24h</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i>Care navigation when other specialists join</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <div class="home-overview__cta">
+      <a class="btn btn-primary btn-lg" href="/en/appointment/">
+        <span>Plan your first visit</span>
+        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </a>
+      <a class="btn btn-outline-primary btn-lg" href="/en/diaeta-method/">
+        <span>Meet the team</span>
+      </a>
+    </div>
   </div>
-
-
+</section>
 
 
 <!-- =========================
@@ -1866,5 +2078,6 @@ head_extra: |
     </div>
   </div>
 </section>
+
 
 

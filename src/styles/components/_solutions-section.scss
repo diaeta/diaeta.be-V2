@@ -1,97 +1,14 @@
-/* ====== TARGETED SOLUTIONS // IMMERSIVE CONSTELLATION ====== */
+/* ====== HEALTHCARE SOLUTIONS SECTION ====== */
 .solutions-section {
   position: relative;
   overflow: hidden;
-  isolation: isolate;
-  color: #EAF3F4;
-  background:
-    radial-gradient(1200px 720px at -20% -25%, rgba(63, 170, 194, 0.25), transparent 60%),
-    radial-gradient(980px 680px at 110% 0%, rgba(77, 56, 151, 0.28), transparent 65%),
-    linear-gradient(180deg, var(--color-primary-900) 0%, #021d24 100%);
-  padding: clamp(3.5rem, 6.5vw, 6rem) 0 clamp(4rem, 7vw, 6.75rem);
+  color: var(--color-text);
+  background: var(--color-surface);
+  padding: clamp(4rem, 8vw, 6rem) 0;
 }
 
 .solutions-backdrop {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-  filter: saturate(130%);
-}
-
-.solutions-backdrop__orb {
-  position: absolute;
-  width: clamp(22rem, 35vw, 32rem);
-  height: clamp(22rem, 35vw, 32rem);
-  border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.55;
-}
-
-.orb--left {
-  top: -18%;
-  left: -12%;
-  background: radial-gradient(circle at 30% 30%, rgba(125, 239, 217, 0.65), rgba(14, 85, 105, 0));
-}
-
-.orb--right {
-  top: 38%;
-  right: -14%;
-  background: radial-gradient(circle at 70% 40%, rgba(120, 172, 255, 0.55), rgba(12, 46, 84, 0));
-}
-
-.solutions-backdrop__grid {
-  position: absolute;
-  inset: -45% -10%;
-  background-image:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 160px 160px;
-  opacity: 0.15;
-  transform: rotate(5deg);
-  mix-blend-mode: screen;
-}
-
-.solutions-backdrop__shooting-star {
-  --angle: 12deg;
-  position: absolute;
-  width: clamp(12rem, 24vw, 18rem);
-  height: 2px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 45%, rgba(255, 255, 255, 0) 100%);
-  opacity: 0.55;
-  animation: shooting-trail 18s linear infinite;
-}
-
-.shooting-star--one {
-  top: 18%;
-  left: -15%;
-  animation-duration: 20s;
-}
-
-.shooting-star--two {
-  top: 68%;
-  right: -18%;
-  --angle: -9deg;
-  animation-duration: 16s;
-  animation-direction: reverse;
-}
-
-@keyframes shooting-trail {
-  0% {
-    transform: translateX(-140%) rotate(var(--angle));
-    opacity: 0;
-  }
-  15% {
-    opacity: 0.85;
-  }
-  45% {
-    opacity: 0.55;
-  }
-  100% {
-    transform: translateX(160%) rotate(var(--angle));
-    opacity: 0;
-  }
+  display: none; /* Remove all sci-fi background elements */
 }
 
 .solutions-section .container {
@@ -111,15 +28,15 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  color: #F5FEFF;
-  padding: 0.42rem 0.85rem;
-  border-radius: 999px;
-  letter-spacing: 0.14em;
+  background: var(--color-primary-50);
+  border: var(--medical-border);
+  color: var(--color-primary-700);
+  padding: 0.5rem 1rem;
+  border-radius: 24px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .solutions-head h2 {
@@ -127,16 +44,16 @@
   font-size: clamp(1.85rem, 4.8vw, 2.8rem);
   line-height: 1.12;
   margin: clamp(0.6rem, 1.6vw, 0.9rem) 0;
-  color: #F7FEFF;
+  color: var(--color-text);
   font-weight: 700;
 }
 
 .solutions-head .lead {
-  color: rgba(197, 224, 228, .92);
-  max-width: 72ch;
+  color: var(--color-medical-gray-600);
+  max-width: 70ch;
   margin: 0 auto;
-  font-size: clamp(1.02rem, 3vw, 1.15rem);
-  line-height: 1.68;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  line-height: 1.6;
 }
 
 .solutions-grid {
@@ -160,124 +77,67 @@
 
 .solution-card {
   position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  padding: clamp(1.4rem, 2.5vw, 1.85rem);
-  border-radius: 22px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: 16px;
+  background: #ffffff;
+  border: var(--medical-border);
+  box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
-  gap: clamp(0.65rem, 2vw, 1.1rem);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease, border-color 0.3s ease;
-  backdrop-filter: blur(6px);
+  gap: clamp(1rem, 2vw, 1.25rem);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
   min-height: 100%;
-  --accent: #73d7ff;
-  --accent-soft: rgba(115, 215, 255, 0.2);
-  --accent-strong: rgba(115, 215, 255, 0.85);
-  --accent-border: rgba(115, 215, 255, 0.4);
-  --accent-glow: rgba(115, 215, 255, 0.55);
+  --accent: var(--color-service-weight); /* Default blue */
 }
 
-/* Subtle per-program accent bar */
+/* Medical service accent indicator */
 .solution-card::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; height: 3px;
-  background: linear-gradient(90deg, transparent 0%, var(--accent-strong) 35%, var(--accent-strong) 65%, transparent 100%);
-  opacity: 0.7;
+  top: 0; left: 0; right: 0; height: 4px;
+  background: var(--accent);
+  border-radius: 16px 16px 0 0;
   pointer-events: none;
 }
 
-.solutions-grid:hover .solution-card:hover {
-  filter: none;
-  transform: translateY(-16px) scale(1.01);
-  opacity: 1;
+.solution-card:hover {
+  box-shadow: var(--shadow-elevated);
+  border-color: var(--accent);
 }
 
-/* Motion safeties */
-@media (prefers-reduced-motion: reduce) {
-  .solutions-grid:hover .solution-card,
-  .solutions-grid:hover .solution-card:hover,
-  .solution-card:focus-within,
-  .solution-card:hover {
-    transform: none !important;
-    transition: none !important;
-  }
-}
-
-.solution-card:hover,
-.solution-card:focus-within {
-  box-shadow: 0 28px 55px rgba(0, 0, 0, 0.34);
-  border-color: var(--accent-border);
-}
-
+/* Healthcare service colors - meaningful medical associations */
 .solution-card[data-program="ibs"],
 .atlas-panel[data-program="ibs"] {
-  --accent: #6fe9d7;
-  --accent-soft: rgba(111, 233, 215, 0.18);
-  --accent-strong: rgba(111, 233, 215, 0.82);
-  --accent-border: rgba(111, 233, 215, 0.45);
-  --accent-glow: rgba(111, 233, 215, 0.55);
+  --accent: var(--color-service-ibs); /* Green for digestive health */
 }
 
 .solution-card[data-program="weight"],
 .atlas-panel[data-program="weight"] {
-  --accent: #7fbaff;
-  --accent-soft: rgba(127, 186, 255, 0.2);
-  --accent-strong: rgba(127, 186, 255, 0.85);
-  --accent-border: rgba(127, 186, 255, 0.42);
-  --accent-glow: rgba(127, 186, 255, 0.55);
+  --accent: var(--color-service-weight); /* Blue for stability/trust */
 }
 
 .solution-card[data-program="t2d"],
 .atlas-panel[data-program="t2d"] {
-  --accent: #ffc177;
-  --accent-soft: rgba(255, 193, 119, 0.2);
-  --accent-strong: rgba(255, 193, 119, 0.88);
-  --accent-border: rgba(255, 193, 119, 0.45);
-  --accent-glow: rgba(255, 193, 119, 0.55);
+  --accent: var(--color-service-diabetes); /* Amber for energy/metabolism */
 }
 
 .solution-card[data-program="lipids"],
 .atlas-panel[data-program="lipids"] {
-  --accent: #ff8ab3;
-  --accent-soft: rgba(255, 138, 179, 0.2);
-  --accent-strong: rgba(255, 138, 179, 0.85);
-  --accent-border: rgba(255, 138, 179, 0.45);
-  --accent-glow: rgba(255, 138, 179, 0.55);
+  --accent: var(--color-service-heart); /* Red for cardiovascular health */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .solution-card {
+    transition: none;
+  }
 }
 
 .solution-card__glow {
-  content: "";
-  position: absolute;
-  inset: -35%;
-  background: radial-gradient(circle at 20% 20%, var(--accent-strong), transparent 65%);
-  opacity: 0.45;
-  z-index: -2;
-  filter: blur(26px);
-  transition: transform 0.6s ease, opacity 0.6s ease;
+  display: none; /* Remove glow effects for healthcare design */
 }
 
 .solution-card__halo {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(130deg, transparent 30%, rgba(255, 255, 255, 0.2) 100%);
-  mix-blend-mode: screen;
-  opacity: 0.4;
-  z-index: -1;
-  transition: opacity 0.3s ease;
-}
-
-.solution-card:hover .solution-card__glow {
-  transform: scale(1.08) translate(12px, -8px);
-  opacity: 0.65;
-}
-
-.solution-card:hover .solution-card__halo {
-  opacity: 0.62;
+  display: none; /* Remove halo effects for healthcare design */
 }
 
 .solution-card__meta {
@@ -288,41 +148,40 @@
 }
 
 .solution-card .badge {
-  background: rgba(255, 255, 255, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  color: #F5FEFF;
-  padding: 0.42rem 0.75rem;
-  border-radius: 999px;
-  letter-spacing: 0.08em;
+  background: var(--color-medical-gray-50);
+  border: var(--medical-border);
+  color: var(--color-medical-gray-600);
+  padding: 0.4rem 0.75rem;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  font-size: 0.72rem;
-  font-weight: 700;
-  backdrop-filter: blur(4px);
+  font-size: 0.7rem;
+  font-weight: 600;
 }
 
 .solution-card__icon {
-  width: 2.7rem;
-  height: 2.7rem;
-  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 12px;
   display: grid;
   place-items: center;
-  font-size: 1.1rem;
-  color: #031820;
-  background: linear-gradient(150deg, rgba(255, 255, 255, 0.85) 0%, var(--accent-strong) 80%);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
+  font-size: 1rem;
+  color: #ffffff;
+  background: var(--accent);
+  box-shadow: var(--shadow-soft);
 }
 
 .solution-card h3 {
   margin: 0.4rem 0 0;
-  font-size: clamp(1.15rem, 2.5vw, 1.32rem);
-  font-weight: 700;
-  color: #F7FCFF;
+  font-size: clamp(1.15rem, 2.5vw, 1.3rem);
+  font-weight: 600;
+  color: var(--color-text);
   line-height: 1.25;
 }
 
 .solution-card .desc {
-  color: rgba(215, 235, 238, .9);
-  line-height: 1.58;
+  color: var(--color-medical-gray-600);
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -331,13 +190,13 @@
   padding: 0;
   list-style: none;
   display: grid;
-  gap: 0.48rem;
+  gap: 0.5rem;
 }
 
 .solution-card .bullets li {
   position: relative;
-  padding-left: 1.45rem;
-  color: rgba(221, 240, 243, 0.88);
+  padding-left: 1.5rem;
+  color: var(--color-medical-gray-600);
   font-size: 0.95rem;
   line-height: 1.5;
 }
@@ -346,12 +205,11 @@
   content: "";
   position: absolute;
   left: 0.25rem;
-  top: 0.58em;
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: 999px;
+  top: 0.6em;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 12px var(--accent-glow);
 }
 
 .cta-row {
@@ -619,55 +477,13 @@
   color: #F5FEFF;
 }
 
-.solutions-section .btn-primary,
-.solutions-section .btn-ghost {
-  appearance: none;
-  cursor: pointer;
-  text-decoration: none;
-  border-radius: 999px;
-  padding: 0.74rem 1.15rem;
-  font-weight: 700;
-  line-height: 1;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-  font-size: 0.95rem;
-}
-
+/* Use standard healthcare button styles from _buttons.scss */
 .solutions-section .btn-primary {
-  background: linear-gradient(120deg, #2ae4ff 0%, #1c9bff 48%, #52e7c4 100%);
-  color: #02131A;
-  border: none;
-  box-shadow: 0 14px 30px rgba(32, 196, 235, 0.45);
-}
-
-.solutions-section .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 20px 40px rgba(32, 196, 235, 0.45);
-}
-
-.solutions-section .btn-primary:active {
-  transform: translateY(1px);
+  /* Inherits from global .btn-primary */
 }
 
 .solutions-section .btn-ghost {
-  background: rgba(255, 255, 255, 0.12);
-  color: #E4F7FA;
-  border: 2px solid rgba(255, 255, 255, 0.45);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.24);
-  backdrop-filter: blur(8px);
-}
-
-.solutions-section .btn-ghost:hover {
-  transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.5);
-}
-
-.solutions-section .btn-primary:focus-visible,
-.solutions-section .btn-ghost:focus-visible,
-.orbit-cta:focus-visible {
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.22);
+  /* Use .btn-outline-primary instead */
 }
 
 @media (min-width: 720px) {
@@ -682,43 +498,26 @@
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 768px) {
   .cta-row {
     flex-direction: column;
     align-items: stretch;
   }
-  .cta-row .btn-primary,
-  .cta-row .btn-ghost {
+  .cta-row .btn {
     width: 100%;
     justify-content: center;
-  }
-  .solutions-cta {
-    flex-direction: column;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .solutions-grid:hover .solution-card,
-  .solution-card,
-  .orbit-cta,
-  .solutions-section .btn-primary,
-  .solutions-section .btn-ghost {
+  .solution-card {
     transition: none;
-    transform: none !important;
-  }
-  .solutions-backdrop__shooting-star {
-    animation: none;
-    opacity: 0.3;
   }
 }
 
 @media (prefers-contrast: high) {
-  .solution-card,
-  .atlas-panel {
-    box-shadow: none;
-    background: #0f2734;
-  }
-  .solutions-section .btn-ghost {
-    border-color: #fff;
+  .solution-card {
+    border-width: 2px;
+    border-color: var(--color-text);
   }
 }

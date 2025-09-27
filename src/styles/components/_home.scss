@@ -37,6 +37,182 @@
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .hero-metrics-disclaimer { color: #cfe9ec; font-size: .9rem; margin-top: .75rem; text-align: center; }
 
+/* HOME OVERVIEW SECTION */
+.home-overview {
+  position: relative;
+  padding: clamp(3rem, 8vw, 5rem) 0;
+  background: linear-gradient(180deg, rgba(244, 250, 251, 0.8) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.home-overview__container {
+  display: grid;
+  gap: clamp(2rem, 6vw, 3.5rem);
+}
+
+.home-overview__header {
+  display: grid;
+  gap: 1rem;
+  text-align: center;
+  max-width: 48rem;
+  margin: 0 auto;
+
+  @media (min-width: 64rem) {
+    text-align: left;
+    margin: 0;
+  }
+}
+
+.home-overview__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  align-self: center;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(10, 90, 101, 0.2);
+  background: rgba(12, 109, 124, 0.12);
+  color: var(--color-primary-700);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  i {
+    color: var(--color-primary-600);
+  }
+
+  @media (min-width: 64rem) {
+    align-self: flex-start;
+  }
+}
+
+.home-overview__title {
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-primary-900);
+  text-wrap: balance;
+}
+
+.home-overview__description {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-medical-gray-700);
+}
+
+.home-overview__grid {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+
+  @media (min-width: 64rem) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.home-overview__card {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.75rem, 4vw, 2.25rem);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(12, 109, 124, 0.15);
+  box-shadow: var(--shadow-soft);
+  min-height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elevated);
+  }
+}
+
+.home-overview__card--onboarding {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(198, 241, 236, 0.55) 100%);
+}
+
+.home-overview__card--insights {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(204, 224, 255, 0.5) 100%);
+}
+
+.home-overview__card--support {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 224, 240, 0.45) 100%);
+}
+
+.home-overview__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 18px;
+  background: rgba(12, 109, 124, 0.12);
+  color: var(--color-primary-700);
+  font-size: 1.3rem;
+}
+
+.home-overview__content {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.home-overview__card-title {
+  margin: 0;
+  font-size: 1.35rem;
+  color: var(--color-primary-900);
+}
+
+.home-overview__card-copy {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-medical-gray-700);
+}
+
+.home-overview__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+
+  li {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    font-size: 0.95rem;
+    color: var(--color-medical-gray-800);
+
+    i {
+      color: var(--color-primary-600);
+      font-size: 1rem;
+      margin-top: 0.15rem;
+    }
+  }
+}
+
+.home-overview__cta {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+
+  @media (min-width: 48rem) {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @media (min-width: 64rem) {
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.home-overview__cta .btn {
+  min-width: 220px;
+}
+
 /* PHILOSOPHY ATLAS */
 .philosophy-atlas {
   position: relative;
@@ -436,7 +612,7 @@
 .wave-sep--dark-top svg path { fill: #021d24; }
 .wave-sep--dark-bottom svg path { fill: #021d24; }
 
-/* ========================= PATIENT STORIES — PREMIUM GRID ========================= */
+/* ========================= PATIENT STORIES - PREMIUM GRID ========================= */
 .ps-section {
   position: relative;
   isolation: isolate;
@@ -507,7 +683,7 @@
   .ps-card { transition: none; }
 }
 
-/* ========================= PROXIMITY — REWORKED LAYOUT ========================= */
+/* ========================= PROXIMITY - REWORKED LAYOUT ========================= */
 #our-locations-teaser {
   position: relative;
   background:
@@ -628,3 +804,4 @@
   #our-locations-teaser::before, #our-locations-teaser::after { animation: none; }
   .prox-map path, .prox-map circle { animation: none; }
 }
+
