@@ -95,4 +95,108 @@
   color:#fff !important;
 }
 
+/* ===== HERO PRO PREMIUM REFINEMENTS ===== */
+
+/* 1) Rebalance layout + scale */
+.hero-pro__inner{
+  max-width: min(1360px, 94vw);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+@media (min-width: 1024px){
+  /* give the image more presence */
+  .hero-pro__inner{ grid-template-columns: 0.9fr 1.25fr; }
+}
+
+/* 2) Make the image big and cinematic */
+.hero-pro__media{
+  min-height: clamp(24rem, 54vh, 38rem);
+  aspect-ratio: 16/10; /* keeps a generous wide look */
+  border-radius: 22px;
+}
+.hero-pro__img{
+  object-position: 75% center;   /* keeps your face in the sweet spot */
+  filter: saturate(1.05) contrast(1.06);
+}
+
+/* Optional: bleed the image to the right edge on large screens (modern feel) */
+@media (min-width: 1280px){
+  .hero-pro__media{ margin-right: calc(-50vw + 50%); border-radius: 22px 0 0 22px; }
+}
+
+/* 3) Stronger CTA (conversion > aesthetics) */
+.hero-pro__cta{
+  /* Option A: solid brand button (highest contrast) */
+  background: var(--diaeta-teal);
+  color:#fff !important;
+  box-shadow: 0 8px 24px rgba(0,109,119,.22);
+}
+/* Option B (if you love gradient):
+.hero-pro__cta{
+  background: linear-gradient(135deg, #006D77 0%, #1a8e94 55%, #E29578 130%);
+  color:#fff !important;
+  box-shadow: 0 8px 24px rgba(0,109,119,.22);
+} */
+
+.btn-ghost{ border:1px solid color-mix(in srgb, var(--diaeta-teal) 28%, #fff); }
+.btn-ghost:hover{ border-color: var(--diaeta-teal); color: var(--diaeta-teal); }
+
+/* 4) Sharpen trust chips */
+.hero-pro__trust li{
+  background:#fff;
+  border:1px solid #d9e6e8;
+  color:#203536;
+}
+
+/* 5) Give the overlay more "sculpt" for text legibility and mood */
+.hero-pro__overlay{
+  opacity:.95;
+  background:
+    radial-gradient(120% 120% at 18% 52%, rgba(0,0,0,.34), transparent 60%),
+    linear-gradient(90deg,
+      color-mix(in srgb, var(--diaeta-teal) 28%, transparent) 0%,
+      transparent 50%,
+      transparent 100%);
+  mix-blend-mode:multiply;
+}
+
+/* 6) Micro-typography polish */
+.hero-pro__title{ letter-spacing:-.015em; line-height:1.04; }
+.hero-pro__subtitle{ color:#2a3a3a; }
+
+/* ===== Trust strip (hero) ===== */
+.truststrip{
+  display:flex; align-items:center; gap: .9rem;
+  margin-top: .6rem;
+}
+.truststrip--divider{
+  border-top:1px solid #e7eef0;
+  padding-top:.75rem;
+}
+.truststrip__label{
+  font-weight:600; letter-spacing:.01em;
+  color:#244; opacity:.8; white-space:nowrap; font-size:.9rem;
+}
+.truststrip__logos{
+  display:flex; align-items:center; flex-wrap:wrap;
+  gap: clamp(.7rem, 2.2vw, 1.4rem);
+  margin:0; padding:0; list-style:none;
+}
+.truststrip__logos img{
+  height: clamp(18px, 2.2vw, 26px);
+  filter: grayscale(1) contrast(.8) opacity(.75);
+  transform: translateZ(0);
+}
+.truststrip__logos img:hover{ filter: grayscale(0) contrast(1) opacity(1); }
+
+.chip{
+  display:inline-block; background:#fff; border:1px solid #e0eaec;
+  padding:.35rem .6rem; border-radius:999px; color:#203536; font-size:.92rem;
+}
+
+/* Dark sections fallback (if you reuse elsewhere) */
+@media (prefers-color-scheme: dark){
+  .truststrip--divider{ border-color: color-mix(in srgb, #fff 12%, transparent); }
+  .truststrip__label{ color:#eaf2f2; opacity:.85; }
+}
+
 /*# sourceMappingURL=main.css.map */
