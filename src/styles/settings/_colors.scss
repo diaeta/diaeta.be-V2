@@ -5,19 +5,19 @@ $colors: (
   surface: #f8fafc,
   text: #1e293b,
   muted: #64748b,
-  primary-900: #0f3460,
-  primary-800: #1e4a72,
-  primary-700: #2d7d8b,
-  primary-600: #3b82a0,
-  primary-500: #4a90a4,
-  primary-400: #6ba3b8,
-  primary-300: #8bb6cc,
-  primary-200: #b3d1e0,
-  primary-100: #dae8f0,
-  primary-50: #f0f6f9,
-  accent: #4a90e2,
-  accent-dark: #2563eb,
-  accent-light: #93c5fd,
+  primary-900: #006D77, // Deep Teal
+  primary-800: #006D77, // Deep Teal
+  primary-700: #006D77, // Deep Teal
+  primary-600: #006D77, // Deep Teal
+  primary-500: #006D77, // Deep Teal
+  primary-400: #83C5BE, // Sage
+  primary-300: #83C5BE, // Sage
+  primary-200: #83C5BE, // Sage
+  primary-100: #EDF6F9, // Mint
+  primary-50: #EDF6F9,  // Mint
+  accent: #E29578,      // Terracotta
+  accent-dark: #E29578, // Terracotta
+  accent-light: #FFDDD2, // Warm Peach
   secondary: #475569,
   secondary-light: #64748b,
   success: #059669,
@@ -43,19 +43,19 @@ $colors: (
   --color-surface: #{map.get($colors, surface)};
   --color-text: #{map.get($colors, text)};
   --color-muted: #{map.get($colors, muted)};
-  --color-primary-900: #{map.get($colors, primary-900)};
-  --color-primary-800: #{map.get($colors, primary-800)};
-  --color-primary-700: #{map.get($colors, primary-700)};
-  --color-primary-600: #{map.get($colors, primary-600)};
-  --color-primary-500: #{map.get($colors, primary-500)};
-  --color-primary-400: #{map.get($colors, primary-400)};
-  --color-primary-300: #{map.get($colors, primary-300)};
-  --color-primary-200: #{map.get($colors, primary-200)};
-  --color-primary-100: #{map.get($colors, primary-100)};
-  --color-primary-50: #{map.get($colors, primary-50)};
-  --color-accent: #{map.get($colors, accent)};
-  --color-accent-dark: #{map.get($colors, accent-dark)};
-  --color-accent-light: #{map.get($colors, accent-light)};
+  --color-primary-900: #{map.get($colors, primary-900)}; /* Deep Teal */
+  --color-primary-800: #{map.get($colors, primary-800)}; /* Deep Teal */
+  --color-primary-700: #{map.get($colors, primary-700)}; /* Deep Teal */
+  --color-primary-600: #{map.get($colors, primary-600)}; /* Deep Teal */
+  --color-primary-500: #{map.get($colors, primary-500)}; /* Deep Teal */
+  --color-primary-400: #{map.get($colors, primary-400)}; /* Sage */
+  --color-primary-300: #{map.get($colors, primary-300)}; /* Sage */
+  --color-primary-200: #{map.get($colors, primary-200)}; /* Sage */
+  --color-primary-100: #{map.get($colors, primary-100)}; /* Mint */
+  --color-primary-50: #{map.get($colors, primary-50)};  /* Mint */
+  --color-accent: #{map.get($colors, accent)};      /* Terracotta */
+  --color-accent-dark: #{map.get($colors, accent-dark)}; /* Terracotta */
+  --color-accent-light: #{map.get($colors, accent-light)}; /* Warm Peach */
   --color-secondary: #{map.get($colors, secondary)};
   --color-secondary-light: #{map.get($colors, secondary-light)};
   --color-success: #{map.get($colors, success)};
