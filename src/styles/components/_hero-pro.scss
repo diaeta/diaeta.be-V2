@@ -193,11 +193,16 @@
     }
     
     @media (min-width: 1280px) {
-      margin-left: 0; /* override auto from >=1024px */
-      justify-self: end; /* align to right edge of grid cell */
-      margin-right: calc(-50vw + 50%);
+      margin-left: auto;
+      justify-self: end;
+      margin-right: 0;
+      max-width: min(680px, 100%);
       border-radius: 22px 0 0 22px;
       overflow: visible; /* Allow image to bleed on large screens */
+    }
+
+    @media (min-width: 1536px) {
+      transform: translateX(clamp(0px, 4vw, 96px));
     }
   }
   
@@ -363,4 +368,123 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+/* =========================
+  HERO POLISH - ENHANCED STYLING
+  ========================= */
+
+/* Layout balance: give the image more weight on desktop */
+.hero-pro__inner {
+  max-width: min(1360px, 94vw);
+  gap: clamp(1.6rem, 4vw, 3.8rem);
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: 0.95fr 1.35fr;
+    padding-block: clamp(2rem, 5vw, 4rem);
+  }
+}
+
+/* Cinematic photo + better text legibility */
+.hero-pro__media {
+  min-height: clamp(26rem, 56vh, 40rem);
+  aspect-ratio: 16/10;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.10);
+}
+
+.hero-pro__img {
+  object-position: 74% center;
+  filter: saturate(1.05) contrast(1.06);
+}
+
+/* Sculpt the left for the headline */
+.hero-pro__overlay {
+  opacity: 0.95;
+  background:
+    radial-gradient(120% 120% at 18% 52%, rgba(0, 0, 0, 0.34), transparent 60%),
+    linear-gradient(90deg,
+      color-mix(in srgb, var(--diaeta-teal) 30%, transparent) 0%,
+      transparent 50% 100%);
+  mix-blend-mode: multiply;
+}
+
+/* Strong primary CTA for conversion */
+.hero-pro__cta {
+  background: var(--diaeta-teal);
+  color: #fff !important;
+  box-shadow: 0 10px 26px rgba(0, 109, 119, 0.20);
+  
+  &:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+  }
+}
+
+/* Trust chips: a hair darker for readability */
+.hero-pro__trust li {
+  background: #fff;
+  border: 1px solid #d7e4e7;
+  color: #1e3435;
+}
+
+/* Micro-answers: compact & scan-friendly */
+.hero-qa {
+  margin-top: 0.85rem;
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+  color: #294041;
+  
+  p {
+    margin: 0;
+  }
+  
+  strong {
+    color: #0f2627;
+  }
+}
+
+/* Availability pill (optional) */
+.hero-availability {
+  margin-top: 0.7rem;
+  display: inline-block;
+  background: #fff;
+  border: 1px dashed #cfe2e4;
+  color: #1f3637;
+  border-radius: 999px;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+/* Typographic rhythm */
+.hero-pro__title {
+  letter-spacing: -0.015em;
+  line-height: 1.04;
+  max-width: 22ch;
+}
+
+.hero-pro__subtitle {
+  max-width: 60ch;
+  color: #2a3a3a;
+}
+
+/* MOBILE tuning: make the photo hook early on small screens */
+@media (max-width: 767px) {
+  .hero-pro__inner {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-pro__media {
+    order: -1;
+    margin-bottom: 0.9rem;
+    min-height: 16rem;
+    aspect-ratio: auto;
+  }
+  
+  .hero-pro__img {
+    object-position: 60% center;
+  }
 }
