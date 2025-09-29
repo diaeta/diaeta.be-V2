@@ -336,7 +336,7 @@
 
   // 6) Handle window resize - close mobile menu on desktop
   window.addEventListener('resize', () => {
-    if (window.innerWidth >= 1024 && !drawer.hidden) {
+    if (window.innerWidth >= 1180 && !drawer.hidden) {
       closeDrawer();
     }
   });

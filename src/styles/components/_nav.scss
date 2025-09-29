@@ -6,6 +6,21 @@
 @use '../settings/colors' as *;
 @use '../settings/breakpoints' as *;
 
+// Debug rule removed - issue identified and fixed
+
+// Permanent fix for teal strip at top of viewport
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: #ffffff;
+  z-index: 9999;
+  pointer-events: none;
+}
+
 // Remove all bullet points, list markers, and underlines
 .nav,
 .mnav,
@@ -56,7 +71,7 @@ $glass-border: rgba(255, 255, 255, 0.2);
 // Optimized breakpoints for perfect responsive design
 $bp-sm: 480px;   // Small phones
 $bp-md: 768px;   // Tablets
-$bp-lg: 1024px;  // Small laptops - perfect mobile transition point
+$bp-lg: 1180px;  // Desktop nav threshold keeps tablets on mobile layout
 $bp-xl: 1280px;  // Large screens
 
 // ===== Site Header =====
@@ -87,7 +102,7 @@ $bp-xl: 1280px;  // Large screens
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 2rem; // Increased gap for better visual separation
     max-width: min(1400px, 95vw);
     margin-inline: auto;
     padding: 1rem clamp(1rem, 3vw, 2rem);
@@ -101,23 +116,24 @@ $bp-xl: 1280px;  // Large screens
       flex-shrink: 0;
     }
     
-    // Logo section
+    // Logo section - balanced spacing
     .brand {
       flex-shrink: 0;
-      margin-right: 1rem;
+      margin-right: 1rem; // Increased margin for better separation
     }
     
-    // Navigation section
+    // Navigation section - centered with balanced margins
     .nav {
       flex: 1;
-      margin: 0 1rem;
-      max-width: 600px;
+      margin: 0 2rem; // Increased margins to prevent overlap
+      max-width: clamp(600px, 70vw, 1080px);
+      min-width: 0; // Allow nav to shrink within header
     }
     
-    // Controls section
+    // Controls section - balanced spacing
     .header-ctrls {
       flex-shrink: 0;
-      margin-left: 1rem;
+      margin-left: 1.5rem; // Increased margin to prevent overlap
     }
   }
 
@@ -191,7 +207,7 @@ $bp-xl: 1280px;  // Large screens
 .nav {
   display: none;
   width: 100%;
-  max-width: 600px;
+  max-width: clamp(600px, 70vw, 1080px);
 
   @media (min-width: $bp-lg) {
     display: block;
@@ -216,7 +232,9 @@ $bp-xl: 1280px;  // Large screens
 
   &__link {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 0.5rem 0.8rem;
     line-height: 1;
     color: $ink;
@@ -269,6 +287,8 @@ $bp-xl: 1280px;  // Large screens
   // Dropdown functionality
   &__item {
     position: relative;
+    display: flex;
+    align-items: center;
 
     &--has-sub {
       .nav__toggle {

@@ -5,7 +5,7 @@
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(1200px 600px at 80% -5%, color-mix(in srgb, var(--color-primary-300) 18%, transparent), transparent 60%),
+    radial-gradient(1200px 600px at 80% 20%, color-mix(in srgb, var(--color-primary-300) 18%, transparent), transparent 60%),
     radial-gradient(900px 500px at 10% 105%, color-mix(in srgb, var(--color-accent) 14%, transparent), transparent 60%),
     linear-gradient(180deg, #ffffff, var(--color-surface));
 }

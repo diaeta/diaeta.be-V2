@@ -38,7 +38,6 @@ module.exports = async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/scripts": "assets/js" });
   eleventyConfig.addPassthroughCopy({ 'public/images': 'images' });
   eleventyConfig.addPassthroughCopy({ 'assets/images': 'assets/images' });
-  eleventyConfig.addPassthroughCopy({ 'public/videos': 'videos' });
   eleventyConfig.addPassthroughCopy({ 'public/favicon.ico': 'favicon.ico' });
 
   eleventyConfig.addWatchTarget('src/styles');

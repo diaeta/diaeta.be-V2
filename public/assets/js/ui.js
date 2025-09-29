@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Language switcher toggle
   const langSelector = document.querySelector('.lang-selector');
   if (langSelector) {
-    const langToggle = langSelector.querySelector('.lang-toggle');
+    const langToggle = langSelector.querySelector('.lang');
     const langDropdown = langSelector.querySelector('.lang-dropdown');
 
     langToggle.addEventListener('click', (event) => {
