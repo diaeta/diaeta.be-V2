@@ -14,63 +14,128 @@
     <!-- Assuming a global header is included via the build process -->
     
 
-  ﻿<header class="site-header" id="site-header">
-  <div class="container header-container">
-    <div class="logo">
-      <a href="/en/" aria-label="Diaeta - Home">
-        <img src="/images/logo.svg" alt="Diaeta Logo">
-      </a>
-    </div>
+  ﻿<header class="site-header" data-header="">
+  <div class="site-header__inner">
+    <a class="brand" href="/en/" aria-label="Diaeta — Home">
+      <img src="/images/logo.svg" alt="Diaeta">
+    </a>
 
-    <nav class="main-nav js-main-nav" id="main-nav" aria-label="Main navigation">
-      <ul class="nav-list">
-        <li class="nav-item"><a href="/en/" class="nav-link">Home</a></li>
-        <li class="nav-item dropdown js-dropdown">
-          <a class="nav-link dropdown-toggle js-dropdown-toggle" href="#" aria-expanded="false">About <i class="fa-solid fa-chevron-down nav-chev" aria-hidden="true"></i></a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/en/diaeta-method/">The Diaeta Method</a></li>
-            <li><a class="dropdown-item" href="/en/our-expertise/">Our Expertise</a></li>
-          </ul>
+    <!-- Desktop nav -->
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="/en/#hero" data-spy="">Home</a></li>
+        <li class="nav__item nav__item--has-sub">
+          <button class="nav__link nav__toggle" aria-expanded="false" aria-haspopup="true" aria-controls="about-sub">About</button>
+          <div id="about-sub" class="nav-sub" role="menu">
+            <a role="menuitem" class="nav-sub__link" href="/en/#philosophy">Our Philosophy</a>
+            <a role="menuitem" class="nav-sub__link" href="/en/our-expertise/">Our Expertise</a>
+            <a role="menuitem" class="nav-sub__link" href="/en/diaeta-method/">Diaeta Method</a>
+            <a role="menuitem" class="nav-sub__link" href="/en/contact/">Contact Us</a>
+          </div>
         </li>
-        <li class="nav-item dropdown js-dropdown">
-          <a class="nav-link dropdown-toggle js-dropdown-toggle is-active" href="#" aria-expanded="false">Services <i class="fa-solid fa-chevron-down nav-chev" aria-hidden="true"></i></a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item is-active" href="/en/weight-loss/" aria-current="page">Weight Loss</a></li>
-            <li><a class="dropdown-item" href="/en/irritable-bowel-syndrome-fodmap/">Irritable Bowel Syndrome</a></li>
-            <li><a class="dropdown-item" href="/en/diabetes-management/">Diabetes Management</a></li>
-            <li><a class="dropdown-item" href="/en/hypertension-cholesterol/">Hypertension & Cholesterol</a></li>
-            <li><a class="dropdown-item" href="/en/nutrigenetic-tests/">Nutrigenetic Tests</a></li>
-          </ul>
+
+        <!-- Optional: Services dropdown -->
+        <li class="nav__item nav__item--has-sub">
+          <button class="nav__link nav__toggle" aria-expanded="false" aria-haspopup="true" aria-controls="svcs-sub">Services</button>
+          <div id="svcs-sub" class="nav-sub" role="menu">
+            <a role="menuitem" class="nav-sub__link" href="/en/irritable-bowel-syndrome-fodmap/">IBS (Low-FODMAP)</a>
+            <a role="menuitem" class="nav-sub__link" href="/en/weight-loss/">Weight Management</a>
+            <a role="menuitem" class="nav-sub__link" href="/en/type-2-diabetes/">Type 2 Diabetes</a>
+            <a role="menuitem" class="nav-sub__link" href="/en/hypertension-cholesterol/">Cholesterol</a>
+          </div>
         </li>
-        <li class="nav-item"><a href="/en/locations/" class="nav-link">Locations</a></li>
-        <li class="nav-item"><a href="/en/tariffs/" class="nav-link">Pricing</a></li>
-        <li class="nav-item"><a href="/en/news/" class="nav-link">Blog</a></li>
-        <li class="nav-item"><a href="/en/contact/" class="nav-link">Contact</a></li>
+
+        <li class="nav__item"><a class="nav__link" href="/en/locations/" data-spy="">Locations</a></li>
+        <li class="nav__item"><a class="nav__link" href="/en/tariffs/" data-spy="">Pricing</a></li>
+        <li class="nav__item"><a class="nav__link" href="/en/news/" data-spy="">Blog</a></li>
+        <li class="nav__item"><a class="nav__link" href="/en/contact/" data-spy="">Contact</a></li>
       </ul>
     </nav>
 
-    <div class="header-actions">
-      <form class="site-search" action="/en/search/" method="get" role="search" aria-label="Site search">
-        <label for="q" class="visually-hidden">Search</label>
-        <input id="q" name="q" type="search" placeholder="Search..." aria-label="Search">
-        <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <!-- Right cluster -->
+    <div class="header-ctrls">
+      <form class="search" role="search" action="/en/search/" method="get">
+        <input class="search__input" type="search" name="q" placeholder="Search…" aria-label="Search">
       </form>
-      <div class="desktop-actions">
-        <a href="tel:+32479355551" class="phone-link" aria-label="Call Diaeta"><i class="fa-solid fa-phone"></i><span>+32 479 35 55 51</span></a>
-        <div class="lang-selector">
-          <button class="lang-toggle" aria-expanded="false"><i class="fa-solid fa-globe"></i><span>EN</span></button>
-          <div class="lang-dropdown">
-            <a href="/fr/" class="lang-option">Français</a>
-            <a href="/en/" class="lang-option active" aria-current="true">English</a>
-            <a href="/nl/" class="lang-option">Nederlands</a>
-            <a href="/de/" class="lang-option">Deutsch</a>
-            <a href="/ar/" class="lang-option">العربية</a>
+
+      <a class="header-phone" href="tel:+32479355551" aria-label="Call +32 479 35 55 51">+32 479 35 55 51</a>
+
+      <div class="lang-selector">
+        <button class="lang" aria-label="Language" aria-expanded="false" aria-haspopup="true" aria-controls="lang-dropdown">
+          <span class="lang-current">EN</span>
+          <span class="lang-arrow">▼</span>
+        </button>
+        <div id="lang-dropdown" class="lang-dropdown" role="menu">
+          <a role="menuitem" class="lang-option active" href="/en/" data-lang="en">English</a>
+          <a role="menuitem" class="lang-option" href="/fr/" data-lang="fr">Français</a>
+          <a role="menuitem" class="lang-option" href="/nl/" data-lang="nl">Nederlands</a>
+          <a role="menuitem" class="lang-option" href="/de/" data-lang="de">Deutsch</a>
+        </div>
+      </div>
+
+      <a class="btn btn-primary header-cta" href="/en/appointment/">Book Appointment</a>
+
+      <!-- Mobile burger -->
+      <button class="burger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span class="burger__bar"></span><span class="burger__bar"></span><span class="burger__bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div id="mobile-menu" class="mnav" hidden="">
+    <div class="mnav__panel" role="dialog" aria-modal="true" aria-label="Main menu">
+      <button class="mnav__close" aria-label="Close menu">✕</button>
+
+      <nav class="mnav__nav">
+        <a class="mnav__link" href="/en/#hero">Home</a>
+        <details class="mnav__group">
+          <summary class="mnav__link">About</summary>
+          <div class="mnav__sub">
+            <a class="mnav__sublink" href="/en/#philosophy">Our Philosophy</a>
+            <a class="mnav__sublink" href="/en/our-expertise/">Our Expertise</a>
+            <a class="mnav__sublink" href="/en/diaeta-method/">Diaeta Method</a>
+            <a class="mnav__sublink" href="/en/contact/">Contact Us</a>
+          </div>
+        </details>
+
+        <details class="mnav__group">
+          <summary class="mnav__link">Services</summary>
+          <div class="mnav__sub">
+            <a class="mnav__sublink" href="/en/irritable-bowel-syndrome-fodmap/">IBS (Low-FODMAP)</a>
+            <a class="mnav__sublink" href="/en/weight-loss/">Weight Management</a>
+            <a class="mnav__sublink" href="/en/type-2-diabetes/">Type 2 Diabetes</a>
+            <a class="mnav__sublink" href="/en/hypertension-cholesterol/">Cholesterol</a>
+          </div>
+        </details>
+
+        <a class="mnav__link" href="/en/locations/">Locations</a>
+        <a class="mnav__link" href="/en/tariffs/">Pricing</a>
+        <a class="mnav__link" href="/en/news/">Blog</a>
+        <a class="mnav__link" href="/en/contact/">Contact</a>
+      </nav>
+
+      <form class="mnav__search" role="search" action="/en/search/" method="get">
+        <input class="mnav__input" type="search" name="q" placeholder="Search…" aria-label="Search">
+      </form>
+
+      <div class="mnav__actions">
+        <a class="btn btn-primary" href="/en/appointment/">Book appointment</a>
+        <a class="btn btn-ghost" href="tel:+32479355551">Call +32 479 35 55 51</a>
+        
+        <div class="mnav__lang">
+          <div class="mnav__lang-label">Language:</div>
+          <div class="mnav__lang-options">
+            <a class="mnav__lang-option active" href="/en/" data-lang="en">EN</a>
+            <a class="mnav__lang-option" href="/fr/" data-lang="fr">FR</a>
+            <a class="mnav__lang-option" href="/nl/" data-lang="nl">NL</a>
+            <a class="mnav__lang-option" href="/de/" data-lang="de">DE</a>
           </div>
         </div>
-        <a href="/en/appointment/" class="btn btn-secondary header-cta">Book Appointment</a>
       </div>
-      <button class="menu-toggle js-menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
     </div>
+
+    <div class="mnav__backdrop" data-close=""></div>
   </div>
 </header>
 

@@ -100,33 +100,47 @@ head_extra: |
 <!-- HERO — Clinically Warm, Photo-led -->
 <section class="hero-pro" id="hero">
   <div class="hero-pro__inner">
-    <div class="hero-pro__content">
+    <div class="hero-pro__content" aria-describedby="hero-sub">
       <span class="hero-pro__eyebrow">Monash-certified Dietitian · Brussels</span>
 
-      <h1 class="hero-pro__title">Dietitian in Brussels for weight, IBS, cholesterol & type 2 diabetes</h1>
+      <!-- Dynamic title (JS swaps text based on selected program) -->
+      <h1 class="hero-pro__title" id="hero-title">
+        Dietitian in Brussels for weight, IBS, cholesterol & type 2 diabetes
+      </h1>
 
-      <p class="hero-pro__subtitle">
-        Personalised, non-restrictive plans that fit your life—no hunger, foods you enjoy—plus body
-        composition tracking and app support between sessions.
+      <p id="hero-sub" class="hero-pro__subtitle">
+        Personalised, non-restrictive plans—no hunger, foods you enjoy—plus body composition tracking and app support between sessions.
       </p>
 
-      <div class="hero-pro__ctas">
-        <a class="btn btn-primary hero-pro__cta" href="#book">Book an appointment</a>
-        <a class="btn btn-ghost" href="#guided-journeys">See programs: IBS · Weight · Diabetes</a>
+      <!-- Program switcher (accessible tabs) -->
+      <div class="hero-switcher" role="tablist" aria-label="Choose a program">
+        <button class="hero-switcher__tab is-active" role="tab" aria-selected="true" data-program="ibs">IBS</button>
+        <button class="hero-switcher__tab" role="tab" aria-selected="false" data-program="weight">Weight</button>
+        <button class="hero-switcher__tab" role="tab" aria-selected="false" data-program="t2d">Type 2 Diabetes</button>
+        <button class="hero-switcher__tab" role="tab" aria-selected="false" data-program="cholesterol">Cholesterol</button>
       </div>
 
+      <!-- Dynamic micro-answers (AISO-friendly) -->
+      <div class="hero-dynamic" id="hero-dynamic" aria-live="polite">
+        <ul class="hero-dynamic__bullets">
+          <li><strong>IBS:</strong> Low-FODMAP mapping to find *your* tolerances, phased reintroduction, and flare control.</li>
+          <li><strong>Tools:</strong> Meal swaps you'll actually eat + symptom tracking between sessions.</li>
+          <li><strong>Results:</strong> Less bloating & pain, more food freedom.</li>
+        </ul>
+      </div>
+
+      <div class="hero-pro__ctas">
+        <a class="btn btn-primary hero-pro__cta" id="hero-cta" href="#book">Start IBS program</a>
+        <a class="btn btn-ghost" href="#guided-journeys">Compare programs</a>
+      </div>
+
+      <!-- Proof row (kept) -->
       <ul class="hero-pro__trust">
         <li><strong>4.9/5</strong> patient satisfaction</li>
         <li><strong>300+ </strong>patients guided in Brussels</li>
         <li><strong>EN · FR · NL · DE · AR</strong></li>
       </ul>
 
-      <!-- Quick answers for AISO (concise, extractable) -->
-      <div class="hero-qa" aria-label="Quick answers">
-        <p><strong>What I treat:</strong> IBS (low-FODMAP), weight management, type 2 diabetes & cholesterol.</p>
-        <p><strong>How it works:</strong> Practical plans you can keep, with bio-impedance tracking and in-app follow-up.</p>
-        <p><strong>Where:</strong> Brussels (in-person) and secure video consultations.</p>
-      </div>
     </div>
 
     <figure class="hero-pro__media">
@@ -1171,6 +1185,8 @@ head_extra: |
     </div>
   </div>
 </section>
+
+<script src="/assets/js/hero-switcher.js" defer></script>
 
 <!-- Wave: out of expertise section -->
 <div class="wave-sep wave-sep--bottom" aria-hidden="true">

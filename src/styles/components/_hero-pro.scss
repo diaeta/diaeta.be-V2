@@ -370,121 +370,137 @@ body {
   box-sizing: border-box;
 }
 
-/* =========================
-  HERO POLISH - ENHANCED STYLING
-  ========================= */
+/* ===== Adaptive Hero — visual punch without bloat ===== */
 
-/* Layout balance: give the image more weight on desktop */
-.hero-pro__inner {
-  max-width: min(1360px, 94vw);
-  gap: clamp(1.6rem, 4vw, 3.8rem);
-  
-  @media (min-width: 1024px) {
-    grid-template-columns: 0.95fr 1.35fr;
-    padding-block: clamp(2rem, 5vw, 4rem);
+/* Subtle "nutrition grid" texture behind text (premium + light) */
+.hero-pro {
+  background: radial-gradient(1200px 600px at 18% 48%, #eaf3f5 0%, transparent 60%) no-repeat,
+              linear-gradient(180deg, #edf6f9 0%, #e9f1f3 60%, #e8eef2 100%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 45% 12% 0;
+    pointer-events: none;
+    background-image: 
+      linear-gradient(to right, rgba(0, 109, 119, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 109, 119, 0.05) 1px, transparent 1px);
+    background-size: 22px 22px;
+    mask-image: radial-gradient(80% 80% at 24% 48%, black, transparent 70%);
+    opacity: 0.5;
   }
 }
 
-/* Cinematic photo + better text legibility */
-.hero-pro__media {
-  min-height: clamp(26rem, 56vh, 40rem);
-  aspect-ratio: 16/10;
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.10);
-}
+/* Tabs */
+.hero-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.9rem 0 0.6rem;
 
-.hero-pro__img {
-  object-position: 74% center;
-  filter: saturate(1.05) contrast(1.06);
-}
+  &__tab {
+    appearance: none;
+    border: 1px solid #cfe2e4;
+    background: #fff;
+    color: #103133;
+    padding: 0.45rem 0.75rem;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.12s ease;
 
-/* Sculpt the left for the headline */
-.hero-pro__overlay {
-  opacity: 0.95;
-  background:
-    radial-gradient(120% 120% at 18% 52%, rgba(0, 0, 0, 0.34), transparent 60%),
-    linear-gradient(90deg,
-      color-mix(in srgb, var(--diaeta-teal) 30%, transparent) 0%,
-      transparent 50% 100%);
-  mix-blend-mode: multiply;
-}
+    &:hover {
+      border-color: var(--diaeta-teal);
+      transform: translateY(-1px);
+    }
 
-/* Strong primary CTA for conversion */
-.hero-pro__cta {
-  background: var(--diaeta-teal);
-  color: #fff !important;
-  box-shadow: 0 10px 26px rgba(0, 109, 119, 0.20);
-  
-  &:hover {
-    filter: brightness(1.05);
-    transform: translateY(-1px);
+    &.is-active {
+      background: color-mix(in srgb, var(--diaeta-teal) 12%, white);
+      border-color: color-mix(in srgb, var(--diaeta-teal) 32%, #cfe2e4);
+      color: #0d2b2d;
+    }
   }
 }
 
-/* Trust chips: a hair darker for readability */
-.hero-pro__trust li {
-  background: #fff;
-  border: 1px solid #d7e4e7;
-  color: #1e3435;
-}
+/* Dynamic bullets */
+.hero-dynamic {
+  margin: 0.4rem 0 0.6rem;
 
-/* Micro-answers: compact & scan-friendly */
-.hero-qa {
-  margin-top: 0.85rem;
-  display: grid;
-  gap: 0.35rem;
-  font-size: 0.95rem;
-  color: #294041;
-  
-  p {
+  &__bullets {
     margin: 0;
+    padding-left: 1.2rem;
+    color: #294041;
+
+    li {
+      margin: 0.2rem 0;
+    }
+
+    em {
+      font-style: normal;
+      color: #0f2627;
+    }
   }
-  
-  strong {
-    color: #0f2627;
-  }
 }
 
-/* Availability pill (optional) */
-.hero-availability {
-  margin-top: 0.7rem;
-  display: inline-block;
-  background: #fff;
-  border: 1px dashed #cfe2e4;
-  color: #1f3637;
-  border-radius: 999px;
-  padding: 0.4rem 0.7rem;
-  font-size: 0.9rem;
-  opacity: 0.95;
+/* Cinematic image halo changes by program */
+.hero-pro__overlay {
+  transition: 320ms ease-in-out;
 }
 
-/* Typographic rhythm */
-.hero-pro__title {
-  letter-spacing: -0.015em;
-  line-height: 1.04;
-  max-width: 22ch;
+.hero-pro[data-tone="ibs"] .hero-pro__overlay {
+  background: 
+    radial-gradient(120% 120% at 18% 52%, rgba(0, 0, 0, 0.34), transparent 60%),
+    linear-gradient(90deg, color-mix(in srgb, var(--diaeta-teal) 30%, transparent) 0%, transparent 50% 100%);
 }
 
-.hero-pro__subtitle {
-  max-width: 60ch;
-  color: #2a3a3a;
+.hero-pro[data-tone="weight"] .hero-pro__overlay {
+  background: 
+    radial-gradient(120% 120% at 18% 52%, rgba(0, 0, 0, 0.30), transparent 60%),
+    linear-gradient(90deg, color-mix(in srgb, #E29578 28%, transparent) 0%, transparent 50% 100%);
 }
 
-/* MOBILE tuning: make the photo hook early on small screens */
+.hero-pro[data-tone="t2d"] .hero-pro__overlay {
+  background: 
+    radial-gradient(120% 120% at 18% 52%, rgba(0, 0, 0, 0.30), transparent 60%),
+    linear-gradient(90deg, color-mix(in srgb, #0c6fb3 26%, transparent) 0%, transparent 50% 100%);
+}
+
+.hero-pro[data-tone="cholesterol"] .hero-pro__overlay {
+  background: 
+    radial-gradient(120% 120% at 18% 52%, rgba(0, 0, 0, 0.32), transparent 60%),
+    linear-gradient(90deg, color-mix(in srgb, #1a8e94 26%, transparent) 0%, transparent 50% 100%);
+}
+
+/* CTA morphing emphasis */
+.hero-pro__cta {
+  transition: background 0.25s ease, transform 0.12s ease;
+}
+
+.hero-pro[data-tone="ibs"] .hero-pro__cta {
+  background: var(--diaeta-teal);
+}
+
+.hero-pro[data-tone="weight"] .hero-pro__cta {
+  background: linear-gradient(135deg, #006D77, #E29578);
+}
+
+.hero-pro[data-tone="t2d"] .hero-pro__cta {
+  background: linear-gradient(135deg, #006D77, #0c6fb3);
+}
+
+.hero-pro[data-tone="cholesterol"] .hero-pro__cta {
+  background: linear-gradient(135deg, #006D77, #1a8e94);
+}
+
+.hero-pro__cta:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+/* Mobile: show image first for emotional hook */
 @media (max-width: 767px) {
-  .hero-pro__inner {
-    grid-template-columns: 1fr;
-  }
-  
   .hero-pro__media {
     order: -1;
     margin-bottom: 0.9rem;
-    min-height: 16rem;
-    aspect-ratio: auto;
-  }
-  
-  .hero-pro__img {
-    object-position: 60% center;
   }
 }
