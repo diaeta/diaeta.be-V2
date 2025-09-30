@@ -1,8 +1,13 @@
 {
   "mcpServers": {
     "byterover": {
-      "command": "powershell",
-      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", "& { node 'C:\\nvm4w\\nodejs\\node_modules\\byterover-mcp\\dist\\cli.js' --user-id 'codex-local' }"],
+      "command": "byterover-mcp",
+      "args": [
+        "--port",
+        "5174",
+        "--user-id",
+        "codex-local"
+      ],
       "disabled": false,
       "autoApprove": []
     },

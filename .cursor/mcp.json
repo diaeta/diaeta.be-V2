@@ -1,5 +1,16 @@
 {
   "mcpServers": {
+    "byterover": {
+      "command": "byterover-mcp",
+      "args": [
+        "--port",
+        "5174",
+        "--user-id",
+        "codex-local"
+      ],
+      "disabled": false,
+      "autoApprove": []
+    },
     "lighthouse": {
       "command": "npx",
       "args": [
