@@ -5,59 +5,69 @@
     </a>
 
     <!-- Desktop nav -->
-    <nav class="nav" aria-label="Primary">
-      <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link" href="/en/#hero" data-spy>Home</a></li>
-        <li class="nav__item nav__item--has-sub">
-          <button class="nav__link nav__toggle" aria-expanded="false" aria-haspopup="true" aria-controls="about-sub">About</button>
-          <div id="about-sub" class="nav-sub" role="menu">
-            <a role="menuitem" class="nav-sub__link" href="/en/#philosophy">Our Philosophy</a>
-            <a role="menuitem" class="nav-sub__link" href="/en/our-expertise/">Our Expertise</a>
-            <a role="menuitem" class="nav-sub__link" href="/en/diaeta-method/">Diaeta Method</a>
-            <a role="menuitem" class="nav-sub__link" href="/en/contact/">Contact Us</a>
-          </div>
-        </li>
+    <div class="nav-shell" role="presentation">
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list" role="menubar">
+          <li class="nav__item" role="none"><a class="nav__link" href="/en/#hero" data-spy>Home</a></li>
+          <li class="nav__item nav__item--has-sub" role="none">
+            <button class="nav__link nav__toggle" aria-expanded="false" aria-haspopup="true" aria-controls="about-sub">
+              <span class="nav__label">About</span>
+              <span class="nav__caret" aria-hidden="true"></span>
+            </button>
+            <div id="about-sub" class="nav-sub" role="menu">
+              <a role="menuitem" class="nav-sub__link" href="/en/#philosophy">Our Philosophy</a>
+              <a role="menuitem" class="nav-sub__link" href="/en/our-expertise/">Our Expertise</a>
+              <a role="menuitem" class="nav-sub__link" href="/en/diaeta-method/">Diaeta Method</a>
+              <a role="menuitem" class="nav-sub__link" href="/en/contact/">Contact Us</a>
+            </div>
+          </li>
 
-        <!-- Optional: Services dropdown -->
-        <li class="nav__item nav__item--has-sub">
-          <button class="nav__link nav__toggle" aria-expanded="false" aria-haspopup="true" aria-controls="svcs-sub">Services</button>
-          <div id="svcs-sub" class="nav-sub" role="menu">
-            <a role="menuitem" class="nav-sub__link" href="/en/irritable-bowel-syndrome-fodmap/">IBS (Low-FODMAP)</a>
-            <a role="menuitem" class="nav-sub__link" href="/en/weight-loss/">Weight Management</a>
-            <a role="menuitem" class="nav-sub__link" href="/en/type-2-diabetes/">Type 2 Diabetes</a>
-            <a role="menuitem" class="nav-sub__link" href="/en/hypertension-cholesterol/">Cholesterol</a>
-          </div>
-        </li>
+          <!-- Optional: Services dropdown -->
+          <li class="nav__item nav__item--has-sub" role="none">
+            <button class="nav__link nav__toggle" aria-expanded="false" aria-haspopup="true" aria-controls="svcs-sub">
+              <span class="nav__label">Services</span>
+              <span class="nav__caret" aria-hidden="true"></span>
+            </button>
+            <div id="svcs-sub" class="nav-sub" role="menu">
+              <a role="menuitem" class="nav-sub__link" href="/en/irritable-bowel-syndrome-fodmap/">IBS (Low-FODMAP)</a>
+              <a role="menuitem" class="nav-sub__link" href="/en/weight-loss/">Weight Management</a>
+              <a role="menuitem" class="nav-sub__link" href="/en/type-2-diabetes/">Type 2 Diabetes</a>
+              <a role="menuitem" class="nav-sub__link" href="/en/hypertension-cholesterol/">Cholesterol</a>
+            </div>
+          </li>
 
-        <li class="nav__item"><a class="nav__link" href="/en/locations/" data-spy>Locations</a></li>
-        <li class="nav__item"><a class="nav__link" href="/en/tariffs/" data-spy>Pricing</a></li>
-        <li class="nav__item"><a class="nav__link" href="/en/news/" data-spy>Blog</a></li>
-        <li class="nav__item"><a class="nav__link" href="/en/contact/" data-spy>Contact</a></li>
-      </ul>
-    </nav>
+          <li class="nav__item" role="none"><a class="nav__link" href="/en/locations/" data-spy>Locations</a></li>
+          <li class="nav__item" role="none"><a class="nav__link" href="/en/tariffs/" data-spy>Pricing</a></li>
+          <li class="nav__item" role="none"><a class="nav__link" href="/en/news/" data-spy>Blog</a></li>
+          <li class="nav__item" role="none"><a class="nav__link" href="/en/contact/" data-spy>Contact</a></li>
+        </ul>
+      </nav>
+    </div>
 
     <!-- Right cluster -->
     <div class="header-ctrls">
-      <form class="search" role="search" action="/en/search/" method="get">
-        <input class="search__input" type="search" name="q" placeholder="Search…" aria-label="Search" />
-      </form>
+      <div class="header-utilities" role="presentation">
+        <form class="search" role="search" action="/en/search/" method="get">
+          <input class="search__input" type="search" name="q" placeholder="Search..." aria-label="Search" />
+        </form>
 
-      <a class="header-phone" href="tel:+32479355551" aria-label="Call +32 479 35 55 51">+32 479 35 55 51</a>
+        <a class="header-phone" href="tel:+32479355551" aria-label="Call +32 479 35 55 51">+32 479 35 55 51</a>
 
-      <div class="lang-selector">
-        <button class="lang" aria-label="Language" aria-expanded="false" aria-haspopup="true" aria-controls="lang-dropdown">
-          <span class="lang-current">EN</span>
-          <span class="lang-arrow">▼</span>
-        </button>
-        <div id="lang-dropdown" class="lang-dropdown" role="menu">
-          <a role="menuitem" class="lang-option active" href="/en/" data-lang="en">English</a>
-          <a role="menuitem" class="lang-option" href="/fr/" data-lang="fr">Français</a>
-          <a role="menuitem" class="lang-option" href="/nl/" data-lang="nl">Nederlands</a>
-          <a role="menuitem" class="lang-option" href="/de/" data-lang="de">Deutsch</a>
+        <div class="lang-selector">
+          <button class="lang" aria-label="Language" aria-expanded="false" aria-haspopup="true" aria-controls="lang-dropdown">
+            <span class="lang-current">EN</span>
+            <span class="lang-arrow" aria-hidden="true"></span>
+          </button>
+          <div id="lang-dropdown" class="lang-dropdown" role="menu">
+            <a role="menuitem" class="lang-option active" href="/en/" data-lang="en">English</a>
+            <a role="menuitem" class="lang-option" href="/fr/" data-lang="fr">Fran&ccedil;ais</a>
+            <a role="menuitem" class="lang-option" href="/nl/" data-lang="nl">Nederlands</a>
+            <a role="menuitem" class="lang-option" href="/de/" data-lang="de">Deutsch</a>
+          </div>
         </div>
-      </div>
 
-      <a class="btn btn-primary header-cta" href="/en/appointment/">Book Appointment</a>
+        <a class="btn btn-primary header-cta" href="/en/appointment/">Book Appointment</a>
+      </div>
 
       <!-- Mobile burger -->
       <button class="burger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
