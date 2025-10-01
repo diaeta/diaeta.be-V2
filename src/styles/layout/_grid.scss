@@ -2,14 +2,22 @@
 @use '../settings/breakpoints' as breakpoints;
 
 .l-container {
-  width: min(100% - 2rem, 72rem);
+  width: min(100% - 1rem, 90rem);
   margin-inline: auto;
+  
+  @media (max-width: 768px) {
+    width: calc(100% - 0.5rem);
+  }
 }
 
 /* Common container alias used in templates */
 .container {
-  width: min(100% - 2rem, 72rem);
+  width: min(100% - 1rem, 90rem);
   margin-inline: auto;
+  
+  @media (max-width: 768px) {
+    width: calc(100% - 0.5rem);
+  }
 }
 
 .l-grid {

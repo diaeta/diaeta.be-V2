@@ -36,6 +36,7 @@ module.exports = async function (eleventyConfig) {
 
   // Copy static assets to the output directory
   eleventyConfig.addPassthroughCopy({ "src/scripts": "assets/js" });
+  eleventyConfig.addPassthroughCopy({ "public/assets/js": "assets/js" });
   eleventyConfig.addPassthroughCopy({ 'public/images': 'images' });
   eleventyConfig.addPassthroughCopy({ 'assets/images': 'assets/images' });
   eleventyConfig.addPassthroughCopy({ 'public/favicon.ico': 'favicon.ico' });

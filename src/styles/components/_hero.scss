@@ -38,7 +38,7 @@
 .hero-immersive__container {
   position: relative;
   z-index: 1;
-  width: min(100% - 2rem, 72rem);
+  width: min(100% - 1rem, 90rem);
   margin-inline: auto;
   display: grid;
   gap: clamp(2rem, 6vw, 3.5rem);
