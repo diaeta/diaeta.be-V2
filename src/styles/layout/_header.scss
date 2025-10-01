@@ -1,7 +1,9 @@
 // Header Layout Components
 // Implements the 3-column grid layout: Logo | Primary Nav | Utilities
 
+@use 'sass:map';
 @use '../settings/mixins' as *;
+@use '../settings/tokens' as *;
 
 // =============================================================================
 // SITE HEADER CONTAINER
@@ -12,37 +14,33 @@
   z-index: var(--z-sticky);
   width: 100%;
   height: var(--header-h);
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
-  transition: var(--header-transition);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  transition: height var(--transition-normal), background-color var(--transition-normal), box-shadow var(--transition-normal);
   
-  // Scrolled state
+  // Scrolled state (exact specifications)
   &.is-scrolled {
-    height: calc(var(--header-h) * 0.9);
-    box-shadow: var(--header-shadow-solid);
+    box-shadow: var(--shadow-solid);
     
-    .site-header__inner {
-      max-width: 80rem; // Preferred XL width
+    // Glass theme gets more opaque on scroll
+    &.theme-glass {
+      background: var(--surface-weak);
     }
   }
   
-  // Glass theme variant
+  // Glass theme variant (exact specifications)
   &.theme-glass {
-    background: var(--color-surface-glass);
-    backdrop-filter: blur(var(--header-blur));
-    -webkit-backdrop-filter: blur(var(--header-blur));
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: var(--header-shadow-glass);
-    
-    &.is-scrolled {
-      background: var(--color-surface-weak);
-    }
+    background: var(--surface-glass);
+    backdrop-filter: blur(var(--bar-blur));
+    -webkit-backdrop-filter: blur(var(--bar-blur));
+    border-bottom: 1px solid rgba(229, 231, 235, 0.5); // transparent border
+    box-shadow: var(--shadow-glass);
   }
   
-  // Solid theme variant (default)
+  // Solid theme variant (exact specifications)
   &.theme-solid {
-    background: var(--color-surface);
-    box-shadow: var(--header-shadow-solid);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
   }
 }
 
@@ -55,12 +53,13 @@
   align-items: center;
   gap: var(--header-gap);
   height: 100%;
-  max-width: 72rem; // Current width
+  width: 100%;
+  max-width: 80rem; // Use preferred XL width as standard
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 var(--header-gap); // Use gap for padding
   
   @include respond-to('xl') {
-    max-width: 80rem; // Preferred XL width
+    max-width: 80rem; // Preferred XL width (80rem for XL)
   }
 }
 
@@ -70,19 +69,24 @@
 .brand {
   display: flex;
   align-items: center;
-  height: var(--header-h);
-  padding: 0.5rem 0;
+  height: 100%; // Ensure full height for tap target
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
   
+  // Logo sizing (exact specifications)
   img {
-    height: calc(var(--header-h) - 12px);
+    display: block; // remove bottom space
+    max-height: calc(var(--header-h) - 20px); // Maintain 10px top/bottom safe margin
     width: auto;
-    max-width: 142px;
+    transition: max-height var(--transition-normal);
   }
   
+  // Hover effect
   &:hover {
     opacity: 0.8;
   }
   
+  // Focus styles
   @include focus-visible;
 }
 
@@ -114,6 +118,9 @@
   align-items: center;
   gap: 0.5rem;
   height: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav__item {
@@ -124,186 +131,252 @@
 }
 
 .nav__link {
-  @include nav-link-base;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
   height: 100%;
-  
-  // Force visible styling for testing
-  background-color: #ff0000 !important;
-  color: #ffffff !important;
-  padding: 8px 12px !important;
-  border-radius: 4px !important;
-  font-weight: 600 !important;
-  
-  &:hover {
-    background-color: #00ff00 !important;
-    color: #000000 !important;
+  padding: 0 var(--nav-link-padding-inline);
+  font-size: var(--font-size-nav);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: #{map.get($components, 'nav-link-letter-spacing')};
+  color: var(--ink);
+  text-decoration: none;
+  position: relative;
+  opacity: 0.8;
+  transition: opacity var(--transition-fast), color var(--transition-fast);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 10px; // Position underline
+    left: var(--nav-link-padding-inline);
+    right: var(--nav-link-padding-inline);
+    height: 2px;
+    background-color: var(--brand);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform var(--transition-normal);
   }
-  
+
+  &:hover,
   &:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--color-focus-ring);
+    opacity: 1;
+    color: var(--ink);
   }
   
+  &:hover::after,
+  &:focus-visible::after {
+    transform: scaleX(1);
+  }
+
   &.is-active {
-    background-color: #0000ff !important;
-    color: #ffffff !important;
-    
+    opacity: 1;
+    color: var(--ink);
+    font-weight: var(--font-weight-semibold);
+
     &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 20px;
-      height: 2px;
-      background-color: var(--color-brand);
-      border-radius: 1px;
+      transform: scaleX(1);
+      height: 2.5px; // Slightly thicker for active state
     }
   }
+
+  @include focus-visible-ring('outset');
+}
+
+.nav__toggle {
+  @extend .nav__link;
+  background: none;
+  border: none;
+  cursor: pointer;
   
-  // Dropdown toggle specific styles
-  &.nav__toggle {
-    @include button-reset;
-    @include nav-link-base;
-    
+  .nav__caret {
+    font-size: 12px;
+    transition: var(--header-transition);
+  }
+  
+  &[aria-expanded="true"] {
     .nav__caret {
-      width: 0;
-      height: 0;
-      border-left: 4px solid transparent;
-      border-right: 4px solid transparent;
-      border-top: 4px solid currentColor;
-      transition: transform var(--header-transition);
-    }
-    
-    &[aria-expanded="true"] .nav__caret {
       transform: rotate(180deg);
     }
   }
 }
 
 // =============================================================================
-// DROPDOWN MENUS
+// NAVIGATION DROPDOWNS
 // =============================================================================
 .nav-sub {
   position: absolute;
   top: calc(100% + var(--dropdown-offset));
   left: 0;
-  min-width: var(--dropdown-min-width);
+  min-width: 280px; // Good default min-width
   max-width: var(--dropdown-max-width);
-  background: var(--color-surface);
-  border-radius: var(--header-radius-lg);
-  box-shadow: var(--header-shadow-glass);
-  padding: 0.5rem 0;
+  background: var(--surface);
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-solid);
+  padding: map.get($spacing, 2) 0; // 8px vertical padding
   z-index: var(--z-dropdown);
-  
   @include dropdown-animation;
   
-  // Two-column layout for long lists
-  &.nav-sub--two-column {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-    padding: 0.5rem;
+  &.is-open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 }
 
 .nav-sub__link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: #{map.get($components, 'dropdown-item-height')};
+  padding: 0 #{map.get($components, 'dropdown-item-padding-inline')};
+  color: var(--ink);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  position: relative;
+  
+  // Stagger animation for dropdown items
+  .nav-sub.is-open & {
+    @include stagger-fade-in(6, 40ms);
+  }
+  
+  &:hover,
+  &:focus-visible {
+    background-color: var(--brand-weak);
+    color: var(--brand);
+    outline: none;
+  }
+  
+  // Add subtle hover slide effect
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 0;
+    background: var(--brand);
+    border-radius: 0 2px 2px 0;
+    transition: height var(--transition-fast);
+  }
+  
+  &:hover::before {
+    height: 60%;
+  }
+
+  @include focus-visible-ring('inset');
+}
+
+// =============================================================================
+// MOBILE NAVIGATION STYLES
+// =============================================================================
+.mnav__nav {
+  margin-bottom: 2rem;
+}
+
+.mnav__group {
+  margin-bottom: 0.5rem;
+  
+  summary {
+    list-style: none;
+    cursor: pointer;
+    
+    &::-webkit-details-marker {
+      display: none;
+    }
+    
+    &::after {
+      content: '▼';
+      float: right;
+      font-size: 12px;
+      transition: var(--header-transition);
+    }
+  }
+  
+  &[open] summary::after {
+    transform: rotate(180deg);
+  }
+}
+
+.mnav__sub {
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.mnav__sublink {
   display: block;
-  padding: 0.75rem var(--dropdown-item-padding);
-  color: var(--color-ink);
+  padding: 0.5rem 0;
+  color: var(--color-ink-dim);
   text-decoration: none;
   font-size: 14px;
-  line-height: 1.4;
   transition: var(--header-transition);
   
   &:hover {
-    background-color: var(--color-brand-weak);
     color: var(--color-brand);
   }
-  
-  @include focus-visible;
 }
 
 // =============================================================================
-// HEADER CONTROLS (Right side)
+// RESPONSIVE ADJUSTMENTS (exact specifications)
 // =============================================================================
-.header-ctrls {
-  display: flex;
+
+// Default states (mobile-first approach)
+.utilities {
+  display: none; // Hidden by default (mobile)
   align-items: center;
   gap: var(--header-gap);
-  height: var(--header-h);
 }
 
-.header-utilities {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  height: 100%;
-  
-  @include respond-below('lg') {
-    display: none; // Hide on mobile, show in drawer
-  }
+.burger {
+  display: inline-flex; // Shown by default (mobile)
+  justify-self: end;
 }
 
-// =============================================================================
-// RESPONSIVE ADJUSTMENTS
-// =============================================================================
+.nav-shell {
+  display: none; // Hidden by default (mobile)
+}
 
-// Large screens (1180-1279px)
+.site-header__inner {
+  grid-template-columns: auto 1fr; // Logo | Burger (mobile layout)
+  justify-content: space-between;
+}
+
+// Desktop screens (≥1180px) - Show desktop navigation
 @include respond-to('lg') {
   .site-header__inner {
-    gap: var(--header-gap);
+    grid-template-columns: auto 1fr auto; // Logo | Nav | Utilities
+    justify-content: space-between;
   }
   
-  .nav__list {
-    gap: 0.25rem;
+  .nav-shell,
+  .utilities {
+    display: flex; // Show desktop nav and utilities
   }
   
-  .header-utilities {
-    gap: 0.5rem;
+  .burger {
+    display: none; // Hide burger menu on desktop
   }
 }
 
-// Medium screens (768-1179px)
+// Medium screens (MD) - Specific adjustments for this range if needed
 @include respond-to('md') {
-  .site-header__inner {
-    gap: var(--header-gap);
-    padding: 0 0.75rem;
-  }
-  
-  .nav__list {
-    gap: 0.125rem;
-  }
-  
-  .nav__link {
-    padding: 6px 8px;
-    font-size: 14px;
-  }
-  
-  .header-utilities {
-    gap: 0.375rem;
-  }
+  // Example: .nav__link { font-size: 14px; }
+  // Most changes are handled by the burger menu switch at < 1180px
 }
 
-// Small screens (≤767px)
+// Small screens (SM) - Specific adjustments for this range if needed
 @include respond-below('sm') {
   .site-header__inner {
-    grid-template-columns: 1fr auto;
-    gap: 1rem;
-    padding: 0 1rem;
-  }
-  
-  .nav-shell {
-    display: none;
-  }
-  
-  .header-utilities {
-    display: none;
+    padding: 0 map.get($spacing, 4); // 16px padding on small screens
   }
 }
 
 // =============================================================================
-// ACCESSIBILITY IMPROVEMENTS
+// ACCESSIBILITY IMPROVEMENTS (WCAG 2.2 AA)
 // =============================================================================
 
 // Ensure proper focus management
@@ -329,6 +402,40 @@
   @include visually-hidden;
 }
 
+// Skip link for accessibility
+.u-skip-link {
+  @include visually-hidden;
+  
+  &:focus {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 9999;
+    width: auto;
+    height: auto;
+    padding: 0.5rem 1rem;
+    background: var(--color-brand);
+    color: var(--color-ink-invert);
+    text-decoration: none;
+    border-radius: 4px;
+    clip: auto;
+  }
+}
+
+// =============================================================================
+// ACCESSIBILITY: REDUCED MOTION
+// =============================================================================
+@include reduced-motion {
+  .nav-sub__link {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+  
+  .nav__link::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
 // =============================================================================
 // PRINT STYLES
 // =============================================================================
@@ -345,5 +452,13 @@
     transform: none;
     box-shadow: none;
     display: block;
+  }
+  
+  .utilities {
+    display: none;
+  }
+  
+  .burger {
+    display: none;
   }
 }

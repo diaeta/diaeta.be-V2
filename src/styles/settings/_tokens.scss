@@ -1,6 +1,8 @@
 // Design System Tokens for Diaeta Header & Navigation
 // Based on the comprehensive design system specification
 
+@use 'sass:map';
+
 // =============================================================================
 // BREAKPOINTS
 // =============================================================================
@@ -20,10 +22,10 @@ $colors: (
   'brand': #2B7A78,           // Primary teal
   'brand-light': #3A9B99,     // Lighter teal for hover states
   'brand-dark': #1F5A58,      // Darker teal for active states
-  'brand-weak': rgba(43, 122, 120, 0.08), // 8% opacity for subtle backgrounds
+  'brand-weak': rgba(43, 122, 120, 0.1), // 10% opacity for subtle backgrounds (within 8-12% range)
   
   // Text colors
-  'ink': #1A1A1A,             // Primary text (near black)
+  'ink': #17252A,             // Primary text (Brand ink/dark teal)
   'ink-dim': #6B7280,         // Secondary text (gray-500)
   'ink-invert': #FFFFFF,      // White text for dark backgrounds
   
@@ -45,7 +47,7 @@ $colors: (
   'gray-900': #111827,
   
   // Focus and interaction
-  'focus-ring': rgba(43, 122, 120, 0.4), // 40% brand teal for focus rings
+  'focus-ring': rgba(43, 122, 120, 0.5), // 50% brand teal for focus rings (within 40-60% range)
   'border': #E5E7EB,          // Light border color
   'border-focus': #2B7A78,    // Brand teal for focused borders
 );
@@ -55,18 +57,14 @@ $colors: (
 // =============================================================================
 $typography: (
   // Font families
-  'font-family-primary': (-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif),
+  'font-family-primary': ('Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif),
   'font-family-mono': ('SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace),
   
   // Font sizes (responsive)
-  'font-size-xs': 0.75rem,    // 12px
-  'font-size-sm': 0.875rem,   // 14px
   'font-size-base': 1rem,     // 16px
-  'font-size-lg': 1.125rem,   // 18px
-  'font-size-xl': 1.25rem,    // 20px
-  'font-size-2xl': 1.5rem,    // 24px
-  'font-size-3xl': 1.875rem,  // 30px
-  'font-size-4xl': 2.25rem,   // 36px
+  'font-size-nav': 0.9375rem, // 15px
+  'font-size-sm': 0.875rem,   // 14px
+  'font-size-xs': 0.75rem,    // 12px
   
   // Font weights
   'font-weight-normal': 400,
@@ -80,8 +78,8 @@ $typography: (
   'line-height-relaxed': 1.625,
   
   // Letter spacing
-  'letter-spacing-tight': -0.025em,
-  'letter-spacing-normal': 0,
+  'letter-spacing-tight': -0.01em,
+  'letter-spacing-normal': 0.01em,
   'letter-spacing-wide': 0.025em,
 );
 
@@ -92,8 +90,10 @@ $spacing: (
   '0': 0,
   '1': 0.25rem,   // 4px
   '2': 0.5rem,    // 8px
+  '2.5': 0.625rem, // 10px
   '3': 0.75rem,   // 12px
   '4': 1rem,      // 16px
+  '4.5': 1.125rem, // 18px
   '5': 1.25rem,   // 20px
   '6': 1.5rem,    // 24px
   '8': 2rem,      // 32px
@@ -108,69 +108,74 @@ $spacing: (
 // HEADER SPECIFIC TOKENS
 // =============================================================================
 $header: (
-  // Heights by breakpoint
-  'height-xl': 56px,          // ≥1280px
-  'height-lg': 52px,          // 1180-1279px
-  'height-md': 48px,          // 768-1179px
-  'height-sm': 44px,          // ≤767px
+  // Heights by breakpoint (exact specifications)
+  'height-xl': 56px,          // ≥1280px (XL)
+  'height-lg': 52px,          // 1180-1279px (LG)
+  'height-md': 48px,          // 768-1179px (MD)
+  'height-sm': 44px,          // ≤767px (SM)
   
-  // Gaps by breakpoint
-  'gap-xl': 24px,             // ≥1280px
-  'gap-lg': 20px,             // 1180-1279px
-  'gap-md': 16px,             // ≤1179px
+  // Gaps by breakpoint (exact specifications)
+  'gap-xl': 24px,             // ≥1280px (XL)
+  'gap-lg': 20px,             // 1180-1279px (LG)
+  'gap-md': 16px,             // ≤1179px (MD/SM)
   
-  // Border radius
-  'radius-pill': 50%,         // For round elements (equals header-h / 2)
-  'radius-lg': 18px,          // For dropdowns and menus
+  // Border radius (exact specifications)
+  'radius-pill': 'calc(var(--header-h) / 2)', // For round elements
+  'radius-lg': 18px,          // For dropdowns and menus (16-20px range)
   
-  // Icon sizes
-  'icon-xl': 22px,            // Desktop
-  'icon-md': 20px,            // Mobile
+  // Icon sizes (exact specifications)
+  'icon-xl': 22px,            // Desktop (20-22px)
+  'icon-md': 20px,            // Mobile (18-20px)
   
-  // Shadows
-  'shadow-glass': 0 8px 25px rgba(0, 0, 0, 0.12),
-  'shadow-solid': 0 4px 20px rgba(0, 0, 0, 0.1),
-  'shadow-focus': 0 0 0 2px rgba(43, 122, 120, 0.4),
+  // Shadows (exact specifications)
+  'shadow-glass': '0 8px 30px rgba(0, 0, 0, 0.12)', // y=6-10, blur=20-30, alpha 10-14%
+  'shadow-solid': '0 5px 20px rgba(0, 0, 0, 0.10)',  // y=4-6, blur=16-22, alpha 10-12%
+  'shadow-focus': '0 0 0 3px rgba(43, 122, 120, 0.5)', // 40-60% opacity
   
-  // Blur effects
-  'blur-glass': 8px,
+  // Blur effects (exact specifications)
+  'blur-glass': 8px,          // --bar-blur: 8px
   
-  // Transitions
-  'transition-fast': 150ms ease,
-  'transition-normal': 200ms ease,
-  'transition-slow': 250ms ease,
+  // Transitions (exact specifications)
+  'transition-fast': 180ms ease-out, // Hover/active transitions: 150-200ms
+  'transition-normal': 220ms ease-out, // Search expand/collapse: 200-250ms
+  'transition-slow': 250ms ease-out, // Dropdown enter/exit: 150-200ms
 );
 
 // =============================================================================
 // COMPONENT SPECIFIC TOKENS
 // =============================================================================
 $components: (
-  // Navigation
-  'nav-link-padding': 8px 10px,
-  'nav-link-font-size': 15px,
-  'nav-link-font-weight': 500,
-  'nav-link-letter-spacing': 0.2px,
+  // Navigation (exact specifications)
+  'nav-link-padding-inline': 10px,   // Link horizontal padding: 8-10px
+  'nav-link-font-size': 'var(--font-size-nav)', // Primary nav links: 15-16px
+  'nav-link-font-weight': 'var(--font-weight-medium)', // medium
+  'nav-link-letter-spacing': 0.1px,     // letter-spacing: 0-0.2px
   
-  // Dropdowns
-  'dropdown-offset': 10px,
-  'dropdown-min-width': 240px,
-  'dropdown-max-width': 480px,
-  'dropdown-item-height': 42px,
-  'dropdown-item-padding': 16px,
+  // Dropdowns (exact specifications)
+  'dropdown-offset': 10px,              // Vertical offset: 8-12px below trigger
+  'dropdown-max-width': 420px,          // Max width: 360-480px; two columns allowed
+  'dropdown-item-height': 44px,         // Min item height: 40-44px
+  'dropdown-item-padding-inline': 16px, // Horizontal padding: 14-16px
   
-  // Search
-  'search-expanded-width': clamp(180px, 22vw, 260px),
-  'search-icon-size': 20px,
+  // Search (exact specifications)
+  'search-expanded-width': 'clamp(180px, 22vw, 260px)',
   
-  // Utilities
-  'utility-padding': 10px 12px,
-  'utility-height': 56px,
-  'cta-padding': 16px 18px,
+  // Utilities (exact specifications)
+  'utility-padding-block': 8px,
+  'utility-padding-inline': 12px,
+  'utility-label-font-size': 14px,
+  'utility-label-font-weight': 400,
   
-  // Mobile
-  'burger-size': 44px,
-  'burger-bar-height': 2px,
-  'drawer-width': 88vw,
+  // CTA Button (exact specifications)
+  'cta-padding-block': 12px,
+  'cta-padding-inline': 18px,
+  'cta-font-size': 'var(--font-size-nav)',
+  'cta-font-weight': 'var(--font-weight-semibold)',
+  
+  // Mobile (exact specifications)
+  'burger-size': 44px,                  // Burger tap area ≥44px
+  'burger-bar-height': 2px,             // 3 bars, 2px thick
+  'drawer-width': 88vw,                 // Width 88-92% viewport
 );
 
 // =============================================================================
@@ -191,72 +196,90 @@ $z-index: (
 // =============================================================================
 :root {
   // Colors
-  --color-brand: #2B7A78;
-  --color-brand-light: #3A9B99;
-  --color-brand-dark: #1F5A58;
-  --color-brand-weak: rgba(43, 122, 120, 0.08);
-  --color-ink: #1A1A1A;
-  --color-ink-dim: #6B7280;
-  --color-ink-invert: #FFFFFF;
-  --color-surface: #FFFFFF;
-  --color-surface-weak: rgba(255, 255, 255, 0.92);
-  --color-surface-glass: rgba(255, 255, 255, 0.75);
-  --color-focus-ring: rgba(43, 122, 120, 0.4);
-  --color-border: #E5E7EB;
-  --color-border-focus: #2B7A78;
+  --brand: #{map.get($colors, 'brand')};
+  --brand-light: #{map.get($colors, 'brand-light')};
+  --brand-dark: #{map.get($colors, 'brand-dark')};
+  --brand-weak: #{map.get($colors, 'brand-weak')};
+  --ink: #{map.get($colors, 'ink')};
+  --ink-dim: #{map.get($colors, 'ink-dim')};
+  --ink-invert: #{map.get($colors, 'ink-invert')};
+  --surface: #{map.get($colors, 'surface')};
+  --surface-weak: #{map.get($colors, 'surface-weak')};
+  --surface-glass: #{map.get($colors, 'surface-glass')};
+  --focus-ring: #{map.get($colors, 'focus-ring')};
+  --border: #{map.get($colors, 'border')};
+  --border-focus: #{map.get($colors, 'border-focus')};
+  
+  // Color aliases with color- prefix for consistency
+  --color-brand: #{map.get($colors, 'brand')};
+  --color-brand-light: #{map.get($colors, 'brand-light')};
+  --color-brand-dark: #{map.get($colors, 'brand-dark')};
+  --color-brand-weak: #{map.get($colors, 'brand-weak')};
+  --color-ink: #{map.get($colors, 'ink')};
+  --color-ink-dim: #{map.get($colors, 'ink-dim')};
+  --color-ink-invert: #{map.get($colors, 'ink-invert')};
+  --color-surface: #{map.get($colors, 'surface')};
+  --color-surface-weak: #{map.get($colors, 'surface-weak')};
+  --color-surface-glass: #{map.get($colors, 'surface-glass')};
+  --color-focus-ring: #{map.get($colors, 'focus-ring')};
+  --color-border: #{map.get($colors, 'border')};
+  --color-border-focus: #{map.get($colors, 'border-focus')};
   
   // Typography
-  --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-size-base: 1rem;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --line-height-normal: 1.5;
+  --font-family-primary: #{map.get($typography, 'font-family-primary')};
+  --font-size-base: #{map.get($typography, 'font-size-base')};
+  --font-size-nav: #{map.get($typography, 'font-size-nav')};
+  --font-weight-normal: #{map.get($typography, 'font-weight-normal')};
+  --font-weight-medium: #{map.get($typography, 'font-weight-medium')};
+  --font-weight-semibold: #{map.get($typography, 'font-weight-semibold')};
+  --line-height-normal: #{map.get($typography, 'line-height-normal')};
   
-  // Header dimensions
-  --header-h: 56px;
-  --header-gap: 24px;
-  --header-radius-lg: 18px;
-  --header-shadow-glass: 0 8px 25px rgba(0, 0, 0, 0.12);
-  --header-shadow-solid: 0 4px 20px rgba(0, 0, 0, 0.1);
-  --header-blur: 8px;
-  --header-transition: 200ms ease;
+  // Header dimensions (exact specifications)
+  --header-h: #{map.get($header, 'height-xl')};
+  --header-gap: #{map.get($header, 'gap-xl')};
+  --radius-lg: #{map.get($header, 'radius-lg')};
+  --radius-pill: #{map.get($header, 'radius-pill')};
+  --shadow-glass: #{map.get($header, 'shadow-glass')};
+  --shadow-solid: #{map.get($header, 'shadow-solid')};
+  --bar-blur: #{map.get($header, 'blur-glass')};
   
-          // Component dimensions
-          --nav-link-padding: 8px 10px;
-          --dropdown-offset: 10px;
-          --dropdown-min-width: 200px;
-          --dropdown-max-width: 320px;
-          --dropdown-item-padding: 1rem;
-          --search-expanded-width: clamp(180px, 22vw, 260px);
-          --search-icon-size: 20px;
-          --utility-padding: 10px 12px;
-          --cta-padding: 16px 18px;
-          --drawer-width: 88vw;
+  // Transitions
+  --transition-fast: #{map.get($header, 'transition-fast')};
+  --transition-normal: #{map.get($header, 'transition-normal')};
+
+  // Component dimensions (exact specifications)
+  --nav-link-padding-inline: #{map.get($components, 'nav-link-padding-inline')};
+  --dropdown-offset: #{map.get($components, 'dropdown-offset')};
+  --dropdown-max-width: #{map.get($components, 'dropdown-max-width')};
+  --dropdown-item-padding-inline: #{map.get($components, 'dropdown-item-padding-inline')};
+  --search-expanded-width: #{map.get($components, 'search-expanded-width')};
+  --utility-padding: #{map.get($components, 'utility-padding-block')} #{map.get($components, 'utility-padding-inline')};
+  --cta-padding: #{map.get($components, 'cta-padding-block')} #{map.get($components, 'cta-padding-inline')};
+  --drawer-width: #{map.get($components, 'drawer-width')};
   
   // Z-index
-  --z-dropdown: 1000;
-  --z-sticky: 1020;
-  --z-modal: 1050;
+  --z-dropdown: #{map.get($z-index, 'dropdown')};
+  --z-sticky: #{map.get($z-index, 'sticky')};
+  --z-modal: #{map.get($z-index, 'modal')};
 }
 
-// Responsive custom properties
-@media (max-width: 1279px) {
+// Responsive custom properties (exact specifications)
+@media (max-width: #{map.get($breakpoints, 'xl')} - 1) {
   :root {
-    --header-h: 52px;
-    --header-gap: 20px;
+    --header-h: #{map.get($header, 'height-lg')};
+    --header-gap: #{map.get($header, 'gap-lg')};
   }
 }
 
-@media (max-width: 1179px) {
+@media (max-width: #{map.get($breakpoints, 'lg')} - 1) {
   :root {
-    --header-h: 48px;
-    --header-gap: 16px;
+    --header-h: #{map.get($header, 'height-md')};
+    --header-gap: #{map.get($header, 'gap-md')};
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: #{map.get($breakpoints, 'sm')} - 1) {
   :root {
-    --header-h: 44px;
+    --header-h: #{map.get($header, 'height-sm')};
   }
 }

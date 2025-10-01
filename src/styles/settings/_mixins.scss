@@ -2,13 +2,14 @@
 // Reusable patterns and utilities
 
 @use 'tokens' as *;
+@use 'sass:map';
 
 // =============================================================================
 // RESPONSIVE BREAKPOINTS
 // =============================================================================
 @mixin respond-to($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media (min-width: map-get($breakpoints, $breakpoint)) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
       @content;
     }
   } @else {
@@ -17,8 +18,8 @@
 }
 
 @mixin respond-below($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media (max-width: map-get($breakpoints, $breakpoint) - 1px) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (max-width: map.get($breakpoints, $breakpoint) - 1px) {
       @content;
     }
   } @else {
@@ -29,9 +30,21 @@
 // =============================================================================
 // FOCUS STYLES
 // =============================================================================
-@mixin focus-ring($color: var(--color-focus-ring), $offset: 2px) {
+@mixin focus-ring($color: var(--focus-ring), $offset: 3px) {
   outline: none;
   box-shadow: 0 0 0 $offset $color;
+  border-radius: inherit;
+}
+
+@mixin focus-visible-ring($position: 'outset') {
+  &:focus-visible {
+    outline: none;
+    @if $position == 'outset' {
+      box-shadow: 0 0 0 3px var(--focus-ring);
+    } @else {
+      box-shadow: inset 0 0 0 2px var(--focus-ring);
+    }
+  }
 }
 
 @mixin focus-visible {
@@ -92,34 +105,110 @@
 }
 
 // =============================================================================
-// DROPDOWN ANIMATION
+// DROPDOWN ANIMATION (Enhanced)
 // =============================================================================
-@mixin dropdown-animation($duration: var(--header-transition)) {
+@mixin dropdown-animation($duration: var(--transition-normal)) {
   opacity: 0;
-  transform: translateY(-8px);
-  transition: opacity $duration, transform $duration;
+  visibility: hidden;
+  transform: translateY(8px) scale(0.95);
+  transition: 
+    opacity $duration cubic-bezier(0.16, 1, 0.3, 1),
+    transform $duration cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0s $duration;
   pointer-events: none;
   
   &.is-open {
     opacity: 1;
-    transform: translateY(0);
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    transition: 
+      opacity $duration cubic-bezier(0.16, 1, 0.3, 1),
+      transform $duration cubic-bezier(0.16, 1, 0.3, 1),
+      visibility 0s 0s;
     pointer-events: auto;
   }
 }
 
 // =============================================================================
-// HOVER LIFT EFFECT
+// NAVIGATION DROPDOWN BASE
 // =============================================================================
-@mixin hover-lift($lift: 2px, $duration: var(--header-transition)) {
-  transition: transform $duration, box-shadow $duration;
+@mixin nav-dropdown-base {
+  position: absolute;
+  top: calc(100% + var(--dropdown-offset));
+  left: 50%;
+  transform: translateX(-50%) translateY(8px) scale(0.95);
+  min-width: 280px;
+  max-width: var(--dropdown-max-width);
+  background: var(--surface);
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-solid);
+  padding: map.get($spacing, 2) 0;
+  z-index: var(--z-dropdown);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: 
+    opacity var(--transition-normal) cubic-bezier(0.16, 1, 0.3, 1),
+    transform var(--transition-normal) cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0s var(--transition-normal);
+  
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0) scale(1);
+    pointer-events: auto;
+    transition: 
+      opacity var(--transition-normal) cubic-bezier(0.16, 1, 0.3, 1),
+      transform var(--transition-normal) cubic-bezier(0.16, 1, 0.3, 1),
+      visibility 0s 0s;
+  }
+}
+
+// =============================================================================
+// NAVIGATION DROPDOWN ITEM
+// =============================================================================
+@mixin nav-dropdown-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: #{map.get($components, 'dropdown-item-height')};
+  padding: 0 #{map.get($components, 'dropdown-item-padding-inline')};
+  color: var(--ink);
+  background: none;
+  border: none;
+  text-align: left;
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  
+  &:hover,
+  &:focus-visible {
+    background-color: var(--brand-weak);
+    color: var(--brand);
+    outline: none;
+  }
+
+  @include focus-visible-ring('inset');
+}
+
+// =============================================================================
+// HOVER LIFT EFFECT (Enhanced)
+// =============================================================================
+@mixin hover-lift($lift: 2px, $duration: var(--transition-fast)) {
+  transition: 
+    transform $duration cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow $duration cubic-bezier(0.16, 1, 0.3, 1);
   
   &:hover {
     transform: translateY(-$lift);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 ($lift * 2) ($lift * 6) rgba(0, 0, 0, 0.12);
   }
   
   &:active {
-    transform: translateY(0);
+    transform: translateY(-1px);
+    transition-duration: 100ms;
   }
 }
 
@@ -227,11 +316,11 @@
 }
 
 // =============================================================================
-// MOBILE DRAWER ANIMATION
+// MOBILE DRAWER ANIMATION (Enhanced)
 // =============================================================================
-@mixin drawer-animation($duration: var(--header-transition)) {
+@mixin drawer-animation($duration: 320ms) {
   transform: translateX(100%);
-  transition: transform $duration;
+  transition: transform $duration cubic-bezier(0.16, 1, 0.3, 1);
   
   &.is-open {
     transform: translateX(0);
@@ -239,25 +328,53 @@
 }
 
 // =============================================================================
-// BURGER MENU ANIMATION
+// BURGER MENU ANIMATION (Enhanced)
 // =============================================================================
-@mixin burger-animation($duration: var(--header-transition)) {
+@mixin burger-animation {
   .burger__bar {
-    transition: transform $duration, opacity $duration;
+    transition: 
+      transform var(--transition-normal) cubic-bezier(0.16, 1, 0.3, 1),
+      opacity var(--transition-fast) ease-out;
   }
   
-  &.is-active {
+  &.is-active,
+  &[aria-expanded="true"] {
     .burger__bar:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
+      transform: translateY(6px) rotate(45deg);
     }
     
     .burger__bar:nth-child(2) {
       opacity: 0;
+      transform: scaleX(0);
     }
     
     .burger__bar:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -6px);
+      transform: translateY(-6px) rotate(-45deg);
     }
+  }
+}
+
+// =============================================================================
+// STAGGER ANIMATION (for dropdown items)
+// =============================================================================
+@mixin stagger-fade-in($items: 6, $delay: 30ms) {
+  @for $i from 1 through $items {
+    &:nth-child(#{$i}) {
+      animation: fadeInUp var(--transition-normal) cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation-delay: #{$i * $delay};
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -271,7 +388,7 @@
 }
 
 // =============================================================================
-// REDUCED MOTION
+// REDUCED MOTION (Enhanced)
 // =============================================================================
 @mixin reduced-motion {
   @media (prefers-reduced-motion: reduce) {

@@ -1,237 +1,304 @@
-// Header Utilities Components
-// Search, Phone, Language, CTA components
+// Utilities Cluster Components
+// Implements search, phone, language, and CTA components
 
+@use 'sass:map';
+@use 'sass:color';
 @use '../settings/mixins' as *;
+@use '../settings/tokens' as *;
 
 // =============================================================================
-// SEARCH COMPONENT
+// UTILITIES CLUSTER SHARED STYLES
+// =============================================================================
+%utility-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px; // Consistent height for controls within the 56px header
+  padding: var(--utility-padding);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  background-color: transparent;
+  font-size: map.get($components, 'utility-label-font-size');
+  font-weight: map.get($components, 'utility-label-font-weight');
+  color: var(--ink-dim);
+  text-decoration: none;
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--ink);
+    background-color: var(--brand-weak);
+  }
+
+  @include focus-visible-ring('outset');
+
+  .icon {
+    width: map.get($header, 'icon-md');
+    height: map.get($header, 'icon-md');
+  }
+}
+
+// =============================================================================
+// UTILITIES CLUSTER CONTAINER
+// =============================================================================
+.utilities {
+  display: none; // Hidden by default (mobile-first)
+  align-items: center;
+  gap: map.get($spacing, 2); // 8px gap for a tighter cluster
+  height: 100%;
+  
+  @include respond-to('lg') {
+    display: flex; // Show on desktop
+  }
+  
+  @include respond-below('lg') {
+    gap: 0.75rem; // Reduced gap on smaller screens
+  }
+}
+
+// =============================================================================
+// SEARCH COMPONENT (EXPANDABLE)
 // =============================================================================
 .search {
   position: relative;
   display: flex;
   align-items: center;
-  height: var(--header-h);
+  z-index: 5; // Ensure search container is above other elements
 }
 
 .search__button {
-  @include utility-button;
+  @extend %utility-button;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  .search__icon {
-    width: var(--search-icon-size);
-    height: var(--search-icon-size);
-    fill: currentColor;
-  }
-  
+  padding: 0;
+  color: var(--ink-dim);
+  z-index: 1;
+
   &:hover {
-    background-color: var(--color-brand-weak);
-    color: var(--color-brand);
+    color: var(--ink);
+    background-color: var(--brand-weak);
   }
 }
 
 .search__input {
-  @include search-expand;
+  position: relative;
+  width: 40px;
   height: 40px;
-  padding: 0 12px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 20px;
+  padding: 0 40px 0 15px; // Padding for icon space and text
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
   font-size: 14px;
-  color: var(--color-ink);
+  color: var(--ink);
+  opacity: 0;
+  pointer-events: none;
+  transition: width var(--transition-normal), opacity var(--transition-normal), background-color var(--transition-normal);
+  z-index: 0;
+  box-shadow: var(--shadow-solid); // Add shadow when expanded
   
   &::placeholder {
-    color: var(--color-ink-dim);
+    color: var(--ink-dim);
   }
   
   &:focus {
-    border-color: var(--color-border-focus);
-    @include focus-ring;
+    outline: none;
+    border-color: var(--brand);
+    box-shadow: 0 0 0 3px var(--focus-ring), var(--shadow-solid);
   }
   
   &.is-expanded {
     width: var(--search-expanded-width);
     opacity: 1;
+    pointer-events: auto;
+    background-color: var(--surface);
+    box-shadow: var(--shadow-solid);
   }
 }
+
+.search__form {
+  width: 100%;
+}
+
+.search__icon--on-input {
+  display: none;
+}
+
 
 // =============================================================================
 // PHONE COMPONENT
 // =============================================================================
-.header-phone {
-  @include utility-button;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--color-brand-weak);
-  color: var(--color-brand);
-  font-weight: var(--font-weight-medium);
-  text-decoration: none;
-  
-  .phone__icon {
-    width: 16px;
-    height: 16px;
-    fill: currentColor;
-  }
-  
-  .phone__number {
-    @include respond-below('md') {
-      display: none;
-    }
-  }
+.phone {
+  @extend %utility-button;
+  gap: map.get($spacing, 2);
+  background-color: color.adjust(map.get($colors, 'brand'), $alpha: -0.92); // Soft fill
   
   &:hover {
-    background: var(--color-brand);
-    color: var(--color-ink-invert);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-solid);
+    background-color: var(--brand-weak);
   }
-  
-  @include respond-below('lg') {
-    padding: 8px 10px;
-    font-size: 14px;
+
+  @include respond-below('md') {
+    .phone__number {
+      display: none; // Icon-only on mobile
+    }
   }
 }
 
 // =============================================================================
-// LANGUAGE SELECTOR
+// LANGUAGE COMPONENT
 // =============================================================================
-.lang-selector {
-  position: relative;
-}
-
 .lang {
-  @include utility-button;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  min-width: 60px;
-  
-  .lang-current {
-    font-size: 14px;
-    font-weight: var(--font-weight-medium);
+  position: relative; // For dropdown positioning
+}
+
+.lang__button {
+  @extend %utility-button;
+  gap: map.get($spacing, 1);
+  border: 1px solid var(--border);
+
+  &:hover {
+     border-color: var(--brand);
   }
-  
-  .lang-arrow {
-    width: 0;
-    height: 0;
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;
-    border-top: 3px solid currentColor;
-    transition: transform var(--header-transition);
+
+  .icon-caret {
+    width: 16px;
+    height: 16px;
+    transition: transform var(--transition-fast);
   }
-  
-  &[aria-expanded="true"] .lang-arrow {
+
+  &[aria-expanded="true"] .icon-caret {
     transform: rotate(180deg);
   }
-  
+}
+
+.lang__code {
   @include respond-below('lg') {
-    min-width: 44px;
-    justify-content: center;
-    
-    .lang-current {
-      font-size: 12px;
-    }
+    display: none; // Icon-only on smaller screens
   }
 }
 
 .lang-dropdown {
-  position: absolute;
-  top: calc(100% + var(--dropdown-offset));
-  right: 0;
-  min-width: 160px;
-  background: var(--color-surface);
-  border-radius: var(--header-radius-lg);
-  box-shadow: var(--header-shadow-glass);
-  padding: 0.5rem 0;
-  z-index: var(--z-dropdown);
-  
-  @include dropdown-animation;
+  @include nav-dropdown-base; // Use mixin for consistency
+  right: 0; // Align to the right of the trigger
+  left: auto;
 }
 
 .lang-option {
-  display: block;
-  padding: 0.75rem 1rem;
-  color: var(--color-ink);
-  text-decoration: none;
-  font-size: 14px;
-  transition: var(--header-transition);
-  
-  &:hover {
-    background-color: var(--color-brand-weak);
-    color: var(--color-brand);
+  @include nav-dropdown-item; // Use mixin for consistency
+
+  // Stagger animation for language options
+  .lang-dropdown.is-open & {
+    @include stagger-fade-in(4, 40ms);
   }
-  
-  &.active {
-    background-color: var(--color-brand-weak);
-    color: var(--color-brand);
+
+  &.is-active {
     font-weight: var(--font-weight-medium);
+    color: var(--brand);
+    background-color: color.adjust(map.get($colors, 'brand'), $alpha: -0.95);
     
     &::after {
       content: '✓';
-      float: right;
-      color: var(--color-brand);
+      margin-left: auto;
+      color: var(--brand);
+      font-weight: bold;
     }
   }
-  
-  @include focus-visible;
 }
 
 // =============================================================================
-// CTA BUTTON
+// CTA COMPONENT
 // =============================================================================
-.header-cta {
-  @include cta-button;
-  white-space: nowrap;
+.cta__button {
+  @extend %utility-button;
+  height: 40px;
+  padding: #{map.get($components, 'cta-padding-block')} #{map.get($components, 'cta-padding-inline')};
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-light) 100%);
+  color: var(--ink-invert);
+  font-size: map.get($components, 'cta-font-size');
+  font-weight: map.get($components, 'cta-font-weight');
+  position: relative;
+  overflow: hidden;
   
-  @include respond-below('lg') {
-    padding: 12px 16px;
-    font-size: 14px;
-  }
-  
-  @include respond-below('md') {
-    padding: 10px 14px;
-    font-size: 13px;
-  }
-}
-
-// =============================================================================
-// BURGER MENU
-// =============================================================================
-.burger {
-  @include button-reset;
-  @include burger-animation;
-  width: 44px;
-  height: 44px;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  border-radius: 6px;
-  color: var(--color-ink);
-  
-  @include respond-below('lg') {
-    display: flex;
-  }
-  
-  .burger__bar {
-    width: 20px;
-    height: 2px;
-    background-color: currentColor;
-    border-radius: 1px;
-    transition: var(--header-transition);
+  // Subtle pulse animation
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    opacity: 0;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
   
   &:hover {
-    background-color: var(--color-brand-weak);
-    color: var(--color-brand);
+    background: linear-gradient(135deg, var(--brand-light) 0%, var(--brand) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px color.adjust(map.get($colors, 'brand'), $alpha: -0.65);
+    
+    &::after {
+      animation: none;
+      opacity: 0.3;
+    }
   }
   
-  @include focus-visible;
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px color.adjust(map.get($colors, 'brand'), $alpha: -0.7);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.15;
+    transform: scale(1.05);
+  }
+}
+
+// =============================================================================
+// MOBILE BURGER MENU
+// =============================================================================
+.burger {
+  // Do NOT extend %utility-button to avoid global display:inline-flex
+  display: inline-flex; // Shown by default (mobile-first)
+  width: 44px;
+  height: 44px;
+  gap: 4px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: var(--ink-dim);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+
+  &:hover {
+    color: var(--ink);
+    background-color: var(--brand-weak);
+  }
+
+  @include respond-below('lg') {
+    display: inline-flex; // Show on mobile
+  }
+  
+  @include burger-animation;
+}
+
+.burger__bar {
+  width: 22px;
+  height: 2px;
+  background-color: currentColor;
+  border-radius: 1px;
+  transition: transform var(--transition-normal), opacity var(--transition-normal);
 }
 
 // =============================================================================
@@ -242,193 +309,15 @@
   top: 0;
   right: 0;
   width: var(--drawer-width);
-  height: 100vh;
-  background: var(--color-surface);
+  height: 100dvh; // Use dynamic viewport height
+  background: var(--surface);
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
   z-index: var(--z-modal);
-  transform: translateX(100%);
-  transition: transform var(--header-transition);
+  @include drawer-animation;
   
   &.is-open {
     transform: translateX(0);
   }
-  
-  @include respond-to('lg') {
-    display: none;
-  }
-}
-
-.mnav__panel {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 1rem;
-  overflow-y: auto;
-}
-
-.mnav__close {
-  @include button-reset;
-  align-self: flex-end;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  color: var(--color-ink-dim);
-  font-size: 20px;
-  margin-bottom: 1rem;
-  
-  &:hover {
-    background-color: var(--color-brand-weak);
-    color: var(--color-brand);
-  }
-  
-  @include focus-visible;
-}
-
-.mnav__nav {
-  flex: 1;
-  margin-bottom: 2rem;
-}
-
-.mnav__link {
-  display: block;
-  padding: 1rem 0;
-  color: var(--color-ink);
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: var(--font-weight-medium);
-  border-bottom: 1px solid var(--color-border);
-  
-  &:hover {
-    color: var(--color-brand);
-  }
-  
-  @include focus-visible;
-}
-
-.mnav__group {
-  border-bottom: 1px solid var(--color-border);
-  
-  summary {
-    @include button-reset;
-    display: block;
-    padding: 1rem 0;
-    color: var(--color-ink);
-    font-size: 16px;
-    font-weight: var(--font-weight-medium);
-    cursor: pointer;
-    list-style: none;
-    
-    &::-webkit-details-marker {
-      display: none;
-    }
-    
-    &::after {
-      content: '+';
-      float: right;
-      font-size: 18px;
-      transition: transform var(--header-transition);
-    }
-    
-    &:hover {
-      color: var(--color-brand);
-    }
-  }
-  
-  &[open] summary::after {
-    transform: rotate(45deg);
-  }
-}
-
-.mnav__sub {
-  padding-left: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.mnav__sublink {
-  display: block;
-  padding: 0.75rem 0;
-  color: var(--color-ink-dim);
-  text-decoration: none;
-  font-size: 14px;
-  
-  &:hover {
-    color: var(--color-brand);
-  }
-  
-  @include focus-visible;
-}
-
-.mnav__search {
-  margin-bottom: 2rem;
-}
-
-.mnav__input {
-  width: 100%;
-  height: 44px;
-  padding: 0 1rem;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 22px;
-  font-size: 16px;
-  color: var(--color-ink);
-  
-  &::placeholder {
-    color: var(--color-ink-dim);
-  }
-  
-  &:focus {
-    border-color: var(--color-border-focus);
-    @include focus-ring;
-  }
-}
-
-.mnav__actions {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.mnav__lang {
-  .mnav__lang-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 14px;
-    color: var(--color-ink-dim);
-    font-weight: var(--font-weight-medium);
-  }
-}
-
-.mnav__lang-options {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.mnav__lang-option {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  color: var(--color-ink-dim);
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: var(--font-weight-medium);
-  transition: var(--header-transition);
-  
-  &:hover {
-    border-color: var(--color-brand);
-    color: var(--color-brand);
-  }
-  
-  &.active {
-    background: var(--color-brand);
-    border-color: var(--color-brand);
-    color: var(--color-ink-invert);
-  }
-  
-  @include focus-visible;
 }
 
 .mnav__backdrop {
@@ -436,91 +325,133 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  height: 100dvh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   z-index: calc(var(--z-modal) - 1);
   opacity: 0;
-  transition: opacity var(--header-transition);
   pointer-events: none;
+  transition: opacity 320ms cubic-bezier(0.16, 1, 0.3, 1);
   
-  .mnav.is-open & {
+  .mnav.is-open + & {
     opacity: 1;
     pointer-events: auto;
   }
 }
 
-// =============================================================================
-// RESPONSIVE ADJUSTMENTS
-// =============================================================================
+.mnav__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-h);
+  padding: 0 map.get($spacing, 4);
+  border-bottom: 1px solid var(--border);
+}
 
-// Large screens - compress utilities
-@include respond-to('lg') {
-  .header-utilities {
-    gap: 0.5rem;
-  }
-  
-  .lang {
-    min-width: 50px;
-  }
-  
-  .header-phone {
-    padding: 8px 10px;
-    font-size: 14px;
+.mnav__close {
+  @extend %utility-button;
+  width: 44px;
+  height: 44px;
+}
+
+.mnav__content {
+  padding: map.get($spacing, 4);
+  height: calc(100dvh - var(--header-h));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mnav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mnav__item {
+  border-bottom: 1px solid var(--border);
+  &:last-child {
+    border-bottom: none;
   }
 }
 
-// Medium screens - further compression
-@include respond-to('md') {
-  .header-utilities {
-    gap: 0.375rem;
+.mnav__link {
+  display: block;
+  padding: map.get($spacing, 3) map.get($spacing, 2);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  border-radius: 6px;
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+  position: relative;
+  
+  // Stagger animation when mobile menu opens
+  .mnav.is-open & {
+    @include stagger-fade-in(8, 50ms);
   }
   
-  .search__button {
-    width: 36px;
-    height: 36px;
+  &:hover {
+    background-color: var(--brand-weak);
+    color: var(--brand);
+    transform: translateX(4px);
   }
   
-  .header-phone {
-    padding: 6px 8px;
-    font-size: 13px;
+  &.is-active {
+    background-color: var(--brand-weak);
+    color: var(--brand);
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 60%;
+      background: var(--brand);
+      border-radius: 0 2px 2px 0;
+    }
   }
+
+  @include focus-visible-ring('inset');
+}
+
+.mnav__utilities {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  display: grid;
+  gap: map.get($spacing, 3);
   
-  .lang {
-    min-width: 44px;
-    padding: 6px 8px;
+  .search,
+  .phone,
+  .lang__button,
+  .cta__button {
+    width: 100%;
+    justify-content: center;
   }
-  
-  .header-cta {
-    padding: 8px 12px;
-    font-size: 13px;
+
+  .search {
+    // Mobile search can be simpler, maybe just a link to a search page
+    // or a permanently visible input field here.
+    // For now, we'll hide the complex expandable search
+    display: none;
   }
 }
 
 // =============================================================================
-// ACCESSIBILITY IMPROVEMENTS
+// ACCESSIBILITY: REDUCED MOTION
 // =============================================================================
-
-// Ensure proper focus management in dropdowns
-.lang-selector:focus-within .lang-dropdown {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-// Screen reader support
-.search__icon,
-.phone__icon {
-  @include visually-hidden;
-}
-
-// High contrast mode adjustments
-@include high-contrast {
-  .search__input,
-  .mnav__input {
-    border-width: 2px;
+@include reduced-motion {
+  .nav-sub__link,
+  .lang-option,
+  .mnav__link {
+    animation: none !important;
+    opacity: 1 !important;
   }
   
-  .lang-option.active::after {
-    content: '✓';
+  .cta__button::after {
+    animation: none !important;
   }
 }

@@ -26,6 +26,11 @@
   @include visually-hidden;
 }
 
+// Alias to match template class name
+.u-visually-hidden {
+  @include visually-hidden;
+}
+
 // =============================================================================
 // FLEXBOX UTILITIES
 // =============================================================================
