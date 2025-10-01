@@ -1,37 +1,124 @@
-@use 'settings/colors';
-@use 'settings/typography-tokens';
-@use 'settings/breakpoints';
+// Main SCSS entry point for Diaeta Header & Navigation Design System
+// Following ITCSS architecture: Settings → Base → Layout → Components → Utilities
+
+// =============================================================================
+// SETTINGS
+// =============================================================================
+@use 'settings/tokens';
+@use 'settings/mixins' as *;
+
+// =============================================================================
+// BASE
+// =============================================================================
 @use 'base/reset';
-@use 'base/typography';
-@use 'layout/grid';
-@use 'components/background';
-@use 'components/header';
-@use 'components/nav';
-@use 'components/footer';
-@use 'components/hero';
-@use 'components/hero-modern';
-@use 'components/hero-pro';
-@use 'components/home';
-@use 'components/card';
-@use 'components/buttons';
-@use 'components/badges';
-@use 'components/sections';
-@use 'components/philosophy-contrast';
-@use 'components/philosophy-modern';
-@use 'components/solutions-section';
-@use 'components/solutions-modern';
-@use 'components/testimonials-timelines';
-@use 'components/testimonials-modern';
-@use 'components/expertise-showcase';
-@use 'components/faq';
-@use 'components/pricing-section';
-@use 'components/loading-states';
-@use 'components/micro-interactions';
-@use 'components/enhanced-headers';
-@use 'components/spacing-system';
-@use 'components/accessibility-enhancements';
-@use 'components/healthcare-accessibility';
-@use 'components/icon-system';
-@use 'components/performance-optimization';
-@use 'utilities/utilities';
-@use 'utilities/animations';
+
+// =============================================================================
+// LAYOUT
+// =============================================================================
+@use 'layout/header';
+
+// =============================================================================
+// COMPONENTS
+// =============================================================================
+@use 'components/utilities';
+
+// =============================================================================
+// UTILITIES
+// =============================================================================
+@use 'utilities/helpers';
+
+// =============================================================================
+// GLOBAL STYLES
+// =============================================================================
+
+// Ensure proper box-sizing
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Root font settings
+html {
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Body reset
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--color-ink);
+  background-color: var(--color-surface);
+}
+
+// =============================================================================
+// THEME SWITCHING
+// =============================================================================
+
+// Default solid theme
+.site-header {
+  @extend .theme-solid;
+}
+
+// Glass theme can be applied via JavaScript
+.site-header.theme-glass {
+  // Glass theme styles are defined in layout/header.scss
+}
+
+// =============================================================================
+// SCROLL BEHAVIOR
+// =============================================================================
+
+// Smooth scrolling for anchor links
+html {
+  scroll-behavior: smooth;
+}
+
+// Disable smooth scrolling for users who prefer reduced motion
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+// =============================================================================
+// PERFORMANCE OPTIMIZATIONS
+// =============================================================================
+
+// Optimize rendering for header elements
+.site-header,
+.site-header * {
+  will-change: auto;
+}
+
+// Only apply will-change during animations
+.site-header.is-scrolled,
+.nav-sub.is-open,
+.mnav.is-open {
+  will-change: transform, opacity;
+}
+
+// =============================================================================
+// DEBUG MODE (remove in production)
+// =============================================================================
+
+// Uncomment to visualize header grid and components
+// .site-header {
+//   outline: 2px dashed red;
+//   
+//   .site-header__inner {
+//     outline: 2px dashed blue;
+//   }
+//   
+//   .nav-shell {
+//     outline: 2px dashed green;
+//   }
+//   
+//   .header-utilities {
+//     outline: 2px dashed orange;
+//   }
+// }

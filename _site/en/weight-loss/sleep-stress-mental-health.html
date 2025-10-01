@@ -8,27 +8,30 @@
     <!-- Link to global and hub-specific stylesheets -->
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/weight-loss-hub.css">
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/main.css" />
 </head>
 <body>
     <!-- Assuming a global header is included via the build process -->
     
 
-  ﻿<header class="site-header" data-header="">
+  ﻿<header class="site-header theme-solid" data-header>
   <div class="site-header__inner">
+    <!-- Brand/Logo -->
     <a class="brand" href="/en/" aria-label="Diaeta — Home">
-      <img src="/images/logo.svg" alt="Diaeta">
+      <img src="/images/logo.svg" alt="Diaeta" width="142" height="50" />
     </a>
 
-    <!-- Desktop nav -->
+    <!-- Primary Navigation -->
     <div class="nav-shell" role="presentation">
       <nav class="nav" aria-label="Primary">
         <ul class="nav__list" role="menubar">
-          <li class="nav__item" role="none"><a class="nav__link" href="/en/#hero" data-spy="">Home</a></li>
+          <li class="nav__item" role="none">
+            <a class="nav__link" href="/en/#hero" data-spy>Home</a>
+          </li>
           <li class="nav__item nav__item--has-sub" role="none">
             <button class="nav__link nav__toggle" aria-expanded="false" aria-haspopup="true" aria-controls="about-sub">
               <span class="nav__label">About</span>
-              <span class="nav__caret" aria-hidden="true"></span>
+              <span class="nav__caret" aria-hidden="true">▼</span>
             </button>
             <div id="about-sub" class="nav-sub" role="menu">
               <a role="menuitem" class="nav-sub__link" href="/en/#philosophy">Our Philosophy</a>
@@ -37,63 +40,94 @@
               <a role="menuitem" class="nav-sub__link" href="/en/contact/">Contact Us</a>
             </div>
           </li>
-
-          <!-- Optional: Services dropdown -->
           <li class="nav__item nav__item--has-sub" role="none">
-            <button class="nav__link nav__toggle" aria-expanded="false" aria-haspopup="true" aria-controls="svcs-sub">
+            <button class="nav__link nav__toggle" aria-expanded="false" aria-haspopup="true" aria-controls="services-sub">
               <span class="nav__label">Services</span>
-              <span class="nav__caret" aria-hidden="true"></span>
+              <span class="nav__caret" aria-hidden="true">▼</span>
             </button>
-            <div id="svcs-sub" class="nav-sub" role="menu">
+            <div id="services-sub" class="nav-sub" role="menu">
               <a role="menuitem" class="nav-sub__link" href="/en/irritable-bowel-syndrome-fodmap/">IBS (Low-FODMAP)</a>
               <a role="menuitem" class="nav-sub__link" href="/en/weight-loss/">Weight Management</a>
               <a role="menuitem" class="nav-sub__link" href="/en/type-2-diabetes/">Type 2 Diabetes</a>
               <a role="menuitem" class="nav-sub__link" href="/en/hypertension-cholesterol/">Cholesterol</a>
             </div>
           </li>
-
-          <li class="nav__item" role="none"><a class="nav__link" href="/en/locations/" data-spy="">Locations</a></li>
-          <li class="nav__item" role="none"><a class="nav__link" href="/en/tariffs/" data-spy="">Pricing</a></li>
-          <li class="nav__item" role="none"><a class="nav__link" href="/en/news/" data-spy="">Blog</a></li>
-          <li class="nav__item" role="none"><a class="nav__link" href="/en/contact/" data-spy="">Contact</a></li>
+          <li class="nav__item" role="none">
+            <a class="nav__link" href="/en/locations/">Locations</a>
+          </li>
+          <li class="nav__item" role="none">
+            <a class="nav__link" href="/en/tariffs/">Pricing</a>
+          </li>
+          <li class="nav__item" role="none">
+            <a class="nav__link" href="/en/news/">Blog</a>
+          </li>
+          <li class="nav__item" role="none">
+            <a class="nav__link" href="/en/contact/">Contact</a>
+          </li>
         </ul>
       </nav>
     </div>
 
-    <!-- Right cluster -->
+    <!-- Utilities Cluster -->
     <div class="header-ctrls">
       <div class="header-utilities" role="presentation">
-        <form class="search" role="search" action="/en/search/" method="get">
-          <input class="search__input" type="search" name="q" placeholder="Search..." aria-label="Search">
-        </form>
+        <!-- Search -->
+        <div class="search">
+          <button class="search__button" aria-expanded="false" aria-controls="search-input" aria-label="Search">
+            <svg class="search__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+          </button>
+          <form role="search" action="/en/search/" method="get">
+            <input 
+              id="search-input"
+              class="search__input" 
+              type="search" 
+              name="q" 
+              placeholder="Search..." 
+              aria-label="Search"
+            />
+          </form>
+        </div>
 
-        <a class="header-phone" href="tel:+32479355551" aria-label="Call +32 479 35 55 51">+32 479 35 55 51</a>
+        <!-- Phone -->
+        <a class="header-phone" href="tel:+32479355551" aria-label="Call +32 479 35 55 51">
+          <svg class="phone__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span class="phone__number">+32 479 35 55 51</span>
+        </a>
 
+        <!-- Language Selector -->
         <div class="lang-selector">
           <button class="lang" aria-label="Language" aria-expanded="false" aria-haspopup="true" aria-controls="lang-dropdown">
             <span class="lang-current">EN</span>
-            <span class="lang-arrow" aria-hidden="true"></span>
+            <span class="lang-arrow" aria-hidden="true">▼</span>
           </button>
           <div id="lang-dropdown" class="lang-dropdown" role="menu">
             <a role="menuitem" class="lang-option active" href="/en/" data-lang="en">English</a>
-            <a role="menuitem" class="lang-option" href="/fr/" data-lang="fr">Fran&ccedil;ais</a>
+            <a role="menuitem" class="lang-option" href="/fr/" data-lang="fr">Français</a>
             <a role="menuitem" class="lang-option" href="/nl/" data-lang="nl">Nederlands</a>
             <a role="menuitem" class="lang-option" href="/de/" data-lang="de">Deutsch</a>
           </div>
         </div>
 
-        <a class="btn btn-primary header-cta" href="/en/appointment/">Book Appointment</a>
+        <!-- CTA Button -->
+        <a class="header-cta" href="/en/appointment/">Book Appointment</a>
       </div>
 
-      <!-- Mobile burger -->
+      <!-- Mobile Burger Menu -->
       <button class="burger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
-        <span class="burger__bar"></span><span class="burger__bar"></span><span class="burger__bar"></span>
+        <span class="burger__bar"></span>
+        <span class="burger__bar"></span>
+        <span class="burger__bar"></span>
       </button>
     </div>
   </div>
 
   <!-- Mobile drawer -->
-  <div id="mobile-menu" class="mnav" hidden="">
+  <div id="mobile-menu" class="mnav" hidden>
     <div class="mnav__panel" role="dialog" aria-modal="true" aria-label="Main menu">
       <button class="mnav__close" aria-label="Close menu">✕</button>
 
@@ -126,7 +160,7 @@
       </nav>
 
       <form class="mnav__search" role="search" action="/en/search/" method="get">
-        <input class="mnav__input" type="search" name="q" placeholder="Search…" aria-label="Search">
+        <input class="mnav__input" type="search" name="q" placeholder="Search…" aria-label="Search" />
       </form>
 
       <div class="mnav__actions">
@@ -145,12 +179,9 @@
       </div>
     </div>
 
-    <div class="mnav__backdrop" data-close=""></div>
+    <div class="mnav__backdrop" data-close></div>
   </div>
 </header>
-
-
-
 
 
 
@@ -363,7 +394,7 @@
                 <div class="cookie-category">
                     <div class="category-header">
                         <label for="cookieCatNecessary" class="category-label">Necessary Cookies</label>
-                        <input type="checkbox" id="cookieCatNecessary" checked="" disabled="">
+                        <input type="checkbox" id="cookieCatNecessary" checked disabled>
                          <span class="toggle-switch-display" aria-hidden="true"></span>
                     </div>
                     <p class="category-description text-xs">These cookies are essential for the site to function properly and cannot be disabled.</p>

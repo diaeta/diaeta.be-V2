@@ -1,328 +1,40 @@
-require('dotenv').config();
-const { DateTime } = require('luxon');
-const path = require('path');
-const fs = require('fs');
+const { DateTime } = require("luxon");
 
-const site = require('./src/_data/site.json');
-const translations = require('./src/_data/i18n.json');
-
-const supportedLocales = site?.locales ?? ['fr'];
-const defaultLocale = site?.defaultLocale ?? supportedLocales[0];
-const baseUrl = site?.baseUrl ?? '';
-const outputDir = process.env.ELEVENTY_OUTPUT_DIR || '_site';
-
-module.exports = async function (eleventyConfig) {
-  // Eleventy v3-compatible dynamic imports (ESM)
-  const { EleventyI18nPlugin } = await import('@11ty/eleventy');
-  const { default: EleventyImage } = await import('@11ty/eleventy-img');
-  const { default: EleventyBundlePlugin } = await import('@11ty/eleventy-plugin-bundle');
-  const { default: EleventyNavigationPlugin } = await import('@11ty/eleventy-navigation');
-  const { default: EleventyRssPlugin } = await import('@11ty/eleventy-plugin-rss');
-  const { default: sitemapPlugin } = await import('@quasibit/eleventy-plugin-sitemap');
-  eleventyConfig.addPlugin(EleventyI18nPlugin, {
-    defaultLanguage: defaultLocale,
-    errorMode: 'strict',
-    translations,
+module.exports = function(eleventyConfig) {
+  // Copy static files
+  eleventyConfig.addPassthroughCopy("src/robots.txt.njk");
+  
+  // Add filters
+  eleventyConfig.addFilter("readableDate", dateObj => {
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
   });
 
-  eleventyConfig.addPlugin(EleventyNavigationPlugin);
-  eleventyConfig.addPlugin(EleventyBundlePlugin);
-  eleventyConfig.addPlugin(EleventyRssPlugin);
-  eleventyConfig.addPlugin(sitemapPlugin, {
-    sitemap: {
-      hostname: baseUrl,
-    },
+  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
   });
 
-  // Copy static assets to the output directory
-  eleventyConfig.addPassthroughCopy({ "src/scripts": "assets/js" });
-  eleventyConfig.addPassthroughCopy({ "public/assets/js": "assets/js" });
-  eleventyConfig.addPassthroughCopy({ 'public/images': 'images' });
-  eleventyConfig.addPassthroughCopy({ 'assets/images': 'assets/images' });
-  eleventyConfig.addPassthroughCopy({ 'public/favicon.ico': 'favicon.ico' });
-
-  eleventyConfig.addWatchTarget('src/styles');
-
-  eleventyConfig.addGlobalData('cacheBuster', () => new Date().getTime());
-
-  eleventyConfig.addGlobalData('localization', {
-    supportedLocales,
-    defaultLocale,
-    baseUrl,
-  });
-
-  eleventyConfig.addFilter('localizedUrl', (url = '/', locale = defaultLocale) => {
-    if (!url.startsWith('/')) {
-      url = `/${url}`;
+  // Add date filter for formatting
+  eleventyConfig.addFilter("date", (dateObj, format) => {
+    if (!dateObj) return "";
+    if (typeof dateObj === 'string') {
+      dateObj = new Date(dateObj);
     }
-    if (locale === defaultLocale) {
-      return url;
-    }
-    return `/${locale}${url}`;
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat(format);
   });
 
-  eleventyConfig.addFilter('hreflangList', (path = '/') => {
-    return supportedLocales.map(locale => ({
-      locale,
-      url: locale === defaultLocale ? `${baseUrl}${path}` : `${baseUrl}/${locale}${path}`,
-    }));
-  });
+  // Add shortcodes
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
-  // Backward-compat function for templates calling hreflangList(path) directly
-  // Exposes a universal JS function usable across template engines
-  eleventyConfig.addJavaScriptFunction('hreflangList', function(path = '/') {
-    try {
-      const segs = (path || '/').split('/').filter(Boolean);
-      const first = segs[0];
-      const hasLocalePrefix = supportedLocales.includes(first);
-      const rest = hasLocalePrefix ? '/' + segs.slice(1).join('/') : (path || '/');
-      return supportedLocales.map(locale => ({
-        locale,
-        url: `${baseUrl}${locale === defaultLocale ? rest : `/${locale}${rest}`}`,
-      }));
-    } catch {
-      return supportedLocales.map(locale => ({ locale, url: `${baseUrl}${path || '/'}` }));
-    }
-  });
-
-  // Generate correct hreflang alternates by stripping any existing leading locale
-  // from the current page url and rebuilding for each supported locale.
-  eleventyConfig.addFilter('hreflangAlternates', (urlPath = '/') => {
-    try {
-      const segs = (urlPath || '/').split('/').filter(Boolean);
-      const first = segs[0];
-      const hasLocalePrefix = supportedLocales.includes(first);
-      const rest = hasLocalePrefix ? '/' + segs.slice(1).join('/') : (urlPath || '/');
-      return supportedLocales.map(locale => ({
-        locale,
-        url: `${baseUrl}${locale === defaultLocale ? rest : `/${locale}${rest}`}`,
-      }));
-    } catch {
-      // Fallback to current url only
-      return [{ locale: defaultLocale, url: `${baseUrl}${urlPath || '/'}` }];
-    }
-  });
-
-  // Utility string filters
-  eleventyConfig.addFilter('startsWith', (value, prefix) => {
-    try {
-      return typeof value === 'string' && typeof prefix === 'string' && value.startsWith(prefix);
-    } catch { return false; }
-  });
-  eleventyConfig.addFilter('includes', (value, needle) => {
-    try {
-      return typeof value === 'string' && typeof needle === 'string' && value.includes(needle);
-    } catch { return false; }
-  });
-
-  // Proper date formatting filter using Luxon
-  // Usage: {{ someDate | date('dd LLL yyyy', 'Europe/Brussels', locale) }}
-  eleventyConfig.addFilter('date', (value, format = 'dd LLL yyyy', zone = 'Europe/Brussels', locale = defaultLocale) => {
-    try {
-      let dt;
-      if (value instanceof Date) {
-        dt = DateTime.fromJSDate(value, { zone });
-      } else if (typeof value === 'number') {
-        dt = DateTime.fromMillis(value, { zone });
-      } else if (typeof value === 'string') {
-        dt = DateTime.fromISO(value, { zone });
-        if (!dt.isValid) {
-          // try JS Date fallback
-          const js = new Date(value);
-          if (!Number.isNaN(js.getTime())) dt = DateTime.fromJSDate(js, { zone });
-        }
-      }
-      if (!dt || !dt.isValid) return String(value ?? '');
-      return dt.setLocale(locale).toFormat(format);
-    } catch {
-      return String(value ?? '');
-    }
-  });
-
-  // Simple translation helpers using i18n.json
-  function getNested(source, key) {
-    return key
-      .split('.')
-      .reduce((obj, k) => (obj && obj[k] !== undefined ? obj[k] : undefined), source);
-  }
-  function detectLocaleFromPath(path = '/') {
-    try {
-      const seg = (path || '/').split('/').filter(Boolean)[0];
-      return supportedLocales.includes(seg) ? seg : defaultLocale;
-    } catch {
-      return defaultLocale;
-    }
-  }
-  eleventyConfig.addFilter('localeFromUrl', (path = '/') => detectLocaleFromPath(path));
-  eleventyConfig.addFilter('t', (key, locale = defaultLocale) => {
-    const lang = supportedLocales.includes(locale) ? locale : defaultLocale;
-    const primary = getNested(translations?.[lang] || {}, key);
-    if (primary !== undefined) return primary;
-    const fallback = getNested(translations?.[defaultLocale] || {}, key);
-    return fallback !== undefined ? fallback : key;
-  });
-  eleventyConfig.addFilter('tAuto', (key, path = '/') => {
-    const lang = detectLocaleFromPath(path);
-    const primary = getNested(translations?.[lang] || {}, key);
-    if (primary !== undefined) return primary;
-    const fallback = getNested(translations?.[defaultLocale] || {}, key);
-    return fallback !== undefined ? fallback : key;
-  });
-
-  // Simple translation filter reading from src/_data/i18n.json
-  function getNested(source, key) {
-    return key
-      .split('.')
-      .reduce((obj, k) => (obj && obj[k] !== undefined ? obj[k] : undefined), source);
-  }
-  eleventyConfig.addFilter('t', (key, locale = defaultLocale) => {
-    const lang = supportedLocales.includes(locale) ? locale : defaultLocale;
-    const primary = getNested(translations?.[lang] || {}, key);
-    if (primary !== undefined) return primary;
-    const fallback = getNested(translations?.[defaultLocale] || {}, key);
-    return fallback !== undefined ? fallback : key;
-  });
-
-  eleventyConfig.addNunjucksAsyncShortcode(
-    'image',
-    async function imageShortcode(src, alt = '', options = {}) {
-      if (!src) {
-        throw new Error('Image shortcode requires src');
-      }
-
-      const widths = options.widths || [360, 480, 640, 768, 1024, 1280, 1536, 1920];
-      const formats = options.formats || ['avif', 'webp', 'jpg'];
-      const sizes = options.sizes || '(min-width: 1200px) 560px, (min-width: 768px) 75vw, 92vw';
-      const outputDirPath = `${outputDir}/assets/images`;
-
-      const results = await EleventyImage(src, {
-        widths,
-        formats,
-        urlPath: '/assets/images',
-        outputDir: outputDirPath,
-        filenameFormat(id, imageSrc, width, format) {
-          const optSlug = options.slug ? String(options.slug) : '';
-          const parsedSrc = typeof imageSrc === 'string' ? imageSrc : '';
-          let relativeDir = '';
-          let slugBase = optSlug.trim();
-
-          if (!slugBase && parsedSrc) {
-            try {
-              const absolute = path.isAbsolute(parsedSrc) ? parsedSrc : path.resolve(parsedSrc);
-              const relativeToSrc = path.relative(path.resolve('src'), absolute);
-              if (!relativeToSrc.startsWith('..')) {
-                relativeDir = path.dirname(relativeToSrc).replace(/\\/g, '/');
-                slugBase = path.parse(relativeToSrc).name;
-              }
-            } catch {}
-          }
-
-          if (!slugBase) {
-            slugBase = EleventyImage.slugify(id);
-          }
-
-          const safeSlug = slugBase
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, '-')
-            .replace(/^-|-$/g, '') || 'image';
-
-          let computedDir = relativeDir && relativeDir !== '.' ? relativeDir.replace(/\\/g, '/') : '';
-          if (computedDir.startsWith('images/')) {
-            computedDir = computedDir.slice('images/'.length);
-          }
-          const subdir = options.outputSubdir || computedDir;
-          const normalizedDir = subdir ? subdir.replace(/\\/g, '/') : '';
-          const normalizedFormat = format === 'jpeg' ? 'jpg' : format;
-          const filename = `${safeSlug}-${width}.${normalizedFormat}`;
-
-          const ensureDir = normalizedDir ? path.join(outputDirPath, normalizedDir) : outputDirPath;
-          if (!fs.existsSync(ensureDir)) {
-            fs.mkdirSync(ensureDir, { recursive: true });
-          }
-
-          return normalizedDir ? `${normalizedDir}/${filename}` : filename;
-        },
-        sharpOptions: {
-          withoutEnlargement: false,
-        },
-        sharpAvifOptions: {
-          quality: options.avifQuality || 60,
-          effort: 6,
-        },
-        sharpWebpOptions: {
-          quality: options.webpQuality || 75,
-          effort: 5,
-        },
-        sharpJpegOptions: {
-          quality: options.jpegQuality || 82,
-          progressive: true,
-          mozjpeg: true,
-          chromaSubsampling: '4:4:4',
-        },
-      });
-      if (results.jpeg) {
-        results.jpg = results.jpg || results.jpeg.map(entry => {
-          const next = { ...entry };
-          if (next.url) next.url = next.url.replace(/\.jpeg$/i, '.jpg');
-          if (next.outputPath) next.outputPath = next.outputPath.replace(/\.jpeg$/i, '.jpg');
-          if (next.filename) next.filename = next.filename.replace(/\.jpeg$/i, '.jpg');
-          next.format = 'jpg';
-          next.sourceType = 'image/jpeg';
-          return next;
-        });
-        delete results.jpeg;
-      }
-
-
-      const fallbackFormat = results.jpg || results.jpeg || results[formats[formats.length - 1]];
-      const metadata = fallbackFormat?.[fallbackFormat.length - 1] || Object.values(results)[0][0];
-      const attrs = {
-        alt,
-        loading: options.loading || 'lazy',
-        decoding: options.decoding || 'async',
-        width: metadata.width,
-        height: metadata.height,
-        sizes,
-      };
-
-      if (options.class) {
-        attrs.class = options.class;
-      }
-      if (options.style) {
-        attrs.style = options.style;
-      }
-
-      return EleventyImage.generateHTML(results, attrs, { whitespaceMode: 'inline' });
-    }
-  );
-
-  // Strip any lingering legacy main.js includes from built HTML
-  eleventyConfig.addTransform('stripLegacyMain', (content, outputPath) => {
-    try {
-      if (outputPath && outputPath.endsWith('.html')) {
-        return content.replace(/<script[^>]*src=["']\/?legacy\/js\/main\.js["'][^>]*><\/script>\s*/gi, '');
-      }
-    } catch {}
-    return content;
-  });
-
-  eleventyConfig.setServerOptions({
-    port: 8080,
-    domDiff: false,
-    showAllHosts: false,
-  });
-
+  // Set custom directories
   return {
     dir: {
-      input: 'src',
-      includes: '_includes',
-      data: '_data',
-      output: outputDir,
+      input: "src/content",
+      includes: "../_includes",
+      data: "../_data",
+      output: "_site"
     },
-    markdownTemplateEngine: 'njk',
-    htmlTemplateEngine: 'njk',
-    templateFormats: ['md', 'njk', 'html', '11ty.js'],
-    pathPrefix: '/',
+    templateFormats: ["html", "njk", "md"],
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk"
   };
 };
-

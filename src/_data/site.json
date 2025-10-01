@@ -1,11 +1,8 @@
 {
+  "baseUrl": "https://diaeta.be",
   "brand": {
     "name": "Diaeta",
-    "tagline": ""
+    "tagline": "Personalized Nutrition, Backed by Science"
   },
-  "defaultLocale": "fr",
-  "locales": ["fr", "en", "nl", "de"],
-  "baseUrl": "https://www.diaeta.be",
-  "assetPath": "/public",
-  "cacheBuster": "20250917002"
+  "cacheBuster": "1.0.0"
 }

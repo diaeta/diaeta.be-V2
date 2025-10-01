@@ -1,42 +1,85 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+// Base reset and normalization for header components
+// Focused on header-specific elements to avoid conflicts
+
+@use '../settings/mixins' as *;
+
+// =============================================================================
+// HEADER SPECIFIC RESET
+// =============================================================================
+
+// Reset button styles for header buttons
+.site-header button,
+.site-header [role="button"] {
+  @include button-reset;
 }
 
-html {
-  font-size: 100%;
-}
-
-body {
+// Reset list styles for navigation
+.site-header ul,
+.site-header ol {
+  list-style: none;
   margin: 0;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  padding: 0;
 }
 
-img,
-video {
-  max-width: 100%;
-  height: auto;
-  display: block;
+// Reset link styles
+.site-header a {
+  color: inherit;
+  text-decoration: none;
 }
 
-/* Accessible skip link */
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+// Reset form elements
+.site-header input,
+.site-header select,
+.site-header textarea {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  outline: none;
 }
-.skip-link:focus {
-  left: 1rem;
-  top: 1rem;
-  width: auto;
-  height: auto;
-  background: #0a5f6b;
-  color: #fff;
-  padding: .5rem .75rem;
-  border-radius: .25rem;
-  z-index: 1000;
+
+// =============================================================================
+// ACCESSIBILITY IMPROVEMENTS
+// =============================================================================
+
+// Ensure focus is visible
+.site-header *:focus {
+  outline: none;
+}
+
+.site-header *:focus-visible {
+  @include focus-ring;
+}
+
+// Improve touch targets on mobile
+@media (max-width: 767px) {
+  .site-header button,
+  .site-header a,
+  .site-header [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+// =============================================================================
+// REDUCED MOTION SUPPORT
+// =============================================================================
+@include reduced-motion {
+  .site-header * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+// =============================================================================
+// HIGH CONTRAST MODE SUPPORT
+// =============================================================================
+@include high-contrast {
+  .site-header {
+    --color-brand: #000000;
+    --color-ink: #000000;
+    --color-border: #000000;
+    --color-focus-ring: #000000;
+  }
 }

@@ -10,7 +10,7 @@
     "build:css": "sass src/styles/main.scss _site/assets/css/main.css --style=compressed",
     "watch:css": "sass src/styles/main.scss _site/assets/css/main.css --watch",
     "dev": "npm run build && npm-run-all --parallel watch serve:static watch:css",
-    "build": "cross-env ELEVENTY_OUTPUT_DIR=_site NODE_ENV=production eleventy --config=eleventy.config.js && npm run build:css",
+    "build": "cross-env ELEVENTY_OUTPUT_DIR=_site NODE_ENV=production eleventy --config=eleventy.config.js",
     "serve": "cross-env ELEVENTY_OUTPUT_DIR=_site eleventy --config=eleventy.config.js --serve",
     "serve:static": "http-server _site --port 8080",
     "watch": "cross-env ELEVENTY_OUTPUT_DIR=_site eleventy --config=eleventy.config.js --watch",

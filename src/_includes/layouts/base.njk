@@ -1,63 +1,61 @@
 <!DOCTYPE html>
-<html lang="{{ lang or page.lang or localization.defaultLocale }}">
+<html lang="{{ lang or page.lang or 'en' }}">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>
-      {% if title %}{{ title }}{% elseif seo and seo.title %}{{ seo.title }}{% else %}{{ site.brand.name }}{% endif %}
+      {% if title %}{{ title }}{% else %}{{ site.brand.name }}{% endif %}
     </title>
-    {% if description or seo and seo.description %}
-      <meta name="description" content="{{ description or seo.description }}">
+    {% if description %}
+      <meta name="description" content="{{ description }}">
     {% endif %}
 
     {% set canonicalUrl = (page.url or '/') | url %}
     <link rel="canonical" href="{{ site.baseUrl }}{{ canonicalUrl }}">
 
-    {% if localization and localization.supportedLocales and page.url %}
-      {% for href in page.url | hreflangAlternates %}
-        <link rel="alternate" hreflang="{{ href.locale }}" href="{{ href.url }}">
-      {% endfor %}
-    {% endif %}
-
-    {% if og_image %}
-      <meta property="og:image" content="{{ og_image }}">
-    {% endif %}
-    <meta property="og:title" content="{{ title or seo.title or site.brand.name }}">
-    {% if description or seo and seo.description %}
-      <meta property="og:description" content="{{ description or seo.description }}">
-    {% endif %}
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ site.baseUrl }}{{ canonicalUrl }}">
-
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="/assets/css/main.css?v={{ cacheBuster }}">
+    <!-- Header Design System CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <!-- Basic styling for development -->
+    <style>
+      .container { 
+        max-width: 1200px; 
+        margin: 0 auto; 
+        background: white; 
+        padding: 20px; 
+        border-radius: 8px; 
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+      }
+      h1, h2, h3 { color: #333; }
+      .header { border-bottom: 2px solid #e0e0e0; padding-bottom: 20px; margin-bottom: 30px; }
+      .footer { border-top: 2px solid #e0e0e0; padding-top: 20px; margin-top: 30px; color: #666; }
+    </style>
 
     {% if head_extra %}{{ head_extra | safe }}{% endif %}
   </head>
   <body>
-    <div class="site-background" aria-hidden="true"></div>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-    {% include "partials/header.njk" %}
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="u-skip-link">Skip to main content</a>
     
-    <main id="main-content" tabindex="-1">
-      {{ content | safe }}
+    <!-- Header Navigation -->
+    {% include "partials/header_en.njk" %}
+    
+    <main id="main-content">
+      <div class="container">
+        {{ content | safe }}
+      </div>
     </main>
-    {% include "partials/footer.njk" %}
-    <script src="/assets/js/nav.js?v={{ cacheBuster }}" defer></script>
-    <script src="/assets/js/ui.js?v={{ cacheBuster }}" defer></script>
-    <script src="/assets/js/hero-switcher.js?v={{ cacheBuster }}" defer></script>
-    <script src="/assets/js/hero-video.js?v={{ cacheBuster }}" defer></script>
-    <script src="/assets/js/timelines.js?v={{ cacheBuster }}" defer></script>
-    <script src="/assets/js/expertise-showcase.js?v={{ cacheBuster }}" defer></script>
-    <script src="/assets/js/faq.js?v={{ cacheBuster }}" defer></script>
-    {# Removed guided-journeys script; section deprecated #}
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; {% year %} {{ site.brand.name }}. All rights reserved.</p>
+      </div>
+    </footer>
+    
+    <!-- Header Navigation JavaScript -->
+    <script src="/assets/js/header.js"></script>
   </body>
 </html>

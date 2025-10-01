@@ -1,0 +1,526 @@
+// Header Utilities Components
+// Search, Phone, Language, CTA components
+
+@use '../settings/mixins' as *;
+
+// =============================================================================
+// SEARCH COMPONENT
+// =============================================================================
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--header-h);
+}
+
+.search__button {
+  @include utility-button;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .search__icon {
+    width: var(--search-icon-size);
+    height: var(--search-icon-size);
+    fill: currentColor;
+  }
+  
+  &:hover {
+    background-color: var(--color-brand-weak);
+    color: var(--color-brand);
+  }
+}
+
+.search__input {
+  @include search-expand;
+  height: 40px;
+  padding: 0 12px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  font-size: 14px;
+  color: var(--color-ink);
+  
+  &::placeholder {
+    color: var(--color-ink-dim);
+  }
+  
+  &:focus {
+    border-color: var(--color-border-focus);
+    @include focus-ring;
+  }
+  
+  &.is-expanded {
+    width: var(--search-expanded-width);
+    opacity: 1;
+  }
+}
+
+// =============================================================================
+// PHONE COMPONENT
+// =============================================================================
+.header-phone {
+  @include utility-button;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-brand-weak);
+  color: var(--color-brand);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  
+  .phone__icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+  
+  .phone__number {
+    @include respond-below('md') {
+      display: none;
+    }
+  }
+  
+  &:hover {
+    background: var(--color-brand);
+    color: var(--color-ink-invert);
+    transform: translateY(-1px);
+  }
+  
+  @include respond-below('lg') {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}
+
+// =============================================================================
+// LANGUAGE SELECTOR
+// =============================================================================
+.lang-selector {
+  position: relative;
+}
+
+.lang {
+  @include utility-button;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 60px;
+  
+  .lang-current {
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+  }
+  
+  .lang-arrow {
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 3px solid currentColor;
+    transition: transform var(--header-transition);
+  }
+  
+  &[aria-expanded="true"] .lang-arrow {
+    transform: rotate(180deg);
+  }
+  
+  @include respond-below('lg') {
+    min-width: 44px;
+    justify-content: center;
+    
+    .lang-current {
+      font-size: 12px;
+    }
+  }
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + var(--dropdown-offset));
+  right: 0;
+  min-width: 160px;
+  background: var(--color-surface);
+  border-radius: var(--header-radius-lg);
+  box-shadow: var(--header-shadow-glass);
+  padding: 0.5rem 0;
+  z-index: var(--z-dropdown);
+  
+  @include dropdown-animation;
+}
+
+.lang-option {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--color-ink);
+  text-decoration: none;
+  font-size: 14px;
+  transition: var(--header-transition);
+  
+  &:hover {
+    background-color: var(--color-brand-weak);
+    color: var(--color-brand);
+  }
+  
+  &.active {
+    background-color: var(--color-brand-weak);
+    color: var(--color-brand);
+    font-weight: var(--font-weight-medium);
+    
+    &::after {
+      content: '✓';
+      float: right;
+      color: var(--color-brand);
+    }
+  }
+  
+  @include focus-visible;
+}
+
+// =============================================================================
+// CTA BUTTON
+// =============================================================================
+.header-cta {
+  @include cta-button;
+  white-space: nowrap;
+  
+  @include respond-below('lg') {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  
+  @include respond-below('md') {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+
+// =============================================================================
+// BURGER MENU
+// =============================================================================
+.burger {
+  @include button-reset;
+  @include burger-animation;
+  width: 44px;
+  height: 44px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 6px;
+  color: var(--color-ink);
+  
+  @include respond-below('lg') {
+    display: flex;
+  }
+  
+  .burger__bar {
+    width: 20px;
+    height: 2px;
+    background-color: currentColor;
+    border-radius: 1px;
+    transition: var(--header-transition);
+  }
+  
+  &:hover {
+    background-color: var(--color-brand-weak);
+    color: var(--color-brand);
+  }
+  
+  @include focus-visible;
+}
+
+// =============================================================================
+// MOBILE NAVIGATION DRAWER
+// =============================================================================
+.mnav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: var(--drawer-width);
+  height: 100vh;
+  background: var(--color-surface);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  z-index: var(--z-modal);
+  transform: translateX(100%);
+  transition: transform var(--header-transition);
+  
+  &.is-open {
+    transform: translateX(0);
+  }
+  
+  @include respond-to('lg') {
+    display: none;
+  }
+}
+
+.mnav__panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.mnav__close {
+  @include button-reset;
+  align-self: flex-end;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--color-ink-dim);
+  font-size: 20px;
+  margin-bottom: 1rem;
+  
+  &:hover {
+    background-color: var(--color-brand-weak);
+    color: var(--color-brand);
+  }
+  
+  @include focus-visible;
+}
+
+.mnav__nav {
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+.mnav__link {
+  display: block;
+  padding: 1rem 0;
+  color: var(--color-ink);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+  border-bottom: 1px solid var(--color-border);
+  
+  &:hover {
+    color: var(--color-brand);
+  }
+  
+  @include focus-visible;
+}
+
+.mnav__group {
+  border-bottom: 1px solid var(--color-border);
+  
+  summary {
+    @include button-reset;
+    display: block;
+    padding: 1rem 0;
+    color: var(--color-ink);
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    list-style: none;
+    
+    &::-webkit-details-marker {
+      display: none;
+    }
+    
+    &::after {
+      content: '+';
+      float: right;
+      font-size: 18px;
+      transition: transform var(--header-transition);
+    }
+    
+    &:hover {
+      color: var(--color-brand);
+    }
+  }
+  
+  &[open] summary::after {
+    transform: rotate(45deg);
+  }
+}
+
+.mnav__sub {
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.mnav__sublink {
+  display: block;
+  padding: 0.75rem 0;
+  color: var(--color-ink-dim);
+  text-decoration: none;
+  font-size: 14px;
+  
+  &:hover {
+    color: var(--color-brand);
+  }
+  
+  @include focus-visible;
+}
+
+.mnav__search {
+  margin-bottom: 2rem;
+}
+
+.mnav__input {
+  width: 100%;
+  height: 44px;
+  padding: 0 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  font-size: 16px;
+  color: var(--color-ink);
+  
+  &::placeholder {
+    color: var(--color-ink-dim);
+  }
+  
+  &:focus {
+    border-color: var(--color-border-focus);
+    @include focus-ring;
+  }
+}
+
+.mnav__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mnav__lang {
+  .mnav__lang-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+    color: var(--color-ink-dim);
+    font-weight: var(--font-weight-medium);
+  }
+}
+
+.mnav__lang-options {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mnav__lang-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-ink-dim);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: var(--font-weight-medium);
+  transition: var(--header-transition);
+  
+  &:hover {
+    border-color: var(--color-brand);
+    color: var(--color-brand);
+  }
+  
+  &.active {
+    background: var(--color-brand);
+    border-color: var(--color-brand);
+    color: var(--color-ink-invert);
+  }
+  
+  @include focus-visible;
+}
+
+.mnav__backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: calc(var(--z-modal) - 1);
+  opacity: 0;
+  transition: opacity var(--header-transition);
+  pointer-events: none;
+  
+  .mnav.is-open & {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+// =============================================================================
+// RESPONSIVE ADJUSTMENTS
+// =============================================================================
+
+// Large screens - compress utilities
+@include respond-to('lg') {
+  .header-utilities {
+    gap: 0.5rem;
+  }
+  
+  .lang {
+    min-width: 50px;
+  }
+  
+  .header-phone {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}
+
+// Medium screens - further compression
+@include respond-to('md') {
+  .header-utilities {
+    gap: 0.375rem;
+  }
+  
+  .search__button {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .header-phone {
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+  
+  .lang {
+    min-width: 44px;
+    padding: 6px 8px;
+  }
+  
+  .header-cta {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+
+// =============================================================================
+// ACCESSIBILITY IMPROVEMENTS
+// =============================================================================
+
+// Ensure proper focus management in dropdowns
+.lang-selector:focus-within .lang-dropdown {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+// Screen reader support
+.search__icon,
+.phone__icon {
+  @include visually-hidden;
+}
+
+// High contrast mode adjustments
+@include high-contrast {
+  .search__input,
+  .mnav__input {
+    border-width: 2px;
+  }
+  
+  .lang-option.active::after {
+    content: '✓';
+  }
+}
