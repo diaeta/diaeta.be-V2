@@ -3,16 +3,14 @@
 {% set t = hero[currentLang] %}
 
 <!-- ============================================================================
-  HERO SECTION - Mind-blowing Professional Dietitian Hero
-  Mobile-first, SEO-optimized, AISO-friendly, with animated elements
-  Internationalized with i18n support
+  HERO SECTION - Mind-Blowing Professional Dietitian Hero
+  Advanced animations, parallax, mouse tracking, cutting-edge design
+  Mobile-first, SEO-optimized, AISO-friendly
 ============================================================================= -->
-<section class="c-hero" id="hero" data-hero data-lang="{{ currentLang }}">
-  <!-- Animated gradient mesh background -->
-  <div class="c-hero__bg-mesh" aria-hidden="true">
+<section class="c-hero reveal-on-scroll" id="hero" data-hero data-lang="{{ currentLang }}">
+  <!-- Dynamic gradient background with parallax -->
+  <div class="c-hero__bg-mesh animate-gradient" aria-hidden="true" data-parallax="0.3">
     <div class="c-hero__gradient-blob c-hero__gradient-blob--1"></div>
-    <div class="c-hero__gradient-blob c-hero__gradient-blob--2"></div>
-    <div class="c-hero__gradient-blob c-hero__gradient-blob--3"></div>
   </div>
 
   <div class="c-hero__container">
@@ -114,22 +112,6 @@
           <span>{{ t.ctas.secondary }}</span>
         </a>
       </div>
-
-      <!-- Social proof stats -->
-      <div class="c-hero__stats">
-        <div class="c-hero__stat" data-stat="patients">
-          <span class="c-hero__stat-number" data-count="300">{{ t.stats.patients.number }}</span>
-          <span class="c-hero__stat-label">{{ t.stats.patients.label }}</span>
-        </div>
-        <div class="c-hero__stat" data-stat="sessions">
-          <span class="c-hero__stat-number" data-count="1500">{{ t.stats.sessions.number }}</span>
-          <span class="c-hero__stat-label">{{ t.stats.sessions.label }}</span>
-        </div>
-        <div class="c-hero__stat" data-stat="success">
-          <span class="c-hero__stat-number">{{ t.stats.success.number }}</span>
-          <span class="c-hero__stat-label">{{ t.stats.success.label }}</span>
-        </div>
-      </div>
     </div>
 
     <!-- Media Column -->
@@ -174,49 +156,6 @@
 
           <!-- Decorative gradient overlay -->
           <div class="c-hero__img-overlay" aria-hidden="true"></div>
-        </div>
-
-        <!-- Floating achievement cards -->
-        <div class="c-hero__floating-cards" aria-hidden="true">
-          <div class="c-hero__float-card c-hero__float-card--1" data-float="result">
-            <span class="c-hero__float-icon">🎯</span>
-            <span class="c-hero__float-text">
-              <strong>{{ t.floatingCards.result.title }}</strong>
-              <span>{{ t.floatingCards.result.subtitle }}</span>
-            </span>
-          </div>
-
-          <div class="c-hero__float-card c-hero__float-card--2" data-float="certification">
-            <span class="c-hero__float-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-            </span>
-            <span class="c-hero__float-text">
-              <strong>{{ t.floatingCards.certification.title }}</strong>
-              <span>{{ t.floatingCards.certification.subtitle }}</span>
-            </span>
-          </div>
-
-          <div class="c-hero__float-card c-hero__float-card--3" data-float="support">
-            <span class="c-hero__float-icon">💬</span>
-            <span class="c-hero__float-text">
-              <strong>{{ t.floatingCards.support.title }}</strong>
-              <span>{{ t.floatingCards.support.subtitle }}</span>
-            </span>
-          </div>
-        </div>
-
-        <!-- Particle system -->
-        <div class="c-hero__particles" aria-hidden="true">
-          <span class="c-hero__particle"></span>
-          <span class="c-hero__particle"></span>
-          <span class="c-hero__particle"></span>
-          <span class="c-hero__particle"></span>
-          <span class="c-hero__particle"></span>
-          <span class="c-hero__particle"></span>
-          <span class="c-hero__particle"></span>
-          <span class="c-hero__particle"></span>
         </div>
       </figure>
     </div>

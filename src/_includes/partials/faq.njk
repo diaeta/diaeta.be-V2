@@ -1,21 +1,70 @@
+{# Get current language or default to 'en' #}
 {% set currentLang = lang or page.lang or 'en' %}
 {% set data = faq[currentLang] %}
-<section id="faq" class="c-faq">
+
+<!-- ============================================================================
+  FAQ SECTION - Frequently Asked Questions
+  Enhanced accordion design with icons and better visual hierarchy
+============================================================================= -->
+<section id="faq" class="c-faq" aria-labelledby="faq-title">
   <div class="c-faq__container">
+
+    <!-- Header -->
     <header class="c-faq__header">
-      <h2 class="c-faq__title">{{ data.title }}</h2>
+      <p class="c-faq__eyebrow">{{ data.eyebrow or "Common Questions" }}</p>
+      <h2 id="faq-title" class="c-faq__title">{{ data.title }}</h2>
       <p class="c-faq__subtitle">{{ data.subtitle }}</p>
     </header>
+
+    <!-- FAQ List -->
     <div class="c-faq__list">
       {% for item in data.questions %}
       <details class="c-faq__item">
-        <summary class="c-faq__question">{{ item.q }}</summary>
-        <div class="c-faq__answer">{{ item.a }}</div>
+        <summary class="c-faq__question">
+          <span class="c-faq__question-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 16v-4M12 8h.01"/>
+            </svg>
+          </span>
+          <span class="c-faq__question-text">{{ item.q }}</span>
+          <span class="c-faq__toggle" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </span>
+        </summary>
+        <div class="c-faq__answer">
+          <div class="c-faq__answer-content">{{ item.a }}</div>
+        </div>
       </details>
       {% endfor %}
     </div>
+
+    <!-- Still have questions panel -->
+    <aside class="c-faq__help">
+      <div class="c-faq__help-icon" aria-hidden="true">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          <path d="M9 10h.01M12 10h.01M15 10h.01"/>
+        </svg>
+      </div>
+      <div class="c-faq__help-content">
+        <h3 class="c-faq__help-title">{{ data.help.title or "Still have questions?" }}</h3>
+        <p class="c-faq__help-text">{{ data.help.text or "We're here to help you understand every aspect of your nutrition journey." }}</p>
+      </div>
+    </aside>
+
+    <!-- CTA -->
     <div class="c-faq__cta">
-      <a href="{{ data.cta.url }}" class="c-faq__cta-btn">{{ data.cta.text }}</a>
+      <a href="{{ data.cta.url }}" class="c-faq__cta-btn">
+        <span>{{ data.cta.text }}</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
     </div>
+
   </div>
 </section>

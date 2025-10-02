@@ -1,33 +1,81 @@
-{# Nutrigenetics Section - DNA Testing #}
+{# Get current language or default to 'en' #}
 {% set currentLang = lang or page.lang or 'en' %}
 {% set data = nutrigenetics[currentLang] %}
+
+<!-- ============================================================================
+  NUTRIGENETICS SECTION - DNA-Based Personalized Nutrition
+  Enhanced design for optional advanced service
+============================================================================= -->
 <section id="nutrigenetics" class="c-nutrigen" aria-labelledby="nutrigen-title">
   <div class="c-nutrigen__container">
+
+    <!-- Header with badge -->
     <header class="c-nutrigen__header">
       <span class="c-nutrigen__badge">{{ data.hero.badge }}</span>
       <p class="c-nutrigen__eyebrow">{{ data.eyebrow }}</p>
       <h2 id="nutrigen-title" class="c-nutrigen__title">{{ data.title }}</h2>
       <p class="c-nutrigen__subtitle">{{ data.subtitle }}</p>
     </header>
+
+    <!-- Benefits Grid -->
     <div class="c-nutrigen__benefits">
       {% for benefit in data.benefits %}
-      <div class="c-nutrigen__benefit">
+      <article class="c-nutrigen__benefit">
         <div class="c-nutrigen__benefit-icon" aria-hidden="true">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
         </div>
         <h3 class="c-nutrigen__benefit-title">{{ benefit.title }}</h3>
         <p class="c-nutrigen__benefit-description">{{ benefit.description }}</p>
-      </div>
+      </article>
       {% endfor %}
     </div>
-    <div class="c-nutrigen__pricing">
-      <h3>{{ data.pricing.title }}</h3>
-      <div class="c-nutrigen__price">{{ data.pricing.price }}</div>
-      <ul>{% for item in data.pricing.includes %}<li>{{ item }}</li>{% endfor %}</ul>
-    </div>
+
+    <!-- Pricing Panel -->
+    <aside class="c-nutrigen__pricing">
+      <div class="c-nutrigen__pricing-header">
+        <h3 class="c-nutrigen__pricing-title">{{ data.pricing.title }}</h3>
+        <div class="c-nutrigen__price">{{ data.pricing.price }}</div>
+      </div>
+      <ul class="c-nutrigen__pricing-includes">
+        {% for item in data.pricing.includes %}
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <span>{{ item }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </aside>
+
+    <!-- CTA Buttons -->
     <div class="c-nutrigen__cta">
-      <a href="{{ data.cta.primary.url }}" class="c-nutrigen__cta-primary">{{ data.cta.primary.text }}</a>
-      <a href="{{ data.cta.secondary.url }}" class="c-nutrigen__cta-secondary">{{ data.cta.secondary.text }}</a>
+      <a href="{{ data.cta.primary.url }}" class="c-nutrigen__cta-primary">
+        <span>{{ data.cta.primary.text }}</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+      <a href="{{ data.cta.secondary.url }}" class="c-nutrigen__cta-secondary">
+        {{ data.cta.secondary.text }}
+      </a>
     </div>
+
+  </div>
+
+  <!-- DNA Helix Background Decoration -->
+  <div class="c-nutrigen__bg-dna" aria-hidden="true">
+    <svg viewBox="0 0 200 400" fill="none" opacity="0.05">
+      <path d="M50 0 Q70 50 50 100 T50 200 T50 300 T50 400" stroke="currentColor" stroke-width="3"/>
+      <path d="M150 0 Q130 50 150 100 T150 200 T150 300 T150 400" stroke="currentColor" stroke-width="3"/>
+      <line x1="50" y1="50" x2="150" y2="50" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+      <line x1="50" y1="150" x2="150" y2="150" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+      <line x1="50" y1="250" x2="150" y2="250" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+      <line x1="50" y1="350" x2="150" y2="350" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+    </svg>
   </div>
 </section>

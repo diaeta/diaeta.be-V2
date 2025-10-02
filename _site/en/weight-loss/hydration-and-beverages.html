@@ -14,196 +14,335 @@
     <!-- Assuming a global header is included via the build process -->
     
 
-  <header class="site-header theme-glass" data-header>
-  <div class="site-header__inner">
+
+
+<header class="c-header" data-header>
+  <div class="c-header__inner">
     <!-- Brand/Logo -->
-    <a class="brand" href="/en/" aria-label="Diaeta � Home">
-      <img src="/assets/images/logo.svg" alt="Diaeta" width="110" height="34" />
+    <a class="c-header__brand" href="/en/" aria-label="Diaeta – Home">
+      <img src="/assets/images/logo.svg" alt="Diaeta" width="147" height="50" />
     </a>
 
-    <!-- Primary Navigation -->
-    <div class="nav-shell" role="presentation">
-      <nav class="nav" aria-label="Primary">
-        <ul class="nav__list" role="menubar">
-          <li class="nav__item" role="presentation">
-            <a class="nav__link" href="/en/#hero" data-spy>Home</a>
-          </li>
-          <li class="nav__item nav__item--has-sub" role="presentation">
-            <button class="nav__link nav__toggle" aria-expanded="false" aria-haspopup="true" aria-controls="about-sub">
-              <span class="nav__label">About</span>
-              <svg class="icon icon-caret" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg>
-            </button>
-            <div id="about-sub" class="nav-sub" role="menu" aria-labelledby="about-toggle">
-              <a role="menuitem" class="nav-sub__link" href="/en/#philosophy">Our Philosophy</a>
-              <a role="menuitem" class="nav-sub__link" href="/en/our-expertise/">Our Expertise</a>
-              <a role="menuitem" class="nav-sub__link" href="/en/diaeta-method/">Diaeta Method</a>
-              <a role="menuitem" class="nav-sub__link" href="/en/contact/">Contact Us</a>
-            </div>
-          </li>
-          <li class="nav__item nav__item--has-sub" role="presentation">
-            <button class="nav__link nav__toggle" aria-expanded="false" aria-haspopup="true" aria-controls="services-sub">
-              <span class="nav__label">Services</span>
-              <svg class="icon icon-caret" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg>
-            </button>
-            <div id="services-sub" class="nav-sub" role="menu" aria-labelledby="services-toggle">
-              <a role="menuitem" class="nav-sub__link" href="/en/irritable-bowel-syndrome-fodmap/">IBS (Low-FODMAP)</a>
-              <a role="menuitem" class="nav-sub__link" href="/en/weight-loss/">Weight Management</a>
-              <a role="menuitem" class="nav-sub__link" href="/en/type-2-diabetes/">Type 2 Diabetes</a>
-              <a role="menuitem" class="nav-sub__link" href="/en/hypertension-cholesterol/">Cholesterol</a>
-            </div>
-          </li>
-          <li class="nav__item" role="presentation">
-            <a class="nav__link" href="/en/locations/">Locations</a>
-          </li>
-          <li class="nav__item" role="presentation">
-            <a class="nav__link" href="/en/tariffs/">Pricing</a>
-          </li>
-          <li class="nav__item" role="presentation">
-            <a class="nav__link" href="/en/news/">Blog</a>
-          </li>
-          <li class="nav__item" role="presentation">
-            <a class="nav__link" href="/en/contact/">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <!-- Primary Navigation (Desktop) -->
+    <nav class="c-header__nav" aria-label="Primary">
+      <ul class="c-nav">
+        
+        <li class="c-nav__item">
+          
+          <a class="c-nav__link" href="/en/">Home</a>
+          
+        </li>
+        
+        <li class="c-nav__item c-nav__item--has-dropdown">
+          
+          <button class="c-nav__link" aria-expanded="false" aria-controls="about-dropdown" data-dropdown-trigger="about">
+            <span>About</span>
+            <svg class="c-nav__caret" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg>
+          </button>
+          <div id="about-dropdown" class="c-dropdown" data-dropdown="about">
+            
+            <a class="c-dropdown__item" href="/en/our-expertise/">Our Expertise</a>
+            
+            <a class="c-dropdown__item" href="/en/diaeta-method/">Diaeta Method</a>
+            
+            <a class="c-dropdown__item" href="/en/contact/">Contact Us</a>
+            
+          </div>
+          
+        </li>
+        
+        <li class="c-nav__item c-nav__item--has-dropdown">
+          
+          <button class="c-nav__link" aria-expanded="false" aria-controls="services-dropdown" data-dropdown-trigger="services">
+            <span>Services</span>
+            <svg class="c-nav__caret" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg>
+          </button>
+          <div id="services-dropdown" class="c-dropdown" data-dropdown="services">
+            
+            <a class="c-dropdown__item" href="/en/weight-loss/">Weight Loss Program</a>
+            
+            <a class="c-dropdown__item" href="/en/irritable-bowel-syndrome-fodmap/">IBS &amp; Low-FODMAP</a>
+            
+            <a class="c-dropdown__item" href="/en/type-2-diabetes/">Diabetes Nutrition</a>
+            
+            <a class="c-dropdown__item" href="/en/hypertension-cholesterol/">Cholesterol &amp; Lipids</a>
+            
+          </div>
+          
+        </li>
+        
+        <li class="c-nav__item">
+          
+          <a class="c-nav__link" href="/en/locations/">Locations</a>
+          
+        </li>
+        
+        <li class="c-nav__item">
+          
+          <a class="c-nav__link" href="/en/tariffs/">Pricing</a>
+          
+        </li>
+        
+        <li class="c-nav__item">
+          
+          <a class="c-nav__link" href="/en/news/">Blog</a>
+          
+        </li>
+        
+        <li class="c-nav__item">
+          
+          <a class="c-nav__link" href="/en/contact/">Contact</a>
+          
+        </li>
+        
+      </ul>
+    </nav>
 
-    <!-- Utilities Cluster -->
-    <div class="utilities">
-      <!-- Search -->
-      <div class="search u-hidden-mobile" data-search-container>
-        <form class="search__form" role="search" action="/en/search/" method="get">
-          <label for="search-input" class="u-visually-hidden">Search</label>
-          <input 
-            id="search-input"
-            class="search__input" 
-            type="search" 
-            name="q" 
-            placeholder="Search..." 
-          />
-        </form>
-        <button class="search__button" aria-label="Open search" data-search-toggle>
-          <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.35-4.35"></path>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Phone -->
-      <a class="phone u-hidden-mobile" href="tel:+32479355551" aria-label="Call +32 479 35 55 51">
-        <svg class="icon phone__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+    <!-- Utilities -->
+    <div class="c-header__utilities">
+      <!-- Search Icon (Mobile & Desktop) -->
+      <button class="c-icon-btn" aria-label="Search" data-search-open>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
         </svg>
-        <span class="phone__number">+32 479 35 55 51</span>
-      </a>
+      </button>
 
-      <!-- Language Selector -->
-      <div class="lang u-hidden-mobile">
-        <button class="lang__button" aria-label="Language" aria-expanded="false" aria-haspopup="true" aria-controls="lang-dropdown">
-          <svg class="icon lang__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Language Chip (Desktop only) -->
+      <div class="c-lang-chip--desktop">
+        <button class="c-lang-chip" aria-label="Select language" aria-expanded="false" aria-controls="lang-dropdown" data-lang-trigger>
+          <span class="c-lang-chip__code">EN</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
             <line x1="2" y1="12" x2="22" y2="12"></line>
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
           </svg>
-          <span class="lang__code">EN</span>
-          <svg class="icon icon-caret" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg>
+          <svg class="c-lang-chip__caret" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg>
         </button>
-        <div id="lang-dropdown" class="lang-dropdown" role="menu">
-          <a role="menuitem" class="lang-option is-active" href="/en/" lang="en" aria-current="true">English</a>
-          <a role="menuitem" class="lang-option" href="/fr/" lang="fr">Fran&ccedil;ais</a>
-          <a role="menuitem" class="lang-option" href="/nl/" lang="nl">Nederlands</a>
-          <a role="menuitem" class="lang-option" href="/de/" lang="de">Deutsch</a>
+        <div id="lang-dropdown" class="c-lang-dropdown" data-lang-dropdown>
+          
+          <a class="c-lang-dropdown__item c-lang-dropdown__item--active" href="/en/" lang="en">
+            <span>English</span>
+            
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            
+          </a>
+          
+          <a class="c-lang-dropdown__item" href="/fr/" lang="fr">
+            <span>Français</span>
+            
+          </a>
+          
+          <a class="c-lang-dropdown__item" href="/nl/" lang="nl">
+            <span>Nederlands</span>
+            
+          </a>
+          
+          <a class="c-lang-dropdown__item" href="/de/" lang="de">
+            <span>Deutsch</span>
+            
+          </a>
+          
         </div>
       </div>
 
-      <!-- CTA Button -->
-      <a class="cta__button u-hidden-mobile" href="/en/appointment/">Book Appointment</a>
+      <!-- Phone Icon/Chip -->
+      <a class="c-phone-chip c-phone-chip--mobile" href="tel:+32479355551" aria-label="Call +32 479 35 55 51">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+      </a>
+      <a class="c-phone-chip c-phone-chip--desktop" href="tel:+32479355551" aria-label="Call +32 479 35 55 51">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        <span class="c-phone-chip__number">+32 479 35 55 51</span>
+      </a>
 
-      <!-- Mobile Burger Menu -->
-      <button class="burger u-hidden-desktop" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
-        <span class="burger__bar"></span>
-        <span class="burger__bar"></span>
-        <span class="burger__bar"></span>
+      <!-- Book CTA Pill -->
+      <a class="c-cta-pill" href="/en/appointment/">Book Appointment</a>
+
+      <!-- Mobile Menu Button -->
+      <button class="c-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-sheet" data-menu-toggle>
+        <span class="c-hamburger__line"></span>
+        <span class="c-hamburger__line"></span>
+        <span class="c-hamburger__line"></span>
       </button>
     </div>
   </div>
 
-  <!-- Mobile drawer -->
-  <div id="mobile-menu" class="mnav" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="mnav-title">
-    <div class="mnav__backdrop" data-mnav-close></div>
-    
-    <div class="mnav__dialog">
-      <div class="mnav__header">
-        <h2 id="mnav-title" class="mnav__title u-visually-hidden">Main Menu</h2>
-        <a class="brand" href="/en/" aria-label="Diaeta � Home">
-          <img src="/assets/images/logo-dark.svg" alt="Diaeta" width="110" height="34" />
+  <!-- Mobile Navigation Sheet -->
+  <div id="mobile-sheet" class="c-mobile-sheet" data-mobile-sheet>
+    <div class="c-mobile-sheet__backdrop" data-sheet-close></div>
+    <div class="c-mobile-sheet__dialog">
+      <div class="c-mobile-sheet__header">
+        <a class="c-header__brand" href="/en/" aria-label="Diaeta – Home">
+          <img src="/assets/images/logo.svg" alt="Diaeta" width="147" height="50" />
         </a>
-        <button class="mnav__close" aria-label="Close menu" data-mnav-close>
-          <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button class="c-mobile-sheet__close" aria-label="Close menu" data-sheet-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
         </button>
       </div>
-  
-      <div class="mnav__content">
-        <nav class="mnav__nav" aria-label="Mobile Primary">
-          <ul class="mnav__list">
-            <li class="mnav__item">
-              <a class="mnav__link" href="/en/#hero">Home</a>
-            </li>
-            <li class="mnav__item">
-              <details class="mnav__group">
-                <summary class="mnav__link">About</summary>
-                <div class="mnav__sub">
-                  <a class="mnav__sublink" href="/en/#philosophy">Our Philosophy</a>
-                  <a class="mnav__sublink" href="/en/our-expertise/">Our Expertise</a>
-                  <a class="mnav__sublink" href="/en/diaeta-method/">Diaeta Method</a>
-                  <a class="mnav__sublink" href="/en/contact/">Contact Us</a>
-                </div>
-              </details>
-            </li>
-            <li class="mnav__item">
-              <details class="mnav__group">
-                <summary class="mnav__link">Services</summary>
-                <div class="mnav__sub">
-                  <a class="mnav__sublink" href="/en/irritable-bowel-syndrome-fodmap/">IBS (Low-FODMAP)</a>
-                  <a class="mnav__sublink" href="/en/weight-loss/">Weight Management</a>
-                  <a class="mnav__sublink" href="/en/type-2-diabetes/">Type 2 Diabetes</a>
-                  <a class="mnav__sublink" href="/en/hypertension-cholesterol/">Cholesterol</a>
-                </div>
-              </details>
-            </li>
-            <li class="mnav__item">
-              <a class="mnav__link" href="/en/locations/">Locations</a>
-            </li>
-            <li class="mnav__item">
-              <a class="mnav__link" href="/en/tariffs/">Pricing</a>
-            </li>
-            <li class="mnav__item">
-              <a class="mnav__link" href="/en/news/">Blog</a>
-            </li>
-            <li class="mnav__item">
-              <a class="mnav__link" href="/en/contact/">Contact</a>
-            </li>
-          </ul>
-        </nav>
-  
-        <div class="mnav__utilities">
-          <a class="cta__button" href="/en/appointment/">Book Appointment</a>
-          <a class="phone" href="tel:+32479355551" aria-label="Call +32 479 35 55 51">
-            <svg class="icon phone__icon" width="20" height="20" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            <span>Call Us</span>
-          </a>
-        </div>
+
+      <nav class="c-mobile-nav" aria-label="Mobile Primary">
+        <ul class="c-mobile-nav__list">
+          
+          <li class="c-mobile-nav__item">
+            
+            <a class="c-mobile-nav__link" href="/en/">Home</a>
+            
+          </li>
+          
+          <li class="c-mobile-nav__item">
+            
+            <details class="c-mobile-accordion">
+              <summary class="c-mobile-accordion__trigger">
+                <span>About</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg>
+              </summary>
+              <div class="c-mobile-accordion__content">
+                
+                <a href="/en/our-expertise/">Our Expertise</a>
+                
+                <a href="/en/diaeta-method/">Diaeta Method</a>
+                
+                <a href="/en/contact/">Contact Us</a>
+                
+              </div>
+            </details>
+            
+          </li>
+          
+          <li class="c-mobile-nav__item">
+            
+            <details class="c-mobile-accordion">
+              <summary class="c-mobile-accordion__trigger">
+                <span>Services</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg>
+              </summary>
+              <div class="c-mobile-accordion__content">
+                
+                <a href="/en/weight-loss/">Weight Loss Program</a>
+                
+                <a href="/en/irritable-bowel-syndrome-fodmap/">IBS &amp; Low-FODMAP</a>
+                
+                <a href="/en/type-2-diabetes/">Diabetes Nutrition</a>
+                
+                <a href="/en/hypertension-cholesterol/">Cholesterol &amp; Lipids</a>
+                
+              </div>
+            </details>
+            
+          </li>
+          
+          <li class="c-mobile-nav__item">
+            
+            <a class="c-mobile-nav__link" href="/en/locations/">Locations</a>
+            
+          </li>
+          
+          <li class="c-mobile-nav__item">
+            
+            <a class="c-mobile-nav__link" href="/en/tariffs/">Pricing</a>
+            
+          </li>
+          
+          <li class="c-mobile-nav__item">
+            
+            <a class="c-mobile-nav__link" href="/en/news/">Blog</a>
+            
+          </li>
+          
+          <li class="c-mobile-nav__item">
+            
+            <a class="c-mobile-nav__link" href="/en/contact/">Contact</a>
+            
+          </li>
+          
+        </ul>
+      </nav>
+
+      <div class="c-mobile-sheet__actions">
+        <a class="c-cta-pill c-cta-pill--full" href="/en/appointment/">Book Appointment</a>
+        <a class="c-mobile-action" href="tel:+32479355551">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span>Call Us</span>
+        </a>
+
+        <!-- Mobile Language Accordion -->
+        <details class="c-mobile-lang-accordion">
+          <summary class="c-mobile-action">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>English</span>
+            <svg class="c-mobile-lang-caret" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+          <div class="c-mobile-lang-list">
+            
+            <a class="c-mobile-lang-item c-mobile-lang-item--active" href="/en/" lang="en">
+              <span>English</span>
+              
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              
+            </a>
+            
+            <a class="c-mobile-lang-item" href="/fr/" lang="fr">
+              <span>Français</span>
+              
+            </a>
+            
+            <a class="c-mobile-lang-item" href="/nl/" lang="nl">
+              <span>Nederlands</span>
+              
+            </a>
+            
+            <a class="c-mobile-lang-item" href="/de/" lang="de">
+              <span>Deutsch</span>
+              
+            </a>
+            
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Overlay -->
+  <div class="c-search-overlay" data-search-overlay>
+    <div class="c-search-overlay__backdrop" data-search-close></div>
+    <div class="c-search-overlay__content">
+      <button class="c-search-overlay__close" aria-label="Close search" data-search-close>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <form class="c-search-form" action="/en/search/" method="get">
+        <input type="search" name="q" placeholder="Search..." aria-label="Search" autofocus />
+      </form>
+      <div class="c-search-suggestions">
+        <h3>Popular searches</h3>
+        
+        <a href="/en/search/?q=IBS+diet">IBS diet</a>
+        
+        <a href="/en/search/?q=Weight+loss">Weight loss</a>
+        
+        <a href="/en/search/?q=Low-FODMAP">Low-FODMAP</a>
+        
+        <a href="/en/search/?q=Diabetes">Diabetes nutrition</a>
+        
       </div>
     </div>
   </div>
 </header>
-
-
-
 
 
     <main>

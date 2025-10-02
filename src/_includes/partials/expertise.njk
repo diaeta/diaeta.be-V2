@@ -1,27 +1,72 @@
+{# Get current language or default to 'en' #}
 {% set currentLang = lang or page.lang or 'en' %}
 {% set data = expertise[currentLang] %}
-<section id="expertise" class="c-expertise">
+
+<!-- ============================================================================
+  EXPERTISE SECTION - Professional Credentials & Qualifications
+  Enhanced design matching site aesthetic with icons and visual hierarchy
+============================================================================= -->
+<section id="expertise" class="c-expertise" aria-labelledby="expertise-title">
   <div class="c-expertise__container">
+
+    <!-- Header -->
     <header class="c-expertise__header">
       <p class="c-expertise__eyebrow">{{ data.eyebrow }}</p>
-      <h2 class="c-expertise__title">{{ data.title }}</h2>
+      <h2 id="expertise-title" class="c-expertise__title">{{ data.title }}</h2>
       <p class="c-expertise__subtitle">{{ data.subtitle }}</p>
     </header>
+
+    <!-- Credentials Grid -->
     <div class="c-expertise__grid">
       {% for credential in data.credentials %}
-      <div class="c-expertise__card">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3-6.2 3.3 1.2-6.8-5-4.9 6.9-1z" fill="currentColor"/></svg>
-        <h3>{{ credential.title }}</h3>
-        <p>{{ credential.description }}</p>
-      </div>
+      <article class="c-expertise__card">
+        <div class="c-expertise__icon" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+        <div class="c-expertise__card-content">
+          <h3 class="c-expertise__card-title">{{ credential.title }}</h3>
+          <p class="c-expertise__card-description">{{ credential.description }}</p>
+        </div>
+        <div class="c-expertise__accent" aria-hidden="true"></div>
+      </article>
       {% endfor %}
     </div>
-    <div class="c-expertise__approach">
-      <h3>{{ data.approach.title }}</h3>
-      <ul>{% for point in data.approach.points %}<li>{{ point }}</li>{% endfor %}</ul>
-    </div>
+
+    <!-- Approach Panel -->
+    <aside class="c-expertise__approach">
+      <div class="c-expertise__approach-icon" aria-hidden="true">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+      </div>
+      <div class="c-expertise__approach-content">
+        <h3 class="c-expertise__approach-title">{{ data.approach.title }}</h3>
+        <ul class="c-expertise__approach-list">
+          {% for point in data.approach.points %}
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span>{{ point }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </aside>
+
+    <!-- CTA -->
     <div class="c-expertise__cta">
-      <a href="{{ data.cta.url }}" class="c-expertise__cta-btn">{{ data.cta.text }}</a>
+      <a href="{{ data.cta.url }}" class="c-expertise__cta-btn">
+        <span>{{ data.cta.text }}</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
     </div>
+
   </div>
 </section>
