@@ -126,10 +126,10 @@
     <a href="#main-content" class="u-skip-link">Skip to main content</a>
     
     <!-- Header Navigation -->
-    ﻿<header class="site-header theme-glass" data-header>
+    <header class="site-header theme-glass" data-header>
   <div class="site-header__inner">
     <!-- Brand/Logo -->
-    <a class="brand" href="/en/" aria-label="Diaeta — Home">
+    <a class="brand" href="/en/" aria-label="Diaeta � Home">
       <img src="/assets/images/logo.svg" alt="Diaeta" width="110" height="34" />
     </a>
 
@@ -183,7 +183,7 @@
     <!-- Utilities Cluster -->
     <div class="utilities">
       <!-- Search -->
-      <div class="search" data-search-container>
+      <div class="search u-hidden-mobile" data-search-container>
         <form class="search__form" role="search" action="/en/search/" method="get">
           <label for="search-input" class="u-visually-hidden">Search</label>
           <input 
@@ -203,7 +203,7 @@
       </div>
 
       <!-- Phone -->
-      <a class="phone" href="tel:+32479355551" aria-label="Call +32 479 35 55 51">
+      <a class="phone u-hidden-mobile" href="tel:+32479355551" aria-label="Call +32 479 35 55 51">
         <svg class="icon phone__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
         </svg>
@@ -211,7 +211,7 @@
       </a>
 
       <!-- Language Selector -->
-      <div class="lang">
+      <div class="lang u-hidden-mobile">
         <button class="lang__button" aria-label="Language" aria-expanded="false" aria-haspopup="true" aria-controls="lang-dropdown">
           <svg class="icon lang__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
@@ -222,18 +222,18 @@
           <svg class="icon icon-caret" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg>
         </button>
         <div id="lang-dropdown" class="lang-dropdown" role="menu">
-          <button role="menuitem" class="lang-option is-active" data-lang-switcher="en">English</button>
-          <button role="menuitem" class="lang-option" data-lang-switcher="fr">Français</button>
-          <button role="menuitem" class="lang-option" data-lang-switcher="nl">Nederlands</button>
-          <button role="menuitem" class="lang-option" data-lang-switcher="de">Deutsch</button>
+          <a role="menuitem" class="lang-option is-active" href="/en/" lang="en" aria-current="true">English</a>
+          <a role="menuitem" class="lang-option" href="/fr/" lang="fr">Fran&ccedil;ais</a>
+          <a role="menuitem" class="lang-option" href="/nl/" lang="nl">Nederlands</a>
+          <a role="menuitem" class="lang-option" href="/de/" lang="de">Deutsch</a>
         </div>
       </div>
 
       <!-- CTA Button -->
-      <a class="cta__button" href="/en/appointment/">Book Appointment</a>
+      <a class="cta__button u-hidden-mobile" href="/en/appointment/">Book Appointment</a>
 
       <!-- Mobile Burger Menu -->
-      <button class="burger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+      <button class="burger u-hidden-desktop" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
         <span class="burger__bar"></span>
         <span class="burger__bar"></span>
         <span class="burger__bar"></span>
@@ -248,7 +248,7 @@
     <div class="mnav__dialog">
       <div class="mnav__header">
         <h2 id="mnav-title" class="mnav__title u-visually-hidden">Main Menu</h2>
-        <a class="brand" href="/en/" aria-label="Diaeta — Home">
+        <a class="brand" href="/en/" aria-label="Diaeta � Home">
           <img src="/assets/images/logo-dark.svg" alt="Diaeta" width="110" height="34" />
         </a>
         <button class="mnav__close" aria-label="Close menu" data-mnav-close>
@@ -313,6 +313,7 @@
     </div>
   </div>
 </header>
+
     
     <main id="main-content">
       <div class="container">

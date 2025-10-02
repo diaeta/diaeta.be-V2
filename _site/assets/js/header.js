@@ -12,6 +12,8 @@
  * - Theme switching (Glass/Solid)
  */
 
+const DESKTOP_BREAKPOINT = 1180;
+
 class HeaderNavigation {
   constructor() {
     this.header = document.querySelector('.site-header');
@@ -19,15 +21,19 @@ class HeaderNavigation {
     this.mobileMenu = document.querySelector('.mnav');
     this.searchButton = document.querySelector('.search__button');
     this.searchInput = document.querySelector('.search__input');
-    this.langButton = document.querySelector('.lang');
+    this.langButton = document.querySelector('.lang__button');
     this.langDropdown = document.querySelector('.lang-dropdown');
     this.navToggles = document.querySelectorAll('.nav__toggle');
     this.navDropdowns = document.querySelectorAll('.nav-sub');
+    this.mobileMenuGroups = document.querySelectorAll('.mnav__group');
+    
+    console.log('Mobile menu groups found:', this.mobileMenuGroups.length);
     
     this.isScrolled = false;
     this.isSearchOpen = false;
     this.isMobileMenuOpen = false;
     this.activeDropdown = null;
+    this.activeToggle = null;
     
     this.init();
   }
@@ -38,6 +44,7 @@ class HeaderNavigation {
     this.setupKeyboardNavigation();
     this.setupAccessibility();
     this.initializeTheme();
+    this.initializeResponsiveState();
   }
   
   // =============================================================================
@@ -71,17 +78,30 @@ class HeaderNavigation {
     
     // Language selector
     if (this.langButton && this.langDropdown) {
-      this.langButton.addEventListener('click', () => this.toggleLanguageDropdown());
+      this.langButton.addEventListener('click', (e) => this.toggleLanguageDropdown(e));
     }
     
     // Navigation dropdowns
     this.navToggles.forEach(toggle => {
       toggle.addEventListener('click', (e) => this.handleNavToggle(e));
       toggle.addEventListener('keydown', (e) => this.handleNavKeydown(e));
+      
+      // Add hover functionality for desktop
+      const navItem = toggle.closest('.nav__item');
+      if (navItem) {
+        navItem.addEventListener('mouseenter', (e) => this.handleNavHover(e));
+      }
     });
     
     // Close dropdowns when clicking outside
     document.addEventListener('click', (e) => this.handleOutsideClick(e));
+    
+    // Mobile menu accordion (only one open at a time)
+    console.log('Setting up mobile menu accordion for', this.mobileMenuGroups.length, 'groups');
+    this.mobileMenuGroups.forEach((group, index) => {
+      console.log(`Adding toggle listener to group ${index}`);
+      group.addEventListener('toggle', (e) => this.handleMobileMenuToggle(e));
+    });
     
     // Handle window resize
     window.addEventListener('resize', () => this.handleResize());
@@ -173,6 +193,27 @@ class HeaderNavigation {
     this.announceToScreenReader('Mobile menu closed');
   }
   
+  handleMobileMenuToggle(e) {
+    const currentGroup = e.target;
+    
+    console.log('Mobile menu toggle:', {
+      currentGroup,
+      isOpen: currentGroup.open,
+      totalGroups: this.mobileMenuGroups.length
+    });
+    
+    // If this group is being opened, close all other groups
+    if (currentGroup.open) {
+      console.log('Closing other groups...');
+      this.mobileMenuGroups.forEach(group => {
+        if (group !== currentGroup && group.open) {
+          console.log('Closing group:', group);
+          group.open = false;
+        }
+      });
+    }
+  }
+  
   // =============================================================================
   // SEARCH FUNCTIONALITY
   // =============================================================================
@@ -226,41 +267,100 @@ class HeaderNavigation {
   // LANGUAGE SELECTOR
   // =============================================================================
   
-  toggleLanguageDropdown() {
-    const isOpen = this.langDropdown.classList.contains('is-open');
-    
-    // Close all other dropdowns
+  toggleLanguageDropdown(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    if (!this.langDropdown) {
+      return;
+    }
+
+    const wasOpen = this.langDropdown.classList.contains('is-open');
+
     this.closeAllDropdowns();
-    
-    if (!isOpen) {
-      this.langDropdown.classList.add('is-open');
-      this.langButton.setAttribute('aria-expanded', 'true');
-      
-      // Focus first language option
-      const firstOption = this.langDropdown.querySelector('.lang-option');
-      if (firstOption) {
-        firstOption.focus();
-      }
+
+    if (!wasOpen) {
+      this.openLanguageDropdown();
     }
   }
-  
+
+  openLanguageDropdown() {
+    if (!this.langDropdown) {
+      return;
+    }
+
+    this.langDropdown.classList.add('is-open');
+
+    if (this.langButton) {
+      this.langButton.setAttribute('aria-expanded', 'true');
+    }
+
+    const firstOption = this.langDropdown.querySelector('.lang-option');
+    if (firstOption) {
+      firstOption.focus();
+    }
+  }
+
+  closeLanguageDropdown() {
+    if (!this.langDropdown) {
+      return;
+    }
+
+    this.langDropdown.classList.remove('is-open');
+
+    if (this.langButton) {
+      this.langButton.setAttribute('aria-expanded', 'false');
+    }
+  }
+
   // =============================================================================
   // NAVIGATION DROPDOWNS
   // =============================================================================
   
   handleNavToggle(e) {
     e.preventDefault();
+    e.stopPropagation();
     const toggle = e.currentTarget;
-    const dropdown = document.getElementById(toggle.getAttribute('aria-controls'));
+    const dropdownId = toggle.getAttribute('aria-controls');
+    const dropdown = document.getElementById(dropdownId);
     
     if (!dropdown) return;
     
-    const isOpen = dropdown.classList.contains('is-open');
+    const wasOpen = dropdown.classList.contains('is-open');
     
     // Close all other dropdowns
     this.closeAllDropdowns();
     
-    if (!isOpen) {
+    if (!wasOpen) {
+      this.openDropdown(toggle, dropdown);
+    }
+  }
+  
+  handleNavHover(e) {
+    // Only handle hover on desktop
+    if (!this.isDesktopViewport()) return;
+    
+    const navItem = e.currentTarget;
+    const toggle = navItem.querySelector('.nav__toggle');
+    const dropdownId = toggle?.getAttribute('aria-controls');
+    const dropdown = dropdownId ? document.getElementById(dropdownId) : null;
+    
+    if (!dropdown) return;
+    
+    console.log('Hover detected:', {
+      dropdownId,
+      hasActiveDropdown: !!this.activeDropdown,
+      activeDropdownId: this.activeDropdown?.id,
+      isDifferent: this.activeDropdown !== dropdown
+    });
+    
+    // If any dropdown is already open, switch to this one
+    // (unless it's already the active one)
+    if (this.activeDropdown && this.activeDropdown !== dropdown) {
+      console.log('Switching dropdowns...');
+      this.closeAllDropdowns();
       this.openDropdown(toggle, dropdown);
     }
   }
@@ -269,6 +369,7 @@ class HeaderNavigation {
     dropdown.classList.add('is-open');
     toggle.setAttribute('aria-expanded', 'true');
     this.activeDropdown = dropdown;
+    this.activeToggle = toggle;
     
     // Focus first menu item
     const firstItem = dropdown.querySelector('[role="menuitem"]');
@@ -285,13 +386,11 @@ class HeaderNavigation {
     this.navToggles.forEach(toggle => {
       toggle.setAttribute('aria-expanded', 'false');
     });
-    
-    if (this.langDropdown) {
-      this.langDropdown.classList.remove('is-open');
-      this.langButton.setAttribute('aria-expanded', 'false');
-    }
-    
+
+    this.closeLanguageDropdown();
+
     this.activeDropdown = null;
+    this.activeToggle = null;
   }
   
   // =============================================================================
@@ -438,6 +537,32 @@ class HeaderNavigation {
   }
   
   // =============================================================================
+  // RESPONSIVE STATE MANAGEMENT
+  // =============================================================================
+  
+  initializeResponsiveState() {
+    const isDesktop = this.isDesktopViewport();
+    this.updateBurgerInteractivity(isDesktop);
+
+    if (isDesktop && this.isMobileMenuOpen) {
+      this.closeMobileMenu();
+    }
+  }
+
+  updateBurgerInteractivity(isDesktop) {
+    if (!this.burger) {
+      return;
+    }
+
+    this.burger.style.pointerEvents = isDesktop ? 'none' : 'auto';
+    this.burger.setAttribute('aria-hidden', isDesktop ? 'true' : 'false');
+  }
+
+  isDesktopViewport() {
+    return window.innerWidth >= DESKTOP_BREAKPOINT;
+  }
+
+  // =============================================================================
   // THEME MANAGEMENT
   // =============================================================================
   
@@ -465,27 +590,44 @@ class HeaderNavigation {
   // =============================================================================
   
   handleOutsideClick(e) {
-    // Close dropdowns if clicking outside
-    if (this.activeDropdown && !this.activeDropdown.contains(e.target)) {
+    const clickedToggle = Array.from(this.navToggles).some(toggle => toggle.contains(e.target));
+    const clickedLangButton = this.langButton && this.langButton.contains(e.target);
+    const clickedLangMenu = this.langDropdown && this.langDropdown.contains(e.target);
+
+    if (this.activeDropdown &&
+        !this.activeDropdown.contains(e.target) &&
+        !clickedToggle) {
       this.closeAllDropdowns();
     }
-    
-    // Close mobile menu if clicking outside
-    if (this.isMobileMenuOpen && 
-        !this.mobileMenu.contains(e.target) && 
+
+    if (this.langDropdown &&
+        this.langDropdown.classList.contains('is-open') &&
+        !clickedLangButton &&
+        !clickedLangMenu) {
+      this.closeLanguageDropdown();
+    }
+
+    if (this.isMobileMenuOpen &&
+        this.mobileMenu &&
+        !this.mobileMenu.contains(e.target) &&
+        this.burger &&
         !this.burger.contains(e.target)) {
       this.closeMobileMenu();
     }
   }
   
   handleResize() {
-    // Close mobile menu on desktop resize
-    if (window.innerWidth >= 1180 && this.isMobileMenuOpen) {
+    const isDesktop = this.isDesktopViewport();
+
+    // Close mobile menu on desktop resize and sync burger state
+    if (isDesktop && this.isMobileMenuOpen) {
       this.closeMobileMenu();
     }
-    
-    // Close search on mobile resize
-    if (window.innerWidth < 1180 && this.isSearchOpen) {
+
+    this.updateBurgerInteractivity(isDesktop);
+
+    // Close search when shifting into mobile layout
+    if (!isDesktop && this.isSearchOpen) {
       this.closeSearch();
     }
   }

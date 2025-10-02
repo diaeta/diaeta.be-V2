@@ -42,17 +42,15 @@
 // UTILITIES CLUSTER CONTAINER
 // =============================================================================
 .utilities {
-  display: none; // Hidden by default (mobile-first)
+  display: flex; // Always flex; individual items hide on mobile via utility classes
   align-items: center;
-  gap: map.get($spacing, 2); // 8px gap for a tighter cluster
+  justify-content: flex-end;
+  gap: map.get($spacing, '3'); // 12px default spacing
   height: 100%;
-  
-  @include respond-to('lg') {
-    display: flex; // Show on desktop
-  }
-  
+  flex-wrap: nowrap;
+
   @include respond-below('lg') {
-    gap: 0.75rem; // Reduced gap on smaller screens
+    gap: map.get($spacing, '2'); // Slightly tighter spacing on smaller screens
   }
 }
 
@@ -133,7 +131,7 @@
 // =============================================================================
 .phone {
   @extend %utility-button;
-  gap: map.get($spacing, 2);
+  gap: map.get($spacing, '2');
   background-color: color.adjust(map.get($colors, 'brand'), $alpha: -0.92); // Soft fill
   
   &:hover {
@@ -183,18 +181,39 @@
 }
 
 .lang-dropdown {
-  @include nav-dropdown-base; // Use mixin for consistency
-  right: 0; // Align to the right of the trigger
+  position: absolute;
+  top: calc(100% + var(--dropdown-offset));
+  right: 0;
   left: auto;
+  min-width: 12rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--color-ink);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-solid);
+  padding: map.get($spacing, '2') 0;
+  z-index: var(--z-dropdown);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity var(--transition-normal) cubic-bezier(0.16, 1, 0.3, 1), transform var(--transition-normal) cubic-bezier(0.16, 1, 0.3, 1), visibility 0s var(--transition-normal);
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition: opacity var(--transition-normal) cubic-bezier(0.16, 1, 0.3, 1), transform var(--transition-normal) cubic-bezier(0.16, 1, 0.3, 1), visibility 0s 0s;
+  }
 }
 
 .lang-option {
   @include nav-dropdown-item; // Use mixin for consistency
-
-  // Stagger animation for language options
-  .lang-dropdown.is-open & {
-    @include stagger-fade-in(4, 40ms);
-  }
+  justify-content: space-between;
+  gap: map.get($spacing, '1');
+  opacity: 1;
+  color: var(--color-ink);
 
   &.is-active {
     font-weight: var(--font-weight-medium);
@@ -377,7 +396,7 @@
 
 .mnav__link {
   display: block;
-  padding: map.get($spacing, 3) map.get($spacing, 2);
+  padding: map.get($spacing, '3') map.get($spacing, '2');
   color: var(--ink);
   text-decoration: none;
   font-size: var(--font-size-base);
@@ -386,10 +405,10 @@
   transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
   position: relative;
   
-  // Stagger animation when mobile menu opens
-  .mnav.is-open & {
-    @include stagger-fade-in(8, 50ms);
-  }
+  // Stagger animation when mobile menu opens - DISABLED to ensure visibility
+  // .mnav.is-open & {
+  //   @include stagger-fade-in(8, 50ms);
+  // }
   
   &:hover {
     background-color: var(--brand-weak);
@@ -422,7 +441,7 @@
   padding-top: 1rem;
   border-top: 1px solid var(--border);
   display: grid;
-  gap: map.get($spacing, 3);
+  gap: map.get($spacing, '3');
   
   .search,
   .phone,
