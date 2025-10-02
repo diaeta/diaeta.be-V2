@@ -1,0 +1,279 @@
+{
+  "en": {
+    "eyebrow": "Why Clients Choose Us",
+    "title": "Your body's unique blueprint meets precision nutrition",
+    "subtitle": "Data-driven personalization that honors your tastes, culture, and lifestyle—powered by body composition analysis and continuous app support.",
+    "promise": {
+      "title": "The Diaeta Promise",
+      "points": [
+        "Real food you actually enjoy",
+        "Zero calorie counting stress",
+        "Flexible around your schedule",
+        "Backed by clinical research"
+      ]
+    },
+    "features": [
+      {
+        "icon": "microscope",
+        "number": "01",
+        "title": "Evidence Meets Empathy",
+        "description": "Peer-reviewed protocols adapted to your unique needs, preferences, and medical context.",
+        "highlight": "Clinical rigor without the rigidity",
+        "metrics": ["200+ studies reviewed", "15+ years expertise"]
+      },
+      {
+        "icon": "body",
+        "number": "02",
+        "title": "Body Composition Intelligence",
+        "description": "InBody scans reveal muscle-to-fat ratios, visceral fat levels, and hydration status—so you track real progress, not just scale numbers.",
+        "highlight": "Know exactly what's changing",
+        "metrics": ["8+ biomarkers tracked", "Weekly progress scans"]
+      },
+      {
+        "icon": "chef-hat",
+        "number": "03",
+        "title": "Food Freedom Philosophy",
+        "description": "No forbidden foods, no calorie apps, no meal prep marathons. Just smart strategies that work with your real life.",
+        "highlight": "Eat what you love, sustainably",
+        "metrics": ["Zero restrictions", "100% personalized"]
+      },
+      {
+        "icon": "mobile-heart",
+        "number": "04",
+        "title": "24/7 App Ecosystem",
+        "description": "Nutrium platform connects you to your dietitian between sessions—meal logging, photo sharing, quick questions, progress dashboards.",
+        "highlight": "Never feel alone on the journey",
+        "metrics": ["< 24h response time", "Unlimited messaging"]
+      }
+    ],
+    "stats": {
+      "title": "Client Results That Speak Louder",
+      "subtitle": "Real outcomes from people who chose evidence over fads",
+      "metrics": [
+        {
+          "value": "12kg",
+          "label": "Average weight lost",
+          "sublabel": "in 6 months",
+          "icon": "scale"
+        },
+        {
+          "value": "89%",
+          "label": "IBS relief rate",
+          "sublabel": "Low-FODMAP protocol",
+          "icon": "heart-pulse"
+        },
+        {
+          "value": "92%",
+          "label": "Keep it off",
+          "sublabel": "after 12 months",
+          "icon": "trophy"
+        },
+        {
+          "value": "500+",
+          "label": "Lives transformed",
+          "sublabel": "since 2015",
+          "icon": "users"
+        }
+      ]
+    },
+    "testimonial": {
+      "quote": "I lost 23kg eating foods I love. No hunger, no restriction, just real science.",
+      "author": "Sophie L.",
+      "role": "Weight Loss Client",
+      "image": "/assets/images/testimonials/sophie.jpg"
+    },
+    "cta": {
+      "primary": {
+        "text": "Book Your Consultation",
+        "url": "/en/appointment/"
+      },
+      "secondary": {
+        "text": "Learn About Our Method",
+        "url": "/en/diaeta-method/"
+      }
+    }
+  },
+  "fr": {
+    "eyebrow": "La Différence Diaeta",
+    "title": "Nutrition scientifique qui s'adapte à votre vie",
+    "subtitle": "Stratégies fondées sur des preuves, personnalisées pour vous—sans faim, restriction ou sacrifice des aliments que vous aimez.",
+    "features": [
+      {
+        "icon": "microscope",
+        "title": "Protocoles Fondés sur les Preuves",
+        "description": "Chaque recommandation repose sur la recherche évaluée par les pairs et les directives cliniques—nutrition qui fonctionne parce que la science le dit.",
+        "badge": "Cliniquement Prouvé"
+      },
+      {
+        "icon": "user-heart",
+        "title": "Personnalisé pour Votre Corps",
+        "description": "Suivi de composition corporelle, analyses de laboratoire et évaluation du mode de vie garantissent que votre plan s'adapte à la façon dont votre corps réagit réellement.",
+        "badge": "Vraiment Sur Mesure"
+      },
+      {
+        "icon": "utensils",
+        "title": "Sans Faim, Sans Privation",
+        "description": "Mangez des aliments que vous appréciez vraiment tout en atteignant vos objectifs. Notre approche respecte vos goûts, votre culture et vos routines.",
+        "badge": "Satisfaction Garantie"
+      },
+      {
+        "icon": "mobile-screen",
+        "title": "Soutien Continu via Application",
+        "description": "Suivis hebdomadaires, suivi des progrès, journalisation des repas et messagerie directe avec votre diététicien—via Nutrium.",
+        "badge": "Toujours Connecté"
+      }
+    ],
+    "stats": {
+      "title": "Résultats Réels de Vraies Personnes",
+      "metrics": [
+        {
+          "value": "12kg",
+          "label": "Perte de poids moyenne",
+          "sublabel": "en 6 mois"
+        },
+        {
+          "value": "92%",
+          "label": "Rétention des clients",
+          "sublabel": "d'année en année"
+        },
+        {
+          "value": "89%",
+          "label": "Amélioration des symptômes",
+          "sublabel": "pour patients SII"
+        }
+      ]
+    },
+    "cta": {
+      "primary": {
+        "text": "Réserver Votre Consultation",
+        "url": "/fr/appointment/"
+      },
+      "secondary": {
+        "text": "Découvrir Notre Méthode",
+        "url": "/fr/diaeta-method/"
+      }
+    }
+  },
+  "nl": {
+    "eyebrow": "Het Diaeta Verschil",
+    "title": "Wetenschappelijk onderbouwde voeding die bij uw leven past",
+    "subtitle": "Evidence-based strategieën, gepersonaliseerd voor u—zonder honger, beperking of het opgeven van voedsel dat u lekker vindt.",
+    "features": [
+      {
+        "icon": "microscope",
+        "title": "Evidence-Based Protocollen",
+        "description": "Elke aanbeveling is gebaseerd op peer-reviewed onderzoek en klinische richtlijnen—voeding die werkt omdat de wetenschap dat zegt.",
+        "badge": "Klinisch Bewezen"
+      },
+      {
+        "icon": "user-heart",
+        "title": "Gepersonaliseerd voor Uw Lichaam",
+        "description": "Lichaamssamenstelling tracking, labresultaten en levensstijlevaluatie zorgen ervoor dat uw plan zich aanpast aan hoe uw lichaam werkelijk reageert.",
+        "badge": "Echt Op Maat"
+      },
+      {
+        "icon": "utensils",
+        "title": "Geen Honger, Geen Ontbering",
+        "description": "Eet voedsel dat u echt lekker vindt terwijl u uw doelen bereikt. Onze aanpak respecteert uw smaak, cultuur en routines.",
+        "badge": "Tevredenheid Gegarandeerd"
+      },
+      {
+        "icon": "mobile-screen",
+        "title": "Continue Ondersteuning via App",
+        "description": "Wekelijkse check-ins, voortgangscontrole, maaltijdregistratie en directe berichten met uw diëtist—via Nutrium.",
+        "badge": "Altijd Verbonden"
+      }
+    ],
+    "stats": {
+      "title": "Echte Resultaten van Echte Mensen",
+      "metrics": [
+        {
+          "value": "12kg",
+          "label": "Gemiddeld gewichtsverlies",
+          "sublabel": "in 6 maanden"
+        },
+        {
+          "value": "92%",
+          "label": "Cliëntbehoud",
+          "sublabel": "jaar op jaar"
+        },
+        {
+          "value": "89%",
+          "label": "Symptoomverbetering",
+          "sublabel": "voor PDS-patiënten"
+        }
+      ]
+    },
+    "cta": {
+      "primary": {
+        "text": "Boek Uw Consultatie",
+        "url": "/nl/appointment/"
+      },
+      "secondary": {
+        "text": "Leer Over Onze Methode",
+        "url": "/nl/diaeta-method/"
+      }
+    }
+  },
+  "de": {
+    "eyebrow": "Der Diaeta Unterschied",
+    "title": "Wissenschaftlich fundierte Ernährung, die zu Ihrem Leben passt",
+    "subtitle": "Evidenzbasierte Strategien, personalisiert für Sie—ohne Hunger, Einschränkung oder Verzicht auf Lebensmittel, die Sie lieben.",
+    "features": [
+      {
+        "icon": "microscope",
+        "title": "Evidenzbasierte Protokolle",
+        "description": "Jede Empfehlung basiert auf peer-reviewed Forschung und klinischen Leitlinien—Ernährung, die funktioniert, weil die Wissenschaft es sagt.",
+        "badge": "Klinisch Bewährt"
+      },
+      {
+        "icon": "user-heart",
+        "title": "Personalisiert für Ihren Körper",
+        "description": "Körperzusammensetzungs-Tracking, Laborergebnisse und Lebensstilbewertung stellen sicher, dass Ihr Plan sich anpasst, wie Ihr Körper tatsächlich reagiert.",
+        "badge": "Wirklich Maßgeschneidert"
+      },
+      {
+        "icon": "utensils",
+        "title": "Kein Hunger, Keine Entbehrung",
+        "description": "Essen Sie Lebensmittel, die Sie wirklich genießen, während Sie Ihre Ziele erreichen. Unser Ansatz respektiert Ihren Geschmack, Ihre Kultur und Routinen.",
+        "badge": "Zufriedenheit Garantiert"
+      },
+      {
+        "icon": "mobile-screen",
+        "title": "Kontinuierliche Unterstützung via App",
+        "description": "Wöchentliche Check-ins, Fortschrittsverfolgung, Mahlzeitenprotokollierung und direkte Nachrichten mit Ihrem Ernährungsberater—über Nutrium.",
+        "badge": "Immer Verbunden"
+      }
+    ],
+    "stats": {
+      "title": "Echte Ergebnisse von Echten Menschen",
+      "metrics": [
+        {
+          "value": "12kg",
+          "label": "Durchschnittlicher Gewichtsverlust",
+          "sublabel": "in 6 Monaten"
+        },
+        {
+          "value": "92%",
+          "label": "Kundenbindung",
+          "sublabel": "Jahr für Jahr"
+        },
+        {
+          "value": "89%",
+          "label": "Symptomverbesserung",
+          "sublabel": "für RDS-Patienten"
+        }
+      ]
+    },
+    "cta": {
+      "primary": {
+        "text": "Beratung Buchen",
+        "url": "/de/appointment/"
+      },
+      "secondary": {
+        "text": "Über Unsere Methode",
+        "url": "/de/diaeta-method/"
+      }
+    }
+  }
+}

@@ -1,0 +1,434 @@
+{
+  "en": {
+    "eyebrow": "Real Stories, Real Results",
+    "title": "Transformations That Speak Louder Than Promises",
+    "subtitle": "Meet clients who've turned frustration into freedom, confusion into clarity, and temporary fixes into lasting health.",
+    "testimonials": [
+      {
+        "id": "sarah-ibs",
+        "name": "Sarah M.",
+        "age": 34,
+        "program": "IBS & Low-FODMAP",
+        "location": "Brussels",
+        "image": "/assets/images/testimonials/sarah.jpg",
+        "quote": "After 8 years of avoiding restaurants and social events, I finally have my life back. The Low-FODMAP journey wasn't just about food—it was about understanding my body.",
+        "results": [
+          "85% reduction in symptoms within 6 weeks",
+          "Successfully reintroduced 12 trigger foods",
+          "Back to dining out with confidence"
+        ],
+        "highlight": "From fear foods to food freedom",
+        "rating": 5
+      },
+      {
+        "id": "tom-weight",
+        "name": "Tom V.",
+        "age": 42,
+        "program": "Weight Management",
+        "location": "Antwerp",
+        "image": "/assets/images/testimonials/tom.jpg",
+        "quote": "No hunger, no counting, no guilt. Just a straightforward system that fits my schedule. Down 18kg in 6 months and actually enjoying the process.",
+        "results": [
+          "18kg lost sustainably over 6 months",
+          "Improved energy and sleep quality",
+          "Zero calorie counting or food tracking"
+        ],
+        "highlight": "Sustainable weight loss without deprivation",
+        "rating": 5
+      },
+      {
+        "id": "marie-diabetes",
+        "name": "Marie D.",
+        "age": 56,
+        "program": "Type 2 Diabetes",
+        "location": "Ghent",
+        "image": "/assets/images/testimonials/marie.jpg",
+        "quote": "My HbA1c dropped from 8.2 to 6.1 in 4 months. My doctor was amazed. But the best part? I'm eating foods I actually love.",
+        "results": [
+          "HbA1c reduced from 8.2 to 6.1",
+          "Medication dosage decreased by 50%",
+          "No more afternoon energy crashes"
+        ],
+        "highlight": "Reversed prediabetic markers",
+        "rating": 5
+      },
+      {
+        "id": "lisa-cholesterol",
+        "name": "Lisa K.",
+        "age": 48,
+        "program": "Heart Health",
+        "location": "Leuven",
+        "image": "/assets/images/testimonials/lisa.jpg",
+        "quote": "Cholesterol down 40 points without statins. My cardiologist called it 'remarkable.' I call it finally understanding what my body needs.",
+        "results": [
+          "Total cholesterol reduced by 40mg/dL",
+          "LDL decreased from 160 to 110",
+          "Avoided statin medication"
+        ],
+        "highlight": "Natural cholesterol management",
+        "rating": 5
+      }
+    ],
+    "stats": {
+      "title": "Proven Results Across Belgium",
+      "metrics": [
+        {
+          "number": "92%",
+          "label": "Client satisfaction rate",
+          "icon": "thumbs-up"
+        },
+        {
+          "number": "6-12",
+          "label": "Average weeks to see results",
+          "icon": "calendar"
+        },
+        {
+          "number": "500+",
+          "label": "Lives transformed since 2009",
+          "icon": "users"
+        },
+        {
+          "number": "4.9/5",
+          "label": "Average client rating",
+          "icon": "star"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Write Your Success Story?",
+      "subtitle": "Join hundreds of Belgians who've transformed their health with evidence-based nutrition.",
+      "primary": {
+        "text": "Start Your Journey",
+        "url": "/en/appointment/"
+      },
+      "secondary": {
+        "text": "Read More Stories",
+        "url": "/en/testimonials/"
+      }
+    }
+  },
+  "fr": {
+    "eyebrow": "Histoires Réelles, Résultats Réels",
+    "title": "Des Transformations Qui Parlent Plus Fort Que Les Promesses",
+    "subtitle": "Rencontrez des clients qui ont transformé la frustration en liberté, la confusion en clarté et les solutions temporaires en santé durable.",
+    "testimonials": [
+      {
+        "id": "sarah-ibs",
+        "name": "Sarah M.",
+        "age": 34,
+        "program": "SII & Low-FODMAP",
+        "location": "Bruxelles",
+        "image": "/assets/images/testimonials/sarah.jpg",
+        "quote": "Après 8 ans à éviter les restaurants, j'ai enfin retrouvé ma vie. Le parcours Low-FODMAP n'était pas seulement une question de nourriture—c'était comprendre mon corps.",
+        "results": [
+          "85% de réduction des symptômes en 6 semaines",
+          "12 aliments déclencheurs réintroduits avec succès",
+          "Retour aux repas en toute confiance"
+        ],
+        "highlight": "De la peur à la liberté alimentaire",
+        "rating": 5
+      },
+      {
+        "id": "tom-weight",
+        "name": "Tom V.",
+        "age": 42,
+        "program": "Gestion du Poids",
+        "location": "Anvers",
+        "image": "/assets/images/testimonials/tom.jpg",
+        "quote": "Pas de faim, pas de comptage, pas de culpabilité. Juste un système simple qui correspond à mon emploi du temps. -18kg en 6 mois.",
+        "results": [
+          "18kg perdus durablement sur 6 mois",
+          "Énergie et qualité de sommeil améliorées",
+          "Zéro comptage de calories"
+        ],
+        "highlight": "Perte de poids durable sans privation",
+        "rating": 5
+      },
+      {
+        "id": "marie-diabetes",
+        "name": "Marie D.",
+        "age": 56,
+        "program": "Diabète Type 2",
+        "location": "Gand",
+        "image": "/assets/images/testimonials/marie.jpg",
+        "quote": "Mon HbA1c est passé de 8,2 à 6,1 en 4 mois. Mon médecin était étonné. Mais le meilleur ? Je mange des aliments que j'aime vraiment.",
+        "results": [
+          "HbA1c réduit de 8,2 à 6,1",
+          "Dosage médicamenteux diminué de 50%",
+          "Plus de baisses d'énergie l'après-midi"
+        ],
+        "highlight": "Marqueurs prédiabétiques inversés",
+        "rating": 5
+      },
+      {
+        "id": "lisa-cholesterol",
+        "name": "Lisa K.",
+        "age": 48,
+        "program": "Santé Cardiaque",
+        "location": "Louvain",
+        "image": "/assets/images/testimonials/lisa.jpg",
+        "quote": "Cholestérol baissé de 40 points sans statines. Mon cardiologue l'a qualifié de 'remarquable'. Moi j'appelle ça comprendre enfin ce dont mon corps a besoin.",
+        "results": [
+          "Cholestérol total réduit de 40mg/dL",
+          "LDL diminué de 160 à 110",
+          "Évité la médication par statines"
+        ],
+        "highlight": "Gestion naturelle du cholestérol",
+        "rating": 5
+      }
+    ],
+    "stats": {
+      "title": "Résultats Prouvés à Travers la Belgique",
+      "metrics": [
+        {
+          "number": "92%",
+          "label": "Taux de satisfaction client",
+          "icon": "thumbs-up"
+        },
+        {
+          "number": "6-12",
+          "label": "Semaines moyennes pour voir des résultats",
+          "icon": "calendar"
+        },
+        {
+          "number": "500+",
+          "label": "Vies transformées depuis 2009",
+          "icon": "users"
+        },
+        {
+          "number": "4.9/5",
+          "label": "Note moyenne des clients",
+          "icon": "star"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Prêt à Écrire Votre Histoire de Succès?",
+      "subtitle": "Rejoignez des centaines de Belges qui ont transformé leur santé avec une nutrition basée sur les preuves.",
+      "primary": {
+        "text": "Commencer Votre Parcours",
+        "url": "/fr/appointment/"
+      },
+      "secondary": {
+        "text": "Lire Plus d'Histoires",
+        "url": "/fr/testimonials/"
+      }
+    }
+  },
+  "nl": {
+    "eyebrow": "Echte Verhalen, Echte Resultaten",
+    "title": "Transformaties Die Luider Spreken Dan Beloftes",
+    "subtitle": "Ontmoet cliënten die frustratie omzetten in vrijheid, verwarring in helderheid, en tijdelijke oplossingen in blijvende gezondheid.",
+    "testimonials": [
+      {
+        "id": "sarah-ibs",
+        "name": "Sarah M.",
+        "age": 34,
+        "program": "PDS & Low-FODMAP",
+        "location": "Brussel",
+        "image": "/assets/images/testimonials/sarah.jpg",
+        "quote": "Na 8 jaar restaurants vermijden, heb ik eindelijk mijn leven terug. De Low-FODMAP reis ging niet alleen over eten—het ging over mijn lichaam begrijpen.",
+        "results": [
+          "85% vermindering van symptomen binnen 6 weken",
+          "12 trigger voedingsmiddelen succesvol herintroduceerd",
+          "Terug naar uit eten met vertrouwen"
+        ],
+        "highlight": "Van angst voor voedsel naar voedingsvrijheid",
+        "rating": 5
+      },
+      {
+        "id": "tom-weight",
+        "name": "Tom V.",
+        "age": 42,
+        "program": "Gewichtsbeheer",
+        "location": "Antwerpen",
+        "image": "/assets/images/testimonials/tom.jpg",
+        "quote": "Geen honger, geen tellen, geen schuldgevoel. Gewoon een eenvoudig systeem dat bij mijn schema past. 18kg kwijt in 6 maanden.",
+        "results": [
+          "18kg duurzaam verloren over 6 maanden",
+          "Verbeterde energie en slaapkwaliteit",
+          "Nul calorieën tellen"
+        ],
+        "highlight": "Duurzaam gewichtsverlies zonder ontbering",
+        "rating": 5
+      },
+      {
+        "id": "marie-diabetes",
+        "name": "Marie D.",
+        "age": 56,
+        "program": "Type 2 Diabetes",
+        "location": "Gent",
+        "image": "/assets/images/testimonials/marie.jpg",
+        "quote": "Mijn HbA1c daalde van 8,2 naar 6,1 in 4 maanden. Mijn dokter was verbaasd. Maar het beste deel? Ik eet voedsel waar ik echt van hou.",
+        "results": [
+          "HbA1c verlaagd van 8,2 naar 6,1",
+          "Medicatiedosering met 50% verlaagd",
+          "Geen middagdips meer"
+        ],
+        "highlight": "Prediabetische markers omgekeerd",
+        "rating": 5
+      },
+      {
+        "id": "lisa-cholesterol",
+        "name": "Lisa K.",
+        "age": 48,
+        "program": "Hartgezondheid",
+        "location": "Leuven",
+        "image": "/assets/images/testimonials/lisa.jpg",
+        "quote": "Cholesterol 40 punten gedaald zonder statines. Mijn cardioloog noemde het 'opmerkelijk'. Ik noem het eindelijk begrijpen wat mijn lichaam nodig heeft.",
+        "results": [
+          "Totaal cholesterol verlaagd met 40mg/dL",
+          "LDL gedaald van 160 naar 110",
+          "Statine medicatie vermeden"
+        ],
+        "highlight": "Natuurlijk cholesterolbeheer",
+        "rating": 5
+      }
+    ],
+    "stats": {
+      "title": "Bewezen Resultaten Door Heel België",
+      "metrics": [
+        {
+          "number": "92%",
+          "label": "Klanttevredenheid",
+          "icon": "thumbs-up"
+        },
+        {
+          "number": "6-12",
+          "label": "Gemiddeld aantal weken tot resultaten",
+          "icon": "calendar"
+        },
+        {
+          "number": "500+",
+          "label": "Levens getransformeerd sinds 2009",
+          "icon": "users"
+        },
+        {
+          "number": "4.9/5",
+          "label": "Gemiddelde klantbeoordeling",
+          "icon": "star"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Klaar Om Jouw Succesverhaal Te Schrijven?",
+      "subtitle": "Sluit je aan bij honderden Belgen die hun gezondheid hebben getransformeerd met evidence-based voeding.",
+      "primary": {
+        "text": "Start Je Reis",
+        "url": "/nl/appointment/"
+      },
+      "secondary": {
+        "text": "Lees Meer Verhalen",
+        "url": "/nl/testimonials/"
+      }
+    }
+  },
+  "de": {
+    "eyebrow": "Echte Geschichten, Echte Ergebnisse",
+    "title": "Transformationen, Die Lauter Sprechen Als Versprechen",
+    "subtitle": "Treffen Sie Kunden, die Frustration in Freiheit, Verwirrung in Klarheit und vorübergehende Lösungen in dauerhafte Gesundheit verwandelt haben.",
+    "testimonials": [
+      {
+        "id": "sarah-ibs",
+        "name": "Sarah M.",
+        "age": 34,
+        "program": "RDS & Low-FODMAP",
+        "location": "Brüssel",
+        "image": "/assets/images/testimonials/sarah.jpg",
+        "quote": "Nach 8 Jahren Restaurants zu meiden, habe ich endlich mein Leben zurück. Die Low-FODMAP-Reise ging nicht nur um Essen—es ging darum, meinen Körper zu verstehen.",
+        "results": [
+          "85% Symptomreduktion innerhalb von 6 Wochen",
+          "12 Trigger-Lebensmittel erfolgreich wiedereingeführt",
+          "Zurück zum Auswärtsessen mit Vertrauen"
+        ],
+        "highlight": "Von Angst vor Essen zu Essensfreiheit",
+        "rating": 5
+      },
+      {
+        "id": "tom-weight",
+        "name": "Tom V.",
+        "age": 42,
+        "program": "Gewichtsmanagement",
+        "location": "Antwerpen",
+        "image": "/assets/images/testimonials/tom.jpg",
+        "quote": "Kein Hunger, kein Zählen, keine Schuldgefühle. Nur ein einfaches System, das zu meinem Zeitplan passt. 18kg in 6 Monaten abgenommen.",
+        "results": [
+          "18kg nachhaltig über 6 Monate verloren",
+          "Verbesserte Energie und Schlafqualität",
+          "Null Kalorienzählen"
+        ],
+        "highlight": "Nachhaltiger Gewichtsverlust ohne Verzicht",
+        "rating": 5
+      },
+      {
+        "id": "marie-diabetes",
+        "name": "Marie D.",
+        "age": 56,
+        "program": "Typ-2-Diabetes",
+        "location": "Gent",
+        "image": "/assets/images/testimonials/marie.jpg",
+        "quote": "Mein HbA1c sank von 8,2 auf 6,1 in 4 Monaten. Mein Arzt war erstaunt. Aber das Beste? Ich esse Lebensmittel, die ich wirklich liebe.",
+        "results": [
+          "HbA1c von 8,2 auf 6,1 reduziert",
+          "Medikamentendosis um 50% verringert",
+          "Keine Nachmittagstiefs mehr"
+        ],
+        "highlight": "Prädiabetische Marker umgekehrt",
+        "rating": 5
+      },
+      {
+        "id": "lisa-cholesterol",
+        "name": "Lisa K.",
+        "age": 48,
+        "program": "Herzgesundheit",
+        "location": "Leuven",
+        "image": "/assets/images/testimonials/lisa.jpg",
+        "quote": "Cholesterin um 40 Punkte gesenkt ohne Statine. Mein Kardiologe nannte es 'bemerkenswert'. Ich nenne es endlich verstehen, was mein Körper braucht.",
+        "results": [
+          "Gesamtcholesterin um 40mg/dL reduziert",
+          "LDL von 160 auf 110 gesenkt",
+          "Statin-Medikation vermieden"
+        ],
+        "highlight": "Natürliches Cholesterinmanagement",
+        "rating": 5
+      }
+    ],
+    "stats": {
+      "title": "Bewiesene Ergebnisse in ganz Belgien",
+      "metrics": [
+        {
+          "number": "92%",
+          "label": "Kundenzufriedenheitsrate",
+          "icon": "thumbs-up"
+        },
+        {
+          "number": "6-12",
+          "label": "Durchschnittliche Wochen bis zu Ergebnissen",
+          "icon": "calendar"
+        },
+        {
+          "number": "500+",
+          "label": "Leben seit 2009 transformiert",
+          "icon": "users"
+        },
+        {
+          "number": "4.9/5",
+          "label": "Durchschnittliche Kundenbewertung",
+          "icon": "star"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Bereit, Ihre Erfolgsgeschichte Zu Schreiben?",
+      "subtitle": "Schließen Sie sich Hunderten von Belgiern an, die ihre Gesundheit mit evidenzbasierter Ernährung transformiert haben.",
+      "primary": {
+        "text": "Starten Sie Ihre Reise",
+        "url": "/de/appointment/"
+      },
+      "secondary": {
+        "text": "Mehr Geschichten Lesen",
+        "url": "/de/testimonials/"
+      }
+    }
+  }
+}

@@ -1,12 +1,189 @@
-{% set loc = (lang or page.lang or localization.defaultLocale) %}
-{% if loc == 'en' %}
-  {% include 'partials/header_en.njk' %}
-{% elif loc == 'nl' %}
-  {% include 'partials/header_nl.njk' %}
-{% elif loc == 'de' %}
-  {% include 'partials/header_de.njk' %}
-{% else %}
-  {# Fallback to EN if FR-specific partial is not present #}
-  {% include 'partials/header_en.njk' %}
-{% endif %}
+{# Get current language or default to 'en' #}
+{% set currentLang = lang or page.lang or 'en' %}
+{% set nav = navigation[currentLang] %}
 
+<header class="c-header" data-header>
+  <div class="c-header__inner">
+    <!-- Brand/Logo -->
+    <a class="c-header__brand" href="{{ nav.logo.homeUrl }}" aria-label="{{ nav.logo.alt }}">
+      <img src="/assets/images/logo.svg" alt="Diaeta" width="147" height="50" />
+    </a>
+
+    <!-- Primary Navigation (Desktop) -->
+    <nav class="c-header__nav" aria-label="Primary">
+      <ul class="c-nav">
+        {% for key, item in nav.nav %}
+        <li class="c-nav__item{% if item.hasDropdown %} c-nav__item--has-dropdown{% endif %}">
+          {% if item.hasDropdown %}
+          <button class="c-nav__link" aria-expanded="false" aria-controls="{{ key }}-dropdown" data-dropdown-trigger="{{ key }}">
+            <span>{{ item.label }}</span>
+            <svg class="c-nav__caret" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg>
+          </button>
+          <div id="{{ key }}-dropdown" class="c-dropdown" data-dropdown="{{ key }}">
+            {% for dropdownItem in item.dropdown %}
+            <a class="c-dropdown__item" href="{{ dropdownItem.url }}">{{ dropdownItem.label }}</a>
+            {% endfor %}
+          </div>
+          {% else %}
+          <a class="c-nav__link" href="{{ item.url }}">{{ item.label }}</a>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <!-- Utilities -->
+    <div class="c-header__utilities">
+      <!-- Search Icon (Mobile & Desktop) -->
+      <button class="c-icon-btn" aria-label="{{ nav.utilities.search.ariaLabel }}" data-search-open>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </button>
+
+      <!-- Language Chip (Desktop only) -->
+      <div class="c-lang-chip--desktop">
+        <button class="c-lang-chip" aria-label="{{ nav.utilities.language.ariaLabel }}" aria-expanded="false" aria-controls="lang-dropdown" data-lang-trigger>
+          <span class="c-lang-chip__code">{{ nav.utilities.language.code }}</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <svg class="c-lang-chip__caret" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg>
+        </button>
+        <div id="lang-dropdown" class="c-lang-dropdown" data-lang-dropdown>
+          {% for langOption in nav.utilities.language.options %}
+          <a class="c-lang-dropdown__item{% if langOption.isActive %} c-lang-dropdown__item--active{% endif %}" href="{{ langOption.url }}" lang="{{ langOption.code }}">
+            <span>{{ langOption.label }}</span>
+            {% if langOption.isActive %}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            {% endif %}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Phone Icon/Chip -->
+      <a class="c-phone-chip c-phone-chip--mobile" href="tel:{{ nav.utilities.phone.tel }}" aria-label="{{ nav.utilities.phone.ariaLabel }}">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+      </a>
+      <a class="c-phone-chip c-phone-chip--desktop" href="tel:{{ nav.utilities.phone.tel }}" aria-label="{{ nav.utilities.phone.ariaLabel }}">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        <span class="c-phone-chip__number">{{ nav.utilities.phone.number }}</span>
+      </a>
+
+      <!-- Book CTA Pill -->
+      <a class="c-cta-pill" href="{{ nav.utilities.cta.url }}">{{ nav.utilities.cta.label }}</a>
+
+      <!-- Mobile Menu Button -->
+      <button class="c-hamburger" aria-label="{{ nav.utilities.menu.ariaLabel }}" aria-expanded="false" aria-controls="mobile-sheet" data-menu-toggle>
+        <span class="c-hamburger__line"></span>
+        <span class="c-hamburger__line"></span>
+        <span class="c-hamburger__line"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Sheet -->
+  <div id="mobile-sheet" class="c-mobile-sheet" data-mobile-sheet>
+    <div class="c-mobile-sheet__backdrop" data-sheet-close></div>
+    <div class="c-mobile-sheet__dialog">
+      <div class="c-mobile-sheet__header">
+        <a class="c-header__brand" href="{{ nav.logo.homeUrl }}" aria-label="{{ nav.logo.alt }}">
+          <img src="/assets/images/logo.svg" alt="Diaeta" width="147" height="50" />
+        </a>
+        <button class="c-mobile-sheet__close" aria-label="{{ nav.utilities.menu.ariaLabelClose }}" data-sheet-close>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="c-mobile-nav" aria-label="Mobile Primary">
+        <ul class="c-mobile-nav__list">
+          {% for key, item in nav.nav %}
+          <li class="c-mobile-nav__item">
+            {% if item.hasDropdown %}
+            <details class="c-mobile-accordion">
+              <summary class="c-mobile-accordion__trigger">
+                <span>{{ item.label }}</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg>
+              </summary>
+              <div class="c-mobile-accordion__content">
+                {% for dropdownItem in item.dropdown %}
+                <a href="{{ dropdownItem.url }}">{{ dropdownItem.label }}</a>
+                {% endfor %}
+              </div>
+            </details>
+            {% else %}
+            <a class="c-mobile-nav__link" href="{{ item.url }}">{{ item.label }}</a>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+      <div class="c-mobile-sheet__actions">
+        <a class="c-cta-pill c-cta-pill--full" href="{{ nav.utilities.cta.url }}">{{ nav.utilities.cta.label }}</a>
+        <a class="c-mobile-action" href="tel:{{ nav.utilities.phone.tel }}">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span>{{ nav.mobileNav.callUs }}</span>
+        </a>
+
+        <!-- Mobile Language Accordion -->
+        <details class="c-mobile-lang-accordion">
+          <summary class="c-mobile-action">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>{{ nav.mobileNav.languageLabel }}</span>
+            <svg class="c-mobile-lang-caret" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg>
+          </summary>
+          <div class="c-mobile-lang-list">
+            {% for langOption in nav.utilities.language.options %}
+            <a class="c-mobile-lang-item{% if langOption.isActive %} c-mobile-lang-item--active{% endif %}" href="{{ langOption.url }}" lang="{{ langOption.code }}">
+              <span>{{ langOption.label }}</span>
+              {% if langOption.isActive %}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              {% endif %}
+            </a>
+            {% endfor %}
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Overlay -->
+  <div class="c-search-overlay" data-search-overlay>
+    <div class="c-search-overlay__backdrop" data-search-close></div>
+    <div class="c-search-overlay__content">
+      <button class="c-search-overlay__close" aria-label="Close search" data-search-close>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <form class="c-search-form" action="{{ nav.search.action }}" method="get">
+        <input type="search" name="q" placeholder="{{ nav.utilities.search.placeholder }}" aria-label="{{ nav.utilities.search.ariaLabel }}" autofocus />
+      </form>
+      <div class="c-search-suggestions">
+        <h3>{{ nav.search.title }}</h3>
+        {% for suggestion in nav.search.suggestions %}
+        <a href="{{ nav.search.action }}?q={{ suggestion.query }}">{{ suggestion.label }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</header>

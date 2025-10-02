@@ -1,0 +1,170 @@
+{
+  "en": {
+    "eyebrow": "Find Us Across Brussels",
+    "title": "Multiple Locations for Your Convenience",
+    "subtitle": "Choose the clinic closest to your home or workplace. All locations offer the same high-quality, evidence-based care with flexible scheduling.",
+    "cta": {
+      "primary": {
+        "text": "View All Locations",
+        "url": "/en/locations/"
+      },
+      "secondary": {
+        "text": "Book Appointment",
+        "url": "/en/appointment/"
+      }
+    },
+    "features": [
+      {
+        "icon": "map-pin",
+        "title": "8 Clinics",
+        "description": "Strategic locations throughout Brussels"
+      },
+      {
+        "icon": "video",
+        "title": "Online Consultations",
+        "description": "Video appointments from anywhere in Belgium"
+      },
+      {
+        "icon": "parking",
+        "title": "Easy Access",
+        "description": "Public transport & parking available"
+      },
+      {
+        "icon": "clock",
+        "title": "Flexible Hours",
+        "description": "Evenings & Saturdays available"
+      }
+    ],
+    "highlight": {
+      "title": "Serving All of Brussels",
+      "municipalities": ["Ixelles", "Uccle", "Woluwe-Saint-Lambert", "Koekelberg", "Berchem-Sainte-Agathe", "Auderghem", "Jette", "Etterbeek"],
+      "note": "Can't find a convenient location? We offer secure video consultations for all programs."
+    }
+  },
+  "fr": {
+    "eyebrow": "Trouvez-nous à Travers Bruxelles",
+    "title": "Plusieurs Emplacements Pour Votre Commodité",
+    "subtitle": "Choisissez la clinique la plus proche de votre domicile ou de votre lieu de travail. Tous les emplacements offrent les mêmes soins de haute qualité basés sur des preuves avec une planification flexible.",
+    "cta": {
+      "primary": {
+        "text": "Voir Tous les Emplacements",
+        "url": "/fr/locations/"
+      },
+      "secondary": {
+        "text": "Prendre Rendez-vous",
+        "url": "/fr/appointment/"
+      }
+    },
+    "features": [
+      {
+        "icon": "map-pin",
+        "title": "8 Cliniques",
+        "description": "Emplacements stratégiques à travers Bruxelles"
+      },
+      {
+        "icon": "video",
+        "title": "Consultations en Ligne",
+        "description": "Rendez-vous vidéo de n'importe où en Belgique"
+      },
+      {
+        "icon": "parking",
+        "title": "Accès Facile",
+        "description": "Transports publics & parking disponibles"
+      },
+      {
+        "icon": "clock",
+        "title": "Horaires Flexibles",
+        "description": "Soirées & samedis disponibles"
+      }
+    ],
+    "highlight": {
+      "title": "Servir Tout Bruxelles",
+      "municipalities": ["Ixelles", "Uccle", "Woluwe-Saint-Lambert", "Koekelberg", "Berchem-Sainte-Agathe", "Auderghem", "Jette", "Etterbeek"],
+      "note": "Vous ne trouvez pas un emplacement pratique? Nous offrons des consultations vidéo sécurisées pour tous les programmes."
+    }
+  },
+  "nl": {
+    "eyebrow": "Vind Ons Door Heel Brussel",
+    "title": "Meerdere Locaties Voor Uw Gemak",
+    "subtitle": "Kies de kliniek het dichtst bij uw huis of werkplek. Alle locaties bieden dezelfde hoogwaardige, evidence-based zorg met flexibele planning.",
+    "cta": {
+      "primary": {
+        "text": "Bekijk Alle Locaties",
+        "url": "/nl/locations/"
+      },
+      "secondary": {
+        "text": "Afspraak Maken",
+        "url": "/nl/appointment/"
+      }
+    },
+    "features": [
+      {
+        "icon": "map-pin",
+        "title": "8 Klinieken",
+        "description": "Strategische locaties door heel Brussel"
+      },
+      {
+        "icon": "video",
+        "title": "Online Consultaties",
+        "description": "Video-afspraken van overal in België"
+      },
+      {
+        "icon": "parking",
+        "title": "Gemakkelijke Toegang",
+        "description": "Openbaar vervoer & parking beschikbaar"
+      },
+      {
+        "icon": "clock",
+        "title": "Flexibele Uren",
+        "description": "Avonden & zaterdagen beschikbaar"
+      }
+    ],
+    "highlight": {
+      "title": "Heel Brussel Bedienen",
+      "municipalities": ["Elsene", "Ukkel", "Sint-Lambrechts-Woluwe", "Koekelberg", "Sint-Agatha-Berchem", "Oudergem", "Jette", "Etterbeek"],
+      "note": "Geen geschikte locatie kunnen vinden? We bieden beveiligde videoconsultaties voor alle programma's."
+    }
+  },
+  "de": {
+    "eyebrow": "Finden Sie Uns in Ganz Brüssel",
+    "title": "Mehrere Standorte Für Ihre Bequemlichkeit",
+    "subtitle": "Wählen Sie die Klinik, die Ihrem Zuhause oder Arbeitsplatz am nächsten liegt. Alle Standorte bieten dieselbe hochwertige, evidenzbasierte Pflege mit flexibler Terminplanung.",
+    "cta": {
+      "primary": {
+        "text": "Alle Standorte Anzeigen",
+        "url": "/de/locations/"
+      },
+      "secondary": {
+        "text": "Termin Buchen",
+        "url": "/de/appointment/"
+      }
+    },
+    "features": [
+      {
+        "icon": "map-pin",
+        "title": "8 Kliniken",
+        "description": "Strategische Standorte in ganz Brüssel"
+      },
+      {
+        "icon": "video",
+        "title": "Online-Beratungen",
+        "description": "Video-Termine von überall in Belgien"
+      },
+      {
+        "icon": "parking",
+        "title": "Einfacher Zugang",
+        "description": "Öffentliche Verkehrsmittel & Parken verfügbar"
+      },
+      {
+        "icon": "clock",
+        "title": "Flexible Zeiten",
+        "description": "Abende & Samstage verfügbar"
+      }
+    ],
+    "highlight": {
+      "title": "Ganz Brüssel Bedienen",
+      "municipalities": ["Ixelles", "Uccle", "Woluwe-Saint-Lambert", "Koekelberg", "Berchem-Sainte-Agathe", "Auderghem", "Jette", "Etterbeek"],
+      "note": "Können Sie keinen passenden Standort finden? Wir bieten sichere Videoberatungen für alle Programme."
+    }
+  }
+}

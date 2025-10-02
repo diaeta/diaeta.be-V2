@@ -1,0 +1,86 @@
+{
+  "en": {
+    "eyebrow": "Specialized Programs",
+    "title": "Choose your transformation path",
+    "subtitle": "Science-backed programs designed for your exact health goal—from IBS relief to sustainable weight loss.",
+    "programs": [
+      {
+        "id": "weight-loss",
+        "title": "Weight Loss Mastery",
+        "tagline": "Lose fat, keep muscle, feel incredible",
+        "icon": "scale-dynamic",
+        "color": "#006D77",
+        "duration": "3-6 months",
+        "results": "0.5-1kg/week average loss",
+        "features": [
+          "InBody composition scans weekly",
+          "No calorie counting required",
+          "Keep your favorite foods",
+          "Preserve muscle while losing fat"
+        ],
+        "ideal": "Adults seeking sustainable weight loss without restrictive diets",
+        "url": "/en/weight-loss/",
+        "cta": "Start Weight Loss Program"
+      },
+      {
+        "id": "ibs-fodmap",
+        "title": "IBS Relief Protocol",
+        "tagline": "Calm your gut, reclaim your life",
+        "icon": "gut-health",
+        "color": "#E76F51",
+        "duration": "8-12 weeks",
+        "results": "89% symptom reduction rate",
+        "features": [
+          "Monash-certified Low-FODMAP",
+          "Structured reintroduction phase",
+          "Symptom tracking & analysis",
+          "Long-term gut health strategies"
+        ],
+        "ideal": "IBS-diagnosed patients or those with chronic digestive issues",
+        "url": "/en/irritable-bowel-syndrome-fodmap/",
+        "cta": "Start IBS Program"
+      },
+      {
+        "id": "diabetes",
+        "title": "Diabetes Optimization",
+        "tagline": "Stabilize blood sugar, improve HbA1c",
+        "icon": "blood-sugar",
+        "color": "#2A9D8F",
+        "duration": "3-6 months",
+        "results": "1-2% HbA1c reduction average",
+        "features": [
+          "Strategic carb distribution",
+          "Blood sugar monitoring guidance",
+          "Medication coordination with doctor",
+          "Weight loss for insulin sensitivity"
+        ],
+        "ideal": "Type 2 diabetics or pre-diabetics seeking better control",
+        "url": "/en/type-2-diabetes/",
+        "cta": "Start Diabetes Program"
+      },
+      {
+        "id": "heart-health",
+        "title": "Heart Health",
+        "tagline": "Lower cholesterol, protect your heart",
+        "icon": "heart-beat",
+        "color": "#F4A261",
+        "duration": "3-4 months",
+        "results": "15-25% LDL reduction typical",
+        "features": [
+          "Heart-healthy fats optimization",
+          "Fiber & plant sterol strategies",
+          "Lab-guided nutrition adjustments",
+          "Blood pressure management"
+        ],
+        "ideal": "High cholesterol, hypertension, or cardiovascular risk",
+        "url": "/en/hypertension-cholesterol/",
+        "cta": "Start Heart Program"
+      }
+    ],
+    "comparison": {
+      "title": "Not sure which program fits?",
+      "subtitle": "Book a free 15-minute discovery call to find your perfect match",
+      "cta": "Schedule Discovery Call"
+    }
+  }
+}

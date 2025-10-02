@@ -1,0 +1,75 @@
+{
+  "en": {
+    "brand": {
+      "tagline": "Evidence-based nutrition that fits your life",
+      "description": "Helping Brussels residents achieve sustainable health through personalized, science-backed nutrition since 2015."
+    },
+    "programs": {
+      "title": "Programs",
+      "links": [
+        { "text": "Weight Loss", "url": "/en/weight-loss/" },
+        { "text": "IBS & Low-FODMAP", "url": "/en/irritable-bowel-syndrome-fodmap/" },
+        { "text": "Type 2 Diabetes", "url": "/en/type-2-diabetes/" },
+        { "text": "Heart Health", "url": "/en/hypertension-cholesterol/" }
+      ]
+    },
+    "company": {
+      "title": "Company",
+      "links": [
+        { "text": "About Diaeta", "url": "/en/diaeta-method/" },
+        { "text": "Our Expertise", "url": "/en/our-expertise/" },
+        { "text": "Locations", "url": "/en/locations/" },
+        { "text": "Pricing", "url": "/en/tariffs/" }
+      ]
+    },
+    "resources": {
+      "title": "Resources",
+      "links": [
+        { "text": "Knowledge Hub", "url": "/en/knowledge-hub/" },
+        { "text": "Latest News", "url": "/en/news/" },
+        { "text": "FAQ", "url": "#faq" },
+        { "text": "Contact", "url": "/en/contact/" }
+      ]
+    },
+    "legal": {
+      "title": "Legal",
+      "links": [
+        { "text": "Privacy Policy", "url": "/en/privacy-policy/" },
+        { "text": "Cookie Policy", "url": "/en/cookie-policy/" },
+        { "text": "Legal Notice", "url": "/en/legal-notice/" }
+      ]
+    },
+    "contact": {
+      "title": "Get In Touch",
+      "email": "info@diaeta.be",
+      "phone": "+32 XXX XX XX XX",
+      "address": "Multiple locations across Brussels",
+      "hours": "Mon-Fri: 9AM-7PM | Sat: 10AM-4PM"
+    },
+    "social": {
+      "title": "Follow Us",
+      "links": [
+        { "platform": "Facebook", "url": "#", "icon": "facebook" },
+        { "platform": "Instagram", "url": "#", "icon": "instagram" },
+        { "platform": "LinkedIn", "url": "#", "icon": "linkedin" }
+      ]
+    },
+    "newsletter": {
+      "title": "Weekly Nutrition Insights",
+      "subtitle": "Science-backed tips delivered every Monday",
+      "placeholder": "Your email address",
+      "button": "Subscribe",
+      "privacy": "We respect your privacy. Unsubscribe anytime."
+    },
+    "certifications": [
+      { "name": "Monash University Certified", "icon": "monash" },
+      { "name": "Registered Dietitian", "icon": "diploma" },
+      { "name": "InBody Certified", "icon": "inbody" }
+    ],
+    "bottom": {
+      "copyright": "© 2025 Diaeta. All rights reserved.",
+      "built": "Built with Claude Code",
+      "languages": "EN · FR · NL · DE"
+    }
+  }
+}

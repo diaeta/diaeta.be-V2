@@ -1,0 +1,96 @@
+{# =============================================================================
+   LOCATIONS SECTION - Multiple Clinics Across Brussels
+   Map-style design showcasing convenience and accessibility
+   ============================================================================= #}
+
+{% set currentLang = lang or page.lang or 'en' %}
+{% set data = locations[currentLang] %}
+
+<section id="locations" class="c-locations" aria-labelledby="locations-title">
+  <div class="c-locations__container">
+
+    {# Header #}
+    <header class="c-locations__header">
+      <p class="c-locations__eyebrow">{{ data.eyebrow }}</p>
+      <h2 id="locations-title" class="c-locations__title">{{ data.title }}</h2>
+      <p class="c-locations__subtitle">{{ data.subtitle }}</p>
+    </header>
+
+    {# Features Grid #}
+    <div class="c-locations__features">
+      {% for feature in data.features %}
+      <div class="c-locations__feature">
+        <div class="c-locations__feature-icon" aria-hidden="true">
+          {% if feature.icon == 'map-pin' %}
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          {% elif feature.icon == 'video' %}
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+            <path d="M23 7l-7 5 7 5V7z" fill="currentColor"/>
+            <rect x="1" y="5" width="15" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          {% elif feature.icon == 'parking' %}
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+            <path d="M9 7h4a3 3 0 0 1 0 6H9V7z" stroke="currentColor" stroke-width="2"/>
+            <path d="M9 7v10" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          {% elif feature.icon == 'clock' %}
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          {% endif %}
+        </div>
+        <h3 class="c-locations__feature-title">{{ feature.title }}</h3>
+        <p class="c-locations__feature-description">{{ feature.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    {# Highlight Box #}
+    <div class="c-locations__highlight">
+      <h3 class="c-locations__highlight-title">{{ data.highlight.title }}</h3>
+      <div class="c-locations__municipalities">
+        {% for municipality in data.highlight.municipalities %}
+        <span class="c-locations__municipality">{{ municipality }}</span>
+        {% endfor %}
+      </div>
+      <p class="c-locations__note">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        {{ data.highlight.note }}
+      </p>
+    </div>
+
+    {# CTA Buttons #}
+    <div class="c-locations__cta">
+      <a href="{{ data.cta.primary.url }}" class="c-locations__cta-primary">
+        {{ data.cta.primary.text }}
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </a>
+      <a href="{{ data.cta.secondary.url }}" class="c-locations__cta-secondary">
+        {{ data.cta.secondary.text }}
+      </a>
+    </div>
+
+  </div>
+
+  {# Map Icon Background #}
+  <div class="c-locations__bg-map" aria-hidden="true">
+    <svg viewBox="0 0 400 300" fill="none" opacity="0.05">
+      <circle cx="100" cy="80" r="8" fill="currentColor"/>
+      <circle cx="200" cy="120" r="8" fill="currentColor"/>
+      <circle cx="300" cy="100" r="8" fill="currentColor"/>
+      <circle cx="150" cy="180" r="8" fill="currentColor"/>
+      <circle cx="250" cy="200" r="8" fill="currentColor"/>
+      <path d="M100 80L200 120M200 120L300 100M150 180L250 200" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4"/>
+    </svg>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use '../settings/tokens' as t;
+.c-pricing {
+  padding: clamp(4rem, 10vw, 7rem) 0;
+  background: linear-gradient(180deg, #FFF, map.get(t.$colors, 'gray-50'));
+  &__container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 2.5rem); }
+  &__header { text-align: center; margin-bottom: 3rem; }
+  &__title { font-size: clamp(2.5rem, 6vw, 3.75rem); font-weight: 800; color: map.get(t.$colors, 'ink'); margin-bottom: 1rem; }
+  &__grid { display: grid; gap: 2rem; margin-bottom: 2rem; @media (min-width: map.get(t.$colors, 'md')) { grid-template-columns: repeat(3, 1fr); }}
+  &__card { padding: 2.5rem; background: #FFF; border: 2px solid map.get(t.$colors, 'gray-200'); border-radius: 1rem; transition: all 0.3s ease; &:hover { transform: translateY(-8px); border-color: map.get(t.$colors, 'brand'); box-shadow: 0 12px 32px rgba(0,109,119,0.15); }}
+  &__card-price { font-size: 3rem; font-weight: 900; color: map.get(t.$colors, 'brand'); margin: 1rem 0; }
+  &__note { text-align: center; padding: 1.5rem; background: map.get(t.$colors, 'peach'); color: map.get(t.$colors, 'brand-dark'); border-radius: 0.75rem; margin-bottom: 2rem; font-weight: 600; }
+  &__cta { text-align: center; }
+  &__cta-btn { display: inline-block; padding: 1rem 2.5rem; background: linear-gradient(135deg, map.get(t.$colors, 'brand'), map.get(t.$colors, 'brand-light')); color: #FFF; border-radius: 0.75rem; font-weight: 700; text-decoration: none; }
+}

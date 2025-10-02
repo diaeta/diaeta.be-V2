@@ -1,0 +1,454 @@
+{
+  "en": {
+    "logo": {
+      "alt": "Diaeta – Home",
+      "homeUrl": "/en/"
+    },
+    "nav": {
+      "home": {
+        "label": "Home",
+        "url": "/en/"
+      },
+      "about": {
+        "label": "About",
+        "url": "#",
+        "hasDropdown": true,
+        "dropdown": [
+          {
+            "label": "Our Expertise",
+            "url": "/en/our-expertise/"
+          },
+          {
+            "label": "Diaeta Method",
+            "url": "/en/diaeta-method/"
+          },
+          {
+            "label": "Contact Us",
+            "url": "/en/contact/"
+          }
+        ]
+      },
+      "services": {
+        "label": "Services",
+        "url": "#",
+        "hasDropdown": true,
+        "dropdown": [
+          {
+            "label": "Weight Loss Program",
+            "url": "/en/weight-loss/"
+          },
+          {
+            "label": "IBS & Low-FODMAP",
+            "url": "/en/irritable-bowel-syndrome-fodmap/"
+          },
+          {
+            "label": "Diabetes Nutrition",
+            "url": "/en/type-2-diabetes/"
+          },
+          {
+            "label": "Cholesterol & Lipids",
+            "url": "/en/hypertension-cholesterol/"
+          }
+        ]
+      },
+      "locations": {
+        "label": "Locations",
+        "url": "/en/locations/"
+      },
+      "pricing": {
+        "label": "Pricing",
+        "url": "/en/tariffs/"
+      },
+      "blog": {
+        "label": "Blog",
+        "url": "/en/news/"
+      },
+      "contact": {
+        "label": "Contact",
+        "url": "/en/contact/"
+      }
+    },
+    "utilities": {
+      "search": {
+        "ariaLabel": "Search",
+        "placeholder": "Search..."
+      },
+      "language": {
+        "ariaLabel": "Select language",
+        "code": "EN",
+        "options": [
+          { "code": "en", "label": "English", "url": "/en/", "isActive": true },
+          { "code": "fr", "label": "Français", "url": "/fr/", "isActive": false },
+          { "code": "nl", "label": "Nederlands", "url": "/nl/", "isActive": false },
+          { "code": "de", "label": "Deutsch", "url": "/de/", "isActive": false }
+        ]
+      },
+      "phone": {
+        "number": "+32 479 35 55 51",
+        "tel": "+32479355551",
+        "ariaLabel": "Call +32 479 35 55 51"
+      },
+      "cta": {
+        "label": "Book Appointment",
+        "url": "/en/appointment/"
+      },
+      "menu": {
+        "ariaLabel": "Open menu",
+        "ariaLabelClose": "Close menu"
+      }
+    },
+    "mobileNav": {
+      "callUs": "Call Us",
+      "languageLabel": "English"
+    },
+    "search": {
+      "title": "Popular searches",
+      "action": "/en/search/",
+      "suggestions": [
+        { "label": "IBS diet", "query": "IBS+diet" },
+        { "label": "Weight loss", "query": "Weight+loss" },
+        { "label": "Low-FODMAP", "query": "Low-FODMAP" },
+        { "label": "Diabetes nutrition", "query": "Diabetes" }
+      ]
+    }
+  },
+  "fr": {
+    "logo": {
+      "alt": "Diaeta – Accueil",
+      "homeUrl": "/fr/"
+    },
+    "nav": {
+      "home": {
+        "label": "Accueil",
+        "url": "/fr/"
+      },
+      "about": {
+        "label": "À propos",
+        "url": "#",
+        "hasDropdown": true,
+        "dropdown": [
+          {
+            "label": "Notre expertise",
+            "url": "/fr/notre-expertise/"
+          },
+          {
+            "label": "Méthode Diaeta",
+            "url": "/fr/methode-diaeta/"
+          },
+          {
+            "label": "Contactez-nous",
+            "url": "/fr/contact/"
+          }
+        ]
+      },
+      "services": {
+        "label": "Services",
+        "url": "#",
+        "hasDropdown": true,
+        "dropdown": [
+          {
+            "label": "Programme de perte de poids",
+            "url": "/fr/perte-de-poids/"
+          },
+          {
+            "label": "SII & Low-FODMAP",
+            "url": "/fr/syndrome-intestin-irritable-fodmap/"
+          },
+          {
+            "label": "Nutrition diabète",
+            "url": "/fr/diabete-type-2/"
+          },
+          {
+            "label": "Cholestérol & lipides",
+            "url": "/fr/hypertension-cholesterol/"
+          }
+        ]
+      },
+      "locations": {
+        "label": "Emplacements",
+        "url": "/fr/emplacements/"
+      },
+      "pricing": {
+        "label": "Tarifs",
+        "url": "/fr/tarifs/"
+      },
+      "blog": {
+        "label": "Blog",
+        "url": "/fr/actualites/"
+      },
+      "contact": {
+        "label": "Contact",
+        "url": "/fr/contact/"
+      }
+    },
+    "utilities": {
+      "search": {
+        "ariaLabel": "Rechercher",
+        "placeholder": "Rechercher..."
+      },
+      "language": {
+        "ariaLabel": "Sélectionner la langue",
+        "code": "FR",
+        "options": [
+          { "code": "fr", "label": "Français", "url": "/fr/", "isActive": true },
+          { "code": "en", "label": "English", "url": "/en/", "isActive": false },
+          { "code": "nl", "label": "Nederlands", "url": "/nl/", "isActive": false },
+          { "code": "de", "label": "Deutsch", "url": "/de/", "isActive": false }
+        ]
+      },
+      "phone": {
+        "number": "+32 479 35 55 51",
+        "tel": "+32479355551",
+        "ariaLabel": "Appeler +32 479 35 55 51"
+      },
+      "cta": {
+        "label": "Prendre rendez-vous",
+        "url": "/fr/rendez-vous/"
+      },
+      "menu": {
+        "ariaLabel": "Ouvrir le menu",
+        "ariaLabelClose": "Fermer le menu"
+      }
+    },
+    "mobileNav": {
+      "callUs": "Appelez-nous",
+      "languageLabel": "Français"
+    },
+    "search": {
+      "title": "Recherches populaires",
+      "action": "/fr/recherche/",
+      "suggestions": [
+        { "label": "Régime SII", "query": "régime+SII" },
+        { "label": "Perte de poids", "query": "Perte+de+poids" },
+        { "label": "Low-FODMAP", "query": "Low-FODMAP" },
+        { "label": "Nutrition diabète", "query": "Diabète" }
+      ]
+    }
+  },
+  "nl": {
+    "logo": {
+      "alt": "Diaeta – Home",
+      "homeUrl": "/nl/"
+    },
+    "nav": {
+      "home": {
+        "label": "Home",
+        "url": "/nl/"
+      },
+      "about": {
+        "label": "Over ons",
+        "url": "#",
+        "hasDropdown": true,
+        "dropdown": [
+          {
+            "label": "Onze expertise",
+            "url": "/nl/onze-expertise/"
+          },
+          {
+            "label": "Diaeta methode",
+            "url": "/nl/diaeta-methode/"
+          },
+          {
+            "label": "Contacteer ons",
+            "url": "/nl/contact/"
+          }
+        ]
+      },
+      "services": {
+        "label": "Diensten",
+        "url": "#",
+        "hasDropdown": true,
+        "dropdown": [
+          {
+            "label": "Gewichtsverliesprogramma",
+            "url": "/nl/gewichtsverlies/"
+          },
+          {
+            "label": "PDS & Low-FODMAP",
+            "url": "/nl/prikkelbare-darmsyndroom-fodmap/"
+          },
+          {
+            "label": "Diabetes voeding",
+            "url": "/nl/type-2-diabetes/"
+          },
+          {
+            "label": "Cholesterol & lipiden",
+            "url": "/nl/hypertensie-cholesterol/"
+          }
+        ]
+      },
+      "locations": {
+        "label": "Locaties",
+        "url": "/nl/locaties/"
+      },
+      "pricing": {
+        "label": "Tarieven",
+        "url": "/nl/tarieven/"
+      },
+      "blog": {
+        "label": "Blog",
+        "url": "/nl/nieuws/"
+      },
+      "contact": {
+        "label": "Contact",
+        "url": "/nl/contact/"
+      }
+    },
+    "utilities": {
+      "search": {
+        "ariaLabel": "Zoeken",
+        "placeholder": "Zoeken..."
+      },
+      "language": {
+        "ariaLabel": "Selecteer taal",
+        "code": "NL",
+        "options": [
+          { "code": "nl", "label": "Nederlands", "url": "/nl/", "isActive": true },
+          { "code": "en", "label": "English", "url": "/en/", "isActive": false },
+          { "code": "fr", "label": "Français", "url": "/fr/", "isActive": false },
+          { "code": "de", "label": "Deutsch", "url": "/de/", "isActive": false }
+        ]
+      },
+      "phone": {
+        "number": "+32 479 35 55 51",
+        "tel": "+32479355551",
+        "ariaLabel": "Bel +32 479 35 55 51"
+      },
+      "cta": {
+        "label": "Afspraak maken",
+        "url": "/nl/afspraak/"
+      },
+      "menu": {
+        "ariaLabel": "Menu openen",
+        "ariaLabelClose": "Menu sluiten"
+      }
+    },
+    "mobileNav": {
+      "callUs": "Bel ons",
+      "languageLabel": "Nederlands"
+    },
+    "search": {
+      "title": "Populaire zoekopdrachten",
+      "action": "/nl/zoeken/",
+      "suggestions": [
+        { "label": "PDS dieet", "query": "PDS+dieet" },
+        { "label": "Gewichtsverlies", "query": "Gewichtsverlies" },
+        { "label": "Low-FODMAP", "query": "Low-FODMAP" },
+        { "label": "Diabetes voeding", "query": "Diabetes" }
+      ]
+    }
+  },
+  "de": {
+    "logo": {
+      "alt": "Diaeta – Startseite",
+      "homeUrl": "/de/"
+    },
+    "nav": {
+      "home": {
+        "label": "Startseite",
+        "url": "/de/"
+      },
+      "about": {
+        "label": "Über uns",
+        "url": "#",
+        "hasDropdown": true,
+        "dropdown": [
+          {
+            "label": "Unsere Expertise",
+            "url": "/de/unsere-expertise/"
+          },
+          {
+            "label": "Diaeta-Methode",
+            "url": "/de/diaeta-methode/"
+          },
+          {
+            "label": "Kontaktieren Sie uns",
+            "url": "/de/kontakt/"
+          }
+        ]
+      },
+      "services": {
+        "label": "Dienstleistungen",
+        "url": "#",
+        "hasDropdown": true,
+        "dropdown": [
+          {
+            "label": "Gewichtsverlustprogramm",
+            "url": "/de/gewichtsverlust/"
+          },
+          {
+            "label": "RDS & Low-FODMAP",
+            "url": "/de/reizdarmsyndrom-fodmap/"
+          },
+          {
+            "label": "Diabetes-Ernährung",
+            "url": "/de/typ-2-diabetes/"
+          },
+          {
+            "label": "Cholesterin & Lipide",
+            "url": "/de/hypertonie-cholesterin/"
+          }
+        ]
+      },
+      "locations": {
+        "label": "Standorte",
+        "url": "/de/standorte/"
+      },
+      "pricing": {
+        "label": "Preise",
+        "url": "/de/preise/"
+      },
+      "blog": {
+        "label": "Blog",
+        "url": "/de/nachrichten/"
+      },
+      "contact": {
+        "label": "Kontakt",
+        "url": "/de/kontakt/"
+      }
+    },
+    "utilities": {
+      "search": {
+        "ariaLabel": "Suchen",
+        "placeholder": "Suchen..."
+      },
+      "language": {
+        "ariaLabel": "Sprache auswählen",
+        "code": "DE",
+        "options": [
+          { "code": "de", "label": "Deutsch", "url": "/de/", "isActive": true },
+          { "code": "en", "label": "English", "url": "/en/", "isActive": false },
+          { "code": "fr", "label": "Français", "url": "/fr/", "isActive": false },
+          { "code": "nl", "label": "Nederlands", "url": "/nl/", "isActive": false }
+        ]
+      },
+      "phone": {
+        "number": "+32 479 35 55 51",
+        "tel": "+32479355551",
+        "ariaLabel": "Anrufen +32 479 35 55 51"
+      },
+      "cta": {
+        "label": "Termin buchen",
+        "url": "/de/termin/"
+      },
+      "menu": {
+        "ariaLabel": "Menü öffnen",
+        "ariaLabelClose": "Menü schließen"
+      }
+    },
+    "mobileNav": {
+      "callUs": "Rufen Sie uns an",
+      "languageLabel": "Deutsch"
+    },
+    "search": {
+      "title": "Beliebte Suchanfragen",
+      "action": "/de/suche/",
+      "suggestions": [
+        { "label": "RDS-Diät", "query": "RDS-Diät" },
+        { "label": "Gewichtsverlust", "query": "Gewichtsverlust" },
+        { "label": "Low-FODMAP", "query": "Low-FODMAP" },
+        { "label": "Diabetes-Ernährung", "query": "Diabetes" }
+      ]
+    }
+  }
+}

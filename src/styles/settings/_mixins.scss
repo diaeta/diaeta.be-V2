@@ -220,26 +220,26 @@
   align-items: center;
   gap: 0.25rem;
   padding: var(--nav-link-padding);
-  color: var(--color-ink);
+  color: var(--ink);
   text-decoration: none;
   font-size: 15px;
   font-weight: var(--font-weight-medium);
   letter-spacing: 0.2px;
   border-radius: 4px;
-  transition: var(--header-transition);
+  transition: var(--transition-fast);
   position: relative;
-  
+
   @include focus-visible;
-  
+
   &:hover {
-    color: var(--color-brand);
-    background-color: var(--color-brand-weak);
+    color: var(--brand);
+    background-color: var(--brand-weak);
   }
-  
+
   &.is-active {
-    color: var(--color-brand);
-    background-color: var(--color-brand-weak);
-    
+    color: var(--brand);
+    background-color: var(--brand-weak);
+
     &::after {
       content: '';
       position: absolute;
@@ -248,7 +248,7 @@
       transform: translateX(-50%);
       width: 20px;
       height: 2px;
-      background-color: var(--color-brand);
+      background-color: var(--brand);
       border-radius: 1px;
     }
   }
@@ -260,16 +260,16 @@
 @mixin utility-button {
   @include button-reset;
   height: var(--header-h);
-  padding: var(--utility-padding);
+  padding: 8px 12px;
   border-radius: 6px;
-  color: var(--color-ink-dim);
-  transition: var(--header-transition);
-  
+  color: var(--ink-dim);
+  transition: var(--transition-fast);
+
   @include focus-visible;
-  
+
   &:hover {
-    color: var(--color-ink);
-    background-color: var(--color-brand-weak);
+    color: var(--ink);
+    background-color: var(--brand-weak);
   }
 }
 
@@ -280,21 +280,21 @@
   @include button-reset;
   height: var(--header-h);
   padding: var(--cta-padding);
-  background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-light) 100%);
-  color: var(--color-ink-invert);
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-light) 100%);
+  color: var(--ink-invert);
   font-weight: var(--font-weight-semibold);
   border-radius: 6px;
   text-decoration: none;
-  transition: var(--header-transition);
-  
+  transition: var(--transition-fast);
+
   @include focus-visible;
-  
+
   &:hover {
-    background: linear-gradient(135deg, var(--color-brand-dark) 0%, var(--color-brand) 100%);
+    background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 100%);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(43, 122, 120, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 109, 119, 0.3);
   }
-  
+
   &:active {
     transform: translateY(0);
   }
@@ -303,12 +303,12 @@
 // =============================================================================
 // SEARCH EXPAND ANIMATION
 // =============================================================================
-@mixin search-expand($duration: var(--header-transition)) {
+@mixin search-expand($duration: var(--transition-normal)) {
   width: 0;
   opacity: 0;
   transition: width $duration, opacity $duration;
   overflow: hidden;
-  
+
   &.is-expanded {
     width: var(--search-expanded-width);
     opacity: 1;

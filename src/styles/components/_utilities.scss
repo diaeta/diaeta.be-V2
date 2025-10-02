@@ -188,8 +188,8 @@
   min-width: 12rem;
   background: var(--surface);
   border: 1px solid var(--border);
-  color: var(--color-ink);
-  border-radius: var(--radius-lg);
+  color: var(--ink);
+  border-radius: var(--radius-dropdown);
   box-shadow: var(--shadow-solid);
   padding: map.get($spacing, '2') 0;
   z-index: var(--z-dropdown);
@@ -213,7 +213,7 @@
   justify-content: space-between;
   gap: map.get($spacing, '1');
   opacity: 1;
-  color: var(--color-ink);
+  color: var(--ink);
 
   &.is-active {
     font-weight: var(--font-weight-medium);

@@ -1,0 +1,26 @@
+{% set currentLang = lang or page.lang or 'en' %}
+{% set data = pricing[currentLang] %}
+<section id="pricing" class="c-pricing">
+  <div class="c-pricing__container">
+    <header class="c-pricing__header">
+      <h2 class="c-pricing__title">{{ data.title }}</h2>
+      <p class="c-pricing__subtitle">{{ data.subtitle }}</p>
+    </header>
+    <div class="c-pricing__grid">
+      {% for package in data.packages %}
+      <div class="c-pricing__card">
+        <h3 class="c-pricing__card-name">{{ package.name }}</h3>
+        <div class="c-pricing__card-price">{{ package.price }}</div>
+        <div class="c-pricing__card-duration">{{ package.duration }}</div>
+        <ul class="c-pricing__card-includes">
+          {% for item in package.includes %}<li>{{ item }}</li>{% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="c-pricing__note">{{ data.reimbursement.note }}</div>
+    <div class="c-pricing__cta">
+      <a href="{{ data.cta.url }}" class="c-pricing__cta-btn">{{ data.cta.text }}</a>
+    </div>
+  </div>
+</section>

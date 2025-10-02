@@ -1,0 +1,18 @@
+@use 'sass:map';
+@use '../settings/tokens' as t;
+.c-nutrigen {
+  padding: clamp(4rem, 10vw, 7rem) 0;
+  background: linear-gradient(135deg, map.get(t.$colors, 'brand-dark'), map.get(t.$colors, 'brand'));
+  color: #FFF;
+  &__container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 2.5rem); }
+  &__header { text-align: center; margin-bottom: 3rem; }
+  &__badge { display: inline-block; padding: 0.5rem 1rem; background: rgba(255,255,255,0.2); border-radius: 2rem; font-size: 0.875rem; margin-bottom: 1rem; }
+  &__title { font-size: clamp(2.5rem, 6vw, 3.75rem); font-weight: 800; margin-bottom: 1rem; }
+  &__benefits { display: grid; gap: 2rem; margin-bottom: 3rem; @media (min-width: map.get(t.$breakpoints, 'md')) { grid-template-columns: repeat(2, 1fr); }}
+  &__benefit { padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 1rem; backdrop-filter: blur(10px); }
+  &__pricing { text-align: center; padding: 3rem; background: rgba(0,0,0,0.3); border-radius: 1rem; margin-bottom: 2rem; }
+  &__price { font-size: 3rem; font-weight: 900; margin: 1rem 0; }
+  &__cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  &__cta-primary { padding: 1rem 2.5rem; background: #FFF; color: map.get(t.$colors, 'brand-dark'); border-radius: 0.75rem; font-weight: 700; text-decoration: none; }
+  &__cta-secondary { padding: 1rem 2.5rem; background: transparent; color: #FFF; border: 2px solid #FFF; border-radius: 0.75rem; font-weight: 700; text-decoration: none; }
+}

@@ -14,27 +14,31 @@ $breakpoints: (
 );
 
 // =============================================================================
-// COLORS - Brand System
+// COLORS - Warm Clinical Brand System
 // =============================================================================
-// Primary brand colors (professional, trustworthy, clinical)
+// Premium medical brand colors (warm, trustworthy, clinical)
 $colors: (
-  // Primary brand teal (trust, professionalism, health)
-  'brand': #2B7A78,           // Primary teal
-  'brand-light': #3A9B99,     // Lighter teal for hover states
-  'brand-dark': #1F5A58,      // Darker teal for active states
-  'brand-weak': rgba(43, 122, 120, 0.1), // 10% opacity for subtle backgrounds (within 8-12% range)
-  
+  // Primary Deep Teal (clinical trust, professional authority)
+  'brand': #006D77,           // Deep Teal - primary actions
+  'brand-light': #1A868F,     // Lighter teal for hover states
+  'brand-dark': #004D54,      // Darker teal for active states
+  'brand-weak': rgba(0, 109, 119, 0.04), // 2-4% opacity for subtle backgrounds
+
+  // Warm Peach (micro-accents, humanizing warmth)
+  'peach': #FFDDD2,           // Warm Peach for micro-accents
+  'peach-dark': #FFB4A2,      // Darker peach for active states
+
   // Text colors
-  'ink': #17252A,             // Primary text (Brand ink/dark teal)
+  'ink': #1F2937,             // Primary text (gray-800)
   'ink-dim': #6B7280,         // Secondary text (gray-500)
   'ink-invert': #FFFFFF,      // White text for dark backgrounds
-  
+
   // Surface colors
   'surface': #FFFFFF,         // Pure white
   'surface-weak': rgba(255, 255, 255, 0.92), // 92% white for glass effect
   'surface-glass': rgba(255, 255, 255, 0.75), // 75% white for glass header
-  
-  // Neutral grays
+
+  // Neutral grays (high contrast WCAG AA)
   'gray-50': #F9FAFB,
   'gray-100': #F3F4F6,
   'gray-200': #E5E7EB,
@@ -45,11 +49,11 @@ $colors: (
   'gray-700': #374151,
   'gray-800': #1F2937,
   'gray-900': #111827,
-  
+
   // Focus and interaction
-  'focus-ring': rgba(43, 122, 120, 0.5), // 50% brand teal for focus rings (within 40-60% range)
+  'focus-ring': rgba(0, 109, 119, 0.5), // 50% Deep Teal for focus rings
   'border': #E5E7EB,          // Light border color
-  'border-focus': #2B7A78,    // Brand teal for focused borders
+  'border-focus': #006D77,    // Deep Teal for focused borders
 );
 
 // =============================================================================
@@ -108,37 +112,34 @@ $spacing: (
 // HEADER SPECIFIC TOKENS
 // =============================================================================
 $header: (
-  // Heights by breakpoint (exact specifications)
-  'height-xl': 56px,          // ≥1280px (XL)
-  'height-lg': 52px,          // 1180-1279px (LG)
-  'height-md': 48px,          // 768-1179px (MD)
-  'height-sm': 44px,          // ≤767px (SM)
-  
-  // Gaps by breakpoint (exact specifications)
-  'gap-xl': 24px,             // ≥1280px (XL)
-  'gap-lg': 20px,             // 1180-1279px (LG)
-  'gap-md': 16px,             // ≤1179px (MD/SM)
-  
-  // Border radius (exact specifications)
-  'radius-pill': 'calc(var(--header-h) / 2)', // For round elements
-  'radius-lg': 18px,          // For dropdowns and menus (16-20px range)
-  
-  // Icon sizes (exact specifications)
-  'icon-xl': 22px,            // Desktop (20-22px)
-  'icon-md': 20px,            // Mobile (18-20px)
-  
-  // Shadows (exact specifications)
-  'shadow-glass': '0 8px 30px rgba(0, 0, 0, 0.12)', // y=6-10, blur=20-30, alpha 10-14%
-  'shadow-solid': '0 5px 20px rgba(0, 0, 0, 0.10)',  // y=4-6, blur=16-22, alpha 10-12%
-  'shadow-focus': '0 0 0 3px rgba(43, 122, 120, 0.5)', // 40-60% opacity
-  
-  // Blur effects (exact specifications)
-  'blur-glass': 8px,          // --bar-blur: 8px
-  
-  // Transitions (exact specifications)
-  'transition-fast': 180ms ease-out, // Hover/active transitions: 150-200ms
-  'transition-normal': 220ms ease-out, // Search expand/collapse: 200-250ms
-  'transition-slow': 250ms ease-out, // Dropdown enter/exit: 150-200ms
+  // Heights by breakpoint (mobile-first specifications)
+  'height-mobile': 60px,      // Mobile: 60-64px
+  'height-desktop': 72px,     // Desktop: ~72px
+
+  // Gaps by breakpoint
+  'gap-mobile': 12px,         // Mobile spacing
+  'gap-desktop': 16px,        // Desktop spacing
+
+  // Border radius (Warm Clinical specifications)
+  'radius-card': 12px,        // Card border radius
+  'radius-pill': 9999px,      // Full pill for CTAs
+  'radius-dropdown': 12px,    // Dropdown menus
+
+  // Icon sizes
+  'icon-size': 20px,          // Standard icon size
+
+  // Shadows (soft, professional)
+  'shadow-glass': '0 8px 30px rgba(0, 0, 0, 0.12)',
+  'shadow-solid': '0 5px 20px rgba(0, 0, 0, 0.10)',
+  'shadow-focus': '0 0 0 3px rgba(0, 109, 119, 0.5)',
+
+  // Blur effects
+  'blur-glass': 8px,
+
+  // Transitions (160-220ms ease)
+  'transition-fast': 180ms ease-out,
+  'transition-normal': 220ms ease-out,
+  'transition-slow': 250ms ease-out,
 );
 
 // =============================================================================
@@ -200,6 +201,8 @@ $z-index: (
   --brand-light: #{map.get($colors, 'brand-light')};
   --brand-dark: #{map.get($colors, 'brand-dark')};
   --brand-weak: #{map.get($colors, 'brand-weak')};
+  --peach: #{map.get($colors, 'peach')};
+  --peach-dark: #{map.get($colors, 'peach-dark')};
   --ink: #{map.get($colors, 'ink')};
   --ink-dim: #{map.get($colors, 'ink-dim')};
   --ink-invert: #{map.get($colors, 'ink-invert')};
@@ -209,22 +212,7 @@ $z-index: (
   --focus-ring: #{map.get($colors, 'focus-ring')};
   --border: #{map.get($colors, 'border')};
   --border-focus: #{map.get($colors, 'border-focus')};
-  
-  // Color aliases with color- prefix for consistency
-  --color-brand: #{map.get($colors, 'brand')};
-  --color-brand-light: #{map.get($colors, 'brand-light')};
-  --color-brand-dark: #{map.get($colors, 'brand-dark')};
-  --color-brand-weak: #{map.get($colors, 'brand-weak')};
-  --color-ink: #{map.get($colors, 'ink')};
-  --color-ink-dim: #{map.get($colors, 'ink-dim')};
-  --color-ink-invert: #{map.get($colors, 'ink-invert')};
-  --color-surface: #{map.get($colors, 'surface')};
-  --color-surface-weak: #{map.get($colors, 'surface-weak')};
-  --color-surface-glass: #{map.get($colors, 'surface-glass')};
-  --color-focus-ring: #{map.get($colors, 'focus-ring')};
-  --color-border: #{map.get($colors, 'border')};
-  --color-border-focus: #{map.get($colors, 'border-focus')};
-  
+
   // Typography
   --font-family-primary: #{map.get($typography, 'font-family-primary')};
   --font-size-base: #{map.get($typography, 'font-size-base')};
@@ -233,53 +221,41 @@ $z-index: (
   --font-weight-medium: #{map.get($typography, 'font-weight-medium')};
   --font-weight-semibold: #{map.get($typography, 'font-weight-semibold')};
   --line-height-normal: #{map.get($typography, 'line-height-normal')};
-  
-  // Header dimensions (exact specifications)
-  --header-h: #{map.get($header, 'height-xl')};
-  --header-gap: #{map.get($header, 'gap-xl')};
-  --radius-lg: #{map.get($header, 'radius-lg')};
+
+  // Header dimensions (mobile-first)
+  --header-h: #{map.get($header, 'height-mobile')};
+  --header-gap: #{map.get($header, 'gap-mobile')};
+  --radius-card: #{map.get($header, 'radius-card')};
   --radius-pill: #{map.get($header, 'radius-pill')};
+  --radius-dropdown: #{map.get($header, 'radius-dropdown')};
+  --icon-size: #{map.get($header, 'icon-size')};
   --shadow-glass: #{map.get($header, 'shadow-glass')};
   --shadow-solid: #{map.get($header, 'shadow-solid')};
   --bar-blur: #{map.get($header, 'blur-glass')};
-  
+
   // Transitions
   --transition-fast: #{map.get($header, 'transition-fast')};
   --transition-normal: #{map.get($header, 'transition-normal')};
 
-  // Component dimensions (exact specifications)
+  // Component dimensions
   --nav-link-padding-inline: #{map.get($components, 'nav-link-padding-inline')};
   --dropdown-offset: #{map.get($components, 'dropdown-offset')};
   --dropdown-max-width: #{map.get($components, 'dropdown-max-width')};
   --dropdown-item-padding-inline: #{map.get($components, 'dropdown-item-padding-inline')};
   --search-expanded-width: #{map.get($components, 'search-expanded-width')};
-  --utility-padding: #{map.get($components, 'utility-padding-block')} #{map.get($components, 'utility-padding-inline')};
   --cta-padding: #{map.get($components, 'cta-padding-block')} #{map.get($components, 'cta-padding-inline')};
   --drawer-width: #{map.get($components, 'drawer-width')};
-  
+
   // Z-index
   --z-dropdown: #{map.get($z-index, 'dropdown')};
   --z-sticky: #{map.get($z-index, 'sticky')};
   --z-modal: #{map.get($z-index, 'modal')};
 }
 
-// Responsive custom properties (exact specifications)
-@media (max-width: #{map.get($breakpoints, 'xl')} - 1) {
+// Desktop breakpoint
+@media (min-width: #{map.get($breakpoints, 'md')}) {
   :root {
-    --header-h: #{map.get($header, 'height-lg')};
-    --header-gap: #{map.get($header, 'gap-lg')};
-  }
-}
-
-@media (max-width: #{map.get($breakpoints, 'lg')} - 1) {
-  :root {
-    --header-h: #{map.get($header, 'height-md')};
-    --header-gap: #{map.get($header, 'gap-md')};
-  }
-}
-
-@media (max-width: #{map.get($breakpoints, 'sm')} - 1) {
-  :root {
-    --header-h: #{map.get($header, 'height-sm')};
+    --header-h: #{map.get($header, 'height-desktop')};
+    --header-gap: #{map.get($header, 'gap-desktop')};
   }
 }

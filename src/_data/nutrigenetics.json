@@ -1,0 +1,430 @@
+{
+  "en": {
+    "eyebrow": "Precision Nutrition",
+    "title": "Nutrigenetic Testing: Your DNA, Your Diet",
+    "subtitle": "Unlock the science of how your genes influence metabolism, nutrient needs, and food sensitivities. Evidence-based insights for truly personalized nutrition.",
+    "hero": {
+      "badge": "Optional Add-On",
+      "highlight": "Decode your unique nutritional blueprint"
+    },
+    "benefits": [
+      {
+        "icon": "dna",
+        "title": "Metabolic Insights",
+        "description": "Understand how your genes affect carbohydrate, fat, and protein metabolism for optimized energy and weight management."
+      },
+      {
+        "icon": "shield-check",
+        "title": "Sensitivity Screening",
+        "description": "Identify genetic predispositions to lactose intolerance, gluten sensitivity, and other food intolerances before trial-and-error."
+      },
+      {
+        "icon": "vitamin",
+        "title": "Micronutrient Needs",
+        "description": "Discover genetic variations affecting vitamin D, B12, folate, and omega-3 absorption to prevent deficiencies."
+      },
+      {
+        "icon": "target",
+        "title": "Personalized Strategy",
+        "description": "Translate complex genetic data into actionable meal plans, supplement protocols, and lifestyle adjustments."
+      }
+    ],
+    "how_it_works": {
+      "title": "How It Works",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Simple Saliva Sample",
+          "description": "Non-invasive cheek swab collected during consultation or at home. Takes less than 2 minutes."
+        },
+        {
+          "number": "02",
+          "title": "Lab Analysis",
+          "description": "Certified European lab analyzes 20+ nutrition-relevant genetic markers (SNPs). Results in 2-3 weeks."
+        },
+        {
+          "number": "03",
+          "title": "Expert Interpretation",
+          "description": "60-minute consultation to decode findings, answer questions, and integrate into your personalized nutrition plan."
+        },
+        {
+          "number": "04",
+          "title": "Ongoing Optimization",
+          "description": "Lifetime genetic data you can revisit as research evolves. Adjust strategies based on new evidence."
+        }
+      ]
+    },
+    "tested_markers": {
+      "title": "What We Analyze",
+      "categories": [
+        {
+          "name": "Weight & Metabolism",
+          "markers": ["FTO", "MC4R", "ADRB2", "PPARG"]
+        },
+        {
+          "name": "Carbohydrate Response",
+          "markers": ["TCF7L2", "SLC2A2", "KCNJ11"]
+        },
+        {
+          "name": "Fat Metabolism",
+          "markers": ["APOA2", "FADS1", "LPL"]
+        },
+        {
+          "name": "Food Sensitivities",
+          "markers": ["LCT (lactose)", "HLA-DQ (gluten)", "ACE"]
+        },
+        {
+          "name": "Vitamins & Minerals",
+          "markers": ["VDR", "MTHFR", "BCMO1", "SLC23A1"]
+        }
+      ]
+    },
+    "science": {
+      "title": "Evidence-Based Approach",
+      "note": "We only report variants with strong peer-reviewed evidence. Nutrigenetics informs—not dictates—your plan. Clinical outcomes, symptoms, and preferences remain primary drivers."
+    },
+    "pricing": {
+      "title": "Investment",
+      "price": "€295",
+      "includes": [
+        "Lab-certified genetic analysis",
+        "Comprehensive written report",
+        "60-minute interpretation session",
+        "Integration into nutrition plan",
+        "Lifetime access to results"
+      ],
+      "note": "Not covered by Belgian mutual health funds. Optional add-on to any program."
+    },
+    "cta": {
+      "primary": {
+        "text": "Learn More",
+        "url": "/en/nutrigenetic-tests/"
+      },
+      "secondary": {
+        "text": "Book Consultation",
+        "url": "/en/appointment/"
+      }
+    }
+  },
+  "fr": {
+    "eyebrow": "Nutrition de Précision",
+    "title": "Tests Nutrigénétiques: Votre ADN, Votre Alimentation",
+    "subtitle": "Découvrez comment vos gènes influencent le métabolisme, les besoins nutritionnels et les sensibilités alimentaires. Des informations basées sur la science pour une nutrition vraiment personnalisée.",
+    "hero": {
+      "badge": "Option Facultative",
+      "highlight": "Décodez votre plan nutritionnel unique"
+    },
+    "benefits": [
+      {
+        "icon": "dna",
+        "title": "Insights Métaboliques",
+        "description": "Comprenez comment vos gènes affectent le métabolisme des glucides, lipides et protéines pour une énergie et gestion du poids optimisées."
+      },
+      {
+        "icon": "shield-check",
+        "title": "Dépistage des Sensibilités",
+        "description": "Identifiez les prédispositions génétiques à l'intolérance au lactose, la sensibilité au gluten et autres intolérances alimentaires."
+      },
+      {
+        "icon": "vitamin",
+        "title": "Besoins en Micronutriments",
+        "description": "Découvrez les variations génétiques affectant l'absorption de vitamine D, B12, folate et oméga-3."
+      },
+      {
+        "icon": "target",
+        "title": "Stratégie Personnalisée",
+        "description": "Traduisez les données génétiques complexes en plans de repas, protocoles de suppléments et ajustements de style de vie."
+      }
+    ],
+    "how_it_works": {
+      "title": "Comment Ça Marche",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Échantillon de Salive Simple",
+          "description": "Prélèvement buccal non invasif lors de la consultation ou à domicile. Prend moins de 2 minutes."
+        },
+        {
+          "number": "02",
+          "title": "Analyse en Laboratoire",
+          "description": "Un laboratoire européen certifié analyse plus de 20 marqueurs génétiques nutritionnels (SNPs). Résultats en 2-3 semaines."
+        },
+        {
+          "number": "03",
+          "title": "Interprétation Expert",
+          "description": "Consultation de 60 minutes pour décoder les résultats, répondre aux questions et intégrer dans votre plan nutritionnel personnalisé."
+        },
+        {
+          "number": "04",
+          "title": "Optimisation Continue",
+          "description": "Données génétiques à vie que vous pouvez revisiter à mesure que la recherche évolue."
+        }
+      ]
+    },
+    "tested_markers": {
+      "title": "Ce Que Nous Analysons",
+      "categories": [
+        {
+          "name": "Poids & Métabolisme",
+          "markers": ["FTO", "MC4R", "ADRB2", "PPARG"]
+        },
+        {
+          "name": "Réponse aux Glucides",
+          "markers": ["TCF7L2", "SLC2A2", "KCNJ11"]
+        },
+        {
+          "name": "Métabolisme des Lipides",
+          "markers": ["APOA2", "FADS1", "LPL"]
+        },
+        {
+          "name": "Sensibilités Alimentaires",
+          "markers": ["LCT (lactose)", "HLA-DQ (gluten)", "ACE"]
+        },
+        {
+          "name": "Vitamines & Minéraux",
+          "markers": ["VDR", "MTHFR", "BCMO1", "SLC23A1"]
+        }
+      ]
+    },
+    "science": {
+      "title": "Approche Basée sur les Preuves",
+      "note": "Nous ne rapportons que les variants avec des preuves scientifiques solides. La nutrigénétique informe—ne dicte pas—votre plan."
+    },
+    "pricing": {
+      "title": "Investissement",
+      "price": "€295",
+      "includes": [
+        "Analyse génétique certifiée en laboratoire",
+        "Rapport écrit complet",
+        "Session d'interprétation de 60 minutes",
+        "Intégration dans le plan nutritionnel",
+        "Accès à vie aux résultats"
+      ],
+      "note": "Non couvert par les mutuelles belges. Option facultative pour tout programme."
+    },
+    "cta": {
+      "primary": {
+        "text": "En Savoir Plus",
+        "url": "/fr/nutrigenetic-tests/"
+      },
+      "secondary": {
+        "text": "Réserver une Consultation",
+        "url": "/fr/appointment/"
+      }
+    }
+  },
+  "nl": {
+    "eyebrow": "Precisie Voeding",
+    "title": "Nutrigenetische Tests: Uw DNA, Uw Dieet",
+    "subtitle": "Ontdek hoe uw genen het metabolisme, voedingsbehoeften en voedselgevoeligheden beïnvloeden. Evidence-based inzichten voor echt gepersonaliseerde voeding.",
+    "hero": {
+      "badge": "Optionele Add-On",
+      "highlight": "Decodeer uw unieke voedingsprint"
+    },
+    "benefits": [
+      {
+        "icon": "dna",
+        "title": "Metabolische Inzichten",
+        "description": "Begrijp hoe uw genen het koolhydraat-, vet- en eiwitmetabolisme beïnvloeden voor geoptimaliseerde energie en gewichtsbeheer."
+      },
+      {
+        "icon": "shield-check",
+        "title": "Gevoeligheidsscreening",
+        "description": "Identificeer genetische aanleg voor lactose-intolerantie, glutengevoeligheid en andere voedselintoleranties."
+      },
+      {
+        "icon": "vitamin",
+        "title": "Micronutriënt Behoeften",
+        "description": "Ontdek genetische variaties die vitamine D, B12, foliumzuur en omega-3 absorptie beïnvloeden."
+      },
+      {
+        "icon": "target",
+        "title": "Gepersonaliseerde Strategie",
+        "description": "Vertaal complexe genetische data naar uitvoerbare maaltijdplannen, suppletieprotocollen en lifestyle aanpassingen."
+      }
+    ],
+    "how_it_works": {
+      "title": "Hoe Het Werkt",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Eenvoudig Speekselmonster",
+          "description": "Niet-invasief wanguitstrijkje verzameld tijdens consultatie of thuis. Duurt minder dan 2 minuten."
+        },
+        {
+          "number": "02",
+          "title": "Laboratoriumanalyse",
+          "description": "Gecertificeerd Europees lab analyseert 20+ voedingsrelevante genetische markers (SNPs). Resultaten in 2-3 weken."
+        },
+        {
+          "number": "03",
+          "title": "Expert Interpretatie",
+          "description": "60 minuten durende consultatie om bevindingen te decoderen en te integreren in uw gepersonaliseerde voedingsplan."
+        },
+        {
+          "number": "04",
+          "title": "Continue Optimalisatie",
+          "description": "Levenslange genetische data die u kunt herbekijken naarmate onderzoek evolueert."
+        }
+      ]
+    },
+    "tested_markers": {
+      "title": "Wat We Analyseren",
+      "categories": [
+        {
+          "name": "Gewicht & Metabolisme",
+          "markers": ["FTO", "MC4R", "ADRB2", "PPARG"]
+        },
+        {
+          "name": "Koolhydraat Respons",
+          "markers": ["TCF7L2", "SLC2A2", "KCNJ11"]
+        },
+        {
+          "name": "Vetmetabolisme",
+          "markers": ["APOA2", "FADS1", "LPL"]
+        },
+        {
+          "name": "Voedselgevoeligheden",
+          "markers": ["LCT (lactose)", "HLA-DQ (gluten)", "ACE"]
+        },
+        {
+          "name": "Vitamines & Mineralen",
+          "markers": ["VDR", "MTHFR", "BCMO1", "SLC23A1"]
+        }
+      ]
+    },
+    "science": {
+      "title": "Evidence-Based Aanpak",
+      "note": "We rapporteren alleen varianten met sterk peer-reviewed bewijs. Nutrigenetica informeert—dicteert niet—uw plan."
+    },
+    "pricing": {
+      "title": "Investering",
+      "price": "€295",
+      "includes": [
+        "Lab-gecertificeerde genetische analyse",
+        "Uitgebreid schriftelijk rapport",
+        "60 minuten durende interpretatiesessie",
+        "Integratie in voedingsplan",
+        "Levenslange toegang tot resultaten"
+      ],
+      "note": "Niet gedekt door Belgische ziekenfondsen. Optionele add-on voor elk programma."
+    },
+    "cta": {
+      "primary": {
+        "text": "Meer Informatie",
+        "url": "/nl/nutrigenetic-tests/"
+      },
+      "secondary": {
+        "text": "Consultatie Boeken",
+        "url": "/nl/appointment/"
+      }
+    }
+  },
+  "de": {
+    "eyebrow": "Präzisionsernährung",
+    "title": "Nutrigenetische Tests: Ihre DNA, Ihre Ernährung",
+    "subtitle": "Entdecken Sie, wie Ihre Gene den Stoffwechsel, Nährstoffbedarf und Nahrungsmittelunverträglichkeiten beeinflussen. Evidenzbasierte Erkenntnisse für wirklich personalisierte Ernährung.",
+    "hero": {
+      "badge": "Optionales Add-On",
+      "highlight": "Entschlüsseln Sie Ihre einzigartige Ernährungsblaupause"
+    },
+    "benefits": [
+      {
+        "icon": "dna",
+        "title": "Stoffwechsel-Einblicke",
+        "description": "Verstehen Sie, wie Ihre Gene den Kohlenhydrat-, Fett- und Proteinstoffwechsel beeinflussen für optimierte Energie und Gewichtsmanagement."
+      },
+      {
+        "icon": "shield-check",
+        "title": "Empfindlichkeits-Screening",
+        "description": "Identifizieren Sie genetische Veranlagungen für Laktoseintoleranz, Glutenempfindlichkeit und andere Nahrungsmittelunverträglichkeiten."
+      },
+      {
+        "icon": "vitamin",
+        "title": "Mikronährstoff-Bedarf",
+        "description": "Entdecken Sie genetische Variationen, die Vitamin D, B12, Folsäure und Omega-3-Absorption beeinflussen."
+      },
+      {
+        "icon": "target",
+        "title": "Personalisierte Strategie",
+        "description": "Übersetzen Sie komplexe genetische Daten in umsetzbare Essenspläne, Nahrungsergänzungsprotokolle und Lifestyle-Anpassungen."
+      }
+    ],
+    "how_it_works": {
+      "title": "Wie Es Funktioniert",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Einfache Speichelprobe",
+          "description": "Nicht-invasiver Wangenabstrich während der Beratung oder zu Hause. Dauert weniger als 2 Minuten."
+        },
+        {
+          "number": "02",
+          "title": "Laboranalyse",
+          "description": "Zertifiziertes europäisches Labor analysiert 20+ ernährungsrelevante genetische Marker (SNPs). Ergebnisse in 2-3 Wochen."
+        },
+        {
+          "number": "03",
+          "title": "Experteninterpretation",
+          "description": "60-minütige Beratung zur Entschlüsselung der Ergebnisse und Integration in Ihren personalisierten Ernährungsplan."
+        },
+        {
+          "number": "04",
+          "title": "Kontinuierliche Optimierung",
+          "description": "Lebenslange genetische Daten, die Sie überprüfen können, während sich die Forschung weiterentwickelt."
+        }
+      ]
+    },
+    "tested_markers": {
+      "title": "Was Wir Analysieren",
+      "categories": [
+        {
+          "name": "Gewicht & Stoffwechsel",
+          "markers": ["FTO", "MC4R", "ADRB2", "PPARG"]
+        },
+        {
+          "name": "Kohlenhydrat-Reaktion",
+          "markers": ["TCF7L2", "SLC2A2", "KCNJ11"]
+        },
+        {
+          "name": "Fettstoffwechsel",
+          "markers": ["APOA2", "FADS1", "LPL"]
+        },
+        {
+          "name": "Nahrungsmittelempfindlichkeiten",
+          "markers": ["LCT (Laktose)", "HLA-DQ (Gluten)", "ACE"]
+        },
+        {
+          "name": "Vitamine & Mineralien",
+          "markers": ["VDR", "MTHFR", "BCMO1", "SLC23A1"]
+        }
+      ]
+    },
+    "science": {
+      "title": "Evidenzbasierter Ansatz",
+      "note": "Wir berichten nur über Varianten mit starken peer-reviewed Beweisen. Nutrigenetik informiert—diktiert nicht—Ihren Plan."
+    },
+    "pricing": {
+      "title": "Investition",
+      "price": "€295",
+      "includes": [
+        "Labor-zertifizierte genetische Analyse",
+        "Umfassender schriftlicher Bericht",
+        "60-minütige Interpretationssitzung",
+        "Integration in Ernährungsplan",
+        "Lebenslanger Zugang zu Ergebnissen"
+      ],
+      "note": "Nicht von belgischen Krankenkassen abgedeckt. Optionales Add-on für jedes Programm."
+    },
+    "cta": {
+      "primary": {
+        "text": "Mehr Erfahren",
+        "url": "/de/nutrigenetic-tests/"
+      },
+      "secondary": {
+        "text": "Beratung Buchen",
+        "url": "/de/appointment/"
+      }
+    }
+  }
+}

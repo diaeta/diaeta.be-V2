@@ -1,0 +1,378 @@
+{
+  "en": {
+    "badges": {
+      "certified": "Weight Loss Specialist",
+      "languages": "EN · FR · NL · DE · AR",
+      "rating": "4.9/5 Rating"
+    },
+    "title": {
+      "line1": "Lose weight sustainably",
+      "line2": "without restrictive diets"
+    },
+    "subtitle": "Evidence-based <strong>weight loss</strong> that works with your lifestyle—plus specialized programs for <strong>IBS</strong>, <strong>diabetes</strong>, and <strong>cholesterol</strong>. Real results, no deprivation.",
+    "programs": {
+      "weight": {
+        "label": "Weight Loss",
+        "icon": "user-plus",
+        "benefits": [
+          "Lose 0.5-1kg per week with flexible meal plans you'll enjoy",
+          "Body composition tracking to preserve muscle while losing fat",
+          "Evidence-based habits that work long-term—no calorie counting",
+          "Weekly accountability and progress monitoring via app"
+        ],
+        "cta": "Start Weight Loss Program"
+      },
+      "ibs": {
+        "label": "IBS + Weight",
+        "icon": "activity",
+        "benefits": [
+          "Low-FODMAP protocol to calm digestive symptoms first",
+          "Weight loss strategies adapted for sensitive digestion",
+          "Structured food reintroduction while maintaining progress",
+          "Gut-friendly meal timing to reduce bloating"
+        ],
+        "cta": "Start IBS Program"
+      },
+      "diabetes": {
+        "label": "Diabetes + Weight",
+        "icon": "droplet",
+        "benefits": [
+          "Blood sugar stabilization through strategic carb distribution",
+          "Weight loss approach that improves insulin sensitivity",
+          "Medication adjustments coordinated with your doctor",
+          "HbA1c tracking alongside body composition changes"
+        ],
+        "cta": "Start Diabetes Program"
+      },
+      "cholesterol": {
+        "label": "Heart Health",
+        "icon": "heart",
+        "benefits": [
+          "Weight loss that naturally lowers LDL and triglycerides",
+          "Heart-healthy fats and fiber optimization strategies",
+          "Lab-guided nutrition to improve lipid panels",
+          "Blood pressure management through targeted weight loss"
+        ],
+        "cta": "Start Cholesterol Program"
+      }
+    },
+    "ctas": {
+      "primary": "Book Your Consultation",
+      "secondary": "Compare Programs"
+    },
+    "stats": {
+      "patients": {
+        "number": "500+",
+        "label": "Weight Loss Clients"
+      },
+      "sessions": {
+        "number": "12kg",
+        "label": "Average Weight Lost"
+      },
+      "success": {
+        "number": "92%",
+        "label": "Keep Weight Off"
+      }
+    },
+    "floatingCards": {
+      "result": {
+        "title": "Sophie L.",
+        "subtitle": "Lost 23kg in 8 months"
+      },
+      "certification": {
+        "title": "Body Composition",
+        "subtitle": "Track fat loss, not just weight"
+      },
+      "support": {
+        "title": "Weekly Check-ins",
+        "subtitle": "Stay on track with app support"
+      }
+    },
+    "scroll": {
+      "text": "Explore programs"
+    },
+    "imageAlt": "Pierre Abou-Zeid, registered dietitian-nutritionist in Brussels, consulting with patient in a warm, professional clinical setting"
+  },
+  "fr": {
+    "badges": {
+      "certified": "Spécialiste Perte de Poids",
+      "languages": "FR · EN · NL · DE · AR",
+      "rating": "4.9/5 Note"
+    },
+    "title": {
+      "line1": "Perdez du poids durablement",
+      "line2": "sans régimes restrictifs"
+    },
+    "subtitle": "<strong>Perte de poids</strong> fondée sur des preuves qui s'adapte à votre style de vie—plus des programmes spécialisés pour le <strong>SII</strong>, le <strong>diabète</strong> et le <strong>cholestérol</strong>. Résultats réels, sans privation.",
+    "programs": {
+      "weight": {
+        "label": "Perte de poids",
+        "icon": "user-plus",
+        "benefits": [
+          "Perdez 0,5-1kg par semaine avec des plans de repas flexibles",
+          "Suivi composition corporelle pour préserver le muscle",
+          "Habitudes fondées sur des preuves—sans compter les calories",
+          "Suivi hebdomadaire et responsabilisation via l'application"
+        ],
+        "cta": "Commencer le programme perte de poids"
+      },
+      "ibs": {
+        "label": "SII + Poids",
+        "icon": "activity",
+        "benefits": [
+          "Protocole Low-FODMAP pour calmer les symptômes d'abord",
+          "Stratégies de perte de poids adaptées à la digestion sensible",
+          "Réintroduction alimentaire structurée tout en progressant",
+          "Timing des repas adapté pour réduire les ballonnements"
+        ],
+        "cta": "Commencer le programme SII"
+      },
+      "diabetes": {
+        "label": "Diabète + Poids",
+        "icon": "droplet",
+        "benefits": [
+          "Stabilisation glycémique par distribution stratégique des glucides",
+          "Perte de poids qui améliore la sensibilité à l'insuline",
+          "Ajustements médicamenteux coordonnés avec votre médecin",
+          "Suivi HbA1c parallèlement aux changements de composition"
+        ],
+        "cta": "Commencer le programme diabète"
+      },
+      "cholesterol": {
+        "label": "Santé Cardiaque",
+        "icon": "heart",
+        "benefits": [
+          "Perte de poids qui réduit naturellement LDL et triglycérides",
+          "Stratégies d'optimisation des graisses saines et fibres",
+          "Nutrition guidée par analyses pour améliorer le bilan lipidique",
+          "Gestion tension artérielle par perte de poids ciblée"
+        ],
+        "cta": "Commencer le programme cholestérol"
+      }
+    },
+    "ctas": {
+      "primary": "Réserver une consultation",
+      "secondary": "Comparer les programmes"
+    },
+    "stats": {
+      "patients": {
+        "number": "500+",
+        "label": "Clients Perte de Poids"
+      },
+      "sessions": {
+        "number": "12kg",
+        "label": "Perte Moyenne"
+      },
+      "success": {
+        "number": "92%",
+        "label": "Maintiennent leur Poids"
+      }
+    },
+    "floatingCards": {
+      "result": {
+        "title": "Sophie L.",
+        "subtitle": "A perdu 23kg en 8 mois"
+      },
+      "certification": {
+        "title": "Composition Corporelle",
+        "subtitle": "Suivi graisse, pas seulement poids"
+      },
+      "support": {
+        "title": "Suivi Hebdomadaire",
+        "subtitle": "Restez sur la bonne voie"
+      }
+    },
+    "scroll": {
+      "text": "Explorer les programmes"
+    },
+    "imageAlt": "Pierre Abou-Zeid, diététicien-nutritionniste agréé à Bruxelles, en consultation avec un patient dans un cadre clinique chaleureux et professionnel"
+  },
+  "nl": {
+    "badges": {
+      "certified": "Gewichtsverlies Specialist",
+      "languages": "NL · EN · FR · DE · AR",
+      "rating": "4.9/5 Waardering"
+    },
+    "title": {
+      "line1": "Val duurzaam af",
+      "line2": "zonder restrictieve diëten"
+    },
+    "subtitle": "Evidence-based <strong>gewichtsverlies</strong> dat bij uw levensstijl past—plus gespecialiseerde programma's voor <strong>PDS</strong>, <strong>diabetes</strong> en <strong>cholesterol</strong>. Echte resultaten, geen ontbering.",
+    "programs": {
+      "weight": {
+        "label": "Gewichtsverlies",
+        "icon": "user-plus",
+        "benefits": [
+          "Val 0,5-1kg per week af met flexibele maaltijdplannen",
+          "Lichaamssamenstelling tracking om spieren te behouden",
+          "Evidence-based gewoonten—zonder calorieën te tellen",
+          "Wekelijkse controle en voortgangsbewaking via app"
+        ],
+        "cta": "Start gewichtsverliesprogramma"
+      },
+      "ibs": {
+        "label": "PDS + Gewicht",
+        "icon": "activity",
+        "benefits": [
+          "Low-FODMAP protocol om symptomen eerst te kalmeren",
+          "Gewichtsverliesstrategieën aangepast voor gevoelige spijsvertering",
+          "Gestructureerde voedselherintroductie met voortgang",
+          "Darmvriendelijke maaltijdtiming om opgeblazen gevoel te verminderen"
+        ],
+        "cta": "Start PDS-programma"
+      },
+      "diabetes": {
+        "label": "Diabetes + Gewicht",
+        "icon": "droplet",
+        "benefits": [
+          "Bloedsuikerstabilisatie door strategische koolhydraatdistributie",
+          "Gewichtsverlies dat insulinegevoeligheid verbetert",
+          "Medicatie-aanpassingen gecoördineerd met uw arts",
+          "HbA1c tracking naast lichaamssamenstelling veranderingen"
+        ],
+        "cta": "Start diabetesprogramma"
+      },
+      "cholesterol": {
+        "label": "Hartgezondheid",
+        "icon": "heart",
+        "benefits": [
+          "Gewichtsverlies dat LDL en triglyceriden natuurlijk verlaagt",
+          "Strategieën voor gezonde vetten en vezeloptimalisatie",
+          "Lab-gestuurde voeding om lipidenprofiel te verbeteren",
+          "Bloeddrukbeheer door gericht gewichtsverlies"
+        ],
+        "cta": "Start cholesterolprogramma"
+      }
+    },
+    "ctas": {
+      "primary": "Boek uw consultatie",
+      "secondary": "Vergelijk programma's"
+    },
+    "stats": {
+      "patients": {
+        "number": "500+",
+        "label": "Gewichtsverlies Cliënten"
+      },
+      "sessions": {
+        "number": "12kg",
+        "label": "Gemiddeld Gewichtsverlies"
+      },
+      "success": {
+        "number": "92%",
+        "label": "Behouden Gewicht"
+      }
+    },
+    "floatingCards": {
+      "result": {
+        "title": "Sophie L.",
+        "subtitle": "23kg verloren in 8 maanden"
+      },
+      "certification": {
+        "title": "Lichaamssamenstelling",
+        "subtitle": "Track vetverlies, niet alleen gewicht"
+      },
+      "support": {
+        "title": "Wekelijkse Check-ins",
+        "subtitle": "Blijf op koers met app"
+      }
+    },
+    "scroll": {
+      "text": "Verken programma's"
+    },
+    "imageAlt": "Pierre Abou-Zeid, erkend diëtist-voedingsdeskundige in Brussel, in overleg met patiënt in een warme, professionele klinische setting"
+  },
+  "de": {
+    "badges": {
+      "certified": "Gewichtsverlust Spezialist",
+      "languages": "DE · EN · FR · NL · AR",
+      "rating": "4.9/5 Bewertung"
+    },
+    "title": {
+      "line1": "Nachhaltig abnehmen",
+      "line2": "ohne restriktive Diäten"
+    },
+    "subtitle": "Evidenzbasierte <strong>Gewichtsabnahme</strong>, die zu Ihrem Lebensstil passt—plus spezialisierte Programme für <strong>RDS</strong>, <strong>Diabetes</strong> und <strong>Cholesterin</strong>. Echte Ergebnisse, keine Entbehrungen.",
+    "programs": {
+      "weight": {
+        "label": "Gewichtsverlust",
+        "icon": "user-plus",
+        "benefits": [
+          "Verlieren Sie 0,5-1kg pro Woche mit flexiblen Mahlzeitenplänen",
+          "Körperzusammensetzungs-Tracking zur Muskelerhaltung",
+          "Evidenzbasierte Gewohnheiten—ohne Kalorienzählen",
+          "Wöchentliche Kontrolle und Fortschrittsverfolgung per App"
+        ],
+        "cta": "Gewichtsverlustprogramm starten"
+      },
+      "ibs": {
+        "label": "RDS + Gewicht",
+        "icon": "activity",
+        "benefits": [
+          "Low-FODMAP-Protokoll zur Beruhigung der Symptome zuerst",
+          "Gewichtsverluststrategien angepasst für empfindliche Verdauung",
+          "Strukturierte Lebensmittel-Wiedereinführung mit Fortschritt",
+          "Darmfreundliches Mahlzeiten-Timing zur Reduzierung von Blähungen"
+        ],
+        "cta": "RDS-Programm starten"
+      },
+      "diabetes": {
+        "label": "Diabetes + Gewicht",
+        "icon": "droplet",
+        "benefits": [
+          "Blutzuckerstabilisierung durch strategische Kohlenhydratverteilung",
+          "Gewichtsverlust, der die Insulinsensitivität verbessert",
+          "Medikamentenanpassungen koordiniert mit Ihrem Arzt",
+          "HbA1c-Tracking parallel zu Körperzusammensetzungsänderungen"
+        ],
+        "cta": "Diabetes-Programm starten"
+      },
+      "cholesterol": {
+        "label": "Herzgesundheit",
+        "icon": "heart",
+        "benefits": [
+          "Gewichtsverlust, der LDL und Triglyceride natürlich senkt",
+          "Strategien zur Optimierung gesunder Fette und Ballaststoffe",
+          "Laborgesteuerte Ernährung zur Verbesserung des Lipidprofils",
+          "Blutdruckmanagement durch gezielten Gewichtsverlust"
+        ],
+        "cta": "Cholesterin-Programm starten"
+      }
+    },
+    "ctas": {
+      "primary": "Beratung buchen",
+      "secondary": "Programme vergleichen"
+    },
+    "stats": {
+      "patients": {
+        "number": "500+",
+        "label": "Gewichtsverlust Klienten"
+      },
+      "sessions": {
+        "number": "12kg",
+        "label": "Durchschnittlicher Gewichtsverlust"
+      },
+      "success": {
+        "number": "92%",
+        "label": "Halten Gewicht"
+      }
+    },
+    "floatingCards": {
+      "result": {
+        "title": "Sophie L.",
+        "subtitle": "23kg in 8 Monaten verloren"
+      },
+      "certification": {
+        "title": "Körperzusammensetzung",
+        "subtitle": "Fettverlust tracken, nicht nur Gewicht"
+      },
+      "support": {
+        "title": "Wöchentliche Check-ins",
+        "subtitle": "Auf Kurs bleiben mit App"
+      }
+    },
+    "scroll": {
+      "text": "Programme erkunden"
+    },
+    "imageAlt": "Pierre Abou-Zeid, registrierter Diätassistent-Ernährungsberater in Brüssel, in Beratung mit Patient in einer warmen, professionellen klinischen Umgebung"
+  }
+}

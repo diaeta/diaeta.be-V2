@@ -1,0 +1,262 @@
+{
+  "en": {
+    "eyebrow": "Our Philosophy",
+    "title": "Where Clinical Science Meets Human Experience",
+    "subtitle": "We don't believe in one-size-fits-all solutions. Your body, lifestyle, and relationship with food are unique—your nutrition strategy should be too.",
+    "manifesto": {
+      "title": "The Diaeta Manifesto",
+      "principles": [
+        {
+          "number": "01",
+          "title": "Food is Not the Enemy",
+          "description": "No forbidden lists. No moral judgment. Just evidence-based frameworks that honor your preferences and cultural background."
+        },
+        {
+          "number": "02",
+          "title": "Your Body Tells the Truth",
+          "description": "We measure what matters—symptoms, energy, sleep, performance—not just scale weight or calorie counts."
+        },
+        {
+          "number": "03",
+          "title": "Change is a Dialogue",
+          "description": "Not a lecture. We listen, adjust, and evolve your plan as your life changes—because sustainability beats perfection every time."
+        }
+      ]
+    },
+    "pillars": [
+      {
+        "icon": "brain",
+        "title": "Evidence-Driven Protocol",
+        "highlight": "200+ peer-reviewed studies",
+        "description": "Every recommendation traces back to clinical research, Monash FODMAP guidelines, and diabetology standards—translated into practical steps."
+      },
+      {
+        "icon": "heart-pulse",
+        "title": "Empathy-First Approach",
+        "highlight": "15+ years clinical experience",
+        "description": "From body image struggles to medical anxiety, we navigate the emotional landscape alongside the nutritional science."
+      },
+      {
+        "icon": "puzzle-piece",
+        "title": "Personalized Precision",
+        "highlight": "1-on-1 tailored strategies",
+        "description": "Your meal timing, food culture, cooking skills, budget, and family dynamics shape your plan—not generic templates."
+      },
+      {
+        "icon": "infinity",
+        "title": "Long-Term Sustainability",
+        "highlight": "Lifetime skill building",
+        "description": "We teach you to read your body's signals, adapt to life changes, and maintain progress without constant supervision."
+      }
+    ],
+    "quote": {
+      "text": "True health isn't about restriction—it's about discovering the foods and rhythms that help you thrive.",
+      "author": "Diaeta Clinical Philosophy"
+    },
+    "cta": {
+      "primary": {
+        "text": "Explore Our Method",
+        "url": "/en/diaeta-method/"
+      },
+      "secondary": {
+        "text": "Book Discovery Call",
+        "url": "/en/appointment/"
+      }
+    }
+  },
+  "fr": {
+    "eyebrow": "Notre Philosophie",
+    "title": "Où la Science Clinique Rencontre l'Expérience Humaine",
+    "subtitle": "Nous ne croyons pas aux solutions universelles. Votre corps, votre style de vie et votre relation avec la nourriture sont uniques—votre stratégie nutritionnelle devrait l'être aussi.",
+    "manifesto": {
+      "title": "Le Manifeste Diaeta",
+      "principles": [
+        {
+          "number": "01",
+          "title": "La Nourriture N'est Pas l'Ennemi",
+          "description": "Pas de listes interdites. Pas de jugement moral. Juste des cadres basés sur des preuves qui honorent vos préférences et votre contexte culturel."
+        },
+        {
+          "number": "02",
+          "title": "Votre Corps Dit la Vérité",
+          "description": "Nous mesurons ce qui compte—symptômes, énergie, sommeil, performance—pas seulement le poids ou les calories."
+        },
+        {
+          "number": "03",
+          "title": "Le Changement est un Dialogue",
+          "description": "Pas une conférence. Nous écoutons, ajustons et faisons évoluer votre plan—car la durabilité bat la perfection à chaque fois."
+        }
+      ]
+    },
+    "pillars": [
+      {
+        "icon": "brain",
+        "title": "Protocole Basé sur les Preuves",
+        "highlight": "200+ études évaluées",
+        "description": "Chaque recommandation remonte à la recherche clinique, aux directives Monash FODMAP et aux normes de diabétologie."
+      },
+      {
+        "icon": "heart-pulse",
+        "title": "Approche Empathique",
+        "highlight": "15+ ans d'expérience clinique",
+        "description": "De l'image corporelle à l'anxiété médicale, nous naviguons le paysage émotionnel aux côtés de la science nutritionnelle."
+      },
+      {
+        "icon": "puzzle-piece",
+        "title": "Précision Personnalisée",
+        "highlight": "Stratégies sur mesure 1-à-1",
+        "description": "Vos horaires de repas, votre culture alimentaire, vos compétences culinaires et votre budget façonnent votre plan."
+      },
+      {
+        "icon": "infinity",
+        "title": "Durabilité à Long Terme",
+        "highlight": "Compétences pour la vie",
+        "description": "Nous vous apprenons à lire les signaux de votre corps et à maintenir vos progrès sans supervision constante."
+      }
+    ],
+    "quote": {
+      "text": "La vraie santé ne concerne pas la restriction—mais la découverte des aliments qui vous aident à vous épanouir.",
+      "author": "Philosophie Clinique Diaeta"
+    },
+    "cta": {
+      "primary": {
+        "text": "Explorer Notre Méthode",
+        "url": "/fr/diaeta-method/"
+      },
+      "secondary": {
+        "text": "Réserver un Appel",
+        "url": "/fr/appointment/"
+      }
+    }
+  },
+  "nl": {
+    "eyebrow": "Onze Filosofie",
+    "title": "Waar Klinische Wetenschap Menselijke Ervaring Ontmoet",
+    "subtitle": "We geloven niet in one-size-fits-all oplossingen. Jouw lichaam, levensstijl en relatie met voeding zijn uniek—jouw voedingsstrategie zou dat ook moeten zijn.",
+    "manifesto": {
+      "title": "Het Diaeta Manifest",
+      "principles": [
+        {
+          "number": "01",
+          "title": "Voeding is Niet de Vijand",
+          "description": "Geen verboden lijsten. Geen moreel oordeel. Alleen evidence-based kaders die jouw voorkeuren en culturele achtergrond respecteren."
+        },
+        {
+          "number": "02",
+          "title": "Je Lichaam Vertelt de Waarheid",
+          "description": "We meten wat belangrijk is—symptomen, energie, slaap, prestaties—niet alleen gewicht of calorieën."
+        },
+        {
+          "number": "03",
+          "title": "Verandering is een Dialoog",
+          "description": "Geen lezing. We luisteren, passen aan en laten jouw plan evolueren—want duurzaamheid wint het van perfectie."
+        }
+      ]
+    },
+    "pillars": [
+      {
+        "icon": "brain",
+        "title": "Evidence-Driven Protocol",
+        "highlight": "200+ peer-reviewed studies",
+        "description": "Elke aanbeveling is gebaseerd op klinisch onderzoek, Monash FODMAP-richtlijnen en diabetologie-standaarden."
+      },
+      {
+        "icon": "heart-pulse",
+        "title": "Empathie-First Aanpak",
+        "highlight": "15+ jaar klinische ervaring",
+        "description": "Van lichaamsbeeld tot medische angst, we navigeren het emotionele landschap naast de voedingswetenschap."
+      },
+      {
+        "icon": "puzzle-piece",
+        "title": "Gepersonaliseerde Precisie",
+        "highlight": "1-op-1 op maat gemaakte strategieën",
+        "description": "Jouw maaltijdtiming, voedselcultuur, kookvaardigheden en budget vormen jouw plan—niet generieke sjablonen."
+      },
+      {
+        "icon": "infinity",
+        "title": "Langetermijn Duurzaamheid",
+        "highlight": "Levenslange vaardigheden",
+        "description": "We leren je de signalen van je lichaam te lezen en vooruitgang te behouden zonder constante supervisie."
+      }
+    ],
+    "quote": {
+      "text": "Echte gezondheid gaat niet over beperking—maar over het ontdekken van de voeding die je helpt floreren.",
+      "author": "Diaeta Klinische Filosofie"
+    },
+    "cta": {
+      "primary": {
+        "text": "Ontdek Onze Methode",
+        "url": "/nl/diaeta-method/"
+      },
+      "secondary": {
+        "text": "Boek Kennismakingsgesprek",
+        "url": "/nl/appointment/"
+      }
+    }
+  },
+  "de": {
+    "eyebrow": "Unsere Philosophie",
+    "title": "Wo Klinische Wissenschaft Auf Menschliche Erfahrung Trifft",
+    "subtitle": "Wir glauben nicht an Einheitslösungen. Ihr Körper, Lebensstil und Ihre Beziehung zum Essen sind einzigartig—Ihre Ernährungsstrategie sollte es auch sein.",
+    "manifesto": {
+      "title": "Das Diaeta Manifest",
+      "principles": [
+        {
+          "number": "01",
+          "title": "Essen ist Nicht der Feind",
+          "description": "Keine verbotenen Listen. Kein moralisches Urteil. Nur evidenzbasierte Rahmen, die Ihre Vorlieben und kulturellen Hintergrund respektieren."
+        },
+        {
+          "number": "02",
+          "title": "Ihr Körper Sagt die Wahrheit",
+          "description": "Wir messen, was zählt—Symptome, Energie, Schlaf, Leistung—nicht nur Gewicht oder Kalorien."
+        },
+        {
+          "number": "03",
+          "title": "Veränderung ist ein Dialog",
+          "description": "Kein Vortrag. Wir hören zu, passen an und entwickeln Ihren Plan weiter—denn Nachhaltigkeit schlägt Perfektion jedes Mal."
+        }
+      ]
+    },
+    "pillars": [
+      {
+        "icon": "brain",
+        "title": "Evidenzbasiertes Protokoll",
+        "highlight": "200+ peer-reviewed Studien",
+        "description": "Jede Empfehlung basiert auf klinischer Forschung, Monash FODMAP-Richtlinien und Diabetologie-Standards."
+      },
+      {
+        "icon": "heart-pulse",
+        "title": "Empathie-First Ansatz",
+        "highlight": "15+ Jahre klinische Erfahrung",
+        "description": "Vom Körperbild bis zur medizinischen Angst navigieren wir die emotionale Landschaft neben der Ernährungswissenschaft."
+      },
+      {
+        "icon": "puzzle-piece",
+        "title": "Personalisierte Präzision",
+        "highlight": "1-zu-1 maßgeschneiderte Strategien",
+        "description": "Ihre Mahlzeitenzeiten, Esskultur, Kochfähigkeiten und Budget formen Ihren Plan—keine generischen Vorlagen."
+      },
+      {
+        "icon": "infinity",
+        "title": "Langfristige Nachhaltigkeit",
+        "highlight": "Lebenslange Fähigkeiten",
+        "description": "Wir bringen Ihnen bei, die Signale Ihres Körpers zu lesen und Fortschritte ohne ständige Aufsicht zu erhalten."
+      }
+    ],
+    "quote": {
+      "text": "Wahre Gesundheit geht nicht um Einschränkung—sondern um die Entdeckung der Nahrung, die Ihnen hilft zu gedeihen.",
+      "author": "Diaeta Klinische Philosophie"
+    },
+    "cta": {
+      "primary": {
+        "text": "Unsere Methode Erkunden",
+        "url": "/de/diaeta-method/"
+      },
+      "secondary": {
+        "text": "Beratungsgespräch Buchen",
+        "url": "/de/appointment/"
+      }
+    }
+  }
+}

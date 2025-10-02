@@ -1,0 +1,106 @@
+{# Get current language or default to 'en' #}
+{% set currentLang = lang or page.lang or 'en' %}
+{% set t = journey[currentLang] %}
+
+<!-- ============================================================================
+  JOURNEY TIMELINE - Interactive Vertical Timeline
+  Creative phase-by-phase breakdown with animated connectors
+  SEO-optimized, AISO-friendly progress visualization
+============================================================================= -->
+<section class="c-journey" id="journey" aria-labelledby="journey-title">
+  <div class="c-journey__container">
+
+    <!-- Header -->
+    <header class="c-journey__header">
+      <p class="c-journey__eyebrow">{{ t.eyebrow }}</p>
+      <h2 id="journey-title" class="c-journey__title">{{ t.title }}</h2>
+      <p class="c-journey__subtitle">{{ t.subtitle }}</p>
+    </header>
+
+    <!-- Timeline -->
+    <div class="c-journey__timeline">
+      <!-- Vertical connector line -->
+      <div class="c-journey__line" aria-hidden="true"></div>
+
+      {% for phase in t.phases %}
+      <article class="c-journey__phase c-journey__phase--{{ loop.index }}" data-phase="{{ loop.index }}">
+
+        <!-- Number badge -->
+        <div class="c-journey__number" aria-hidden="true">
+          <span>{{ phase.number }}</span>
+        </div>
+
+        <!-- Phase content card -->
+        <div class="c-journey__card">
+          <!-- Icon -->
+          <div class="c-journey__icon" aria-hidden="true">
+            {% if phase.icon == 'search' %}
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="m21 21-4.35-4.35"/>
+            </svg>
+            {% elif phase.icon == 'tools' %}
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+            {% elif phase.icon == 'target' %}
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="6"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+            {% elif phase.icon == 'trophy' %}
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+              <path d="M4 22h16"/>
+              <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+            </svg>
+            {% endif %}
+          </div>
+
+          <div class="c-journey__content">
+            <!-- Duration badge -->
+            <span class="c-journey__duration">{{ phase.duration }}</span>
+
+            <!-- Title & description -->
+            <h3 class="c-journey__phase-title">{{ phase.title }}</h3>
+            <p class="c-journey__description">{{ phase.description }}</p>
+
+            <!-- Deliverables -->
+            <div class="c-journey__deliverables">
+              <h4 class="c-journey__deliverables-title">What you get:</h4>
+              <ul class="c-journey__deliverables-list">
+                {% for item in phase.deliverables %}
+                <li>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  {{ item }}
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    <!-- Guarantee badge -->
+    <div class="c-journey__guarantee">
+      <div class="c-journey__guarantee-icon" aria-hidden="true">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+      </div>
+      <div class="c-journey__guarantee-content">
+        <h3 class="c-journey__guarantee-title">{{ t.guarantee.title }}</h3>
+        <p class="c-journey__guarantee-text">{{ t.guarantee.text }}</p>
+        <span class="c-journey__guarantee-note">{{ t.guarantee.note }}</span>
+      </div>
+    </div>
+
+  </div>
+</section>

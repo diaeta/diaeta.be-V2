@@ -1,0 +1,66 @@
+{
+  "en": {
+    "eyebrow": "Your Journey",
+    "title": "From first consultation to lasting results",
+    "subtitle": "A proven 4-phase system that transforms how you eat, feel, and live",
+    "phases": [
+      {
+        "number": "01",
+        "title": "Discovery & Assessment",
+        "duration": "Week 1",
+        "description": "Deep-dive consultation covering health history, lifestyle habits, food preferences, and goals. InBody scan reveals your starting composition.",
+        "deliverables": [
+          "60-minute initial consultation",
+          "Full body composition analysis",
+          "Personalized nutrition roadmap",
+          "Nutrium app access & training"
+        ],
+        "icon": "search"
+      },
+      {
+        "number": "02",
+        "title": "Foundation Building",
+        "duration": "Weeks 2-4",
+        "description": "Establish core eating patterns, portion strategies, and meal timing. Learn to navigate real-world situations while tracking progress.",
+        "deliverables": [
+          "Weekly 30-40min follow-ups",
+          "Meal framework customization",
+          "Progress photos & measurements",
+          "Direct app messaging support"
+        ],
+        "icon": "tools"
+      },
+      {
+        "number": "03",
+        "title": "Optimization & Refinement",
+        "duration": "Weeks 5-12",
+        "description": "Fine-tune your approach based on results. Address plateaus, adjust for lifestyle changes, introduce advanced strategies.",
+        "deliverables": [
+          "Bi-weekly optimization sessions",
+          "Advanced nutrition techniques",
+          "Habit troubleshooting",
+          "Social eating mastery"
+        ],
+        "icon": "target"
+      },
+      {
+        "number": "04",
+        "title": "Independence & Maintenance",
+        "duration": "Month 4+",
+        "description": "Transition to self-management with confidence. Quarterly check-ins ensure you stay on track long-term.",
+        "deliverables": [
+          "Maintenance protocol creation",
+          "Relapse prevention strategies",
+          "Lifetime app access",
+          "Quarterly tune-up sessions"
+        ],
+        "icon": "trophy"
+      }
+    ],
+    "guarantee": {
+      "title": "Our Commitment",
+      "text": "If you follow the plan and don't see measurable progress in 8 weeks, we'll work with you for free until you do.",
+      "note": "Terms apply"
+    }
+  }
+}

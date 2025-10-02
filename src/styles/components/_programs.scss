@@ -1,0 +1,347 @@
+// =============================================================================
+// PROGRAMS SECTION - Interactive Color-Coded Cards
+// Mind-blowing design with dynamic colors, hover effects, and smooth animations
+// BEM methodology with ITCSS architecture
+// =============================================================================
+
+@use 'sass:map';
+@use '../settings/tokens' as t;
+@use '../settings/mixins' as m;
+
+// =============================================================================
+// BLOCK: c-programs
+// =============================================================================
+.c-programs {
+  position: relative;
+  padding: clamp(4rem, 10vw, 7rem) 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, map.get(t.$colors, 'gray-50') 100%);
+  overflow: hidden;
+
+  &__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 5vw, 2.5rem);
+  }
+
+  // =============================================================================
+  // HEADER
+  // =============================================================================
+  &__header {
+    text-align: center;
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+  }
+
+  &__eyebrow {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: map.get(t.$colors, 'brand');
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: clamp(2.5rem, 6vw, 3.75rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: map.get(t.$colors, 'ink');
+    margin-bottom: 1rem;
+    letter-spacing: -0.03em;
+  }
+
+  &__subtitle {
+    font-size: clamp(1.0625rem, 2.5vw, 1.1875rem);
+    line-height: 1.6;
+    color: map.get(t.$colors, 'ink-dim');
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  // =============================================================================
+  // PROGRAMS GRID
+  // =============================================================================
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+
+    @media (min-width: map.get(t.$breakpoints, 'md')) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: map.get(t.$breakpoints, 'lg')) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  // =============================================================================
+  // PROGRAM CARD
+  // =============================================================================
+  &__card {
+    position: relative;
+    padding: clamp(1.75rem, 4vw, 2.25rem);
+    background: #FFFFFF;
+    border: 2px solid map.get(t.$colors, 'gray-200');
+    border-radius: 1.25rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-8px);
+      border-color: var(--program-color, map.get(t.$colors, 'brand'));
+      box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.08),
+        0 0 0 1px var(--program-color, map.get(t.$colors, 'brand'));
+
+      .c-programs__accent {
+        height: 6px;
+      }
+
+      .c-programs__icon {
+        transform: scale(1.1);
+        background: var(--program-color, map.get(t.$colors, 'brand'));
+      }
+
+      .c-programs__corner {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--program-color, map.get(t.$colors, 'brand')), transparent);
+    transition: height 0.3s ease;
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(135deg, var(--program-color, map.get(t.$colors, 'brand')), rgba(var(--program-color, map.get(t.$colors, 'brand')), 0.7));
+    border-radius: 1rem;
+    color: #FFFFFF;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__card-title {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: map.get(t.$colors, 'ink');
+    margin-bottom: 0.625rem;
+  }
+
+  &__tagline {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--program-color, map.get(t.$colors, 'brand'));
+    margin-bottom: 1.25rem;
+  }
+
+  // Meta info
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid map.get(t.$colors, 'gray-200');
+  }
+
+  &__meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: map.get(t.$colors, 'ink-dim');
+
+    svg {
+      flex-shrink: 0;
+      color: var(--program-color, map.get(t.$colors, 'brand'));
+    }
+  }
+
+  // Features list
+  &__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: map.get(t.$colors, 'ink-dim');
+
+      svg {
+        flex-shrink: 0;
+        margin-top: 0.125rem;
+        color: var(--program-color, map.get(t.$colors, 'brand'));
+      }
+    }
+  }
+
+  // Ideal for badge
+  &__ideal {
+    padding: 0.875rem;
+    background: map.get(t.$colors, 'gray-50');
+    border-radius: 0.625rem;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: map.get(t.$colors, 'ink-dim');
+    margin-bottom: 1.5rem;
+
+    strong {
+      color: map.get(t.$colors, 'ink');
+      font-weight: 600;
+    }
+  }
+
+  // CTA Button
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    text-decoration: none;
+    background: var(--program-color, map.get(t.$colors, 'brand'));
+    color: #FFFFFF;
+    border: none;
+    border-radius: 0.625rem;
+    transition: all 0.3s ease;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+
+      svg {
+        transform: translateX(3px);
+      }
+    }
+
+    &:focus-visible {
+      outline: 3px solid map.get(t.$colors, 'focus-ring');
+      outline-offset: 2px;
+    }
+  }
+
+  // Decorative corner
+  &__corner {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, transparent 50%, var(--program-color, map.get(t.$colors, 'brand')) 50%);
+    opacity: 0.05;
+    transition: opacity 0.3s ease;
+  }
+
+  // =============================================================================
+  // COMPARISON CTA
+  // =============================================================================
+  &__comparison {
+    text-align: center;
+    padding: clamp(2.5rem, 5vw, 3.5rem);
+    background: linear-gradient(135deg, map.get(t.$colors, 'gray-50'), #FFFFFF);
+    border: 2px dashed map.get(t.$colors, 'gray-300');
+    border-radius: 1.5rem;
+  }
+
+  &__comparison-content {
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+
+  &__comparison-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: map.get(t.$colors, 'ink');
+    margin-bottom: 0.75rem;
+  }
+
+  &__comparison-subtitle {
+    font-size: 1.0625rem;
+    color: map.get(t.$colors, 'ink-dim');
+    margin-bottom: 1.75rem;
+  }
+
+  &__comparison-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 1rem 2.25rem;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    text-decoration: none;
+    background: linear-gradient(135deg, map.get(t.$colors, 'brand'), map.get(t.$colors, 'brand-light'));
+    color: #FFFFFF;
+    border-radius: 0.625rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 109, 119, 0.25);
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 109, 119, 0.35);
+    }
+
+    &:focus-visible {
+      outline: 3px solid map.get(t.$colors, 'focus-ring');
+      outline-offset: 3px;
+    }
+  }
+}
+
+// =============================================================================
+// ACCESSIBILITY
+// =============================================================================
+@media (prefers-reduced-motion: reduce) {
+  .c-programs {
+    &__card,
+    &__icon,
+    &__cta,
+    &__comparison-cta {
+      transition: none;
+
+      &:hover {
+        transform: none;
+      }
+    }
+
+    &__cta svg {
+      transition: none;
+    }
+  }
+}

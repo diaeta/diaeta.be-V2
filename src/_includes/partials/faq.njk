@@ -1,0 +1,21 @@
+{% set currentLang = lang or page.lang or 'en' %}
+{% set data = faq[currentLang] %}
+<section id="faq" class="c-faq">
+  <div class="c-faq__container">
+    <header class="c-faq__header">
+      <h2 class="c-faq__title">{{ data.title }}</h2>
+      <p class="c-faq__subtitle">{{ data.subtitle }}</p>
+    </header>
+    <div class="c-faq__list">
+      {% for item in data.questions %}
+      <details class="c-faq__item">
+        <summary class="c-faq__question">{{ item.q }}</summary>
+        <div class="c-faq__answer">{{ item.a }}</div>
+      </details>
+      {% endfor %}
+    </div>
+    <div class="c-faq__cta">
+      <a href="{{ data.cta.url }}" class="c-faq__cta-btn">{{ data.cta.text }}</a>
+    </div>
+  </div>
+</section>

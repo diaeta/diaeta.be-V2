@@ -21,6 +21,18 @@
 // COMPONENTS
 // =============================================================================
 @use 'components/utilities';
+@use 'components/hero';
+@use 'components/approach';
+@use 'components/programs';
+@use 'components/journey';
+@use 'components/philosophy';
+@use 'components/testimonials';
+@use 'components/locations';
+@use 'components/nutrigenetics';
+@use 'components/expertise';
+@use 'components/faq';
+@use 'components/pricing';
+@use 'components/footer';
 
 // =============================================================================
 // UTILITIES
@@ -51,22 +63,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  color: var(--color-ink);
-  background-color: var(--color-surface);
-}
-
-// =============================================================================
-// THEME SWITCHING
-// =============================================================================
-
-// Default solid theme
-.site-header {
-  @extend .theme-solid;
-}
-
-// Glass theme can be applied via JavaScript
-.site-header.theme-glass {
-  // Glass theme styles are defined in layout/header.scss
+  color: var(--ink);
+  background-color: var(--surface);
 }
 
 // =============================================================================
@@ -84,41 +82,3 @@ html {
     scroll-behavior: auto;
   }
 }
-
-// =============================================================================
-// PERFORMANCE OPTIMIZATIONS
-// =============================================================================
-
-// Optimize rendering for header elements
-.site-header,
-.site-header * {
-  will-change: auto;
-}
-
-// Only apply will-change during animations
-.site-header.is-scrolled,
-.nav-sub.is-open,
-.mnav.is-open {
-  will-change: transform, opacity;
-}
-
-// =============================================================================
-// DEBUG MODE (remove in production)
-// =============================================================================
-
-// Uncomment to visualize header grid and components
-// .site-header {
-//   outline: 2px dashed red;
-//   
-//   .site-header__inner {
-//     outline: 2px dashed blue;
-//   }
-//   
-//   .nav-shell {
-//     outline: 2px dashed green;
-//   }
-//   
-//   .header-utilities {
-//     outline: 2px dashed orange;
-//   }
-// }

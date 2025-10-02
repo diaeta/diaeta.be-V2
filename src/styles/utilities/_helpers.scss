@@ -100,20 +100,20 @@
 // =============================================================================
 // COLOR UTILITIES
 // =============================================================================
-.u-text-brand { color: var(--color-brand) !important; }
-.u-text-ink { color: var(--color-ink) !important; }
-.u-text-ink-dim { color: var(--color-ink-dim) !important; }
-.u-text-invert { color: var(--color-ink-invert) !important; }
+.u-text-brand { color: var(--brand) !important; }
+.u-text-ink { color: var(--ink) !important; }
+.u-text-ink-dim { color: var(--ink-dim) !important; }
+.u-text-invert { color: var(--ink-invert) !important; }
 
-.u-bg-brand { background-color: var(--color-brand) !important; }
-.u-bg-brand-weak { background-color: var(--color-brand-weak) !important; }
-.u-bg-surface { background-color: var(--color-surface) !important; }
+.u-bg-brand { background-color: var(--brand) !important; }
+.u-bg-brand-weak { background-color: var(--brand-weak) !important; }
+.u-bg-surface { background-color: var(--surface) !important; }
 
 // =============================================================================
 // BORDER UTILITIES
 // =============================================================================
-.u-border { border: 1px solid var(--color-border) !important; }
-.u-border-brand { border: 1px solid var(--color-brand) !important; }
+.u-border { border: 1px solid var(--border) !important; }
+.u-border-brand { border: 1px solid var(--brand) !important; }
 .u-border-0 { border: 0 !important; }
 
 .u-rounded { border-radius: 0.25rem !important; }
@@ -171,8 +171,8 @@
 // =============================================================================
 // TRANSITION UTILITIES
 // =============================================================================
-.u-transition { transition: all var(--header-transition) !important; }
-.u-transition-fast { transition: all var(--header-transition) !important; }
+.u-transition { transition: all var(--transition-normal) !important; }
+.u-transition-fast { transition: all var(--transition-fast) !important; }
 .u-transition-none { transition: none !important; }
 
 // =============================================================================
@@ -220,13 +220,13 @@
   position: absolute;
   top: -40px;
   left: 6px;
-  background: var(--color-brand);
-  color: var(--color-ink-invert);
+  background: var(--brand);
+  color: var(--ink-invert);
   padding: 8px;
   text-decoration: none;
   border-radius: 4px;
   z-index: 1000;
-  
+
   &:focus {
     top: 6px;
   }

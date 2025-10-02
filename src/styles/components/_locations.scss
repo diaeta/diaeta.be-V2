@@ -1,0 +1,252 @@
+// =============================================================================
+// LOCATIONS SECTION - Multiple Clinics Across Brussels
+// Map-style design with municipality tags
+// BEM methodology with ITCSS architecture
+// =============================================================================
+
+@use 'sass:map';
+@use '../settings/tokens' as t;
+@use '../settings/mixins' as m;
+
+// =============================================================================
+// BLOCK: c-locations
+// =============================================================================
+.c-locations {
+  position: relative;
+  padding: clamp(4rem, 10vw, 7rem) 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, map.get(t.$colors, 'gray-50') 100%);
+  overflow: hidden;
+
+  &__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 5vw, 2.5rem);
+    position: relative;
+    z-index: 2;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+  }
+
+  &__eyebrow {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: map.get(t.$colors, 'brand');
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: clamp(2.5rem, 6vw, 3.75rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: map.get(t.$colors, 'ink');
+    margin-bottom: 1rem;
+    letter-spacing: -0.03em;
+  }
+
+  &__subtitle {
+    font-size: clamp(1.0625rem, 2.5vw, 1.1875rem);
+    line-height: 1.6;
+    color: map.get(t.$colors, 'ink-dim');
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  &__features {
+    display: grid;
+    gap: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+
+    @media (min-width: map.get(t.$breakpoints, 'sm')) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: map.get(t.$breakpoints, 'lg')) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__feature {
+    text-align: center;
+    padding: 2rem;
+    background: #FFFFFF;
+    border: 2px solid map.get(t.$colors, 'gray-200');
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: map.get(t.$colors, 'brand');
+      box-shadow: 0 12px 32px rgba(0, 109, 119, 0.15);
+    }
+  }
+
+  &__feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 1.25rem;
+    background: linear-gradient(135deg, map.get(t.$colors, 'brand'), map.get(t.$colors, 'brand-light'));
+    border-radius: 50%;
+    color: #FFFFFF;
+  }
+
+  &__feature-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: map.get(t.$colors, 'ink');
+    margin-bottom: 0.5rem;
+  }
+
+  &__feature-description {
+    font-size: 0.9375rem;
+    color: map.get(t.$colors, 'ink-dim');
+    line-height: 1.6;
+  }
+
+  &__highlight {
+    padding: clamp(2.5rem, 5vw, 3.5rem);
+    background: linear-gradient(135deg, map.get(t.$colors, 'brand-weak'), rgba(255, 255, 255, 0.9));
+    border-left: 5px solid map.get(t.$colors, 'brand');
+    border-radius: 1.25rem;
+    margin-bottom: clamp(3rem, 6vw, 4rem);
+  }
+
+  &__highlight-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: map.get(t.$colors, 'brand-dark');
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  &__municipalities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  &__municipality {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    background: #FFFFFF;
+    color: map.get(t.$colors, 'brand');
+    border: 1px solid map.get(t.$colors, 'brand-light');
+    border-radius: 2rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: map.get(t.$colors, 'brand');
+      color: #FFFFFF;
+    }
+  }
+
+  &__note {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    font-style: italic;
+    color: map.get(t.$colors, 'ink-dim');
+    text-align: center;
+    justify-content: center;
+
+    svg {
+      flex-shrink: 0;
+      margin-top: 0.125rem;
+      color: map.get(t.$colors, 'brand');
+    }
+  }
+
+  &__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: center;
+  }
+
+  &__cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 1.125rem 2.5rem;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    text-decoration: none;
+    background: linear-gradient(135deg, map.get(t.$colors, 'brand'), map.get(t.$colors, 'brand-light'));
+    color: #FFFFFF;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 109, 119, 0.25);
+
+    svg {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 109, 119, 0.35);
+
+      svg {
+        transform: translateX(5px);
+      }
+    }
+  }
+
+  &__cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 1.125rem 2.5rem;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    text-decoration: none;
+    background: #FFFFFF;
+    color: map.get(t.$colors, 'brand');
+    border: 2px solid map.get(t.$colors, 'brand');
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: map.get(t.$colors, 'brand');
+      color: #FFFFFF;
+      transform: translateY(-3px);
+    }
+  }
+
+  &__bg-map {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    pointer-events: none;
+    color: map.get(t.$colors, 'brand-light');
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .c-locations {
+    &__feature,
+    &__cta-primary,
+    &__cta-secondary {
+      transition: none;
+
+      &:hover {
+        transform: none;
+      }
+    }
+  }
+}

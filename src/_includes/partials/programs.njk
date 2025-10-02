@@ -1,0 +1,124 @@
+{# Get current language or default to 'en' #}
+{% set currentLang = lang or page.lang or 'en' %}
+{% set t = programs[currentLang] %}
+
+<!-- ============================================================================
+  PROGRAMS SECTION - Interactive Tabbed Cards
+  Mind-blowing design with hover effects, color coding, and smooth transitions
+  SEO-optimized with structured data, AISO-friendly content
+============================================================================= -->
+<section class="c-programs" id="programs" aria-labelledby="programs-title">
+  <div class="c-programs__container">
+
+    <!-- Header -->
+    <header class="c-programs__header">
+      <p class="c-programs__eyebrow">{{ t.eyebrow }}</p>
+      <h2 id="programs-title" class="c-programs__title">{{ t.title }}</h2>
+      <p class="c-programs__subtitle">{{ t.subtitle }}</p>
+    </header>
+
+    <!-- Programs Grid -->
+    <div class="c-programs__grid" role="list">
+      {% for program in t.programs %}
+      <article class="c-programs__card"
+               data-program="{{ program.id }}"
+               style="--program-color: {{ program.color }}"
+               role="listitem">
+
+        <!-- Color accent bar -->
+        <div class="c-programs__accent" aria-hidden="true"></div>
+
+        <!-- Icon -->
+        <div class="c-programs__icon" aria-hidden="true">
+          {% if program.icon == 'scale-dynamic' %}
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 3v18"/><path d="M5 9l7-6 7 6"/>
+            <circle cx="12" cy="19" r="2"/>
+          </svg>
+          {% elif program.icon == 'gut-health' %}
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 10h.01M15 10h.01M9.5 15.5c1 1 2.5 1.5 4 1.5s3-.5 4-1.5"/>
+            <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.5 0 4.75 1.02 6.38 2.67"/>
+          </svg>
+          {% elif program.icon == 'blood-sugar' %}
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v20M2 12h20"/>
+            <path d="M8 8l8 8M16 8l-8 8"/>
+            <circle cx="12" cy="12" r="9"/>
+          </svg>
+          {% elif program.icon == 'heart-beat' %}
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            <path d="M3.22 12h3.27l2 4.54 2.73-12.08 2.73 7.54H19"/>
+          </svg>
+          {% endif %}
+        </div>
+
+        <!-- Content -->
+        <div class="c-programs__content">
+          <h3 class="c-programs__card-title">{{ program.title }}</h3>
+          <p class="c-programs__tagline">{{ program.tagline }}</p>
+
+          <!-- Meta info -->
+          <div class="c-programs__meta">
+            <span class="c-programs__meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+              {{ program.duration }}
+            </span>
+            <span class="c-programs__meta-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              {{ program.results }}
+            </span>
+          </div>
+
+          <!-- Features list -->
+          <ul class="c-programs__features">
+            {% for feature in program.features %}
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              {{ feature }}
+            </li>
+            {% endfor %}
+          </ul>
+
+          <!-- Ideal for badge -->
+          <div class="c-programs__ideal">
+            <strong>Ideal for:</strong> {{ program.ideal }}
+          </div>
+
+          <!-- CTA -->
+          <a href="{{ program.url }}" class="c-programs__cta">
+            <span>{{ program.cta }}</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Decorative corner -->
+        <div class="c-programs__corner" aria-hidden="true"></div>
+      </article>
+      {% endfor %}
+    </div>
+
+    <!-- Comparison CTA -->
+    <div class="c-programs__comparison">
+      <div class="c-programs__comparison-content">
+        <h3 class="c-programs__comparison-title">{{ t.comparison.title }}</h3>
+        <p class="c-programs__comparison-subtitle">{{ t.comparison.subtitle }}</p>
+        <a href="/en/appointment/" class="c-programs__comparison-cta">
+          {{ t.comparison.cta }}
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>

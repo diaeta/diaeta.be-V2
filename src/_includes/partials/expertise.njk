@@ -1,0 +1,27 @@
+{% set currentLang = lang or page.lang or 'en' %}
+{% set data = expertise[currentLang] %}
+<section id="expertise" class="c-expertise">
+  <div class="c-expertise__container">
+    <header class="c-expertise__header">
+      <p class="c-expertise__eyebrow">{{ data.eyebrow }}</p>
+      <h2 class="c-expertise__title">{{ data.title }}</h2>
+      <p class="c-expertise__subtitle">{{ data.subtitle }}</p>
+    </header>
+    <div class="c-expertise__grid">
+      {% for credential in data.credentials %}
+      <div class="c-expertise__card">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3-6.2 3.3 1.2-6.8-5-4.9 6.9-1z" fill="currentColor"/></svg>
+        <h3>{{ credential.title }}</h3>
+        <p>{{ credential.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="c-expertise__approach">
+      <h3>{{ data.approach.title }}</h3>
+      <ul>{% for point in data.approach.points %}<li>{{ point }}</li>{% endfor %}</ul>
+    </div>
+    <div class="c-expertise__cta">
+      <a href="{{ data.cta.url }}" class="c-expertise__cta-btn">{{ data.cta.text }}</a>
+    </div>
+  </div>
+</section>

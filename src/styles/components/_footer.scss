@@ -1,0 +1,455 @@
+// =============================================================================
+// FOOTER - Comprehensive footer with CTA, navigation, and contact
+// =============================================================================
+
+@use 'sass:map';
+@use '../settings/tokens' as t;
+
+// =============================================================================
+// FOOTER CONTAINER
+// =============================================================================
+.site-footer {
+  background: linear-gradient(180deg, map.get(t.$colors, 'gray-900') 0%, #0A0E14 100%);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+// =============================================================================
+// FOOTER CTA SECTION
+// =============================================================================
+.footer-cta {
+  background: linear-gradient(135deg, map.get(t.$colors, 'brand'), map.get(t.$colors, 'brand-light'));
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  text-align: center;
+
+  &__layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+
+    @media (min-width: map.get(t.$breakpoints, 'md')) {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+
+  &__text {
+    flex: 1;
+  }
+
+  &__eyebrow {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+
+  &__headline {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: #FFF;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  &__copy {
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 600px;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (min-width: map.get(t.$breakpoints, 'sm')) {
+      flex-direction: row;
+    }
+  }
+}
+
+// =============================================================================
+// FOOTER MAIN CONTENT
+// =============================================================================
+.footer-frame {
+  background: linear-gradient(180deg, map.get(t.$colors, 'gray-900'), #0A0E14);
+}
+
+.footer-main {
+  padding: clamp(3rem, 6vw, 5rem) 0 clamp(2rem, 4vw, 3rem);
+  display: grid;
+  gap: 3rem;
+
+  @media (min-width: map.get(t.$breakpoints, 'md')) {
+    grid-template-columns: 1.2fr 2fr;
+    gap: 4rem;
+  }
+}
+
+// =============================================================================
+// FOOTER BRAND SECTION
+// =============================================================================
+.footer-brand {
+  &__summary {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin: 1.5rem 0;
+  }
+}
+
+.footer-logo {
+  display: inline-block;
+
+  img {
+    height: 40px;
+    width: auto;
+  }
+}
+
+.footer-badges {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+
+  i {
+    color: map.get(t.$colors, 'brand-light');
+    font-size: 1.125rem;
+  }
+}
+
+// =============================================================================
+// FOOTER SOCIAL LINKS
+// =============================================================================
+.footer-social {
+  margin-top: 2rem;
+
+  &__label {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  &__links {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #FFF;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: map.get(t.$colors, 'brand-light');
+    transform: translateY(-3px);
+  }
+}
+
+// =============================================================================
+// FOOTER NAVIGATION COLUMNS
+// =============================================================================
+.footer-columns {
+  display: grid;
+  gap: 2.5rem;
+
+  @media (min-width: map.get(t.$breakpoints, 'sm')) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: map.get(t.$breakpoints, 'md')) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.footer-group {
+  &__title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #FFF;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-size: 0.9375rem;
+
+  &:hover {
+    color: map.get(t.$colors, 'brand-light');
+  }
+}
+
+// =============================================================================
+// FOOTER CONTACT INFO
+// =============================================================================
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  &__icon {
+    color: map.get(t.$colors, 'brand-light');
+    margin-top: 0.125rem;
+    flex-shrink: 0;
+  }
+
+  &__link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: map.get(t.$colors, 'brand-light');
+    }
+  }
+
+  &__text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9375rem;
+  }
+}
+
+// =============================================================================
+// FOOTER BOTTOM BAR
+// =============================================================================
+.footer-bottom {
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+
+  @media (min-width: map.get(t.$breakpoints, 'md')) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__copy {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &__links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.footer-legal-link {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: map.get(t.$colors, 'brand-light');
+  }
+}
+
+// =============================================================================
+// COOKIE CONSENT BANNER
+// =============================================================================
+.cookie-consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 14, 20, 0.98);
+  backdrop-filter: blur(10px);
+  border-top: 2px solid map.get(t.$colors, 'brand');
+  padding: 1.5rem 0;
+  z-index: 1000;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cookie-consent-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+
+  @media (min-width: map.get(t.$breakpoints, 'md')) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.cookie-consent-text {
+  flex: 1;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+
+  p {
+    margin: 0;
+  }
+}
+
+.cookie-consent-link {
+  color: map.get(t.$colors, 'brand-light');
+  text-decoration: underline;
+
+  &:hover {
+    color: map.get(t.$colors, 'brand');
+  }
+}
+
+.cookie-consent-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+// =============================================================================
+// COOKIE PREFERENCES MODAL
+// =============================================================================
+.cookie-preferences-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+
+  .modal-content {
+    background: #FFF;
+    border-radius: 1rem;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-header {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid map.get(t.$colors, 'gray-200');
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: map.get(t.$colors, 'ink');
+    }
+  }
+
+  .modal-body {
+    padding: 2rem;
+
+    p {
+      color: map.get(t.$colors, 'ink-dim');
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .modal-footer {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid map.get(t.$colors, 'gray-200');
+  }
+
+  .btn-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: map.get(t.$colors, 'ink-dim');
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      color: map.get(t.$colors, 'ink');
+    }
+  }
+}
+
+.cookie-category {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: map.get(t.$colors, 'gray-50');
+  border-radius: 0.5rem;
+
+  .category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .category-label {
+    font-weight: 600;
+    color: map.get(t.$colors, 'ink');
+    font-size: 1rem;
+  }
+
+  .category-description {
+    color: map.get(t.$colors, 'ink-dim');
+    line-height: 1.5;
+  }
+
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
